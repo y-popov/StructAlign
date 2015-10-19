@@ -1,0 +1,197 @@
+Reading 1st PDB file: ../restrict_domains/ETS_new/A_1awc.pdb
+Reading 2nd PDB file: ../restrict_domains/ETS_new/A_1awc.pdb
+S max: 18559.2 
+
+Reading 1st PDB file: ../restrict_domains/ETS_new/A_1awc.pdb
+Reading 2nd PDB file: ../restrict_domains/ETS_new/A_1k6o.pdb
+S max: 2426.47 
+
+Reading 1st PDB file: ../restrict_domains/ETS_new/A_1awc.pdb
+Reading 2nd PDB file: ../restrict_domains/ETS_new/A_1k79.pdb
+S max: 3132.46 
+
+Reading 1st PDB file: ../restrict_domains/ETS_new/A_1awc.pdb
+Reading 2nd PDB file: ../restrict_domains/ETS_new/A_1k79.pdb~
+S max: 3079.04 
+
+Reading 1st PDB file: ../restrict_domains/ETS_new/A_1awc.pdb
+Reading 2nd PDB file: ../restrict_domains/ETS_new/A_1k7a.pdb
+S max: 3381.57 
+
+Reading 1st PDB file: ../restrict_domains/ETS_new/A_1awc.pdb
+Reading 2nd PDB file: ../restrict_domains/ETS_new/A_1k7a.pdb~
+S max: 3330.9 
+
+Reading 1st PDB file: ../restrict_domains/ETS_new/A_1awc.pdb
+Reading 2nd PDB file: ../restrict_domains/ETS_new/A_2stt.pdb
+Atom 2:DC (1) isn't complement to atom 34:DA (16). DNA is defect!
+Reading 1st PDB file: ../restrict_domains/ETS_new/A_1awc.pdb
+Reading 2nd PDB file: ../restrict_domains/ETS_new/A_2stw.pdb
+Atom 2:DC (1) isn't complement to atom 34:DA (16). DNA is defect!
+Reading 1st PDB file: ../restrict_domains/ETS_new/A_1awc.pdb
+Reading 2nd PDB file: ../restrict_domains/ETS_new/B_1k78.pdb
+S max: 2571.82 
+
+Reading 1st PDB file: ../restrict_domains/ETS_new/A_1awc.pdb
+Reading 2nd PDB file: ../restrict_domains/ETS_new/B_1k78.pdb~
+Atom 2:DT (1) isn't complement to atom 27:DC (26). DNA is defect!
+Reading 1st PDB file: ../restrict_domains/ETS_new/A_1awc.pdb
+Reading 2nd PDB file: ../restrict_domains/ETS_new/B_1mdm.pdb
+S max: 2801.09 
+
+Reading 1st PDB file: ../restrict_domains/ETS_new/A_1awc.pdb
+Reading 2nd PDB file: ../restrict_domains/ETS_new/C_1bc7.pdb
+S max: 2570.39 
+
+Reading 1st PDB file: ../restrict_domains/ETS_new/A_1awc.pdb
+Reading 2nd PDB file: ../restrict_domains/ETS_new/C_1bc8.pdb
+S max: 2269.66 
+
+Reading 1st PDB file: ../restrict_domains/ETS_new/A_1awc.pdb
+Reading 2nd PDB file: ../restrict_domains/ETS_new/C_1dux.pdb
+S max: 2342.04 
+
+Reading 1st PDB file: ../restrict_domains/ETS_new/A_1awc.pdb
+Reading 2nd PDB file: ../restrict_domains/ETS_new/C_1dux.pdb~
+S max: 2342.04 
+
+Reading 1st PDB file: ../restrict_domains/ETS_new/A_1awc.pdb
+Reading 2nd PDB file: ../restrict_domains/ETS_new/C_1yo5.pdb
+S max: 2115.28 
+
+Reading 1st PDB file: ../restrict_domains/ETS_new/A_1awc.pdb
+Reading 2nd PDB file: ../restrict_domains/ETS_new/D_1k79.pdb
+S max: 3420.56 
+
+Reading 1st PDB file: ../restrict_domains/ETS_new/A_1awc.pdb
+Reading 2nd PDB file: ../restrict_domains/ETS_new/D_1k7a.pdb
+S max: 2973.53 
+
+Reading 1st PDB file: ../restrict_domains/ETS_new/A_1awc.pdb
+Reading 2nd PDB file: ../restrict_domains/ETS_new/D_1k7a.pdb~
+S max: 51.0883 
+
+Reading 1st PDB file: ../restrict_domains/ETS_new/A_1awc.pdb
+Reading 2nd PDB file: ../restrict_domains/ETS_new/E_1pue.pdb
+S max: 2085.09 
+
+Reading 1st PDB file: ../restrict_domains/ETS_new/A_1awc.pdb
+Reading 2nd PDB file: ../restrict_domains/ETS_new/E_1pue.pdb~
+S max: 2064.18 
+
+Reading 1st PDB file: ../restrict_domains/ETS_new/A_1awc.pdb
+Reading 2nd PDB file: ../restrict_domains/ETS_new/F_1dux.pdb
+S max: 2325.36 
+
+Reading 1st PDB file: ../restrict_domains/ETS_new/A_1awc.pdb
+Reading 2nd PDB file: ../restrict_domains/ETS_new/F_1dux.pdb~
+S max: 32.5967 
+
+Reading 1st PDB file: ../restrict_domains/ETS_new/A_1awc.pdb
+Reading 2nd PDB file: ../restrict_domains/ETS_new/F_1k78.pdb
+S max: 2985.85 
+
+Reading 1st PDB file: ../restrict_domains/ETS_new/A_1awc.pdb
+Reading 2nd PDB file: ../restrict_domains/ETS_new/F_1k78.pdb~
+Atom 2:DT (1) isn't complement to atom 27:DC (26). DNA is defect!
+Reading 1st PDB file: ../restrict_domains/ETS_new/A_1awc.pdb
+Reading 2nd PDB file: ../restrict_domains/ETS_new/F_1pue.pdb
+S max: 2067.95 
+
+Reading 1st PDB file: ../restrict_domains/ETS_new/A_1awc.pdb
+Reading 2nd PDB file: ../restrict_domains/ETS_new/F_1pue.pdb~
+S max: 47.6129 
+
+Reading 1st PDB file: ../restrict_domains/ETS_new/A_1awc.pdb
+Reading 2nd PDB file: ../restrict_domains/ETS_new/G_1hbx.pdb
+S max: 1428.34 
+
+Reading 1st PDB file: ../restrict_domains/ETS_new/A_1awc.pdb
+Reading 2nd PDB file: ../restrict_domains/ETS_new/G_1hbx.pdb~
+S max: 1428.34 
+
+Reading 1st PDB file: ../restrict_domains/ETS_new/A_1awc.pdb
+Reading 2nd PDB file: ../restrict_domains/ETS_new/H_1hbx.pdb
+S max: 1642.26 
+
+Reading 1st PDB file: ../restrict_domains/ETS_new/A_1awc.pdb
+Reading 2nd PDB file: ../restrict_domains/ETS_new/H_1hbx.pdb~
+S max: 0 
+
+Reading 1st PDB file: ../restrict_domains/ETS_new/A_1k6o.pdb
+Reading 2nd PDB file: ../restrict_domains/ETS_new/A_1k6o.pdb
+S max: 16257.2 
+
+Reading 1st PDB file: ../restrict_domains/ETS_new/A_1k6o.pdb
+Reading 2nd PDB file: ../restrict_domains/ETS_new/A_1k79.pdb
+S max: 2285 
+
+Reading 1st PDB file: ../restrict_domains/ETS_new/A_1k6o.pdb
+Reading 2nd PDB file: ../restrict_domains/ETS_new/A_1k79.pdb~
+S max: 2285 
+
+Reading 1st PDB file: ../restrict_domains/ETS_new/A_1k6o.pdb
+Reading 2nd PDB file: ../restrict_domains/ETS_new/A_1k7a.pdb
+S max: 2160.16 
+
+Reading 1st PDB file: ../restrict_domains/ETS_new/A_1k6o.pdb
+Reading 2nd PDB file: ../restrict_domains/ETS_new/A_1k7a.pdb~
+S max: 2160.16 
+
+Reading 1st PDB file: ../restrict_domains/ETS_new/A_1k6o.pdb
+Reading 2nd PDB file: ../restrict_domains/ETS_new/A_2stt.pdb
+Atom 2:DC (1) isn't complement to atom 34:DA (16). DNA is defect!
+Reading 1st PDB file: ../restrict_domains/ETS_new/A_1k6o.pdb
+Reading 2nd PDB file: ../restrict_domains/ETS_new/A_2stw.pdb
+Atom 2:DC (1) isn't complement to atom 34:DA (16). DNA is defect!
+Reading 1st PDB file: ../restrict_domains/ETS_new/A_1k6o.pdb
+Reading 2nd PDB file: ../restrict_domains/ETS_new/B_1k78.pdb
+S max: 1988.98 
+
+Reading 1st PDB file: ../restrict_domains/ETS_new/A_1k6o.pdb
+Reading 2nd PDB file: ../restrict_domains/ETS_new/B_1k78.pdb~
+Atom 2:DT (1) isn't complement to atom 27:DC (26). DNA is defect!
+Reading 1st PDB file: ../restrict_domains/ETS_new/A_1k6o.pdb
+Reading 2nd PDB file: ../restrict_domains/ETS_new/B_1mdm.pdb
+S max: 2354.27 
+
+Reading 1st PDB file: ../restrict_domains/ETS_new/A_1k6o.pdb
+Reading 2nd PDB file: ../restrict_domains/ETS_new/C_1bc7.pdb
+S max: 1914.87 
+
+Reading 1st PDB file: ../restrict_domains/ETS_new/A_1k6o.pdb
+Reading 2nd PDB file: ../restrict_domains/ETS_new/C_1bc8.pdb
+S max: 1984.97 
+
+Reading 1st PDB file: ../restrict_domains/ETS_new/A_1k6o.pdb
+Reading 2nd PDB file: ../restrict_domains/ETS_new/C_1dux.pdb
+S max: 2184.42 
+
+Reading 1st PDB file: ../restrict_domains/ETS_new/A_1k6o.pdb
+Reading 2nd PDB file: ../restrict_domains/ETS_new/C_1dux.pdb~
+S max: 2184.42 
+
+Reading 1st PDB file: ../restrict_domains/ETS_new/A_1k6o.pdb
+Reading 2nd PDB file: ../restrict_domains/ETS_new/C_1yo5.pdb
+S max: 1965.92 
+
+Reading 1st PDB file: ../restrict_domains/ETS_new/A_1k6o.pdb
+Reading 2nd PDB file: ../restrict_domains/ETS_new/D_1k79.pdb
+S max: 2588.08 
+
+Reading 1st PDB file: ../restrict_domains/ETS_new/A_1k6o.pdb
+Reading 2nd PDB file: ../restrict_domains/ETS_new/D_1k7a.pdb
+S max: 1993.17 
+
+Reading 1st PDB file: ../restrict_domains/ETS_new/A_1k6o.pdb
+Reading 2nd PDB file: ../restrict_domains/ETS_new/E_1pue.pdb
+S max: 1756.62 
+
+Reading 1st PDB file: ../restrict_domains/ETS_new/A_1k6o.pdb
+Reading 2nd PDB file: ../restrict_domains/ETS_new/E_1pue.pdb~
+S max: 1756.62 
+
+Reading 1st PDB file: ../restrict_domains/ETS_new/A_1k6o.pdb
+Reading 2nd PDB file: ../restrict_domains/ETS_new/F_1dux.pdb
+S max: 2161.9 
+
