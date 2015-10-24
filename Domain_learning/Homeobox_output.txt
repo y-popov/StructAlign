@@ -1,0 +1,1377 @@
+../restrict_domains/Homeobox_new/A_1akh.pdb-../restrict_domains/Homeobox_new/A_1akh.pdb	S max: 7389.75 
+../restrict_domains/Homeobox_new/A_1akh.pdb-../restrict_domains/Homeobox_new/A_1au7.pdb	S max: 563.118 
+../restrict_domains/Homeobox_new/A_1akh.pdb-../restrict_domains/Homeobox_new/A_1b72.pdb	S max: 572.853 
+../restrict_domains/Homeobox_new/A_1akh.pdb-../restrict_domains/Homeobox_new/A_1b8i.pdb	S max: 519.488 
+../restrict_domains/Homeobox_new/A_1akh.pdb-../restrict_domains/Homeobox_new/A_1cqt.pdb	S max: 230.042 
+../restrict_domains/Homeobox_new/A_1akh.pdb-../restrict_domains/Homeobox_new/A_1du0.pdb	S max: 444.618 
+../restrict_domains/Homeobox_new/A_1akh.pdb-../restrict_domains/Homeobox_new/A_1fjl.pdb	Error: none_c
+../restrict_domains/Homeobox_new/A_1akh.pdb-../restrict_domains/Homeobox_new/A_1hf0.pdb	S max: 421.303 
+../restrict_domains/Homeobox_new/A_1akh.pdb-../restrict_domains/Homeobox_new/A_1ig7.pdb	S max: 534.22 
+../restrict_domains/Homeobox_new/A_1akh.pdb-../restrict_domains/Homeobox_new/A_1jgg.pdb	S max: 118.121 
+../restrict_domains/Homeobox_new/A_1akh.pdb-../restrict_domains/Homeobox_new/A_1k61.pdb	S max: 553.341 
+../restrict_domains/Homeobox_new/A_1akh.pdb-../restrict_domains/Homeobox_new/A_1le8.pdb	S max: 1228.66 
+../restrict_domains/Homeobox_new/A_1akh.pdb-../restrict_domains/Homeobox_new/A_1o4x.pdb	S max: 197.796 
+../restrict_domains/Homeobox_new/A_1akh.pdb-../restrict_domains/Homeobox_new/A_1puf.pdb	S max: 405.404 
+../restrict_domains/Homeobox_new/A_1akh.pdb-../restrict_domains/Homeobox_new/A_1yrn.pdb	S max: 1963.09 
+../restrict_domains/Homeobox_new/A_1akh.pdb-../restrict_domains/Homeobox_new/A_2hdd.pdb	S max: 545.237 
+../restrict_domains/Homeobox_new/A_1akh.pdb-../restrict_domains/Homeobox_new/A_3hdd.pdb	S max: 659.035 
+../restrict_domains/Homeobox_new/A_1akh.pdb-../restrict_domains/Homeobox_new/A_9ant.pdb	S max: 493.75 
+../restrict_domains/Homeobox_new/A_1akh.pdb-../restrict_domains/Homeobox_new/B_1akh.pdb	S max: 510.015 
+../restrict_domains/Homeobox_new/A_1akh.pdb-../restrict_domains/Homeobox_new/B_1au7.pdb	S max: 389.814 
+../restrict_domains/Homeobox_new/A_1akh.pdb-../restrict_domains/Homeobox_new/B_1b72.pdb	S max: 513.162 
+../restrict_domains/Homeobox_new/A_1akh.pdb-../restrict_domains/Homeobox_new/B_1b8i.pdb	S max: 680.226 
+../restrict_domains/Homeobox_new/A_1akh.pdb-../restrict_domains/Homeobox_new/B_1cqt.pdb	S max: 187.854 
+../restrict_domains/Homeobox_new/A_1akh.pdb-../restrict_domains/Homeobox_new/B_1du0.pdb	S max: 233.735 
+../restrict_domains/Homeobox_new/A_1akh.pdb-../restrict_domains/Homeobox_new/B_1fjl.pdb	Error: none_c
+../restrict_domains/Homeobox_new/A_1akh.pdb-../restrict_domains/Homeobox_new/B_1hf0.pdb	S max: 327.403 
+../restrict_domains/Homeobox_new/A_1akh.pdb-../restrict_domains/Homeobox_new/B_1jgg.pdb	S max: 207.021 
+../restrict_domains/Homeobox_new/A_1akh.pdb-../restrict_domains/Homeobox_new/B_1k61.pdb	S max: 576.439 
+../restrict_domains/Homeobox_new/A_1akh.pdb-../restrict_domains/Homeobox_new/B_1le8.pdb	S max: 546.35 
+../restrict_domains/Homeobox_new/A_1akh.pdb-../restrict_domains/Homeobox_new/B_1puf.pdb	S max: 389.819 
+../restrict_domains/Homeobox_new/A_1akh.pdb-../restrict_domains/Homeobox_new/B_1yrn.pdb	S max: 744.076 
+../restrict_domains/Homeobox_new/A_1akh.pdb-../restrict_domains/Homeobox_new/B_2hdd.pdb	S max: 252.567 
+../restrict_domains/Homeobox_new/A_1akh.pdb-../restrict_domains/Homeobox_new/B_2r5y.pdb	S max: 490.538 
+../restrict_domains/Homeobox_new/A_1akh.pdb-../restrict_domains/Homeobox_new/B_2r5z.pdb	S max: 666.385 
+../restrict_domains/Homeobox_new/A_1akh.pdb-../restrict_domains/Homeobox_new/B_3hdd.pdb	S max: 267.567 
+../restrict_domains/Homeobox_new/A_1akh.pdb-../restrict_domains/Homeobox_new/B_9ant.pdb	S max: 709.692 
+../restrict_domains/Homeobox_new/A_1akh.pdb-../restrict_domains/Homeobox_new/C_1apl.pdb	S max: 505.961 
+../restrict_domains/Homeobox_new/A_1akh.pdb-../restrict_domains/Homeobox_new/C_1e3o.pdb	Error: none_c
+../restrict_domains/Homeobox_new/A_1akh.pdb-../restrict_domains/Homeobox_new/C_1gt0.pdb	S max: 110.682 
+../restrict_domains/Homeobox_new/A_1akh.pdb-../restrict_domains/Homeobox_new/C_1hdd.pdb	S max: 502.708 
+../restrict_domains/Homeobox_new/A_1akh.pdb-../restrict_domains/Homeobox_new/C_1k61.pdb	S max: 361.194 
+../restrict_domains/Homeobox_new/A_1akh.pdb-../restrict_domains/Homeobox_new/C_1mnm.pdb	S max: 522.035 
+../restrict_domains/Homeobox_new/A_1akh.pdb-../restrict_domains/Homeobox_new/C_1oct.pdb	S max: 198.141 
+../restrict_domains/Homeobox_new/A_1akh.pdb-../restrict_domains/Homeobox_new/D_1apl.pdb	S max: 495.188 
+../restrict_domains/Homeobox_new/A_1akh.pdb-../restrict_domains/Homeobox_new/D_1hdd.pdb	S max: 360.735 
+../restrict_domains/Homeobox_new/A_1akh.pdb-../restrict_domains/Homeobox_new/D_1k61.pdb	S max: 327.594 
+../restrict_domains/Homeobox_new/A_1akh.pdb-../restrict_domains/Homeobox_new/D_1mnm.pdb	S max: 206.275 
+../restrict_domains/Homeobox_new/A_1akh.pdb-../restrict_domains/Homeobox_new/P_1ahd.pdb	S max: 236.512 
+../restrict_domains/Homeobox_new/A_1akh.pdb-../restrict_domains/Homeobox_new/P_1lfu.pdb	S max: 178.642 
+../restrict_domains/Homeobox_new/A_1akh.pdb-../restrict_domains/Homeobox_new/P_1nk2.pdb	S max: 160.258 
+../restrict_domains/Homeobox_new/A_1akh.pdb-../restrict_domains/Homeobox_new/P_1nk3.pdb	S max: 222.276 
+../restrict_domains/Homeobox_new/A_1akh.pdb-../restrict_domains/Homeobox_new/P_1zq3.pdb	S max: 214.136 
+../restrict_domains/Homeobox_new/A_1au7.pdb-../restrict_domains/Homeobox_new/A_1au7.pdb	S max: 11039.1 
+../restrict_domains/Homeobox_new/A_1au7.pdb-../restrict_domains/Homeobox_new/A_1b72.pdb	S max: 759.734 
+../restrict_domains/Homeobox_new/A_1au7.pdb-../restrict_domains/Homeobox_new/A_1b8i.pdb	S max: 674.859 
+../restrict_domains/Homeobox_new/A_1au7.pdb-../restrict_domains/Homeobox_new/A_1cqt.pdb	S max: 642.836 
+../restrict_domains/Homeobox_new/A_1au7.pdb-../restrict_domains/Homeobox_new/A_1du0.pdb	S max: 779.385 
+../restrict_domains/Homeobox_new/A_1au7.pdb-../restrict_domains/Homeobox_new/A_1fjl.pdb	Error: none_c
+../restrict_domains/Homeobox_new/A_1au7.pdb-../restrict_domains/Homeobox_new/A_1hf0.pdb	S max: 802.665 
+../restrict_domains/Homeobox_new/A_1au7.pdb-../restrict_domains/Homeobox_new/A_1ig7.pdb	S max: 450.86 
+../restrict_domains/Homeobox_new/A_1au7.pdb-../restrict_domains/Homeobox_new/A_1jgg.pdb	S max: 389.475 
+../restrict_domains/Homeobox_new/A_1au7.pdb-../restrict_domains/Homeobox_new/A_1k61.pdb	S max: 853.642 
+../restrict_domains/Homeobox_new/A_1au7.pdb-../restrict_domains/Homeobox_new/A_1le8.pdb	S max: 425.715 
+../restrict_domains/Homeobox_new/A_1au7.pdb-../restrict_domains/Homeobox_new/A_1o4x.pdb	S max: 624.083 
+../restrict_domains/Homeobox_new/A_1au7.pdb-../restrict_domains/Homeobox_new/A_1puf.pdb	S max: 701.458 
+../restrict_domains/Homeobox_new/A_1au7.pdb-../restrict_domains/Homeobox_new/A_1yrn.pdb	S max: 420.362 
+../restrict_domains/Homeobox_new/A_1au7.pdb-../restrict_domains/Homeobox_new/A_2hdd.pdb	S max: 499.756 
+../restrict_domains/Homeobox_new/A_1au7.pdb-../restrict_domains/Homeobox_new/A_3hdd.pdb	S max: 675.925 
+../restrict_domains/Homeobox_new/A_1au7.pdb-../restrict_domains/Homeobox_new/A_9ant.pdb	S max: 477.127 
+../restrict_domains/Homeobox_new/A_1au7.pdb-../restrict_domains/Homeobox_new/B_1akh.pdb	S max: 493.478 
+../restrict_domains/Homeobox_new/A_1au7.pdb-../restrict_domains/Homeobox_new/B_1au7.pdb	S max: 2395.45 
+../restrict_domains/Homeobox_new/A_1au7.pdb-../restrict_domains/Homeobox_new/B_1b72.pdb	S max: 1021.53 
+../restrict_domains/Homeobox_new/A_1au7.pdb-../restrict_domains/Homeobox_new/B_1b8i.pdb	S max: 543.032 
+../restrict_domains/Homeobox_new/A_1au7.pdb-../restrict_domains/Homeobox_new/B_1cqt.pdb	S max: 570.132 
+../restrict_domains/Homeobox_new/A_1au7.pdb-../restrict_domains/Homeobox_new/B_1du0.pdb	S max: 208.977 
+../restrict_domains/Homeobox_new/A_1au7.pdb-../restrict_domains/Homeobox_new/B_1fjl.pdb	Error: none_c
+../restrict_domains/Homeobox_new/A_1au7.pdb-../restrict_domains/Homeobox_new/B_1hf0.pdb	S max: 760.598 
+../restrict_domains/Homeobox_new/A_1au7.pdb-../restrict_domains/Homeobox_new/B_1jgg.pdb	S max: 330.371 
+../restrict_domains/Homeobox_new/A_1au7.pdb-../restrict_domains/Homeobox_new/B_1k61.pdb	S max: 727.602 
+../restrict_domains/Homeobox_new/A_1au7.pdb-../restrict_domains/Homeobox_new/B_1le8.pdb	S max: 439.827 
+../restrict_domains/Homeobox_new/A_1au7.pdb-../restrict_domains/Homeobox_new/B_1puf.pdb	S max: 600.097 
+../restrict_domains/Homeobox_new/A_1au7.pdb-../restrict_domains/Homeobox_new/B_1yrn.pdb	S max: 517.332 
+../restrict_domains/Homeobox_new/A_1au7.pdb-../restrict_domains/Homeobox_new/B_2hdd.pdb	S max: 111.454 
+../restrict_domains/Homeobox_new/A_1au7.pdb-../restrict_domains/Homeobox_new/B_2r5y.pdb	S max: 590.25 
+../restrict_domains/Homeobox_new/A_1au7.pdb-../restrict_domains/Homeobox_new/B_2r5z.pdb	S max: 583.03 
+../restrict_domains/Homeobox_new/A_1au7.pdb-../restrict_domains/Homeobox_new/B_3hdd.pdb	S max: 127.104 
+../restrict_domains/Homeobox_new/A_1au7.pdb-../restrict_domains/Homeobox_new/B_9ant.pdb	S max: 688.065 
+../restrict_domains/Homeobox_new/A_1au7.pdb-../restrict_domains/Homeobox_new/C_1apl.pdb	S max: 377.334 
+../restrict_domains/Homeobox_new/A_1au7.pdb-../restrict_domains/Homeobox_new/C_1e3o.pdb	Error: none_c
+../restrict_domains/Homeobox_new/A_1au7.pdb-../restrict_domains/Homeobox_new/C_1gt0.pdb	S max: 342.791 
+../restrict_domains/Homeobox_new/A_1au7.pdb-../restrict_domains/Homeobox_new/C_1hdd.pdb	S max: 676.943 
+../restrict_domains/Homeobox_new/A_1au7.pdb-../restrict_domains/Homeobox_new/C_1k61.pdb	S max: 536.383 
+../restrict_domains/Homeobox_new/A_1au7.pdb-../restrict_domains/Homeobox_new/C_1mnm.pdb	S max: 583.92 
+../restrict_domains/Homeobox_new/A_1au7.pdb-../restrict_domains/Homeobox_new/C_1oct.pdb	S max: 661.329 
+../restrict_domains/Homeobox_new/A_1au7.pdb-../restrict_domains/Homeobox_new/D_1apl.pdb	S max: 444.598 
+../restrict_domains/Homeobox_new/A_1au7.pdb-../restrict_domains/Homeobox_new/D_1hdd.pdb	S max: 282.687 
+../restrict_domains/Homeobox_new/A_1au7.pdb-../restrict_domains/Homeobox_new/D_1k61.pdb	S max: 375.379 
+../restrict_domains/Homeobox_new/A_1au7.pdb-../restrict_domains/Homeobox_new/D_1mnm.pdb	S max: 423.159 
+../restrict_domains/Homeobox_new/A_1au7.pdb-../restrict_domains/Homeobox_new/P_1ahd.pdb	S max: 344.339 
+../restrict_domains/Homeobox_new/A_1au7.pdb-../restrict_domains/Homeobox_new/P_1lfu.pdb	S max: 358.876 
+../restrict_domains/Homeobox_new/A_1au7.pdb-../restrict_domains/Homeobox_new/P_1nk2.pdb	S max: 116.519 
+../restrict_domains/Homeobox_new/A_1au7.pdb-../restrict_domains/Homeobox_new/P_1nk3.pdb	S max: 410.375 
+../restrict_domains/Homeobox_new/A_1au7.pdb-../restrict_domains/Homeobox_new/P_1zq3.pdb	S max: 213.651 
+../restrict_domains/Homeobox_new/A_1b72.pdb-../restrict_domains/Homeobox_new/A_1b72.pdb	S max: 10449.3 
+../restrict_domains/Homeobox_new/A_1b72.pdb-../restrict_domains/Homeobox_new/A_1b8i.pdb	S max: 887.895 
+../restrict_domains/Homeobox_new/A_1b72.pdb-../restrict_domains/Homeobox_new/A_1cqt.pdb	S max: 684.136 
+../restrict_domains/Homeobox_new/A_1b72.pdb-../restrict_domains/Homeobox_new/A_1du0.pdb	S max: 1063.67 
+../restrict_domains/Homeobox_new/A_1b72.pdb-../restrict_domains/Homeobox_new/A_1fjl.pdb	Error: none_c
+../restrict_domains/Homeobox_new/A_1b72.pdb-../restrict_domains/Homeobox_new/A_1hf0.pdb	S max: 727.652 
+../restrict_domains/Homeobox_new/A_1b72.pdb-../restrict_domains/Homeobox_new/A_1ig7.pdb	S max: 1148.63 
+../restrict_domains/Homeobox_new/A_1b72.pdb-../restrict_domains/Homeobox_new/A_1jgg.pdb	S max: 454.285 
+../restrict_domains/Homeobox_new/A_1b72.pdb-../restrict_domains/Homeobox_new/A_1k61.pdb	S max: 982.807 
+../restrict_domains/Homeobox_new/A_1b72.pdb-../restrict_domains/Homeobox_new/A_1le8.pdb	S max: 739.367 
+../restrict_domains/Homeobox_new/A_1b72.pdb-../restrict_domains/Homeobox_new/A_1o4x.pdb	S max: 754.005 
+../restrict_domains/Homeobox_new/A_1b72.pdb-../restrict_domains/Homeobox_new/A_1puf.pdb	S max: 1042.83 
+../restrict_domains/Homeobox_new/A_1b72.pdb-../restrict_domains/Homeobox_new/A_1yrn.pdb	S max: 559.522 
+../restrict_domains/Homeobox_new/A_1b72.pdb-../restrict_domains/Homeobox_new/A_2hdd.pdb	S max: 1298.3 
+../restrict_domains/Homeobox_new/A_1b72.pdb-../restrict_domains/Homeobox_new/A_3hdd.pdb	S max: 1781.31 
+../restrict_domains/Homeobox_new/A_1b72.pdb-../restrict_domains/Homeobox_new/A_9ant.pdb	S max: 1248.51 
+../restrict_domains/Homeobox_new/A_1b72.pdb-../restrict_domains/Homeobox_new/B_1akh.pdb	S max: 710.126 
+../restrict_domains/Homeobox_new/A_1b72.pdb-../restrict_domains/Homeobox_new/B_1au7.pdb	S max: 827.819 
+../restrict_domains/Homeobox_new/A_1b72.pdb-../restrict_domains/Homeobox_new/B_1b72.pdb	S max: 1354.45 
+../restrict_domains/Homeobox_new/A_1b72.pdb-../restrict_domains/Homeobox_new/B_1b8i.pdb	S max: 706.708 
+../restrict_domains/Homeobox_new/A_1b72.pdb-../restrict_domains/Homeobox_new/B_1cqt.pdb	S max: 441.242 
+../restrict_domains/Homeobox_new/A_1b72.pdb-../restrict_domains/Homeobox_new/B_1du0.pdb	S max: 260.146 
+../restrict_domains/Homeobox_new/A_1b72.pdb-../restrict_domains/Homeobox_new/B_1fjl.pdb	Error: none_c
+../restrict_domains/Homeobox_new/A_1b72.pdb-../restrict_domains/Homeobox_new/B_1hf0.pdb	S max: 767.031 
+../restrict_domains/Homeobox_new/A_1b72.pdb-../restrict_domains/Homeobox_new/B_1jgg.pdb	S max: 635.8 
+../restrict_domains/Homeobox_new/A_1b72.pdb-../restrict_domains/Homeobox_new/B_1k61.pdb	S max: 1108.14 
+../restrict_domains/Homeobox_new/A_1b72.pdb-../restrict_domains/Homeobox_new/B_1le8.pdb	S max: 579.782 
+../restrict_domains/Homeobox_new/A_1b72.pdb-../restrict_domains/Homeobox_new/B_1puf.pdb	S max: 874.163 
+../restrict_domains/Homeobox_new/A_1b72.pdb-../restrict_domains/Homeobox_new/B_1yrn.pdb	S max: 668.549 
+../restrict_domains/Homeobox_new/A_1b72.pdb-../restrict_domains/Homeobox_new/B_2hdd.pdb	S max: 212.124 
+../restrict_domains/Homeobox_new/A_1b72.pdb-../restrict_domains/Homeobox_new/B_2r5y.pdb	S max: 719.584 
+../restrict_domains/Homeobox_new/A_1b72.pdb-../restrict_domains/Homeobox_new/B_2r5z.pdb	S max: 710.676 
+../restrict_domains/Homeobox_new/A_1b72.pdb-../restrict_domains/Homeobox_new/B_3hdd.pdb	S max: 392.775 
+../restrict_domains/Homeobox_new/A_1b72.pdb-../restrict_domains/Homeobox_new/B_9ant.pdb	S max: 1155.5 
+../restrict_domains/Homeobox_new/A_1b72.pdb-../restrict_domains/Homeobox_new/C_1apl.pdb	S max: 281.912 
+../restrict_domains/Homeobox_new/A_1b72.pdb-../restrict_domains/Homeobox_new/C_1e3o.pdb	Error: none_c
+../restrict_domains/Homeobox_new/A_1b72.pdb-../restrict_domains/Homeobox_new/C_1gt0.pdb	S max: 628.136 
+../restrict_domains/Homeobox_new/A_1b72.pdb-../restrict_domains/Homeobox_new/C_1hdd.pdb	S max: 1057.96 
+../restrict_domains/Homeobox_new/A_1b72.pdb-../restrict_domains/Homeobox_new/C_1k61.pdb	S max: 489.614 
+../restrict_domains/Homeobox_new/A_1b72.pdb-../restrict_domains/Homeobox_new/C_1mnm.pdb	S max: 650.95 
+../restrict_domains/Homeobox_new/A_1b72.pdb-../restrict_domains/Homeobox_new/C_1oct.pdb	S max: 904.379 
+../restrict_domains/Homeobox_new/A_1b72.pdb-../restrict_domains/Homeobox_new/D_1apl.pdb	S max: 459.54 
+../restrict_domains/Homeobox_new/A_1b72.pdb-../restrict_domains/Homeobox_new/D_1hdd.pdb	S max: 358.233 
+../restrict_domains/Homeobox_new/A_1b72.pdb-../restrict_domains/Homeobox_new/D_1k61.pdb	S max: 465.33 
+../restrict_domains/Homeobox_new/A_1b72.pdb-../restrict_domains/Homeobox_new/D_1mnm.pdb	S max: 669.336 
+../restrict_domains/Homeobox_new/A_1b72.pdb-../restrict_domains/Homeobox_new/P_1ahd.pdb	S max: 439.583 
+../restrict_domains/Homeobox_new/A_1b72.pdb-../restrict_domains/Homeobox_new/P_1lfu.pdb	S max: 441.874 
+../restrict_domains/Homeobox_new/A_1b72.pdb-../restrict_domains/Homeobox_new/P_1nk2.pdb	S max: 243.146 
+../restrict_domains/Homeobox_new/A_1b72.pdb-../restrict_domains/Homeobox_new/P_1nk3.pdb	S max: 603.564 
+../restrict_domains/Homeobox_new/A_1b72.pdb-../restrict_domains/Homeobox_new/P_1zq3.pdb	S max: 397.319 
+../restrict_domains/Homeobox_new/A_1b8i.pdb-../restrict_domains/Homeobox_new/A_1b8i.pdb	S max: 6695.48 
+../restrict_domains/Homeobox_new/A_1b8i.pdb-../restrict_domains/Homeobox_new/A_1cqt.pdb	S max: 457.35 
+../restrict_domains/Homeobox_new/A_1b8i.pdb-../restrict_domains/Homeobox_new/A_1du0.pdb	S max: 672.347 
+../restrict_domains/Homeobox_new/A_1b8i.pdb-../restrict_domains/Homeobox_new/A_1fjl.pdb	Error: none_c
+../restrict_domains/Homeobox_new/A_1b8i.pdb-../restrict_domains/Homeobox_new/A_1hf0.pdb	S max: 608.719 
+../restrict_domains/Homeobox_new/A_1b8i.pdb-../restrict_domains/Homeobox_new/A_1ig7.pdb	S max: 415.56 
+../restrict_domains/Homeobox_new/A_1b8i.pdb-../restrict_domains/Homeobox_new/A_1jgg.pdb	S max: 323.054 
+../restrict_domains/Homeobox_new/A_1b8i.pdb-../restrict_domains/Homeobox_new/A_1k61.pdb	S max: 833.408 
+../restrict_domains/Homeobox_new/A_1b8i.pdb-../restrict_domains/Homeobox_new/A_1le8.pdb	S max: 632.357 
+../restrict_domains/Homeobox_new/A_1b8i.pdb-../restrict_domains/Homeobox_new/A_1o4x.pdb	S max: 465.082 
+../restrict_domains/Homeobox_new/A_1b8i.pdb-../restrict_domains/Homeobox_new/A_1puf.pdb	S max: 1413.33 
+../restrict_domains/Homeobox_new/A_1b8i.pdb-../restrict_domains/Homeobox_new/A_1yrn.pdb	S max: 270.988 
+../restrict_domains/Homeobox_new/A_1b8i.pdb-../restrict_domains/Homeobox_new/A_2hdd.pdb	S max: 685.606 
+../restrict_domains/Homeobox_new/A_1b8i.pdb-../restrict_domains/Homeobox_new/A_3hdd.pdb	S max: 817.633 
+../restrict_domains/Homeobox_new/A_1b8i.pdb-../restrict_domains/Homeobox_new/A_9ant.pdb	S max: 658.325 
+../restrict_domains/Homeobox_new/A_1b8i.pdb-../restrict_domains/Homeobox_new/B_1akh.pdb	S max: 549.871 
+../restrict_domains/Homeobox_new/A_1b8i.pdb-../restrict_domains/Homeobox_new/B_1au7.pdb	S max: 733.021 
+../restrict_domains/Homeobox_new/A_1b8i.pdb-../restrict_domains/Homeobox_new/B_1b72.pdb	S max: 885.417 
+../restrict_domains/Homeobox_new/A_1b8i.pdb-../restrict_domains/Homeobox_new/B_1b8i.pdb	S max: 451.413 
+../restrict_domains/Homeobox_new/A_1b8i.pdb-../restrict_domains/Homeobox_new/B_1cqt.pdb	S max: 538.353 
+../restrict_domains/Homeobox_new/A_1b8i.pdb-../restrict_domains/Homeobox_new/B_1du0.pdb	S max: 154.515 
+../restrict_domains/Homeobox_new/A_1b8i.pdb-../restrict_domains/Homeobox_new/B_1fjl.pdb	Error: none_c
+../restrict_domains/Homeobox_new/A_1b8i.pdb-../restrict_domains/Homeobox_new/B_1hf0.pdb	S max: 546.105 
+../restrict_domains/Homeobox_new/A_1b8i.pdb-../restrict_domains/Homeobox_new/B_1jgg.pdb	S max: 193.258 
+../restrict_domains/Homeobox_new/A_1b8i.pdb-../restrict_domains/Homeobox_new/B_1k61.pdb	S max: 689.518 
+../restrict_domains/Homeobox_new/A_1b8i.pdb-../restrict_domains/Homeobox_new/B_1le8.pdb	S max: 645.741 
+../restrict_domains/Homeobox_new/A_1b8i.pdb-../restrict_domains/Homeobox_new/B_1puf.pdb	S max: 611.079 
+../restrict_domains/Homeobox_new/A_1b8i.pdb-../restrict_domains/Homeobox_new/B_1yrn.pdb	S max: 530.584 
+../restrict_domains/Homeobox_new/A_1b8i.pdb-../restrict_domains/Homeobox_new/B_2hdd.pdb	S max: 219.353 
+../restrict_domains/Homeobox_new/A_1b8i.pdb-../restrict_domains/Homeobox_new/B_2r5y.pdb	S max: 392.354 
+../restrict_domains/Homeobox_new/A_1b8i.pdb-../restrict_domains/Homeobox_new/B_2r5z.pdb	S max: 799.041 
+../restrict_domains/Homeobox_new/A_1b8i.pdb-../restrict_domains/Homeobox_new/B_3hdd.pdb	S max: 143.473 
+../restrict_domains/Homeobox_new/A_1b8i.pdb-../restrict_domains/Homeobox_new/B_9ant.pdb	S max: 1085.19 
+../restrict_domains/Homeobox_new/A_1b8i.pdb-../restrict_domains/Homeobox_new/C_1apl.pdb	S max: 216.995 
+../restrict_domains/Homeobox_new/A_1b8i.pdb-../restrict_domains/Homeobox_new/C_1e3o.pdb	Error: none_c
+../restrict_domains/Homeobox_new/A_1b8i.pdb-../restrict_domains/Homeobox_new/C_1gt0.pdb	S max: 306.503 
+../restrict_domains/Homeobox_new/A_1b8i.pdb-../restrict_domains/Homeobox_new/C_1hdd.pdb	S max: 461.243 
+../restrict_domains/Homeobox_new/A_1b8i.pdb-../restrict_domains/Homeobox_new/C_1k61.pdb	S max: 621.675 
+../restrict_domains/Homeobox_new/A_1b8i.pdb-../restrict_domains/Homeobox_new/C_1mnm.pdb	S max: 695.331 
+../restrict_domains/Homeobox_new/A_1b8i.pdb-../restrict_domains/Homeobox_new/C_1oct.pdb	S max: 547.902 
+../restrict_domains/Homeobox_new/A_1b8i.pdb-../restrict_domains/Homeobox_new/D_1apl.pdb	S max: 628.909 
+../restrict_domains/Homeobox_new/A_1b8i.pdb-../restrict_domains/Homeobox_new/D_1hdd.pdb	S max: 132.296 
+../restrict_domains/Homeobox_new/A_1b8i.pdb-../restrict_domains/Homeobox_new/D_1k61.pdb	S max: 415.761 
+../restrict_domains/Homeobox_new/A_1b8i.pdb-../restrict_domains/Homeobox_new/D_1mnm.pdb	S max: 434.532 
+../restrict_domains/Homeobox_new/A_1b8i.pdb-../restrict_domains/Homeobox_new/P_1ahd.pdb	S max: 283.217 
+../restrict_domains/Homeobox_new/A_1b8i.pdb-../restrict_domains/Homeobox_new/P_1lfu.pdb	S max: 409.082 
+../restrict_domains/Homeobox_new/A_1b8i.pdb-../restrict_domains/Homeobox_new/P_1nk2.pdb	S max: 263.859 
+../restrict_domains/Homeobox_new/A_1b8i.pdb-../restrict_domains/Homeobox_new/P_1nk3.pdb	S max: 568.162 
+../restrict_domains/Homeobox_new/A_1b8i.pdb-../restrict_domains/Homeobox_new/P_1zq3.pdb	S max: 323.198 
+../restrict_domains/Homeobox_new/A_1cqt.pdb-../restrict_domains/Homeobox_new/A_1cqt.pdb	S max: 6691.46 
+../restrict_domains/Homeobox_new/A_1cqt.pdb-../restrict_domains/Homeobox_new/A_1du0.pdb	S max: 704.355 
+../restrict_domains/Homeobox_new/A_1cqt.pdb-../restrict_domains/Homeobox_new/A_1fjl.pdb	Error: none_c
+../restrict_domains/Homeobox_new/A_1cqt.pdb-../restrict_domains/Homeobox_new/A_1hf0.pdb	S max: 857.861 
+../restrict_domains/Homeobox_new/A_1cqt.pdb-../restrict_domains/Homeobox_new/A_1ig7.pdb	S max: 598.767 
+../restrict_domains/Homeobox_new/A_1cqt.pdb-../restrict_domains/Homeobox_new/A_1jgg.pdb	S max: 365.604 
+../restrict_domains/Homeobox_new/A_1cqt.pdb-../restrict_domains/Homeobox_new/A_1k61.pdb	S max: 653.572 
+../restrict_domains/Homeobox_new/A_1cqt.pdb-../restrict_domains/Homeobox_new/A_1le8.pdb	S max: 339.004 
+../restrict_domains/Homeobox_new/A_1cqt.pdb-../restrict_domains/Homeobox_new/A_1o4x.pdb	S max: 460.455 
+../restrict_domains/Homeobox_new/A_1cqt.pdb-../restrict_domains/Homeobox_new/A_1puf.pdb	S max: 648.133 
+../restrict_domains/Homeobox_new/A_1cqt.pdb-../restrict_domains/Homeobox_new/A_1yrn.pdb	S max: 200.393 
+../restrict_domains/Homeobox_new/A_1cqt.pdb-../restrict_domains/Homeobox_new/A_2hdd.pdb	S max: 653.987 
+../restrict_domains/Homeobox_new/A_1cqt.pdb-../restrict_domains/Homeobox_new/A_3hdd.pdb	S max: 707.212 
+../restrict_domains/Homeobox_new/A_1cqt.pdb-../restrict_domains/Homeobox_new/A_9ant.pdb	S max: 566.672 
+../restrict_domains/Homeobox_new/A_1cqt.pdb-../restrict_domains/Homeobox_new/B_1akh.pdb	S max: 468.066 
+../restrict_domains/Homeobox_new/A_1cqt.pdb-../restrict_domains/Homeobox_new/B_1au7.pdb	S max: 453.279 
+../restrict_domains/Homeobox_new/A_1cqt.pdb-../restrict_domains/Homeobox_new/B_1b72.pdb	S max: 662.714 
+../restrict_domains/Homeobox_new/A_1cqt.pdb-../restrict_domains/Homeobox_new/B_1b8i.pdb	S max: 326.342 
+../restrict_domains/Homeobox_new/A_1cqt.pdb-../restrict_domains/Homeobox_new/B_1cqt.pdb	S max: 1101.26 
+../restrict_domains/Homeobox_new/A_1cqt.pdb-../restrict_domains/Homeobox_new/B_1du0.pdb	S max: 227.207 
+../restrict_domains/Homeobox_new/A_1cqt.pdb-../restrict_domains/Homeobox_new/B_1fjl.pdb	Error: none_c
+../restrict_domains/Homeobox_new/A_1cqt.pdb-../restrict_domains/Homeobox_new/B_1hf0.pdb	S max: 640.947 
+../restrict_domains/Homeobox_new/A_1cqt.pdb-../restrict_domains/Homeobox_new/B_1jgg.pdb	S max: 275.322 
+../restrict_domains/Homeobox_new/A_1cqt.pdb-../restrict_domains/Homeobox_new/B_1k61.pdb	S max: 445.905 
+../restrict_domains/Homeobox_new/A_1cqt.pdb-../restrict_domains/Homeobox_new/B_1le8.pdb	S max: 269.408 
+../restrict_domains/Homeobox_new/A_1cqt.pdb-../restrict_domains/Homeobox_new/B_1puf.pdb	S max: 632.314 
+../restrict_domains/Homeobox_new/A_1cqt.pdb-../restrict_domains/Homeobox_new/B_1yrn.pdb	S max: 379.789 
+../restrict_domains/Homeobox_new/A_1cqt.pdb-../restrict_domains/Homeobox_new/B_2hdd.pdb	S max: 42.6245 
+../restrict_domains/Homeobox_new/A_1cqt.pdb-../restrict_domains/Homeobox_new/B_2r5y.pdb	S max: 425.343 
+../restrict_domains/Homeobox_new/A_1cqt.pdb-../restrict_domains/Homeobox_new/B_2r5z.pdb	S max: 428.948 
+../restrict_domains/Homeobox_new/A_1cqt.pdb-../restrict_domains/Homeobox_new/B_3hdd.pdb	S max: 161.533 
+../restrict_domains/Homeobox_new/A_1cqt.pdb-../restrict_domains/Homeobox_new/B_9ant.pdb	S max: 559.78 
+../restrict_domains/Homeobox_new/A_1cqt.pdb-../restrict_domains/Homeobox_new/C_1apl.pdb	S max: 203.124 
+../restrict_domains/Homeobox_new/A_1cqt.pdb-../restrict_domains/Homeobox_new/C_1e3o.pdb	Error: none_c
+../restrict_domains/Homeobox_new/A_1cqt.pdb-../restrict_domains/Homeobox_new/C_1gt0.pdb	S max: 998.821 
+../restrict_domains/Homeobox_new/A_1cqt.pdb-../restrict_domains/Homeobox_new/C_1hdd.pdb	S max: 437.5 
+../restrict_domains/Homeobox_new/A_1cqt.pdb-../restrict_domains/Homeobox_new/C_1k61.pdb	S max: 255.099 
+../restrict_domains/Homeobox_new/A_1cqt.pdb-../restrict_domains/Homeobox_new/C_1mnm.pdb	S max: 643.442 
+../restrict_domains/Homeobox_new/A_1cqt.pdb-../restrict_domains/Homeobox_new/C_1oct.pdb	S max: 1120.33 
+../restrict_domains/Homeobox_new/A_1cqt.pdb-../restrict_domains/Homeobox_new/D_1apl.pdb	S max: 385.146 
+../restrict_domains/Homeobox_new/A_1cqt.pdb-../restrict_domains/Homeobox_new/D_1hdd.pdb	S max: 171.074 
+../restrict_domains/Homeobox_new/A_1cqt.pdb-../restrict_domains/Homeobox_new/D_1k61.pdb	S max: 270.447 
+../restrict_domains/Homeobox_new/A_1cqt.pdb-../restrict_domains/Homeobox_new/D_1mnm.pdb	S max: 360.634 
+../restrict_domains/Homeobox_new/A_1cqt.pdb-../restrict_domains/Homeobox_new/P_1ahd.pdb	S max: 295.119 
+../restrict_domains/Homeobox_new/A_1cqt.pdb-../restrict_domains/Homeobox_new/P_1lfu.pdb	S max: 344.32 
+../restrict_domains/Homeobox_new/A_1cqt.pdb-../restrict_domains/Homeobox_new/P_1nk2.pdb	S max: 306.531 
+../restrict_domains/Homeobox_new/A_1cqt.pdb-../restrict_domains/Homeobox_new/P_1nk3.pdb	S max: 392.243 
+../restrict_domains/Homeobox_new/A_1cqt.pdb-../restrict_domains/Homeobox_new/P_1zq3.pdb	S max: 332.778 
+../restrict_domains/Homeobox_new/A_1du0.pdb-../restrict_domains/Homeobox_new/A_1du0.pdb	S max: 8299.23 
+../restrict_domains/Homeobox_new/A_1du0.pdb-../restrict_domains/Homeobox_new/A_1fjl.pdb	Error: none_c
+../restrict_domains/Homeobox_new/A_1du0.pdb-../restrict_domains/Homeobox_new/A_1hf0.pdb	S max: 767.374 
+../restrict_domains/Homeobox_new/A_1du0.pdb-../restrict_domains/Homeobox_new/A_1ig7.pdb	S max: 944.07 
+../restrict_domains/Homeobox_new/A_1du0.pdb-../restrict_domains/Homeobox_new/A_1jgg.pdb	S max: 584.716 
+../restrict_domains/Homeobox_new/A_1du0.pdb-../restrict_domains/Homeobox_new/A_1k61.pdb	S max: 884.067 
+../restrict_domains/Homeobox_new/A_1du0.pdb-../restrict_domains/Homeobox_new/A_1le8.pdb	S max: 523.099 
+../restrict_domains/Homeobox_new/A_1du0.pdb-../restrict_domains/Homeobox_new/A_1o4x.pdb	S max: 581.16 
+../restrict_domains/Homeobox_new/A_1du0.pdb-../restrict_domains/Homeobox_new/A_1puf.pdb	S max: 988.461 
+../restrict_domains/Homeobox_new/A_1du0.pdb-../restrict_domains/Homeobox_new/A_1yrn.pdb	S max: 371.907 
+../restrict_domains/Homeobox_new/A_1du0.pdb-../restrict_domains/Homeobox_new/A_2hdd.pdb	S max: 2017.07 
+../restrict_domains/Homeobox_new/A_1du0.pdb-../restrict_domains/Homeobox_new/A_3hdd.pdb	S max: 1527.52 
+../restrict_domains/Homeobox_new/A_1du0.pdb-../restrict_domains/Homeobox_new/A_9ant.pdb	S max: 867.203 
+../restrict_domains/Homeobox_new/A_1du0.pdb-../restrict_domains/Homeobox_new/B_1akh.pdb	S max: 772.665 
+../restrict_domains/Homeobox_new/A_1du0.pdb-../restrict_domains/Homeobox_new/B_1au7.pdb	S max: 549.345 
+../restrict_domains/Homeobox_new/A_1du0.pdb-../restrict_domains/Homeobox_new/B_1b72.pdb	S max: 1408.16 
+../restrict_domains/Homeobox_new/A_1du0.pdb-../restrict_domains/Homeobox_new/B_1b8i.pdb	S max: 605.457 
+../restrict_domains/Homeobox_new/A_1du0.pdb-../restrict_domains/Homeobox_new/B_1cqt.pdb	S max: 438.269 
+../restrict_domains/Homeobox_new/A_1du0.pdb-../restrict_domains/Homeobox_new/B_1du0.pdb	S max: 496.547 
+../restrict_domains/Homeobox_new/A_1du0.pdb-../restrict_domains/Homeobox_new/B_1fjl.pdb	Error: none_c
+../restrict_domains/Homeobox_new/A_1du0.pdb-../restrict_domains/Homeobox_new/B_1hf0.pdb	S max: 878.739 
+../restrict_domains/Homeobox_new/A_1du0.pdb-../restrict_domains/Homeobox_new/B_1jgg.pdb	S max: 501.206 
+../restrict_domains/Homeobox_new/A_1du0.pdb-../restrict_domains/Homeobox_new/B_1k61.pdb	S max: 767.374 
+../restrict_domains/Homeobox_new/A_1du0.pdb-../restrict_domains/Homeobox_new/B_1le8.pdb	S max: 647.842 
+../restrict_domains/Homeobox_new/A_1du0.pdb-../restrict_domains/Homeobox_new/B_1puf.pdb	S max: 1198.6 
+../restrict_domains/Homeobox_new/A_1du0.pdb-../restrict_domains/Homeobox_new/B_1yrn.pdb	S max: 824.629 
+../restrict_domains/Homeobox_new/A_1du0.pdb-../restrict_domains/Homeobox_new/B_2hdd.pdb	S max: 232.15 
+../restrict_domains/Homeobox_new/A_1du0.pdb-../restrict_domains/Homeobox_new/B_2r5y.pdb	S max: 1246.64 
+../restrict_domains/Homeobox_new/A_1du0.pdb-../restrict_domains/Homeobox_new/B_2r5z.pdb	S max: 764.697 
+../restrict_domains/Homeobox_new/A_1du0.pdb-../restrict_domains/Homeobox_new/B_3hdd.pdb	S max: 506.39 
+../restrict_domains/Homeobox_new/A_1du0.pdb-../restrict_domains/Homeobox_new/B_9ant.pdb	S max: 872.827 
+../restrict_domains/Homeobox_new/A_1du0.pdb-../restrict_domains/Homeobox_new/C_1apl.pdb	S max: 233.54 
+../restrict_domains/Homeobox_new/A_1du0.pdb-../restrict_domains/Homeobox_new/C_1e3o.pdb	Error: none_c
+../restrict_domains/Homeobox_new/A_1du0.pdb-../restrict_domains/Homeobox_new/C_1gt0.pdb	S max: 643.735 
+../restrict_domains/Homeobox_new/A_1du0.pdb-../restrict_domains/Homeobox_new/C_1hdd.pdb	S max: 677.698 
+../restrict_domains/Homeobox_new/A_1du0.pdb-../restrict_domains/Homeobox_new/C_1k61.pdb	S max: 372.537 
+../restrict_domains/Homeobox_new/A_1du0.pdb-../restrict_domains/Homeobox_new/C_1mnm.pdb	S max: 590.735 
+../restrict_domains/Homeobox_new/A_1du0.pdb-../restrict_domains/Homeobox_new/C_1oct.pdb	S max: 815.095 
+../restrict_domains/Homeobox_new/A_1du0.pdb-../restrict_domains/Homeobox_new/D_1apl.pdb	S max: 413.662 
+../restrict_domains/Homeobox_new/A_1du0.pdb-../restrict_domains/Homeobox_new/D_1hdd.pdb	S max: 311.041 
+../restrict_domains/Homeobox_new/A_1du0.pdb-../restrict_domains/Homeobox_new/D_1k61.pdb	S max: 296.97 
+../restrict_domains/Homeobox_new/A_1du0.pdb-../restrict_domains/Homeobox_new/D_1mnm.pdb	S max: 472.764 
+../restrict_domains/Homeobox_new/A_1du0.pdb-../restrict_domains/Homeobox_new/P_1ahd.pdb	S max: 217.697 
+../restrict_domains/Homeobox_new/A_1du0.pdb-../restrict_domains/Homeobox_new/P_1lfu.pdb	S max: 259.419 
+../restrict_domains/Homeobox_new/A_1du0.pdb-../restrict_domains/Homeobox_new/P_1nk2.pdb	S max: 198.001 
+../restrict_domains/Homeobox_new/A_1du0.pdb-../restrict_domains/Homeobox_new/P_1nk3.pdb	S max: 554.051 
+../restrict_domains/Homeobox_new/A_1du0.pdb-../restrict_domains/Homeobox_new/P_1zq3.pdb	S max: 188.404 
+../restrict_domains/Homeobox_new/A_1fjl.pdb-../restrict_domains/Homeobox_new/A_1fjl.pdb	Error: none_c
+../restrict_domains/Homeobox_new/A_1fjl.pdb-../restrict_domains/Homeobox_new/A_1hf0.pdb	Error: none_c
+../restrict_domains/Homeobox_new/A_1fjl.pdb-../restrict_domains/Homeobox_new/A_1ig7.pdb	Error: none_c
+../restrict_domains/Homeobox_new/A_1fjl.pdb-../restrict_domains/Homeobox_new/A_1jgg.pdb	Error: none_c
+../restrict_domains/Homeobox_new/A_1fjl.pdb-../restrict_domains/Homeobox_new/A_1k61.pdb	Error: none_c
+../restrict_domains/Homeobox_new/A_1fjl.pdb-../restrict_domains/Homeobox_new/A_1le8.pdb	Error: none_c
+../restrict_domains/Homeobox_new/A_1fjl.pdb-../restrict_domains/Homeobox_new/A_1o4x.pdb	Error: none_c
+../restrict_domains/Homeobox_new/A_1fjl.pdb-../restrict_domains/Homeobox_new/A_1puf.pdb	Error: none_c
+../restrict_domains/Homeobox_new/A_1fjl.pdb-../restrict_domains/Homeobox_new/A_1yrn.pdb	Error: none_c
+../restrict_domains/Homeobox_new/A_1fjl.pdb-../restrict_domains/Homeobox_new/A_2hdd.pdb	Error: none_c
+../restrict_domains/Homeobox_new/A_1fjl.pdb-../restrict_domains/Homeobox_new/A_3hdd.pdb	Error: none_c
+../restrict_domains/Homeobox_new/A_1fjl.pdb-../restrict_domains/Homeobox_new/A_9ant.pdb	Error: none_c
+../restrict_domains/Homeobox_new/A_1fjl.pdb-../restrict_domains/Homeobox_new/B_1akh.pdb	Error: none_c
+../restrict_domains/Homeobox_new/A_1fjl.pdb-../restrict_domains/Homeobox_new/B_1au7.pdb	Error: none_c
+../restrict_domains/Homeobox_new/A_1fjl.pdb-../restrict_domains/Homeobox_new/B_1b72.pdb	Error: none_c
+../restrict_domains/Homeobox_new/A_1fjl.pdb-../restrict_domains/Homeobox_new/B_1b8i.pdb	Error: none_c
+../restrict_domains/Homeobox_new/A_1fjl.pdb-../restrict_domains/Homeobox_new/B_1cqt.pdb	Error: none_c
+../restrict_domains/Homeobox_new/A_1fjl.pdb-../restrict_domains/Homeobox_new/B_1du0.pdb	Error: none_c
+../restrict_domains/Homeobox_new/A_1fjl.pdb-../restrict_domains/Homeobox_new/B_1fjl.pdb	Error: none_c
+../restrict_domains/Homeobox_new/A_1fjl.pdb-../restrict_domains/Homeobox_new/B_1hf0.pdb	Error: none_c
+../restrict_domains/Homeobox_new/A_1fjl.pdb-../restrict_domains/Homeobox_new/B_1jgg.pdb	Error: none_c
+../restrict_domains/Homeobox_new/A_1fjl.pdb-../restrict_domains/Homeobox_new/B_1k61.pdb	Error: none_c
+../restrict_domains/Homeobox_new/A_1fjl.pdb-../restrict_domains/Homeobox_new/B_1le8.pdb	Error: none_c
+../restrict_domains/Homeobox_new/A_1fjl.pdb-../restrict_domains/Homeobox_new/B_1puf.pdb	Error: none_c
+../restrict_domains/Homeobox_new/A_1fjl.pdb-../restrict_domains/Homeobox_new/B_1yrn.pdb	Error: none_c
+../restrict_domains/Homeobox_new/A_1fjl.pdb-../restrict_domains/Homeobox_new/B_2hdd.pdb	Error: none_c
+../restrict_domains/Homeobox_new/A_1fjl.pdb-../restrict_domains/Homeobox_new/B_2r5y.pdb	Error: none_c
+../restrict_domains/Homeobox_new/A_1fjl.pdb-../restrict_domains/Homeobox_new/B_2r5z.pdb	Error: none_c
+../restrict_domains/Homeobox_new/A_1fjl.pdb-../restrict_domains/Homeobox_new/B_3hdd.pdb	Error: none_c
+../restrict_domains/Homeobox_new/A_1fjl.pdb-../restrict_domains/Homeobox_new/B_9ant.pdb	Error: none_c
+../restrict_domains/Homeobox_new/A_1fjl.pdb-../restrict_domains/Homeobox_new/C_1apl.pdb	Error: none_c
+../restrict_domains/Homeobox_new/A_1fjl.pdb-../restrict_domains/Homeobox_new/C_1e3o.pdb	Error: none_c
+../restrict_domains/Homeobox_new/A_1fjl.pdb-../restrict_domains/Homeobox_new/C_1gt0.pdb	Error: none_c
+../restrict_domains/Homeobox_new/A_1fjl.pdb-../restrict_domains/Homeobox_new/C_1hdd.pdb	Error: none_c
+../restrict_domains/Homeobox_new/A_1fjl.pdb-../restrict_domains/Homeobox_new/C_1k61.pdb	Error: none_c
+../restrict_domains/Homeobox_new/A_1fjl.pdb-../restrict_domains/Homeobox_new/C_1mnm.pdb	Error: none_c
+../restrict_domains/Homeobox_new/A_1fjl.pdb-../restrict_domains/Homeobox_new/C_1oct.pdb	Error: none_c
+../restrict_domains/Homeobox_new/A_1fjl.pdb-../restrict_domains/Homeobox_new/D_1apl.pdb	Error: none_c
+../restrict_domains/Homeobox_new/A_1fjl.pdb-../restrict_domains/Homeobox_new/D_1hdd.pdb	Error: none_c
+../restrict_domains/Homeobox_new/A_1fjl.pdb-../restrict_domains/Homeobox_new/D_1k61.pdb	Error: none_c
+../restrict_domains/Homeobox_new/A_1fjl.pdb-../restrict_domains/Homeobox_new/D_1mnm.pdb	Error: none_c
+../restrict_domains/Homeobox_new/A_1fjl.pdb-../restrict_domains/Homeobox_new/P_1ahd.pdb	Error: none_c
+../restrict_domains/Homeobox_new/A_1fjl.pdb-../restrict_domains/Homeobox_new/P_1lfu.pdb	Error: none_c
+../restrict_domains/Homeobox_new/A_1fjl.pdb-../restrict_domains/Homeobox_new/P_1nk2.pdb	Error: none_c
+../restrict_domains/Homeobox_new/A_1fjl.pdb-../restrict_domains/Homeobox_new/P_1nk3.pdb	Error: none_c
+../restrict_domains/Homeobox_new/A_1fjl.pdb-../restrict_domains/Homeobox_new/P_1zq3.pdb	Error: none_c
+../restrict_domains/Homeobox_new/A_1hf0.pdb-../restrict_domains/Homeobox_new/A_1hf0.pdb	S max: 9659.19 
+../restrict_domains/Homeobox_new/A_1hf0.pdb-../restrict_domains/Homeobox_new/A_1ig7.pdb	S max: 734.731 
+../restrict_domains/Homeobox_new/A_1hf0.pdb-../restrict_domains/Homeobox_new/A_1jgg.pdb	S max: 341.477 
+../restrict_domains/Homeobox_new/A_1hf0.pdb-../restrict_domains/Homeobox_new/A_1k61.pdb	S max: 1080.24 
+../restrict_domains/Homeobox_new/A_1hf0.pdb-../restrict_domains/Homeobox_new/A_1le8.pdb	S max: 596.617 
+../restrict_domains/Homeobox_new/A_1hf0.pdb-../restrict_domains/Homeobox_new/A_1o4x.pdb	S max: 586.022 
+../restrict_domains/Homeobox_new/A_1hf0.pdb-../restrict_domains/Homeobox_new/A_1puf.pdb	S max: 860.267 
+../restrict_domains/Homeobox_new/A_1hf0.pdb-../restrict_domains/Homeobox_new/A_1yrn.pdb	S max: 359.45 
+../restrict_domains/Homeobox_new/A_1hf0.pdb-../restrict_domains/Homeobox_new/A_2hdd.pdb	S max: 977.92 
+../restrict_domains/Homeobox_new/A_1hf0.pdb-../restrict_domains/Homeobox_new/A_3hdd.pdb	S max: 925.454 
+../restrict_domains/Homeobox_new/A_1hf0.pdb-../restrict_domains/Homeobox_new/A_9ant.pdb	S max: 745.868 
+../restrict_domains/Homeobox_new/A_1hf0.pdb-../restrict_domains/Homeobox_new/B_1akh.pdb	S max: 676.73 
+../restrict_domains/Homeobox_new/A_1hf0.pdb-../restrict_domains/Homeobox_new/B_1au7.pdb	S max: 877.274 
+../restrict_domains/Homeobox_new/A_1hf0.pdb-../restrict_domains/Homeobox_new/B_1b72.pdb	S max: 1039.25 
+../restrict_domains/Homeobox_new/A_1hf0.pdb-../restrict_domains/Homeobox_new/B_1b8i.pdb	S max: 490.822 
+../restrict_domains/Homeobox_new/A_1hf0.pdb-../restrict_domains/Homeobox_new/B_1cqt.pdb	S max: 1009.8 
+../restrict_domains/Homeobox_new/A_1hf0.pdb-../restrict_domains/Homeobox_new/B_1du0.pdb	S max: 416.342 
+../restrict_domains/Homeobox_new/A_1hf0.pdb-../restrict_domains/Homeobox_new/B_1fjl.pdb	Error: none_c
+../restrict_domains/Homeobox_new/A_1hf0.pdb-../restrict_domains/Homeobox_new/B_1hf0.pdb	S max: 1974.52 
+../restrict_domains/Homeobox_new/A_1hf0.pdb-../restrict_domains/Homeobox_new/B_1jgg.pdb	S max: 293.576 
+../restrict_domains/Homeobox_new/A_1hf0.pdb-../restrict_domains/Homeobox_new/B_1k61.pdb	S max: 808.071 
+../restrict_domains/Homeobox_new/A_1hf0.pdb-../restrict_domains/Homeobox_new/B_1le8.pdb	S max: 504.184 
+../restrict_domains/Homeobox_new/A_1hf0.pdb-../restrict_domains/Homeobox_new/B_1puf.pdb	S max: 753.425 
+../restrict_domains/Homeobox_new/A_1hf0.pdb-../restrict_domains/Homeobox_new/B_1yrn.pdb	S max: 712.473 
+../restrict_domains/Homeobox_new/A_1hf0.pdb-../restrict_domains/Homeobox_new/B_2hdd.pdb	S max: 247.264 
+../restrict_domains/Homeobox_new/A_1hf0.pdb-../restrict_domains/Homeobox_new/B_2r5y.pdb	S max: 703.535 
+../restrict_domains/Homeobox_new/A_1hf0.pdb-../restrict_domains/Homeobox_new/B_2r5z.pdb	S max: 1039.3 
+../restrict_domains/Homeobox_new/A_1hf0.pdb-../restrict_domains/Homeobox_new/B_3hdd.pdb	S max: 280.57 
+../restrict_domains/Homeobox_new/A_1hf0.pdb-../restrict_domains/Homeobox_new/B_9ant.pdb	S max: 753.936 
+../restrict_domains/Homeobox_new/A_1hf0.pdb-../restrict_domains/Homeobox_new/C_1apl.pdb	S max: 280.185 
+../restrict_domains/Homeobox_new/A_1hf0.pdb-../restrict_domains/Homeobox_new/C_1e3o.pdb	Error: none_c
+../restrict_domains/Homeobox_new/A_1hf0.pdb-../restrict_domains/Homeobox_new/C_1gt0.pdb	S max: 1147.98 
+../restrict_domains/Homeobox_new/A_1hf0.pdb-../restrict_domains/Homeobox_new/C_1hdd.pdb	S max: 380.987 
+../restrict_domains/Homeobox_new/A_1hf0.pdb-../restrict_domains/Homeobox_new/C_1k61.pdb	S max: 614.981 
+../restrict_domains/Homeobox_new/A_1hf0.pdb-../restrict_domains/Homeobox_new/C_1mnm.pdb	S max: 684.76 
+../restrict_domains/Homeobox_new/A_1hf0.pdb-../restrict_domains/Homeobox_new/C_1oct.pdb	S max: 1180.37 
+../restrict_domains/Homeobox_new/A_1hf0.pdb-../restrict_domains/Homeobox_new/D_1apl.pdb	S max: 572.449 
+../restrict_domains/Homeobox_new/A_1hf0.pdb-../restrict_domains/Homeobox_new/D_1hdd.pdb	S max: 219.886 
+../restrict_domains/Homeobox_new/A_1hf0.pdb-../restrict_domains/Homeobox_new/D_1k61.pdb	S max: 379.045 
+../restrict_domains/Homeobox_new/A_1hf0.pdb-../restrict_domains/Homeobox_new/D_1mnm.pdb	S max: 450.374 
+../restrict_domains/Homeobox_new/A_1hf0.pdb-../restrict_domains/Homeobox_new/P_1ahd.pdb	S max: 402.128 
+../restrict_domains/Homeobox_new/A_1hf0.pdb-../restrict_domains/Homeobox_new/P_1lfu.pdb	S max: 461.432 
+../restrict_domains/Homeobox_new/A_1hf0.pdb-../restrict_domains/Homeobox_new/P_1nk2.pdb	S max: 326.519 
+../restrict_domains/Homeobox_new/A_1hf0.pdb-../restrict_domains/Homeobox_new/P_1nk3.pdb	S max: 464.133 
+../restrict_domains/Homeobox_new/A_1hf0.pdb-../restrict_domains/Homeobox_new/P_1zq3.pdb	S max: 388.621 
+../restrict_domains/Homeobox_new/A_1ig7.pdb-../restrict_domains/Homeobox_new/A_1ig7.pdb	S max: 5289.56 
+../restrict_domains/Homeobox_new/A_1ig7.pdb-../restrict_domains/Homeobox_new/A_1jgg.pdb	S max: 362.814 
+../restrict_domains/Homeobox_new/A_1ig7.pdb-../restrict_domains/Homeobox_new/A_1k61.pdb	S max: 589.924 
+../restrict_domains/Homeobox_new/A_1ig7.pdb-../restrict_domains/Homeobox_new/A_1le8.pdb	S max: 565.033 
+../restrict_domains/Homeobox_new/A_1ig7.pdb-../restrict_domains/Homeobox_new/A_1o4x.pdb	S max: 389.025 
+../restrict_domains/Homeobox_new/A_1ig7.pdb-../restrict_domains/Homeobox_new/A_1puf.pdb	S max: 841.448 
+../restrict_domains/Homeobox_new/A_1ig7.pdb-../restrict_domains/Homeobox_new/A_1yrn.pdb	S max: 363.828 
+../restrict_domains/Homeobox_new/A_1ig7.pdb-../restrict_domains/Homeobox_new/A_2hdd.pdb	S max: 999.714 
+../restrict_domains/Homeobox_new/A_1ig7.pdb-../restrict_domains/Homeobox_new/A_3hdd.pdb	S max: 873.823 
+../restrict_domains/Homeobox_new/A_1ig7.pdb-../restrict_domains/Homeobox_new/A_9ant.pdb	S max: 583.215 
+../restrict_domains/Homeobox_new/A_1ig7.pdb-../restrict_domains/Homeobox_new/B_1akh.pdb	S max: 716.062 
+../restrict_domains/Homeobox_new/A_1ig7.pdb-../restrict_domains/Homeobox_new/B_1au7.pdb	S max: 621.136 
+../restrict_domains/Homeobox_new/A_1ig7.pdb-../restrict_domains/Homeobox_new/B_1b72.pdb	S max: 899.462 
+../restrict_domains/Homeobox_new/A_1ig7.pdb-../restrict_domains/Homeobox_new/B_1b8i.pdb	S max: 553.474 
+../restrict_domains/Homeobox_new/A_1ig7.pdb-../restrict_domains/Homeobox_new/B_1cqt.pdb	S max: 409.828 
+../restrict_domains/Homeobox_new/A_1ig7.pdb-../restrict_domains/Homeobox_new/B_1du0.pdb	S max: 552.207 
+../restrict_domains/Homeobox_new/A_1ig7.pdb-../restrict_domains/Homeobox_new/B_1fjl.pdb	Error: none_c
+../restrict_domains/Homeobox_new/A_1ig7.pdb-../restrict_domains/Homeobox_new/B_1hf0.pdb	S max: 648.007 
+../restrict_domains/Homeobox_new/A_1ig7.pdb-../restrict_domains/Homeobox_new/B_1jgg.pdb	S max: 597.724 
+../restrict_domains/Homeobox_new/A_1ig7.pdb-../restrict_domains/Homeobox_new/B_1k61.pdb	S max: 730.633 
+../restrict_domains/Homeobox_new/A_1ig7.pdb-../restrict_domains/Homeobox_new/B_1le8.pdb	S max: 522.609 
+../restrict_domains/Homeobox_new/A_1ig7.pdb-../restrict_domains/Homeobox_new/B_1puf.pdb	S max: 680.405 
+../restrict_domains/Homeobox_new/A_1ig7.pdb-../restrict_domains/Homeobox_new/B_1yrn.pdb	S max: 713.472 
+../restrict_domains/Homeobox_new/A_1ig7.pdb-../restrict_domains/Homeobox_new/B_2hdd.pdb	S max: 223.452 
+../restrict_domains/Homeobox_new/A_1ig7.pdb-../restrict_domains/Homeobox_new/B_2r5y.pdb	S max: 648.008 
+../restrict_domains/Homeobox_new/A_1ig7.pdb-../restrict_domains/Homeobox_new/B_2r5z.pdb	S max: 822.835 
+../restrict_domains/Homeobox_new/A_1ig7.pdb-../restrict_domains/Homeobox_new/B_3hdd.pdb	S max: 397.223 
+../restrict_domains/Homeobox_new/A_1ig7.pdb-../restrict_domains/Homeobox_new/B_9ant.pdb	S max: 806.278 
+../restrict_domains/Homeobox_new/A_1ig7.pdb-../restrict_domains/Homeobox_new/C_1apl.pdb	S max: 259.686 
+../restrict_domains/Homeobox_new/A_1ig7.pdb-../restrict_domains/Homeobox_new/C_1e3o.pdb	Error: none_c
+../restrict_domains/Homeobox_new/A_1ig7.pdb-../restrict_domains/Homeobox_new/C_1gt0.pdb	S max: 643.145 
+../restrict_domains/Homeobox_new/A_1ig7.pdb-../restrict_domains/Homeobox_new/C_1hdd.pdb	S max: 743.947 
+../restrict_domains/Homeobox_new/A_1ig7.pdb-../restrict_domains/Homeobox_new/C_1k61.pdb	S max: 311.454 
+../restrict_domains/Homeobox_new/A_1ig7.pdb-../restrict_domains/Homeobox_new/C_1mnm.pdb	S max: 580.621 
+../restrict_domains/Homeobox_new/A_1ig7.pdb-../restrict_domains/Homeobox_new/C_1oct.pdb	S max: 697.572 
+../restrict_domains/Homeobox_new/A_1ig7.pdb-../restrict_domains/Homeobox_new/D_1apl.pdb	S max: 643.306 
+../restrict_domains/Homeobox_new/A_1ig7.pdb-../restrict_domains/Homeobox_new/D_1hdd.pdb	S max: 240.418 
+../restrict_domains/Homeobox_new/A_1ig7.pdb-../restrict_domains/Homeobox_new/D_1k61.pdb	S max: 451.589 
+../restrict_domains/Homeobox_new/A_1ig7.pdb-../restrict_domains/Homeobox_new/D_1mnm.pdb	S max: 475.375 
+../restrict_domains/Homeobox_new/A_1ig7.pdb-../restrict_domains/Homeobox_new/P_1ahd.pdb	S max: 308.365 
+../restrict_domains/Homeobox_new/A_1ig7.pdb-../restrict_domains/Homeobox_new/P_1lfu.pdb	S max: 351.65 
+../restrict_domains/Homeobox_new/A_1ig7.pdb-../restrict_domains/Homeobox_new/P_1nk2.pdb	S max: 127.243 
+../restrict_domains/Homeobox_new/A_1ig7.pdb-../restrict_domains/Homeobox_new/P_1nk3.pdb	S max: 422.151 
+../restrict_domains/Homeobox_new/A_1ig7.pdb-../restrict_domains/Homeobox_new/P_1zq3.pdb	S max: 500.01 
+../restrict_domains/Homeobox_new/A_1jgg.pdb-../restrict_domains/Homeobox_new/A_1jgg.pdb	S max: 4509.61 
+../restrict_domains/Homeobox_new/A_1jgg.pdb-../restrict_domains/Homeobox_new/A_1k61.pdb	S max: 664.986 
+../restrict_domains/Homeobox_new/A_1jgg.pdb-../restrict_domains/Homeobox_new/A_1le8.pdb	S max: 191.083 
+../restrict_domains/Homeobox_new/A_1jgg.pdb-../restrict_domains/Homeobox_new/A_1o4x.pdb	S max: 344.52 
+../restrict_domains/Homeobox_new/A_1jgg.pdb-../restrict_domains/Homeobox_new/A_1puf.pdb	S max: 182.548 
+../restrict_domains/Homeobox_new/A_1jgg.pdb-../restrict_domains/Homeobox_new/A_1yrn.pdb	S max: 69.0975 
+../restrict_domains/Homeobox_new/A_1jgg.pdb-../restrict_domains/Homeobox_new/A_2hdd.pdb	S max: 618.673 
+../restrict_domains/Homeobox_new/A_1jgg.pdb-../restrict_domains/Homeobox_new/A_3hdd.pdb	S max: 647.643 
+../restrict_domains/Homeobox_new/A_1jgg.pdb-../restrict_domains/Homeobox_new/A_9ant.pdb	S max: 592.563 
+../restrict_domains/Homeobox_new/A_1jgg.pdb-../restrict_domains/Homeobox_new/B_1akh.pdb	S max: 367.266 
+../restrict_domains/Homeobox_new/A_1jgg.pdb-../restrict_domains/Homeobox_new/B_1au7.pdb	S max: 258.389 
+../restrict_domains/Homeobox_new/A_1jgg.pdb-../restrict_domains/Homeobox_new/B_1b72.pdb	S max: 636.112 
+../restrict_domains/Homeobox_new/A_1jgg.pdb-../restrict_domains/Homeobox_new/B_1b8i.pdb	S max: 489.65 
+../restrict_domains/Homeobox_new/A_1jgg.pdb-../restrict_domains/Homeobox_new/B_1cqt.pdb	S max: 343.304 
+../restrict_domains/Homeobox_new/A_1jgg.pdb-../restrict_domains/Homeobox_new/B_1fjl.pdb	Error: none_c
+../restrict_domains/Homeobox_new/A_1jgg.pdb-../restrict_domains/Homeobox_new/B_1hf0.pdb	S max: 578.55 
+../restrict_domains/Homeobox_new/A_1jgg.pdb-../restrict_domains/Homeobox_new/B_1jgg.pdb	S max: 492.332 
+../restrict_domains/Homeobox_new/A_1jgg.pdb-../restrict_domains/Homeobox_new/B_1k61.pdb	S max: 354.879 
+../restrict_domains/Homeobox_new/A_1jgg.pdb-../restrict_domains/Homeobox_new/B_1le8.pdb	S max: 155.667 
+../restrict_domains/Homeobox_new/A_1jgg.pdb-../restrict_domains/Homeobox_new/B_1puf.pdb	S max: 452.359 
+../restrict_domains/Homeobox_new/A_1jgg.pdb-../restrict_domains/Homeobox_new/B_1yrn.pdb	S max: 193.1 
+../restrict_domains/Homeobox_new/A_1jgg.pdb-../restrict_domains/Homeobox_new/B_2hdd.pdb	S max: 62.4035 
+../restrict_domains/Homeobox_new/A_1jgg.pdb-../restrict_domains/Homeobox_new/B_2r5y.pdb	S max: 352.899 
+../restrict_domains/Homeobox_new/A_1jgg.pdb-../restrict_domains/Homeobox_new/B_2r5z.pdb	S max: 278.762 
+../restrict_domains/Homeobox_new/A_1jgg.pdb-../restrict_domains/Homeobox_new/B_3hdd.pdb	S max: 62.6582 
+../restrict_domains/Homeobox_new/A_1jgg.pdb-../restrict_domains/Homeobox_new/B_9ant.pdb	S max: 451.784 
+../restrict_domains/Homeobox_new/A_1jgg.pdb-../restrict_domains/Homeobox_new/C_1apl.pdb	S max: 170.615 
+../restrict_domains/Homeobox_new/A_1jgg.pdb-../restrict_domains/Homeobox_new/C_1e3o.pdb	Error: none_c
+../restrict_domains/Homeobox_new/A_1jgg.pdb-../restrict_domains/Homeobox_new/C_1gt0.pdb	S max: 417.948 
+../restrict_domains/Homeobox_new/A_1jgg.pdb-../restrict_domains/Homeobox_new/C_1hdd.pdb	S max: 327.469 
+../restrict_domains/Homeobox_new/A_1jgg.pdb-../restrict_domains/Homeobox_new/C_1k61.pdb	S max: 176.772 
+../restrict_domains/Homeobox_new/A_1jgg.pdb-../restrict_domains/Homeobox_new/C_1mnm.pdb	S max: 333.369 
+../restrict_domains/Homeobox_new/A_1jgg.pdb-../restrict_domains/Homeobox_new/C_1oct.pdb	S max: 555.344 
+../restrict_domains/Homeobox_new/A_1jgg.pdb-../restrict_domains/Homeobox_new/D_1apl.pdb	S max: 225.957 
+../restrict_domains/Homeobox_new/A_1jgg.pdb-../restrict_domains/Homeobox_new/D_1hdd.pdb	S max: 62.2282 
+../restrict_domains/Homeobox_new/A_1jgg.pdb-../restrict_domains/Homeobox_new/D_1k61.pdb	S max: 163.534 
+../restrict_domains/Homeobox_new/A_1jgg.pdb-../restrict_domains/Homeobox_new/D_1mnm.pdb	S max: 460.233 
+../restrict_domains/Homeobox_new/A_1jgg.pdb-../restrict_domains/Homeobox_new/P_1ahd.pdb	S max: 129.236 
+../restrict_domains/Homeobox_new/A_1jgg.pdb-../restrict_domains/Homeobox_new/P_1lfu.pdb	S max: 220.146 
+../restrict_domains/Homeobox_new/A_1jgg.pdb-../restrict_domains/Homeobox_new/P_1nk2.pdb	S max: 185.918 
+../restrict_domains/Homeobox_new/A_1jgg.pdb-../restrict_domains/Homeobox_new/P_1nk3.pdb	S max: 292.392 
+../restrict_domains/Homeobox_new/A_1jgg.pdb-../restrict_domains/Homeobox_new/P_1zq3.pdb	S max: 153.326 
+../restrict_domains/Homeobox_new/A_1k61.pdb-../restrict_domains/Homeobox_new/A_1k61.pdb	S max: 9559.23 
+../restrict_domains/Homeobox_new/A_1k61.pdb-../restrict_domains/Homeobox_new/A_1le8.pdb	S max: 625.166 
+../restrict_domains/Homeobox_new/A_1k61.pdb-../restrict_domains/Homeobox_new/A_1o4x.pdb	S max: 709.261 
+../restrict_domains/Homeobox_new/A_1k61.pdb-../restrict_domains/Homeobox_new/A_1puf.pdb	S max: 812.595 
+../restrict_domains/Homeobox_new/A_1k61.pdb-../restrict_domains/Homeobox_new/A_1yrn.pdb	S max: 454.308 
+../restrict_domains/Homeobox_new/A_1k61.pdb-../restrict_domains/Homeobox_new/A_2hdd.pdb	S max: 799.593 
+../restrict_domains/Homeobox_new/A_1k61.pdb-../restrict_domains/Homeobox_new/A_3hdd.pdb	S max: 1180.82 
+../restrict_domains/Homeobox_new/A_1k61.pdb-../restrict_domains/Homeobox_new/A_9ant.pdb	S max: 904.216 
+../restrict_domains/Homeobox_new/A_1k61.pdb-../restrict_domains/Homeobox_new/B_1akh.pdb	S max: 1285.03 
+../restrict_domains/Homeobox_new/A_1k61.pdb-../restrict_domains/Homeobox_new/B_1au7.pdb	S max: 813.287 
+../restrict_domains/Homeobox_new/A_1k61.pdb-../restrict_domains/Homeobox_new/B_1b72.pdb	S max: 1013.7 
+../restrict_domains/Homeobox_new/A_1k61.pdb-../restrict_domains/Homeobox_new/B_1b8i.pdb	S max: 793.549 
+../restrict_domains/Homeobox_new/A_1k61.pdb-../restrict_domains/Homeobox_new/B_1cqt.pdb	S max: 535.364 
+../restrict_domains/Homeobox_new/A_1k61.pdb-../restrict_domains/Homeobox_new/B_1du0.pdb	S max: 341.473 
+../restrict_domains/Homeobox_new/A_1k61.pdb-../restrict_domains/Homeobox_new/B_1fjl.pdb	Error: none_c
+../restrict_domains/Homeobox_new/A_1k61.pdb-../restrict_domains/Homeobox_new/B_1hf0.pdb	S max: 822.005 
+../restrict_domains/Homeobox_new/A_1k61.pdb-../restrict_domains/Homeobox_new/B_1jgg.pdb	S max: 433.209 
+../restrict_domains/Homeobox_new/A_1k61.pdb-../restrict_domains/Homeobox_new/B_1k61.pdb	S max: 1667.16 
+../restrict_domains/Homeobox_new/A_1k61.pdb-../restrict_domains/Homeobox_new/B_1le8.pdb	S max: 821.498 
+../restrict_domains/Homeobox_new/A_1k61.pdb-../restrict_domains/Homeobox_new/B_1puf.pdb	S max: 845.8 
+../restrict_domains/Homeobox_new/A_1k61.pdb-../restrict_domains/Homeobox_new/B_1yrn.pdb	S max: 866.088 
+../restrict_domains/Homeobox_new/A_1k61.pdb-../restrict_domains/Homeobox_new/B_2hdd.pdb	S max: 157.092 
+../restrict_domains/Homeobox_new/A_1k61.pdb-../restrict_domains/Homeobox_new/B_2r5y.pdb	S max: 825.836 
+../restrict_domains/Homeobox_new/A_1k61.pdb-../restrict_domains/Homeobox_new/B_2r5z.pdb	S max: 1095.37 
+../restrict_domains/Homeobox_new/A_1k61.pdb-../restrict_domains/Homeobox_new/B_3hdd.pdb	S max: 292.176 
+../restrict_domains/Homeobox_new/A_1k61.pdb-../restrict_domains/Homeobox_new/B_9ant.pdb	S max: 959.964 
+../restrict_domains/Homeobox_new/A_1k61.pdb-../restrict_domains/Homeobox_new/C_1apl.pdb	S max: 541.443 
+../restrict_domains/Homeobox_new/A_1k61.pdb-../restrict_domains/Homeobox_new/C_1e3o.pdb	Error: none_c
+../restrict_domains/Homeobox_new/A_1k61.pdb-../restrict_domains/Homeobox_new/C_1gt0.pdb	S max: 400.574 
+../restrict_domains/Homeobox_new/A_1k61.pdb-../restrict_domains/Homeobox_new/C_1hdd.pdb	S max: 471.432 
+../restrict_domains/Homeobox_new/A_1k61.pdb-../restrict_domains/Homeobox_new/C_1k61.pdb	S max: 747.105 
+../restrict_domains/Homeobox_new/A_1k61.pdb-../restrict_domains/Homeobox_new/C_1mnm.pdb	S max: 1034.81 
+../restrict_domains/Homeobox_new/A_1k61.pdb-../restrict_domains/Homeobox_new/C_1oct.pdb	S max: 738.795 
+../restrict_domains/Homeobox_new/A_1k61.pdb-../restrict_domains/Homeobox_new/D_1apl.pdb	S max: 780.029 
+../restrict_domains/Homeobox_new/A_1k61.pdb-../restrict_domains/Homeobox_new/D_1hdd.pdb	S max: 279.931 
+../restrict_domains/Homeobox_new/A_1k61.pdb-../restrict_domains/Homeobox_new/D_1k61.pdb	S max: 588.9 
+../restrict_domains/Homeobox_new/A_1k61.pdb-../restrict_domains/Homeobox_new/D_1mnm.pdb	S max: 570.502 
+../restrict_domains/Homeobox_new/A_1k61.pdb-../restrict_domains/Homeobox_new/P_1ahd.pdb	S max: 404.838 
+../restrict_domains/Homeobox_new/A_1k61.pdb-../restrict_domains/Homeobox_new/P_1lfu.pdb	S max: 388.498 
+../restrict_domains/Homeobox_new/A_1k61.pdb-../restrict_domains/Homeobox_new/P_1nk2.pdb	S max: 190.571 
+../restrict_domains/Homeobox_new/A_1k61.pdb-../restrict_domains/Homeobox_new/P_1nk3.pdb	S max: 378.755 
+../restrict_domains/Homeobox_new/A_1k61.pdb-../restrict_domains/Homeobox_new/P_1zq3.pdb	S max: 309.143 
+../restrict_domains/Homeobox_new/A_1le8.pdb-../restrict_domains/Homeobox_new/A_1le8.pdb	S max: 7884.27 
+../restrict_domains/Homeobox_new/A_1le8.pdb-../restrict_domains/Homeobox_new/A_1o4x.pdb	S max: 490.994 
+../restrict_domains/Homeobox_new/A_1le8.pdb-../restrict_domains/Homeobox_new/A_1puf.pdb	S max: 451.454 
+../restrict_domains/Homeobox_new/A_1le8.pdb-../restrict_domains/Homeobox_new/A_1yrn.pdb	S max: 919.874 
+../restrict_domains/Homeobox_new/A_1le8.pdb-../restrict_domains/Homeobox_new/A_2hdd.pdb	S max: 474.965 
+../restrict_domains/Homeobox_new/A_1le8.pdb-../restrict_domains/Homeobox_new/A_3hdd.pdb	S max: 916.418 
+../restrict_domains/Homeobox_new/A_1le8.pdb-../restrict_domains/Homeobox_new/A_9ant.pdb	S max: 801.527 
+../restrict_domains/Homeobox_new/A_1le8.pdb-../restrict_domains/Homeobox_new/B_1akh.pdb	S max: 386.251 
+../restrict_domains/Homeobox_new/A_1le8.pdb-../restrict_domains/Homeobox_new/B_1au7.pdb	S max: 293.566 
+../restrict_domains/Homeobox_new/A_1le8.pdb-../restrict_domains/Homeobox_new/B_1b72.pdb	S max: 589.673 
+../restrict_domains/Homeobox_new/A_1le8.pdb-../restrict_domains/Homeobox_new/B_1b8i.pdb	S max: 667.015 
+../restrict_domains/Homeobox_new/A_1le8.pdb-../restrict_domains/Homeobox_new/B_1cqt.pdb	S max: 316.929 
+../restrict_domains/Homeobox_new/A_1le8.pdb-../restrict_domains/Homeobox_new/B_1du0.pdb	S max: 267.04 
+../restrict_domains/Homeobox_new/A_1le8.pdb-../restrict_domains/Homeobox_new/B_1fjl.pdb	Error: none_c
+../restrict_domains/Homeobox_new/A_1le8.pdb-../restrict_domains/Homeobox_new/B_1hf0.pdb	S max: 480.079 
+../restrict_domains/Homeobox_new/A_1le8.pdb-../restrict_domains/Homeobox_new/B_1jgg.pdb	S max: 326.252 
+../restrict_domains/Homeobox_new/A_1le8.pdb-../restrict_domains/Homeobox_new/B_1k61.pdb	S max: 668.593 
+../restrict_domains/Homeobox_new/A_1le8.pdb-../restrict_domains/Homeobox_new/B_1le8.pdb	S max: 416.829 
+../restrict_domains/Homeobox_new/A_1le8.pdb-../restrict_domains/Homeobox_new/B_1puf.pdb	S max: 665.671 
+../restrict_domains/Homeobox_new/A_1le8.pdb-../restrict_domains/Homeobox_new/B_1yrn.pdb	S max: 443.495 
+../restrict_domains/Homeobox_new/A_1le8.pdb-../restrict_domains/Homeobox_new/B_2hdd.pdb	S max: 280.903 
+../restrict_domains/Homeobox_new/A_1le8.pdb-../restrict_domains/Homeobox_new/B_2r5y.pdb	S max: 782.615 
+../restrict_domains/Homeobox_new/A_1le8.pdb-../restrict_domains/Homeobox_new/B_2r5z.pdb	S max: 764.807 
+../restrict_domains/Homeobox_new/A_1le8.pdb-../restrict_domains/Homeobox_new/B_3hdd.pdb	S max: 274.924 
+../restrict_domains/Homeobox_new/A_1le8.pdb-../restrict_domains/Homeobox_new/B_9ant.pdb	S max: 949.312 
+../restrict_domains/Homeobox_new/A_1le8.pdb-../restrict_domains/Homeobox_new/C_1apl.pdb	S max: 205.083 
+../restrict_domains/Homeobox_new/A_1le8.pdb-../restrict_domains/Homeobox_new/C_1e3o.pdb	Error: none_c
+../restrict_domains/Homeobox_new/A_1le8.pdb-../restrict_domains/Homeobox_new/C_1gt0.pdb	S max: 190.357 
+../restrict_domains/Homeobox_new/A_1le8.pdb-../restrict_domains/Homeobox_new/C_1hdd.pdb	S max: 576.258 
+../restrict_domains/Homeobox_new/A_1le8.pdb-../restrict_domains/Homeobox_new/C_1k61.pdb	S max: 374.488 
+../restrict_domains/Homeobox_new/A_1le8.pdb-../restrict_domains/Homeobox_new/C_1mnm.pdb	S max: 725.13 
+../restrict_domains/Homeobox_new/A_1le8.pdb-../restrict_domains/Homeobox_new/C_1oct.pdb	S max: 333.881 
+../restrict_domains/Homeobox_new/A_1le8.pdb-../restrict_domains/Homeobox_new/D_1apl.pdb	S max: 439.053 
+../restrict_domains/Homeobox_new/A_1le8.pdb-../restrict_domains/Homeobox_new/D_1hdd.pdb	S max: 287.831 
+../restrict_domains/Homeobox_new/A_1le8.pdb-../restrict_domains/Homeobox_new/D_1k61.pdb	S max: 380.867 
+../restrict_domains/Homeobox_new/A_1le8.pdb-../restrict_domains/Homeobox_new/D_1mnm.pdb	S max: 460.131 
+../restrict_domains/Homeobox_new/A_1le8.pdb-../restrict_domains/Homeobox_new/P_1ahd.pdb	S max: 292.434 
+../restrict_domains/Homeobox_new/A_1le8.pdb-../restrict_domains/Homeobox_new/P_1lfu.pdb	S max: 293.255 
+../restrict_domains/Homeobox_new/A_1le8.pdb-../restrict_domains/Homeobox_new/P_1nk2.pdb	S max: 181.408 
+../restrict_domains/Homeobox_new/A_1le8.pdb-../restrict_domains/Homeobox_new/P_1nk3.pdb	S max: 162.009 
+../restrict_domains/Homeobox_new/A_1le8.pdb-../restrict_domains/Homeobox_new/P_1zq3.pdb	S max: 210.752 
+../restrict_domains/Homeobox_new/A_1o4x.pdb-../restrict_domains/Homeobox_new/A_1o4x.pdb	S max: 7631.31 
+../restrict_domains/Homeobox_new/A_1o4x.pdb-../restrict_domains/Homeobox_new/A_1puf.pdb	S max: 475.42 
+../restrict_domains/Homeobox_new/A_1o4x.pdb-../restrict_domains/Homeobox_new/A_1yrn.pdb	S max: 308.596 
+../restrict_domains/Homeobox_new/A_1o4x.pdb-../restrict_domains/Homeobox_new/A_2hdd.pdb	S max: 857.879 
+../restrict_domains/Homeobox_new/A_1o4x.pdb-../restrict_domains/Homeobox_new/A_3hdd.pdb	S max: 772.473 
+../restrict_domains/Homeobox_new/A_1o4x.pdb-../restrict_domains/Homeobox_new/A_9ant.pdb	S max: 479.585 
+../restrict_domains/Homeobox_new/A_1o4x.pdb-../restrict_domains/Homeobox_new/B_1akh.pdb	S max: 248.734 
+../restrict_domains/Homeobox_new/A_1o4x.pdb-../restrict_domains/Homeobox_new/B_1au7.pdb	S max: 648.009 
+../restrict_domains/Homeobox_new/A_1o4x.pdb-../restrict_domains/Homeobox_new/B_1b72.pdb	S max: 723.011 
+../restrict_domains/Homeobox_new/A_1o4x.pdb-../restrict_domains/Homeobox_new/B_1b8i.pdb	S max: 310.432 
+../restrict_domains/Homeobox_new/A_1o4x.pdb-../restrict_domains/Homeobox_new/B_1cqt.pdb	S max: 726.237 
+../restrict_domains/Homeobox_new/A_1o4x.pdb-../restrict_domains/Homeobox_new/B_1du0.pdb	S max: 135.247 
+../restrict_domains/Homeobox_new/A_1o4x.pdb-../restrict_domains/Homeobox_new/B_1fjl.pdb	Error: none_c
+../restrict_domains/Homeobox_new/A_1o4x.pdb-../restrict_domains/Homeobox_new/B_1hf0.pdb	S max: 615.487 
+../restrict_domains/Homeobox_new/A_1o4x.pdb-../restrict_domains/Homeobox_new/B_1jgg.pdb	S max: 286.381 
+../restrict_domains/Homeobox_new/A_1o4x.pdb-../restrict_domains/Homeobox_new/B_1k61.pdb	S max: 656.626 
+../restrict_domains/Homeobox_new/A_1o4x.pdb-../restrict_domains/Homeobox_new/B_1le8.pdb	S max: 403.508 
+../restrict_domains/Homeobox_new/A_1o4x.pdb-../restrict_domains/Homeobox_new/B_1puf.pdb	S max: 416.896 
+../restrict_domains/Homeobox_new/A_1o4x.pdb-../restrict_domains/Homeobox_new/B_1yrn.pdb	S max: 291.312 
+../restrict_domains/Homeobox_new/A_1o4x.pdb-../restrict_domains/Homeobox_new/B_2hdd.pdb	S max: 99.4485 
+../restrict_domains/Homeobox_new/A_1o4x.pdb-../restrict_domains/Homeobox_new/B_2r5y.pdb	S max: 617.967 
+../restrict_domains/Homeobox_new/A_1o4x.pdb-../restrict_domains/Homeobox_new/B_2r5z.pdb	S max: 489.663 
+../restrict_domains/Homeobox_new/A_1o4x.pdb-../restrict_domains/Homeobox_new/B_3hdd.pdb	S max: 167.349 
+../restrict_domains/Homeobox_new/A_1o4x.pdb-../restrict_domains/Homeobox_new/B_9ant.pdb	S max: 632.914 
+../restrict_domains/Homeobox_new/A_1o4x.pdb-../restrict_domains/Homeobox_new/C_1apl.pdb	S max: 237.349 
+../restrict_domains/Homeobox_new/A_1o4x.pdb-../restrict_domains/Homeobox_new/C_1e3o.pdb	Error: none_c
+../restrict_domains/Homeobox_new/A_1o4x.pdb-../restrict_domains/Homeobox_new/C_1gt0.pdb	S max: 579.313 
+../restrict_domains/Homeobox_new/A_1o4x.pdb-../restrict_domains/Homeobox_new/C_1hdd.pdb	S max: 375.852 
+../restrict_domains/Homeobox_new/A_1o4x.pdb-../restrict_domains/Homeobox_new/C_1k61.pdb	S max: 542.412 
+../restrict_domains/Homeobox_new/A_1o4x.pdb-../restrict_domains/Homeobox_new/C_1mnm.pdb	S max: 386.91 
+../restrict_domains/Homeobox_new/A_1o4x.pdb-../restrict_domains/Homeobox_new/C_1oct.pdb	S max: 504.798 
+../restrict_domains/Homeobox_new/A_1o4x.pdb-../restrict_domains/Homeobox_new/D_1apl.pdb	S max: 364.597 
+../restrict_domains/Homeobox_new/A_1o4x.pdb-../restrict_domains/Homeobox_new/D_1hdd.pdb	S max: 57.5879 
+../restrict_domains/Homeobox_new/A_1o4x.pdb-../restrict_domains/Homeobox_new/D_1k61.pdb	S max: 308.923 
+../restrict_domains/Homeobox_new/A_1o4x.pdb-../restrict_domains/Homeobox_new/D_1mnm.pdb	S max: 741.358 
+../restrict_domains/Homeobox_new/A_1o4x.pdb-../restrict_domains/Homeobox_new/P_1ahd.pdb	S max: 243.386 
+../restrict_domains/Homeobox_new/A_1o4x.pdb-../restrict_domains/Homeobox_new/P_1lfu.pdb	S max: 365.962 
+../restrict_domains/Homeobox_new/A_1o4x.pdb-../restrict_domains/Homeobox_new/P_1nk2.pdb	S max: 110.52 
+../restrict_domains/Homeobox_new/A_1o4x.pdb-../restrict_domains/Homeobox_new/P_1nk3.pdb	S max: 353.797 
+../restrict_domains/Homeobox_new/A_1o4x.pdb-../restrict_domains/Homeobox_new/P_1zq3.pdb	S max: 325.896 
+../restrict_domains/Homeobox_new/A_1puf.pdb-../restrict_domains/Homeobox_new/A_1puf.pdb	S max: 12330.3 
+../restrict_domains/Homeobox_new/A_1puf.pdb-../restrict_domains/Homeobox_new/A_1yrn.pdb	S max: 318.191 
+../restrict_domains/Homeobox_new/A_1puf.pdb-../restrict_domains/Homeobox_new/A_2hdd.pdb	S max: 878.504 
+../restrict_domains/Homeobox_new/A_1puf.pdb-../restrict_domains/Homeobox_new/A_3hdd.pdb	S max: 863.712 
+../restrict_domains/Homeobox_new/A_1puf.pdb-../restrict_domains/Homeobox_new/A_9ant.pdb	S max: 543.636 
+../restrict_domains/Homeobox_new/A_1puf.pdb-../restrict_domains/Homeobox_new/B_1akh.pdb	S max: 690.791 
+../restrict_domains/Homeobox_new/A_1puf.pdb-../restrict_domains/Homeobox_new/B_1au7.pdb	S max: 857.382 
+../restrict_domains/Homeobox_new/A_1puf.pdb-../restrict_domains/Homeobox_new/B_1b72.pdb	S max: 1111.79 
+../restrict_domains/Homeobox_new/A_1puf.pdb-../restrict_domains/Homeobox_new/B_1b8i.pdb	S max: 378.066 
+../restrict_domains/Homeobox_new/A_1puf.pdb-../restrict_domains/Homeobox_new/B_1cqt.pdb	S max: 596.305 
+../restrict_domains/Homeobox_new/A_1puf.pdb-../restrict_domains/Homeobox_new/B_1du0.pdb	S max: 611.234 
+../restrict_domains/Homeobox_new/A_1puf.pdb-../restrict_domains/Homeobox_new/B_1fjl.pdb	Error: none_c
+../restrict_domains/Homeobox_new/A_1puf.pdb-../restrict_domains/Homeobox_new/B_1hf0.pdb	S max: 772.537 
+../restrict_domains/Homeobox_new/A_1puf.pdb-../restrict_domains/Homeobox_new/B_1jgg.pdb	S max: 238.651 
+../restrict_domains/Homeobox_new/A_1puf.pdb-../restrict_domains/Homeobox_new/B_1k61.pdb	S max: 699.239 
+../restrict_domains/Homeobox_new/A_1puf.pdb-../restrict_domains/Homeobox_new/B_1le8.pdb	S max: 552.559 
+../restrict_domains/Homeobox_new/A_1puf.pdb-../restrict_domains/Homeobox_new/B_1puf.pdb	S max: 542.325 
+../restrict_domains/Homeobox_new/A_1puf.pdb-../restrict_domains/Homeobox_new/B_1yrn.pdb	S max: 832.242 
+../restrict_domains/Homeobox_new/A_1puf.pdb-../restrict_domains/Homeobox_new/B_2hdd.pdb	S max: 413.156 
+../restrict_domains/Homeobox_new/A_1puf.pdb-../restrict_domains/Homeobox_new/B_2r5y.pdb	S max: 519.406 
+../restrict_domains/Homeobox_new/A_1puf.pdb-../restrict_domains/Homeobox_new/B_2r5z.pdb	S max: 501.362 
+../restrict_domains/Homeobox_new/A_1puf.pdb-../restrict_domains/Homeobox_new/B_3hdd.pdb	S max: 484.337 
+../restrict_domains/Homeobox_new/A_1puf.pdb-../restrict_domains/Homeobox_new/B_9ant.pdb	S max: 831.53 
+../restrict_domains/Homeobox_new/A_1puf.pdb-../restrict_domains/Homeobox_new/C_1apl.pdb	S max: 361.244 
+../restrict_domains/Homeobox_new/A_1puf.pdb-../restrict_domains/Homeobox_new/C_1e3o.pdb	Error: none_c
+../restrict_domains/Homeobox_new/A_1puf.pdb-../restrict_domains/Homeobox_new/C_1gt0.pdb	S max: 614.92 
+../restrict_domains/Homeobox_new/A_1puf.pdb-../restrict_domains/Homeobox_new/C_1hdd.pdb	S max: 716.902 
+../restrict_domains/Homeobox_new/A_1puf.pdb-../restrict_domains/Homeobox_new/C_1k61.pdb	S max: 568.886 
+../restrict_domains/Homeobox_new/A_1puf.pdb-../restrict_domains/Homeobox_new/C_1mnm.pdb	S max: 828.786 
+../restrict_domains/Homeobox_new/A_1puf.pdb-../restrict_domains/Homeobox_new/C_1oct.pdb	S max: 834.334 
+../restrict_domains/Homeobox_new/A_1puf.pdb-../restrict_domains/Homeobox_new/D_1apl.pdb	S max: 833.379 
+../restrict_domains/Homeobox_new/A_1puf.pdb-../restrict_domains/Homeobox_new/D_1hdd.pdb	S max: 546.481 
+../restrict_domains/Homeobox_new/A_1puf.pdb-../restrict_domains/Homeobox_new/D_1k61.pdb	S max: 467.752 
+../restrict_domains/Homeobox_new/A_1puf.pdb-../restrict_domains/Homeobox_new/D_1mnm.pdb	S max: 524.238 
+../restrict_domains/Homeobox_new/A_1puf.pdb-../restrict_domains/Homeobox_new/P_1ahd.pdb	S max: 444.536 
+../restrict_domains/Homeobox_new/A_1puf.pdb-../restrict_domains/Homeobox_new/P_1lfu.pdb	S max: 393.976 
+../restrict_domains/Homeobox_new/A_1puf.pdb-../restrict_domains/Homeobox_new/P_1nk2.pdb	S max: 290.728 
+../restrict_domains/Homeobox_new/A_1puf.pdb-../restrict_domains/Homeobox_new/P_1nk3.pdb	S max: 614.105 
+../restrict_domains/Homeobox_new/A_1puf.pdb-../restrict_domains/Homeobox_new/P_1zq3.pdb	S max: 448.924 
+../restrict_domains/Homeobox_new/A_1yrn.pdb-../restrict_domains/Homeobox_new/A_1yrn.pdb	S max: 7389.75 
+../restrict_domains/Homeobox_new/A_1yrn.pdb-../restrict_domains/Homeobox_new/A_2hdd.pdb	S max: 473.198 
+../restrict_domains/Homeobox_new/A_1yrn.pdb-../restrict_domains/Homeobox_new/A_3hdd.pdb	S max: 454.74 
+../restrict_domains/Homeobox_new/A_1yrn.pdb-../restrict_domains/Homeobox_new/A_9ant.pdb	S max: 462.593 
+../restrict_domains/Homeobox_new/A_1yrn.pdb-../restrict_domains/Homeobox_new/B_1akh.pdb	S max: 440.392 
+../restrict_domains/Homeobox_new/A_1yrn.pdb-../restrict_domains/Homeobox_new/B_1au7.pdb	S max: 454.322 
+../restrict_domains/Homeobox_new/A_1yrn.pdb-../restrict_domains/Homeobox_new/B_1b72.pdb	S max: 529.403 
+../restrict_domains/Homeobox_new/A_1yrn.pdb-../restrict_domains/Homeobox_new/B_1b8i.pdb	S max: 473.573 
+../restrict_domains/Homeobox_new/A_1yrn.pdb-../restrict_domains/Homeobox_new/B_1cqt.pdb	S max: 176.765 
+../restrict_domains/Homeobox_new/A_1yrn.pdb-../restrict_domains/Homeobox_new/B_1du0.pdb	S max: 284.665 
+../restrict_domains/Homeobox_new/A_1yrn.pdb-../restrict_domains/Homeobox_new/B_1fjl.pdb	Error: none_c
+../restrict_domains/Homeobox_new/A_1yrn.pdb-../restrict_domains/Homeobox_new/B_1hf0.pdb	S max: 336.293 
+../restrict_domains/Homeobox_new/A_1yrn.pdb-../restrict_domains/Homeobox_new/B_1jgg.pdb	S max: 217.48 
+../restrict_domains/Homeobox_new/A_1yrn.pdb-../restrict_domains/Homeobox_new/B_1k61.pdb	S max: 512.827 
+../restrict_domains/Homeobox_new/A_1yrn.pdb-../restrict_domains/Homeobox_new/B_1le8.pdb	S max: 528.896 
+../restrict_domains/Homeobox_new/A_1yrn.pdb-../restrict_domains/Homeobox_new/B_1puf.pdb	S max: 388.201 
+../restrict_domains/Homeobox_new/A_1yrn.pdb-../restrict_domains/Homeobox_new/B_1yrn.pdb	S max: 453.023 
+../restrict_domains/Homeobox_new/A_1yrn.pdb-../restrict_domains/Homeobox_new/B_2hdd.pdb	S max: 221.252 
+../restrict_domains/Homeobox_new/A_1yrn.pdb-../restrict_domains/Homeobox_new/B_2r5y.pdb	S max: 483.78 
+../restrict_domains/Homeobox_new/A_1yrn.pdb-../restrict_domains/Homeobox_new/B_2r5z.pdb	S max: 543.471 
+../restrict_domains/Homeobox_new/A_1yrn.pdb-../restrict_domains/Homeobox_new/B_3hdd.pdb	S max: 264.867 
+../restrict_domains/Homeobox_new/A_1yrn.pdb-../restrict_domains/Homeobox_new/B_9ant.pdb	S max: 598.206 
+../restrict_domains/Homeobox_new/A_1yrn.pdb-../restrict_domains/Homeobox_new/C_1apl.pdb	S max: 367.324 
+../restrict_domains/Homeobox_new/A_1yrn.pdb-../restrict_domains/Homeobox_new/C_1e3o.pdb	Error: none_c
+../restrict_domains/Homeobox_new/A_1yrn.pdb-../restrict_domains/Homeobox_new/C_1gt0.pdb	S max: 84.8134 
+../restrict_domains/Homeobox_new/A_1yrn.pdb-../restrict_domains/Homeobox_new/C_1hdd.pdb	S max: 560.686 
+../restrict_domains/Homeobox_new/A_1yrn.pdb-../restrict_domains/Homeobox_new/C_1k61.pdb	S max: 205.171 
+../restrict_domains/Homeobox_new/A_1yrn.pdb-../restrict_domains/Homeobox_new/C_1mnm.pdb	S max: 293.657 
+../restrict_domains/Homeobox_new/A_1yrn.pdb-../restrict_domains/Homeobox_new/C_1oct.pdb	S max: 170.329 
+../restrict_domains/Homeobox_new/A_1yrn.pdb-../restrict_domains/Homeobox_new/D_1apl.pdb	S max: 397.906 
+../restrict_domains/Homeobox_new/A_1yrn.pdb-../restrict_domains/Homeobox_new/D_1hdd.pdb	S max: 398.481 
+../restrict_domains/Homeobox_new/A_1yrn.pdb-../restrict_domains/Homeobox_new/D_1k61.pdb	S max: 369.242 
+../restrict_domains/Homeobox_new/A_1yrn.pdb-../restrict_domains/Homeobox_new/D_1mnm.pdb	S max: 277.033 
+../restrict_domains/Homeobox_new/A_1yrn.pdb-../restrict_domains/Homeobox_new/P_1ahd.pdb	S max: 229.876 
+../restrict_domains/Homeobox_new/A_1yrn.pdb-../restrict_domains/Homeobox_new/P_1lfu.pdb	S max: 187.726 
+../restrict_domains/Homeobox_new/A_1yrn.pdb-../restrict_domains/Homeobox_new/P_1nk2.pdb	S max: 63.4022 
+../restrict_domains/Homeobox_new/A_1yrn.pdb-../restrict_domains/Homeobox_new/P_1nk3.pdb	S max: 151.545 
+../restrict_domains/Homeobox_new/A_1yrn.pdb-../restrict_domains/Homeobox_new/P_1zq3.pdb	S max: 173.759 
+../restrict_domains/Homeobox_new/A_2hdd.pdb-../restrict_domains/Homeobox_new/A_2hdd.pdb	S max: 8659.23 
+../restrict_domains/Homeobox_new/A_2hdd.pdb-../restrict_domains/Homeobox_new/A_3hdd.pdb	S max: 1998.38 
+../restrict_domains/Homeobox_new/A_2hdd.pdb-../restrict_domains/Homeobox_new/A_9ant.pdb	S max: 796.168 
+../restrict_domains/Homeobox_new/A_2hdd.pdb-../restrict_domains/Homeobox_new/B_1akh.pdb	S max: 608.762 
+../restrict_domains/Homeobox_new/A_2hdd.pdb-../restrict_domains/Homeobox_new/B_1au7.pdb	S max: 619.483 
+../restrict_domains/Homeobox_new/A_2hdd.pdb-../restrict_domains/Homeobox_new/B_1b72.pdb	S max: 993.199 
+../restrict_domains/Homeobox_new/A_2hdd.pdb-../restrict_domains/Homeobox_new/B_1b8i.pdb	S max: 643.993 
+../restrict_domains/Homeobox_new/A_2hdd.pdb-../restrict_domains/Homeobox_new/B_1cqt.pdb	S max: 431.711 
+../restrict_domains/Homeobox_new/A_2hdd.pdb-../restrict_domains/Homeobox_new/B_1du0.pdb	S max: 362.145 
+../restrict_domains/Homeobox_new/A_2hdd.pdb-../restrict_domains/Homeobox_new/B_1fjl.pdb	Error: none_c
+../restrict_domains/Homeobox_new/A_2hdd.pdb-../restrict_domains/Homeobox_new/B_1hf0.pdb	S max: 818.838 
+../restrict_domains/Homeobox_new/A_2hdd.pdb-../restrict_domains/Homeobox_new/B_1jgg.pdb	S max: 494.852 
+../restrict_domains/Homeobox_new/A_2hdd.pdb-../restrict_domains/Homeobox_new/B_1k61.pdb	S max: 751.723 
+../restrict_domains/Homeobox_new/A_2hdd.pdb-../restrict_domains/Homeobox_new/B_1le8.pdb	S max: 520.991 
+../restrict_domains/Homeobox_new/A_2hdd.pdb-../restrict_domains/Homeobox_new/B_1puf.pdb	S max: 816.406 
+../restrict_domains/Homeobox_new/A_2hdd.pdb-../restrict_domains/Homeobox_new/B_1yrn.pdb	S max: 609.342 
+../restrict_domains/Homeobox_new/A_2hdd.pdb-../restrict_domains/Homeobox_new/B_2hdd.pdb	S max: 469.293 
+../restrict_domains/Homeobox_new/A_2hdd.pdb-../restrict_domains/Homeobox_new/B_2r5y.pdb	S max: 593.222 
+../restrict_domains/Homeobox_new/A_2hdd.pdb-../restrict_domains/Homeobox_new/B_2r5z.pdb	S max: 638.34 
+../restrict_domains/Homeobox_new/A_2hdd.pdb-../restrict_domains/Homeobox_new/B_3hdd.pdb	S max: 549.974 
+../restrict_domains/Homeobox_new/A_2hdd.pdb-../restrict_domains/Homeobox_new/B_9ant.pdb	S max: 950.063 
+../restrict_domains/Homeobox_new/A_2hdd.pdb-../restrict_domains/Homeobox_new/C_1apl.pdb	S max: 243.044 
+../restrict_domains/Homeobox_new/A_2hdd.pdb-../restrict_domains/Homeobox_new/C_1e3o.pdb	Error: none_c
+../restrict_domains/Homeobox_new/A_2hdd.pdb-../restrict_domains/Homeobox_new/C_1gt0.pdb	S max: 634.654 
+../restrict_domains/Homeobox_new/A_2hdd.pdb-../restrict_domains/Homeobox_new/C_1hdd.pdb	S max: 1253.56 
+../restrict_domains/Homeobox_new/A_2hdd.pdb-../restrict_domains/Homeobox_new/C_1k61.pdb	S max: 395.574 
+../restrict_domains/Homeobox_new/A_2hdd.pdb-../restrict_domains/Homeobox_new/C_1mnm.pdb	S max: 620.856 
+../restrict_domains/Homeobox_new/A_2hdd.pdb-../restrict_domains/Homeobox_new/C_1oct.pdb	S max: 670.207 
+../restrict_domains/Homeobox_new/A_2hdd.pdb-../restrict_domains/Homeobox_new/D_1apl.pdb	S max: 382.15 
+../restrict_domains/Homeobox_new/A_2hdd.pdb-../restrict_domains/Homeobox_new/D_1hdd.pdb	S max: 456.312 
+../restrict_domains/Homeobox_new/A_2hdd.pdb-../restrict_domains/Homeobox_new/D_1k61.pdb	S max: 403.065 
+../restrict_domains/Homeobox_new/A_2hdd.pdb-../restrict_domains/Homeobox_new/D_1mnm.pdb	S max: 640.728 
+../restrict_domains/Homeobox_new/A_2hdd.pdb-../restrict_domains/Homeobox_new/P_1ahd.pdb	S max: 328.881 
+../restrict_domains/Homeobox_new/A_2hdd.pdb-../restrict_domains/Homeobox_new/P_1lfu.pdb	S max: 279.382 
+../restrict_domains/Homeobox_new/A_2hdd.pdb-../restrict_domains/Homeobox_new/P_1nk2.pdb	S max: 251.725 
+../restrict_domains/Homeobox_new/A_2hdd.pdb-../restrict_domains/Homeobox_new/P_1nk3.pdb	S max: 592.989 
+../restrict_domains/Homeobox_new/A_2hdd.pdb-../restrict_domains/Homeobox_new/P_1zq3.pdb	S max: 356.223 
+../restrict_domains/Homeobox_new/A_3hdd.pdb-../restrict_domains/Homeobox_new/A_3hdd.pdb	S max: 8659.23 
+../restrict_domains/Homeobox_new/A_3hdd.pdb-../restrict_domains/Homeobox_new/A_9ant.pdb	S max: 1063.63 
+../restrict_domains/Homeobox_new/A_3hdd.pdb-../restrict_domains/Homeobox_new/B_1akh.pdb	S max: 635.239 
+../restrict_domains/Homeobox_new/A_3hdd.pdb-../restrict_domains/Homeobox_new/B_1au7.pdb	S max: 598.896 
+../restrict_domains/Homeobox_new/A_3hdd.pdb-../restrict_domains/Homeobox_new/B_1b72.pdb	S max: 1191.33 
+../restrict_domains/Homeobox_new/A_3hdd.pdb-../restrict_domains/Homeobox_new/B_1b8i.pdb	S max: 623.397 
+../restrict_domains/Homeobox_new/A_3hdd.pdb-../restrict_domains/Homeobox_new/B_1cqt.pdb	S max: 554.683 
+../restrict_domains/Homeobox_new/A_3hdd.pdb-../restrict_domains/Homeobox_new/B_1du0.pdb	S max: 718.778 
+../restrict_domains/Homeobox_new/A_3hdd.pdb-../restrict_domains/Homeobox_new/B_1fjl.pdb	Error: none_c
+../restrict_domains/Homeobox_new/A_3hdd.pdb-../restrict_domains/Homeobox_new/B_1hf0.pdb	S max: 1013.25 
+../restrict_domains/Homeobox_new/A_3hdd.pdb-../restrict_domains/Homeobox_new/B_1jgg.pdb	S max: 711.09 
+../restrict_domains/Homeobox_new/A_3hdd.pdb-../restrict_domains/Homeobox_new/B_1k61.pdb	S max: 911.154 
+../restrict_domains/Homeobox_new/A_3hdd.pdb-../restrict_domains/Homeobox_new/B_1le8.pdb	S max: 478.595 
+../restrict_domains/Homeobox_new/A_3hdd.pdb-../restrict_domains/Homeobox_new/B_1puf.pdb	S max: 818.214 
+../restrict_domains/Homeobox_new/A_3hdd.pdb-../restrict_domains/Homeobox_new/B_1yrn.pdb	S max: 620.535 
+../restrict_domains/Homeobox_new/A_3hdd.pdb-../restrict_domains/Homeobox_new/B_2hdd.pdb	S max: 342.38 
+../restrict_domains/Homeobox_new/A_3hdd.pdb-../restrict_domains/Homeobox_new/B_2r5y.pdb	S max: 861.758 
+../restrict_domains/Homeobox_new/A_3hdd.pdb-../restrict_domains/Homeobox_new/B_2r5z.pdb	S max: 710.472 
+../restrict_domains/Homeobox_new/A_3hdd.pdb-../restrict_domains/Homeobox_new/B_3hdd.pdb	S max: 1065.17 
+../restrict_domains/Homeobox_new/A_3hdd.pdb-../restrict_domains/Homeobox_new/B_9ant.pdb	S max: 1594.2 
+../restrict_domains/Homeobox_new/A_3hdd.pdb-../restrict_domains/Homeobox_new/C_1apl.pdb	S max: 336.096 
+../restrict_domains/Homeobox_new/A_3hdd.pdb-../restrict_domains/Homeobox_new/C_1e3o.pdb	Error: none_c
+../restrict_domains/Homeobox_new/A_3hdd.pdb-../restrict_domains/Homeobox_new/C_1gt0.pdb	S max: 652.889 
+../restrict_domains/Homeobox_new/A_3hdd.pdb-../restrict_domains/Homeobox_new/C_1hdd.pdb	S max: 1187.8 
+../restrict_domains/Homeobox_new/A_3hdd.pdb-../restrict_domains/Homeobox_new/C_1k61.pdb	S max: 390.751 
+../restrict_domains/Homeobox_new/A_3hdd.pdb-../restrict_domains/Homeobox_new/C_1mnm.pdb	S max: 733.861 
+../restrict_domains/Homeobox_new/A_3hdd.pdb-../restrict_domains/Homeobox_new/C_1oct.pdb	S max: 823.919 
+../restrict_domains/Homeobox_new/A_3hdd.pdb-../restrict_domains/Homeobox_new/D_1apl.pdb	S max: 482.106 
+../restrict_domains/Homeobox_new/A_3hdd.pdb-../restrict_domains/Homeobox_new/D_1hdd.pdb	S max: 482.814 
+../restrict_domains/Homeobox_new/A_3hdd.pdb-../restrict_domains/Homeobox_new/D_1k61.pdb	S max: 446.41 
+../restrict_domains/Homeobox_new/A_3hdd.pdb-../restrict_domains/Homeobox_new/D_1mnm.pdb	S max: 616.327 
+../restrict_domains/Homeobox_new/A_3hdd.pdb-../restrict_domains/Homeobox_new/P_1ahd.pdb	S max: 392.403 
+../restrict_domains/Homeobox_new/A_3hdd.pdb-../restrict_domains/Homeobox_new/P_1lfu.pdb	S max: 328.393 
+../restrict_domains/Homeobox_new/A_3hdd.pdb-../restrict_domains/Homeobox_new/P_1nk2.pdb	S max: 258.024 
+../restrict_domains/Homeobox_new/A_3hdd.pdb-../restrict_domains/Homeobox_new/P_1nk3.pdb	S max: 427.066 
+../restrict_domains/Homeobox_new/A_3hdd.pdb-../restrict_domains/Homeobox_new/P_1zq3.pdb	S max: 366.804 
+../restrict_domains/Homeobox_new/A_9ant.pdb-../restrict_domains/Homeobox_new/A_9ant.pdb	S max: 6187.46 
+../restrict_domains/Homeobox_new/A_9ant.pdb-../restrict_domains/Homeobox_new/B_1akh.pdb	S max: 665.263 
+../restrict_domains/Homeobox_new/A_9ant.pdb-../restrict_domains/Homeobox_new/B_1au7.pdb	S max: 563.589 
+../restrict_domains/Homeobox_new/A_9ant.pdb-../restrict_domains/Homeobox_new/B_1b72.pdb	S max: 1072.35 
+../restrict_domains/Homeobox_new/A_9ant.pdb-../restrict_domains/Homeobox_new/B_1b8i.pdb	S max: 802.236 
+../restrict_domains/Homeobox_new/A_9ant.pdb-../restrict_domains/Homeobox_new/B_1cqt.pdb	S max: 459.396 
+../restrict_domains/Homeobox_new/A_9ant.pdb-../restrict_domains/Homeobox_new/B_1du0.pdb	S max: 316.165 
+../restrict_domains/Homeobox_new/A_9ant.pdb-../restrict_domains/Homeobox_new/B_1fjl.pdb	Error: none_c
+../restrict_domains/Homeobox_new/A_9ant.pdb-../restrict_domains/Homeobox_new/B_1hf0.pdb	S max: 818.244 
+../restrict_domains/Homeobox_new/A_9ant.pdb-../restrict_domains/Homeobox_new/B_1jgg.pdb	S max: 293.349 
+../restrict_domains/Homeobox_new/A_9ant.pdb-../restrict_domains/Homeobox_new/B_1k61.pdb	S max: 655.718 
+../restrict_domains/Homeobox_new/A_9ant.pdb-../restrict_domains/Homeobox_new/B_1le8.pdb	S max: 322.037 
+../restrict_domains/Homeobox_new/A_9ant.pdb-../restrict_domains/Homeobox_new/B_1puf.pdb	S max: 873.407 
+../restrict_domains/Homeobox_new/A_9ant.pdb-../restrict_domains/Homeobox_new/B_1yrn.pdb	S max: 526.403 
+../restrict_domains/Homeobox_new/A_9ant.pdb-../restrict_domains/Homeobox_new/B_2hdd.pdb	S max: 202.792 
+../restrict_domains/Homeobox_new/A_9ant.pdb-../restrict_domains/Homeobox_new/B_2r5y.pdb	S max: 766.961 
+../restrict_domains/Homeobox_new/A_9ant.pdb-../restrict_domains/Homeobox_new/B_2r5z.pdb	S max: 929.973 
+../restrict_domains/Homeobox_new/A_9ant.pdb-../restrict_domains/Homeobox_new/B_3hdd.pdb	S max: 385.023 
+../restrict_domains/Homeobox_new/A_9ant.pdb-../restrict_domains/Homeobox_new/B_9ant.pdb	S max: 1553.46 
+../restrict_domains/Homeobox_new/A_9ant.pdb-../restrict_domains/Homeobox_new/C_1apl.pdb	S max: 260.722 
+../restrict_domains/Homeobox_new/A_9ant.pdb-../restrict_domains/Homeobox_new/C_1e3o.pdb	Error: none_c
+../restrict_domains/Homeobox_new/A_9ant.pdb-../restrict_domains/Homeobox_new/C_1gt0.pdb	S max: 573.877 
+../restrict_domains/Homeobox_new/A_9ant.pdb-../restrict_domains/Homeobox_new/C_1hdd.pdb	S max: 849.411 
+../restrict_domains/Homeobox_new/A_9ant.pdb-../restrict_domains/Homeobox_new/C_1k61.pdb	S max: 278.038 
+../restrict_domains/Homeobox_new/A_9ant.pdb-../restrict_domains/Homeobox_new/C_1mnm.pdb	S max: 681.5 
+../restrict_domains/Homeobox_new/A_9ant.pdb-../restrict_domains/Homeobox_new/C_1oct.pdb	S max: 678.683 
+../restrict_domains/Homeobox_new/A_9ant.pdb-../restrict_domains/Homeobox_new/D_1apl.pdb	S max: 419.21 
+../restrict_domains/Homeobox_new/A_9ant.pdb-../restrict_domains/Homeobox_new/D_1hdd.pdb	S max: 279.808 
+../restrict_domains/Homeobox_new/A_9ant.pdb-../restrict_domains/Homeobox_new/D_1k61.pdb	S max: 484.842 
+../restrict_domains/Homeobox_new/A_9ant.pdb-../restrict_domains/Homeobox_new/D_1mnm.pdb	S max: 486.92 
+../restrict_domains/Homeobox_new/A_9ant.pdb-../restrict_domains/Homeobox_new/P_1ahd.pdb	S max: 319.752 
+../restrict_domains/Homeobox_new/A_9ant.pdb-../restrict_domains/Homeobox_new/P_1lfu.pdb	S max: 376.48 
+../restrict_domains/Homeobox_new/A_9ant.pdb-../restrict_domains/Homeobox_new/P_1nk2.pdb	S max: 161.84 
+../restrict_domains/Homeobox_new/A_9ant.pdb-../restrict_domains/Homeobox_new/P_1nk3.pdb	S max: 357.321 
+../restrict_domains/Homeobox_new/A_9ant.pdb-../restrict_domains/Homeobox_new/P_1zq3.pdb	S max: 404.701 
+../restrict_domains/Homeobox_new/B_1akh.pdb-../restrict_domains/Homeobox_new/B_1akh.pdb	S max: 12479.2 
+../restrict_domains/Homeobox_new/B_1akh.pdb-../restrict_domains/Homeobox_new/B_1au7.pdb	S max: 503.927 
+../restrict_domains/Homeobox_new/B_1akh.pdb-../restrict_domains/Homeobox_new/B_1b72.pdb	S max: 930.151 
+../restrict_domains/Homeobox_new/B_1akh.pdb-../restrict_domains/Homeobox_new/B_1b8i.pdb	S max: 396.487 
+../restrict_domains/Homeobox_new/B_1akh.pdb-../restrict_domains/Homeobox_new/B_1cqt.pdb	S max: 595.843 
+../restrict_domains/Homeobox_new/B_1akh.pdb-../restrict_domains/Homeobox_new/B_1du0.pdb	S max: 430.279 
+../restrict_domains/Homeobox_new/B_1akh.pdb-../restrict_domains/Homeobox_new/B_1fjl.pdb	Error: none_c
+../restrict_domains/Homeobox_new/B_1akh.pdb-../restrict_domains/Homeobox_new/B_1hf0.pdb	S max: 601.786 
+../restrict_domains/Homeobox_new/B_1akh.pdb-../restrict_domains/Homeobox_new/B_1jgg.pdb	S max: 418.395 
+../restrict_domains/Homeobox_new/B_1akh.pdb-../restrict_domains/Homeobox_new/B_1k61.pdb	S max: 1123.16 
+../restrict_domains/Homeobox_new/B_1akh.pdb-../restrict_domains/Homeobox_new/B_1le8.pdb	S max: 1983.31 
+../restrict_domains/Homeobox_new/B_1akh.pdb-../restrict_domains/Homeobox_new/B_1puf.pdb	S max: 835.702 
+../restrict_domains/Homeobox_new/B_1akh.pdb-../restrict_domains/Homeobox_new/B_1yrn.pdb	S max: 3977.81 
+../restrict_domains/Homeobox_new/B_1akh.pdb-../restrict_domains/Homeobox_new/B_2hdd.pdb	S max: 180.154 
+../restrict_domains/Homeobox_new/B_1akh.pdb-../restrict_domains/Homeobox_new/B_2r5y.pdb	S max: 551.968 
+../restrict_domains/Homeobox_new/B_1akh.pdb-../restrict_domains/Homeobox_new/B_2r5z.pdb	S max: 630.872 
+../restrict_domains/Homeobox_new/B_1akh.pdb-../restrict_domains/Homeobox_new/B_3hdd.pdb	S max: 283.316 
+../restrict_domains/Homeobox_new/B_1akh.pdb-../restrict_domains/Homeobox_new/B_9ant.pdb	S max: 718.642 
+../restrict_domains/Homeobox_new/B_1akh.pdb-../restrict_domains/Homeobox_new/C_1apl.pdb	S max: 830.747 
+../restrict_domains/Homeobox_new/B_1akh.pdb-../restrict_domains/Homeobox_new/C_1e3o.pdb	Error: none_c
+../restrict_domains/Homeobox_new/B_1akh.pdb-../restrict_domains/Homeobox_new/C_1gt0.pdb	S max: 430.458 
+../restrict_domains/Homeobox_new/B_1akh.pdb-../restrict_domains/Homeobox_new/C_1hdd.pdb	S max: 383.309 
+../restrict_domains/Homeobox_new/B_1akh.pdb-../restrict_domains/Homeobox_new/C_1k61.pdb	S max: 531.846 
+../restrict_domains/Homeobox_new/B_1akh.pdb-../restrict_domains/Homeobox_new/C_1mnm.pdb	S max: 1375.53 
+../restrict_domains/Homeobox_new/B_1akh.pdb-../restrict_domains/Homeobox_new/C_1oct.pdb	S max: 531.739 
+../restrict_domains/Homeobox_new/B_1akh.pdb-../restrict_domains/Homeobox_new/D_1apl.pdb	S max: 669.013 
+../restrict_domains/Homeobox_new/B_1akh.pdb-../restrict_domains/Homeobox_new/D_1hdd.pdb	S max: 238.409 
+../restrict_domains/Homeobox_new/B_1akh.pdb-../restrict_domains/Homeobox_new/D_1k61.pdb	S max: 482.28 
+../restrict_domains/Homeobox_new/B_1akh.pdb-../restrict_domains/Homeobox_new/D_1mnm.pdb	S max: 528.162 
+../restrict_domains/Homeobox_new/B_1akh.pdb-../restrict_domains/Homeobox_new/P_1ahd.pdb	S max: 394.9 
+../restrict_domains/Homeobox_new/B_1akh.pdb-../restrict_domains/Homeobox_new/P_1lfu.pdb	S max: 349.285 
+../restrict_domains/Homeobox_new/B_1akh.pdb-../restrict_domains/Homeobox_new/P_1nk2.pdb	S max: 86.4074 
+../restrict_domains/Homeobox_new/B_1akh.pdb-../restrict_domains/Homeobox_new/P_1nk3.pdb	S max: 374.297 
+../restrict_domains/Homeobox_new/B_1akh.pdb-../restrict_domains/Homeobox_new/P_1zq3.pdb	S max: 269.673 
+../restrict_domains/Homeobox_new/B_1au7.pdb-../restrict_domains/Homeobox_new/B_1au7.pdb	S max: 11039.1 
+../restrict_domains/Homeobox_new/B_1au7.pdb-../restrict_domains/Homeobox_new/B_1b72.pdb	S max: 1015.71 
+../restrict_domains/Homeobox_new/B_1au7.pdb-../restrict_domains/Homeobox_new/B_1b8i.pdb	S max: 449.151 
+../restrict_domains/Homeobox_new/B_1au7.pdb-../restrict_domains/Homeobox_new/B_1cqt.pdb	S max: 519.468 
+../restrict_domains/Homeobox_new/B_1au7.pdb-../restrict_domains/Homeobox_new/B_1du0.pdb	S max: 364.832 
+../restrict_domains/Homeobox_new/B_1au7.pdb-../restrict_domains/Homeobox_new/B_1fjl.pdb	Error: none_c
+../restrict_domains/Homeobox_new/B_1au7.pdb-../restrict_domains/Homeobox_new/B_1hf0.pdb	S max: 504.033 
+../restrict_domains/Homeobox_new/B_1au7.pdb-../restrict_domains/Homeobox_new/B_1jgg.pdb	S max: 157.03 
+../restrict_domains/Homeobox_new/B_1au7.pdb-../restrict_domains/Homeobox_new/B_1k61.pdb	S max: 593.743 
+../restrict_domains/Homeobox_new/B_1au7.pdb-../restrict_domains/Homeobox_new/B_1le8.pdb	S max: 394.026 
+../restrict_domains/Homeobox_new/B_1au7.pdb-../restrict_domains/Homeobox_new/B_1puf.pdb	S max: 730.385 
+../restrict_domains/Homeobox_new/B_1au7.pdb-../restrict_domains/Homeobox_new/B_1yrn.pdb	S max: 578.497 
+../restrict_domains/Homeobox_new/B_1au7.pdb-../restrict_domains/Homeobox_new/B_2hdd.pdb	S max: 272.213 
+../restrict_domains/Homeobox_new/B_1au7.pdb-../restrict_domains/Homeobox_new/B_2r5y.pdb	S max: 568.192 
+../restrict_domains/Homeobox_new/B_1au7.pdb-../restrict_domains/Homeobox_new/B_2r5z.pdb	S max: 623.433 
+../restrict_domains/Homeobox_new/B_1au7.pdb-../restrict_domains/Homeobox_new/B_3hdd.pdb	S max: 417.659 
+../restrict_domains/Homeobox_new/B_1au7.pdb-../restrict_domains/Homeobox_new/B_9ant.pdb	S max: 931.768 
+../restrict_domains/Homeobox_new/B_1au7.pdb-../restrict_domains/Homeobox_new/C_1apl.pdb	S max: 265.034 
+../restrict_domains/Homeobox_new/B_1au7.pdb-../restrict_domains/Homeobox_new/C_1e3o.pdb	Error: none_c
+../restrict_domains/Homeobox_new/B_1au7.pdb-../restrict_domains/Homeobox_new/C_1gt0.pdb	S max: 328.98 
+../restrict_domains/Homeobox_new/B_1au7.pdb-../restrict_domains/Homeobox_new/C_1hdd.pdb	S max: 666.267 
+../restrict_domains/Homeobox_new/B_1au7.pdb-../restrict_domains/Homeobox_new/C_1k61.pdb	S max: 650.74 
+../restrict_domains/Homeobox_new/B_1au7.pdb-../restrict_domains/Homeobox_new/C_1mnm.pdb	S max: 618.721 
+../restrict_domains/Homeobox_new/B_1au7.pdb-../restrict_domains/Homeobox_new/C_1oct.pdb	S max: 669.892 
+../restrict_domains/Homeobox_new/B_1au7.pdb-../restrict_domains/Homeobox_new/D_1apl.pdb	S max: 498.006 
+../restrict_domains/Homeobox_new/B_1au7.pdb-../restrict_domains/Homeobox_new/D_1hdd.pdb	S max: 460.826 
+../restrict_domains/Homeobox_new/B_1au7.pdb-../restrict_domains/Homeobox_new/D_1k61.pdb	S max: 369.088 
+../restrict_domains/Homeobox_new/B_1au7.pdb-../restrict_domains/Homeobox_new/D_1mnm.pdb	S max: 456.605 
+../restrict_domains/Homeobox_new/B_1au7.pdb-../restrict_domains/Homeobox_new/P_1ahd.pdb	S max: 358.729 
+../restrict_domains/Homeobox_new/B_1au7.pdb-../restrict_domains/Homeobox_new/P_1lfu.pdb	S max: 371.968 
+../restrict_domains/Homeobox_new/B_1au7.pdb-../restrict_domains/Homeobox_new/P_1nk2.pdb	S max: 60.3998 
+../restrict_domains/Homeobox_new/B_1au7.pdb-../restrict_domains/Homeobox_new/P_1nk3.pdb	S max: 452.644 
+../restrict_domains/Homeobox_new/B_1au7.pdb-../restrict_domains/Homeobox_new/P_1zq3.pdb	S max: 323.799 
+../restrict_domains/Homeobox_new/B_1b72.pdb-../restrict_domains/Homeobox_new/B_1b72.pdb	S max: 11304.3 
+../restrict_domains/Homeobox_new/B_1b72.pdb-../restrict_domains/Homeobox_new/B_1b8i.pdb	S max: 968.988 
+../restrict_domains/Homeobox_new/B_1b72.pdb-../restrict_domains/Homeobox_new/B_1cqt.pdb	S max: 829.987 
+../restrict_domains/Homeobox_new/B_1b72.pdb-../restrict_domains/Homeobox_new/B_1du0.pdb	S max: 348.106 
+../restrict_domains/Homeobox_new/B_1b72.pdb-../restrict_domains/Homeobox_new/B_1fjl.pdb	Error: none_c
+../restrict_domains/Homeobox_new/B_1b72.pdb-../restrict_domains/Homeobox_new/B_1hf0.pdb	S max: 924.809 
+../restrict_domains/Homeobox_new/B_1b72.pdb-../restrict_domains/Homeobox_new/B_1jgg.pdb	S max: 473.105 
+../restrict_domains/Homeobox_new/B_1b72.pdb-../restrict_domains/Homeobox_new/B_1k61.pdb	S max: 860.704 
+../restrict_domains/Homeobox_new/B_1b72.pdb-../restrict_domains/Homeobox_new/B_1le8.pdb	S max: 841.39 
+../restrict_domains/Homeobox_new/B_1b72.pdb-../restrict_domains/Homeobox_new/B_1puf.pdb	S max: 1705.75 
+../restrict_domains/Homeobox_new/B_1b72.pdb-../restrict_domains/Homeobox_new/B_1yrn.pdb	S max: 1070.91 
+../restrict_domains/Homeobox_new/B_1b72.pdb-../restrict_domains/Homeobox_new/B_2hdd.pdb	S max: 282.592 
+../restrict_domains/Homeobox_new/B_1b72.pdb-../restrict_domains/Homeobox_new/B_2r5y.pdb	S max: 2001.54 
+../restrict_domains/Homeobox_new/B_1b72.pdb-../restrict_domains/Homeobox_new/B_2r5z.pdb	S max: 1329.01 
+../restrict_domains/Homeobox_new/B_1b72.pdb-../restrict_domains/Homeobox_new/B_3hdd.pdb	S max: 311.958 
+../restrict_domains/Homeobox_new/B_1b72.pdb-../restrict_domains/Homeobox_new/B_9ant.pdb	S max: 944.329 
+../restrict_domains/Homeobox_new/B_1b72.pdb-../restrict_domains/Homeobox_new/C_1apl.pdb	S max: 510.5 
+../restrict_domains/Homeobox_new/B_1b72.pdb-../restrict_domains/Homeobox_new/C_1e3o.pdb	Error: none_c
+../restrict_domains/Homeobox_new/B_1b72.pdb-../restrict_domains/Homeobox_new/C_1gt0.pdb	S max: 761.418 
+../restrict_domains/Homeobox_new/B_1b72.pdb-../restrict_domains/Homeobox_new/C_1hdd.pdb	S max: 900.528 
+../restrict_domains/Homeobox_new/B_1b72.pdb-../restrict_domains/Homeobox_new/C_1k61.pdb	S max: 625.903 
+../restrict_domains/Homeobox_new/B_1b72.pdb-../restrict_domains/Homeobox_new/C_1mnm.pdb	S max: 837.697 
+../restrict_domains/Homeobox_new/B_1b72.pdb-../restrict_domains/Homeobox_new/C_1oct.pdb	S max: 878.061 
+../restrict_domains/Homeobox_new/B_1b72.pdb-../restrict_domains/Homeobox_new/D_1apl.pdb	S max: 593.907 
+../restrict_domains/Homeobox_new/B_1b72.pdb-../restrict_domains/Homeobox_new/D_1hdd.pdb	S max: 305.387 
+../restrict_domains/Homeobox_new/B_1b72.pdb-../restrict_domains/Homeobox_new/D_1k61.pdb	S max: 550.899 
+../restrict_domains/Homeobox_new/B_1b72.pdb-../restrict_domains/Homeobox_new/D_1mnm.pdb	S max: 778.973 
+../restrict_domains/Homeobox_new/B_1b72.pdb-../restrict_domains/Homeobox_new/P_1ahd.pdb	S max: 423.587 
+../restrict_domains/Homeobox_new/B_1b72.pdb-../restrict_domains/Homeobox_new/P_1lfu.pdb	S max: 625.75 
+../restrict_domains/Homeobox_new/B_1b72.pdb-../restrict_domains/Homeobox_new/P_1nk2.pdb	S max: 405.165 
+../restrict_domains/Homeobox_new/B_1b72.pdb-../restrict_domains/Homeobox_new/P_1nk3.pdb	S max: 648.496 
+../restrict_domains/Homeobox_new/B_1b72.pdb-../restrict_domains/Homeobox_new/P_1zq3.pdb	S max: 467.636 
+../restrict_domains/Homeobox_new/B_1b8i.pdb-../restrict_domains/Homeobox_new/B_1b8i.pdb	S max: 6209.48 
+../restrict_domains/Homeobox_new/B_1b8i.pdb-../restrict_domains/Homeobox_new/B_1cqt.pdb	S max: 290.999 
+../restrict_domains/Homeobox_new/B_1b8i.pdb-../restrict_domains/Homeobox_new/B_1du0.pdb	S max: 170.947 
+../restrict_domains/Homeobox_new/B_1b8i.pdb-../restrict_domains/Homeobox_new/B_1fjl.pdb	Error: none_c
+../restrict_domains/Homeobox_new/B_1b8i.pdb-../restrict_domains/Homeobox_new/B_1hf0.pdb	S max: 455.283 
+../restrict_domains/Homeobox_new/B_1b8i.pdb-../restrict_domains/Homeobox_new/B_1jgg.pdb	S max: 398.34 
+../restrict_domains/Homeobox_new/B_1b8i.pdb-../restrict_domains/Homeobox_new/B_1k61.pdb	S max: 532.433 
+../restrict_domains/Homeobox_new/B_1b8i.pdb-../restrict_domains/Homeobox_new/B_1le8.pdb	S max: 534.722 
+../restrict_domains/Homeobox_new/B_1b8i.pdb-../restrict_domains/Homeobox_new/B_1puf.pdb	S max: 1075.96 
+../restrict_domains/Homeobox_new/B_1b8i.pdb-../restrict_domains/Homeobox_new/B_1yrn.pdb	S max: 512.043 
+../restrict_domains/Homeobox_new/B_1b8i.pdb-../restrict_domains/Homeobox_new/B_2hdd.pdb	S max: 200.203 
+../restrict_domains/Homeobox_new/B_1b8i.pdb-../restrict_domains/Homeobox_new/B_2r5y.pdb	S max: 1503.16 
+../restrict_domains/Homeobox_new/B_1b8i.pdb-../restrict_domains/Homeobox_new/B_2r5z.pdb	S max: 1178.7 
+../restrict_domains/Homeobox_new/B_1b8i.pdb-../restrict_domains/Homeobox_new/B_3hdd.pdb	S max: 197.573 
+../restrict_domains/Homeobox_new/B_1b8i.pdb-../restrict_domains/Homeobox_new/B_9ant.pdb	S max: 623.331 
+../restrict_domains/Homeobox_new/B_1b8i.pdb-../restrict_domains/Homeobox_new/C_1apl.pdb	S max: 228.972 
+../restrict_domains/Homeobox_new/B_1b8i.pdb-../restrict_domains/Homeobox_new/C_1e3o.pdb	Error: none_c
+../restrict_domains/Homeobox_new/B_1b8i.pdb-../restrict_domains/Homeobox_new/C_1gt0.pdb	S max: 263.568 
+../restrict_domains/Homeobox_new/B_1b8i.pdb-../restrict_domains/Homeobox_new/C_1hdd.pdb	S max: 596.959 
+../restrict_domains/Homeobox_new/B_1b8i.pdb-../restrict_domains/Homeobox_new/C_1k61.pdb	S max: 348.435 
+../restrict_domains/Homeobox_new/B_1b8i.pdb-../restrict_domains/Homeobox_new/C_1mnm.pdb	S max: 399.662 
+../restrict_domains/Homeobox_new/B_1b8i.pdb-../restrict_domains/Homeobox_new/C_1oct.pdb	S max: 546.797 
+../restrict_domains/Homeobox_new/B_1b8i.pdb-../restrict_domains/Homeobox_new/D_1apl.pdb	S max: 412.853 
+../restrict_domains/Homeobox_new/B_1b8i.pdb-../restrict_domains/Homeobox_new/D_1hdd.pdb	S max: 334.821 
+../restrict_domains/Homeobox_new/B_1b8i.pdb-../restrict_domains/Homeobox_new/D_1k61.pdb	S max: 504.386 
+../restrict_domains/Homeobox_new/B_1b8i.pdb-../restrict_domains/Homeobox_new/D_1mnm.pdb	S max: 403.815 
+../restrict_domains/Homeobox_new/B_1b8i.pdb-../restrict_domains/Homeobox_new/P_1ahd.pdb	S max: 220.626 
+../restrict_domains/Homeobox_new/B_1b8i.pdb-../restrict_domains/Homeobox_new/P_1lfu.pdb	S max: 313.067 
+../restrict_domains/Homeobox_new/B_1b8i.pdb-../restrict_domains/Homeobox_new/P_1nk2.pdb	S max: 211.547 
+../restrict_domains/Homeobox_new/B_1b8i.pdb-../restrict_domains/Homeobox_new/P_1nk3.pdb	S max: 481.491 
+../restrict_domains/Homeobox_new/B_1b8i.pdb-../restrict_domains/Homeobox_new/P_1zq3.pdb	S max: 267.355 
+../restrict_domains/Homeobox_new/B_1cqt.pdb-../restrict_domains/Homeobox_new/B_1cqt.pdb	S max: 6565.46 
+../restrict_domains/Homeobox_new/B_1cqt.pdb-../restrict_domains/Homeobox_new/B_1du0.pdb	S max: 78.6891 
+../restrict_domains/Homeobox_new/B_1cqt.pdb-../restrict_domains/Homeobox_new/B_1fjl.pdb	Error: none_c
+../restrict_domains/Homeobox_new/B_1cqt.pdb-../restrict_domains/Homeobox_new/B_1hf0.pdb	S max: 787.007 
+../restrict_domains/Homeobox_new/B_1cqt.pdb-../restrict_domains/Homeobox_new/B_1jgg.pdb	S max: 375.557 
+../restrict_domains/Homeobox_new/B_1cqt.pdb-../restrict_domains/Homeobox_new/B_1k61.pdb	S max: 345.985 
+../restrict_domains/Homeobox_new/B_1cqt.pdb-../restrict_domains/Homeobox_new/B_1le8.pdb	S max: 305.211 
+../restrict_domains/Homeobox_new/B_1cqt.pdb-../restrict_domains/Homeobox_new/B_1puf.pdb	S max: 470.68 
+../restrict_domains/Homeobox_new/B_1cqt.pdb-../restrict_domains/Homeobox_new/B_1yrn.pdb	S max: 378.452 
+../restrict_domains/Homeobox_new/B_1cqt.pdb-../restrict_domains/Homeobox_new/B_2hdd.pdb	S max: 48.611 
+../restrict_domains/Homeobox_new/B_1cqt.pdb-../restrict_domains/Homeobox_new/B_2r5y.pdb	S max: 464.876 
+../restrict_domains/Homeobox_new/B_1cqt.pdb-../restrict_domains/Homeobox_new/B_2r5z.pdb	S max: 514.414 
+../restrict_domains/Homeobox_new/B_1cqt.pdb-../restrict_domains/Homeobox_new/B_3hdd.pdb	S max: 91.2112 
+../restrict_domains/Homeobox_new/B_1cqt.pdb-../restrict_domains/Homeobox_new/B_9ant.pdb	S max: 622.604 
+../restrict_domains/Homeobox_new/B_1cqt.pdb-../restrict_domains/Homeobox_new/C_1apl.pdb	S max: 140.576 
+../restrict_domains/Homeobox_new/B_1cqt.pdb-../restrict_domains/Homeobox_new/C_1e3o.pdb	Error: none_c
+../restrict_domains/Homeobox_new/B_1cqt.pdb-../restrict_domains/Homeobox_new/C_1gt0.pdb	S max: 808.571 
+../restrict_domains/Homeobox_new/B_1cqt.pdb-../restrict_domains/Homeobox_new/C_1hdd.pdb	S max: 331.619 
+../restrict_domains/Homeobox_new/B_1cqt.pdb-../restrict_domains/Homeobox_new/C_1k61.pdb	S max: 354.917 
+../restrict_domains/Homeobox_new/B_1cqt.pdb-../restrict_domains/Homeobox_new/C_1mnm.pdb	S max: 502.03 
+../restrict_domains/Homeobox_new/B_1cqt.pdb-../restrict_domains/Homeobox_new/C_1oct.pdb	S max: 740.446 
+../restrict_domains/Homeobox_new/B_1cqt.pdb-../restrict_domains/Homeobox_new/D_1apl.pdb	S max: 325.949 
+../restrict_domains/Homeobox_new/B_1cqt.pdb-../restrict_domains/Homeobox_new/D_1hdd.pdb	S max: 102.058 
+../restrict_domains/Homeobox_new/B_1cqt.pdb-../restrict_domains/Homeobox_new/D_1k61.pdb	S max: 307.303 
+../restrict_domains/Homeobox_new/B_1cqt.pdb-../restrict_domains/Homeobox_new/D_1mnm.pdb	S max: 432.626 
+../restrict_domains/Homeobox_new/B_1cqt.pdb-../restrict_domains/Homeobox_new/P_1ahd.pdb	S max: 129.66 
+../restrict_domains/Homeobox_new/B_1cqt.pdb-../restrict_domains/Homeobox_new/P_1lfu.pdb	S max: 483.408 
+../restrict_domains/Homeobox_new/B_1cqt.pdb-../restrict_domains/Homeobox_new/P_1nk2.pdb	S max: 161.471 
+../restrict_domains/Homeobox_new/B_1cqt.pdb-../restrict_domains/Homeobox_new/P_1nk3.pdb	S max: 437.8 
+../restrict_domains/Homeobox_new/B_1cqt.pdb-../restrict_domains/Homeobox_new/P_1zq3.pdb	S max: 283.754 
+../restrict_domains/Homeobox_new/B_1du0.pdb-../restrict_domains/Homeobox_new/B_1du0.pdb	S max: 8839.23 
+../restrict_domains/Homeobox_new/B_1du0.pdb-../restrict_domains/Homeobox_new/B_1fjl.pdb	Error: none_c
+../restrict_domains/Homeobox_new/B_1du0.pdb-../restrict_domains/Homeobox_new/B_1hf0.pdb	S max: 228.646 
+../restrict_domains/Homeobox_new/B_1du0.pdb-../restrict_domains/Homeobox_new/B_1jgg.pdb	S max: 305.271 
+../restrict_domains/Homeobox_new/B_1du0.pdb-../restrict_domains/Homeobox_new/B_1k61.pdb	S max: 245.03 
+../restrict_domains/Homeobox_new/B_1du0.pdb-../restrict_domains/Homeobox_new/B_1le8.pdb	S max: 247.579 
+../restrict_domains/Homeobox_new/B_1du0.pdb-../restrict_domains/Homeobox_new/B_1puf.pdb	S max: 296.873 
+../restrict_domains/Homeobox_new/B_1du0.pdb-../restrict_domains/Homeobox_new/B_1yrn.pdb	S max: 355.894 
+../restrict_domains/Homeobox_new/B_1du0.pdb-../restrict_domains/Homeobox_new/B_2hdd.pdb	S max: 1376.72 
+../restrict_domains/Homeobox_new/B_1du0.pdb-../restrict_domains/Homeobox_new/B_2r5y.pdb	S max: 386.059 
+../restrict_domains/Homeobox_new/B_1du0.pdb-../restrict_domains/Homeobox_new/B_2r5z.pdb	S max: 215.058 
+../restrict_domains/Homeobox_new/B_1du0.pdb-../restrict_domains/Homeobox_new/B_3hdd.pdb	S max: 1306.75 
+../restrict_domains/Homeobox_new/B_1du0.pdb-../restrict_domains/Homeobox_new/B_9ant.pdb	S max: 476.563 
+../restrict_domains/Homeobox_new/B_1du0.pdb-../restrict_domains/Homeobox_new/C_1apl.pdb	S max: 187.778 
+../restrict_domains/Homeobox_new/B_1du0.pdb-../restrict_domains/Homeobox_new/C_1e3o.pdb	Error: none_c
+../restrict_domains/Homeobox_new/B_1du0.pdb-../restrict_domains/Homeobox_new/C_1gt0.pdb	S max: 68.3293 
+../restrict_domains/Homeobox_new/B_1du0.pdb-../restrict_domains/Homeobox_new/C_1hdd.pdb	S max: 302.505 
+../restrict_domains/Homeobox_new/B_1du0.pdb-../restrict_domains/Homeobox_new/C_1k61.pdb	S max: 106.232 
+../restrict_domains/Homeobox_new/B_1du0.pdb-../restrict_domains/Homeobox_new/C_1mnm.pdb	S max: 240.998 
+../restrict_domains/Homeobox_new/B_1du0.pdb-../restrict_domains/Homeobox_new/C_1oct.pdb	S max: 216.392 
+../restrict_domains/Homeobox_new/B_1du0.pdb-../restrict_domains/Homeobox_new/D_1apl.pdb	S max: 171.433 
+../restrict_domains/Homeobox_new/B_1du0.pdb-../restrict_domains/Homeobox_new/D_1hdd.pdb	S max: 603.454 
+../restrict_domains/Homeobox_new/B_1du0.pdb-../restrict_domains/Homeobox_new/D_1k61.pdb	S max: 182.691 
+../restrict_domains/Homeobox_new/B_1du0.pdb-../restrict_domains/Homeobox_new/D_1mnm.pdb	S max: 177.617 
+../restrict_domains/Homeobox_new/B_1du0.pdb-../restrict_domains/Homeobox_new/P_1ahd.pdb	S max: 197.709 
+../restrict_domains/Homeobox_new/B_1du0.pdb-../restrict_domains/Homeobox_new/P_1lfu.pdb	S max: 218.613 
+../restrict_domains/Homeobox_new/B_1du0.pdb-../restrict_domains/Homeobox_new/P_1nk2.pdb	S max: 46.2579 
+../restrict_domains/Homeobox_new/B_1du0.pdb-../restrict_domains/Homeobox_new/P_1nk3.pdb	S max: 91.2562 
+../restrict_domains/Homeobox_new/B_1du0.pdb-../restrict_domains/Homeobox_new/P_1zq3.pdb	S max: 89.8292 
+../restrict_domains/Homeobox_new/B_1fjl.pdb-../restrict_domains/Homeobox_new/B_1fjl.pdb	Error: none_c
+../restrict_domains/Homeobox_new/B_1fjl.pdb-../restrict_domains/Homeobox_new/B_1hf0.pdb	Error: none_c
+../restrict_domains/Homeobox_new/B_1fjl.pdb-../restrict_domains/Homeobox_new/B_1jgg.pdb	Error: none_c
+../restrict_domains/Homeobox_new/B_1fjl.pdb-../restrict_domains/Homeobox_new/B_1k61.pdb	Error: none_c
+../restrict_domains/Homeobox_new/B_1fjl.pdb-../restrict_domains/Homeobox_new/B_1le8.pdb	Error: none_c
+../restrict_domains/Homeobox_new/B_1fjl.pdb-../restrict_domains/Homeobox_new/B_1puf.pdb	Error: none_c
+../restrict_domains/Homeobox_new/B_1fjl.pdb-../restrict_domains/Homeobox_new/B_1yrn.pdb	Error: none_c
+../restrict_domains/Homeobox_new/B_1fjl.pdb-../restrict_domains/Homeobox_new/B_2hdd.pdb	Error: none_c
+../restrict_domains/Homeobox_new/B_1fjl.pdb-../restrict_domains/Homeobox_new/B_2r5y.pdb	Error: none_c
+../restrict_domains/Homeobox_new/B_1fjl.pdb-../restrict_domains/Homeobox_new/B_2r5z.pdb	Error: none_c
+../restrict_domains/Homeobox_new/B_1fjl.pdb-../restrict_domains/Homeobox_new/B_3hdd.pdb	Error: none_c
+../restrict_domains/Homeobox_new/B_1fjl.pdb-../restrict_domains/Homeobox_new/B_9ant.pdb	Error: none_c
+../restrict_domains/Homeobox_new/B_1fjl.pdb-../restrict_domains/Homeobox_new/C_1apl.pdb	Error: none_c
+../restrict_domains/Homeobox_new/B_1fjl.pdb-../restrict_domains/Homeobox_new/C_1e3o.pdb	Error: none_c
+../restrict_domains/Homeobox_new/B_1fjl.pdb-../restrict_domains/Homeobox_new/C_1gt0.pdb	Error: none_c
+../restrict_domains/Homeobox_new/B_1fjl.pdb-../restrict_domains/Homeobox_new/C_1hdd.pdb	Error: none_c
+../restrict_domains/Homeobox_new/B_1fjl.pdb-../restrict_domains/Homeobox_new/C_1k61.pdb	Error: none_c
+../restrict_domains/Homeobox_new/B_1fjl.pdb-../restrict_domains/Homeobox_new/C_1mnm.pdb	Error: none_c
+../restrict_domains/Homeobox_new/B_1fjl.pdb-../restrict_domains/Homeobox_new/C_1oct.pdb	Error: none_c
+../restrict_domains/Homeobox_new/B_1fjl.pdb-../restrict_domains/Homeobox_new/D_1apl.pdb	Error: none_c
+../restrict_domains/Homeobox_new/B_1fjl.pdb-../restrict_domains/Homeobox_new/D_1hdd.pdb	Error: none_c
+../restrict_domains/Homeobox_new/B_1fjl.pdb-../restrict_domains/Homeobox_new/D_1k61.pdb	Error: none_c
+../restrict_domains/Homeobox_new/B_1fjl.pdb-../restrict_domains/Homeobox_new/D_1mnm.pdb	Error: none_c
+../restrict_domains/Homeobox_new/B_1fjl.pdb-../restrict_domains/Homeobox_new/P_1ahd.pdb	Error: none_c
+../restrict_domains/Homeobox_new/B_1fjl.pdb-../restrict_domains/Homeobox_new/P_1lfu.pdb	Error: none_c
+../restrict_domains/Homeobox_new/B_1fjl.pdb-../restrict_domains/Homeobox_new/P_1nk2.pdb	Error: none_c
+../restrict_domains/Homeobox_new/B_1fjl.pdb-../restrict_domains/Homeobox_new/P_1nk3.pdb	Error: none_c
+../restrict_domains/Homeobox_new/B_1fjl.pdb-../restrict_domains/Homeobox_new/P_1zq3.pdb	Error: none_c
+../restrict_domains/Homeobox_new/B_1hf0.pdb-../restrict_domains/Homeobox_new/B_1hf0.pdb	S max: 9659.19 
+../restrict_domains/Homeobox_new/B_1hf0.pdb-../restrict_domains/Homeobox_new/B_1jgg.pdb	S max: 406.258 
+../restrict_domains/Homeobox_new/B_1hf0.pdb-../restrict_domains/Homeobox_new/B_1k61.pdb	S max: 623.706 
+../restrict_domains/Homeobox_new/B_1hf0.pdb-../restrict_domains/Homeobox_new/B_1le8.pdb	S max: 439.154 
+../restrict_domains/Homeobox_new/B_1hf0.pdb-../restrict_domains/Homeobox_new/B_1puf.pdb	S max: 723.36 
+../restrict_domains/Homeobox_new/B_1hf0.pdb-../restrict_domains/Homeobox_new/B_1yrn.pdb	S max: 511.072 
+../restrict_domains/Homeobox_new/B_1hf0.pdb-../restrict_domains/Homeobox_new/B_2hdd.pdb	S max: 175.364 
+../restrict_domains/Homeobox_new/B_1hf0.pdb-../restrict_domains/Homeobox_new/B_2r5y.pdb	S max: 678.403 
+../restrict_domains/Homeobox_new/B_1hf0.pdb-../restrict_domains/Homeobox_new/B_2r5z.pdb	S max: 710.407 
+../restrict_domains/Homeobox_new/B_1hf0.pdb-../restrict_domains/Homeobox_new/B_3hdd.pdb	S max: 205.768 
+../restrict_domains/Homeobox_new/B_1hf0.pdb-../restrict_domains/Homeobox_new/B_9ant.pdb	S max: 652.633 
+../restrict_domains/Homeobox_new/B_1hf0.pdb-../restrict_domains/Homeobox_new/C_1apl.pdb	S max: 176.429 
+../restrict_domains/Homeobox_new/B_1hf0.pdb-../restrict_domains/Homeobox_new/C_1e3o.pdb	Error: none_c
+../restrict_domains/Homeobox_new/B_1hf0.pdb-../restrict_domains/Homeobox_new/C_1gt0.pdb	S max: 1126.45 
+../restrict_domains/Homeobox_new/B_1hf0.pdb-../restrict_domains/Homeobox_new/C_1hdd.pdb	S max: 459.565 
+../restrict_domains/Homeobox_new/B_1hf0.pdb-../restrict_domains/Homeobox_new/C_1k61.pdb	S max: 433.587 
+../restrict_domains/Homeobox_new/B_1hf0.pdb-../restrict_domains/Homeobox_new/C_1mnm.pdb	S max: 681.151 
+../restrict_domains/Homeobox_new/B_1hf0.pdb-../restrict_domains/Homeobox_new/C_1oct.pdb	S max: 1095.99 
+../restrict_domains/Homeobox_new/B_1hf0.pdb-../restrict_domains/Homeobox_new/D_1apl.pdb	S max: 378.648 
+../restrict_domains/Homeobox_new/B_1hf0.pdb-../restrict_domains/Homeobox_new/D_1hdd.pdb	S max: 79.6733 
+../restrict_domains/Homeobox_new/B_1hf0.pdb-../restrict_domains/Homeobox_new/D_1k61.pdb	S max: 223.507 
+../restrict_domains/Homeobox_new/B_1hf0.pdb-../restrict_domains/Homeobox_new/D_1mnm.pdb	S max: 463.09 
+../restrict_domains/Homeobox_new/B_1hf0.pdb-../restrict_domains/Homeobox_new/P_1ahd.pdb	S max: 257.526 
+../restrict_domains/Homeobox_new/B_1hf0.pdb-../restrict_domains/Homeobox_new/P_1lfu.pdb	S max: 293.391 
+../restrict_domains/Homeobox_new/B_1hf0.pdb-../restrict_domains/Homeobox_new/P_1nk2.pdb	S max: 221.611 
+../restrict_domains/Homeobox_new/B_1hf0.pdb-../restrict_domains/Homeobox_new/P_1nk3.pdb	S max: 572.521 
+../restrict_domains/Homeobox_new/B_1hf0.pdb-../restrict_domains/Homeobox_new/P_1zq3.pdb	S max: 285.622 
+../restrict_domains/Homeobox_new/B_1jgg.pdb-../restrict_domains/Homeobox_new/B_1jgg.pdb	S max: 4509.61 
+../restrict_domains/Homeobox_new/B_1jgg.pdb-../restrict_domains/Homeobox_new/B_1k61.pdb	S max: 333.617 
+../restrict_domains/Homeobox_new/B_1jgg.pdb-../restrict_domains/Homeobox_new/B_1le8.pdb	S max: 307.669 
+../restrict_domains/Homeobox_new/B_1jgg.pdb-../restrict_domains/Homeobox_new/B_1puf.pdb	S max: 496.703 
+../restrict_domains/Homeobox_new/B_1jgg.pdb-../restrict_domains/Homeobox_new/B_1yrn.pdb	S max: 364.785 
+../restrict_domains/Homeobox_new/B_1jgg.pdb-../restrict_domains/Homeobox_new/B_2hdd.pdb	S max: 64.051 
+../restrict_domains/Homeobox_new/B_1jgg.pdb-../restrict_domains/Homeobox_new/B_2r5y.pdb	S max: 358.473 
+../restrict_domains/Homeobox_new/B_1jgg.pdb-../restrict_domains/Homeobox_new/B_2r5z.pdb	S max: 280.962 
+../restrict_domains/Homeobox_new/B_1jgg.pdb-../restrict_domains/Homeobox_new/B_3hdd.pdb	S max: 165.871 
+../restrict_domains/Homeobox_new/B_1jgg.pdb-../restrict_domains/Homeobox_new/B_9ant.pdb	S max: 308.364 
+../restrict_domains/Homeobox_new/B_1jgg.pdb-../restrict_domains/Homeobox_new/C_1apl.pdb	S max: 103.075 
+../restrict_domains/Homeobox_new/B_1jgg.pdb-../restrict_domains/Homeobox_new/C_1e3o.pdb	Error: none_c
+../restrict_domains/Homeobox_new/B_1jgg.pdb-../restrict_domains/Homeobox_new/C_1gt0.pdb	S max: 303.779 
+../restrict_domains/Homeobox_new/B_1jgg.pdb-../restrict_domains/Homeobox_new/C_1hdd.pdb	S max: 466.845 
+../restrict_domains/Homeobox_new/B_1jgg.pdb-../restrict_domains/Homeobox_new/C_1k61.pdb	S max: 102.418 
+../restrict_domains/Homeobox_new/B_1jgg.pdb-../restrict_domains/Homeobox_new/C_1mnm.pdb	S max: 231.673 
+../restrict_domains/Homeobox_new/B_1jgg.pdb-../restrict_domains/Homeobox_new/C_1oct.pdb	S max: 299.367 
+../restrict_domains/Homeobox_new/B_1jgg.pdb-../restrict_domains/Homeobox_new/D_1apl.pdb	S max: 178.233 
+../restrict_domains/Homeobox_new/B_1jgg.pdb-../restrict_domains/Homeobox_new/D_1hdd.pdb	S max: 66.958 
+../restrict_domains/Homeobox_new/B_1jgg.pdb-../restrict_domains/Homeobox_new/D_1k61.pdb	S max: 280.793 
+../restrict_domains/Homeobox_new/B_1jgg.pdb-../restrict_domains/Homeobox_new/D_1mnm.pdb	S max: 307.68 
+../restrict_domains/Homeobox_new/B_1jgg.pdb-../restrict_domains/Homeobox_new/P_1ahd.pdb	S max: 136.128 
+../restrict_domains/Homeobox_new/B_1jgg.pdb-../restrict_domains/Homeobox_new/P_1lfu.pdb	S max: 150.091 
+../restrict_domains/Homeobox_new/B_1jgg.pdb-../restrict_domains/Homeobox_new/P_1nk2.pdb	S max: 95.7425 
+../restrict_domains/Homeobox_new/B_1jgg.pdb-../restrict_domains/Homeobox_new/P_1nk3.pdb	S max: 254.317 
+../restrict_domains/Homeobox_new/B_1jgg.pdb-../restrict_domains/Homeobox_new/P_1zq3.pdb	S max: 208.095 
+../restrict_domains/Homeobox_new/B_1k61.pdb-../restrict_domains/Homeobox_new/B_1k61.pdb	S max: 9379.23 
+../restrict_domains/Homeobox_new/B_1k61.pdb-../restrict_domains/Homeobox_new/B_1le8.pdb	S max: 709.076 
+../restrict_domains/Homeobox_new/B_1k61.pdb-../restrict_domains/Homeobox_new/B_1puf.pdb	S max: 740.033 
+../restrict_domains/Homeobox_new/B_1k61.pdb-../restrict_domains/Homeobox_new/B_1yrn.pdb	S max: 781.546 
+../restrict_domains/Homeobox_new/B_1k61.pdb-../restrict_domains/Homeobox_new/B_2hdd.pdb	S max: 318.013 
+../restrict_domains/Homeobox_new/B_1k61.pdb-../restrict_domains/Homeobox_new/B_2r5y.pdb	S max: 493.7 
+../restrict_domains/Homeobox_new/B_1k61.pdb-../restrict_domains/Homeobox_new/B_2r5z.pdb	S max: 719.446 
+../restrict_domains/Homeobox_new/B_1k61.pdb-../restrict_domains/Homeobox_new/B_3hdd.pdb	S max: 363.696 
+../restrict_domains/Homeobox_new/B_1k61.pdb-../restrict_domains/Homeobox_new/B_9ant.pdb	S max: 775.495 
+../restrict_domains/Homeobox_new/B_1k61.pdb-../restrict_domains/Homeobox_new/C_1apl.pdb	S max: 600.728 
+../restrict_domains/Homeobox_new/B_1k61.pdb-../restrict_domains/Homeobox_new/C_1e3o.pdb	Error: none_c
+../restrict_domains/Homeobox_new/B_1k61.pdb-../restrict_domains/Homeobox_new/C_1gt0.pdb	S max: 540.914 
+../restrict_domains/Homeobox_new/B_1k61.pdb-../restrict_domains/Homeobox_new/C_1hdd.pdb	S max: 433.849 
+../restrict_domains/Homeobox_new/B_1k61.pdb-../restrict_domains/Homeobox_new/C_1k61.pdb	S max: 1030.7 
+../restrict_domains/Homeobox_new/B_1k61.pdb-../restrict_domains/Homeobox_new/C_1mnm.pdb	S max: 896.45 
+../restrict_domains/Homeobox_new/B_1k61.pdb-../restrict_domains/Homeobox_new/C_1oct.pdb	S max: 507.277 
+../restrict_domains/Homeobox_new/B_1k61.pdb-../restrict_domains/Homeobox_new/D_1apl.pdb	S max: 646.931 
+../restrict_domains/Homeobox_new/B_1k61.pdb-../restrict_domains/Homeobox_new/D_1hdd.pdb	S max: 233.325 
+../restrict_domains/Homeobox_new/B_1k61.pdb-../restrict_domains/Homeobox_new/D_1k61.pdb	S max: 560.744 
+../restrict_domains/Homeobox_new/B_1k61.pdb-../restrict_domains/Homeobox_new/D_1mnm.pdb	S max: 984.041 
+../restrict_domains/Homeobox_new/B_1k61.pdb-../restrict_domains/Homeobox_new/P_1ahd.pdb	S max: 278.177 
+../restrict_domains/Homeobox_new/B_1k61.pdb-../restrict_domains/Homeobox_new/P_1lfu.pdb	S max: 412.454 
+../restrict_domains/Homeobox_new/B_1k61.pdb-../restrict_domains/Homeobox_new/P_1nk2.pdb	S max: 86.8561 
+../restrict_domains/Homeobox_new/B_1k61.pdb-../restrict_domains/Homeobox_new/P_1nk3.pdb	S max: 322.956 
+../restrict_domains/Homeobox_new/B_1k61.pdb-../restrict_domains/Homeobox_new/P_1zq3.pdb	S max: 262.252 
+../restrict_domains/Homeobox_new/B_1le8.pdb-../restrict_domains/Homeobox_new/B_1le8.pdb	S max: 11475.3 
+../restrict_domains/Homeobox_new/B_1le8.pdb-../restrict_domains/Homeobox_new/B_1puf.pdb	S max: 664.463 
+../restrict_domains/Homeobox_new/B_1le8.pdb-../restrict_domains/Homeobox_new/B_1yrn.pdb	S max: 1577.94 
+../restrict_domains/Homeobox_new/B_1le8.pdb-../restrict_domains/Homeobox_new/B_2hdd.pdb	S max: 117.842 
+../restrict_domains/Homeobox_new/B_1le8.pdb-../restrict_domains/Homeobox_new/B_2r5y.pdb	S max: 648.158 
+../restrict_domains/Homeobox_new/B_1le8.pdb-../restrict_domains/Homeobox_new/B_2r5z.pdb	S max: 741.973 
+../restrict_domains/Homeobox_new/B_1le8.pdb-../restrict_domains/Homeobox_new/B_3hdd.pdb	S max: 162.18 
+../restrict_domains/Homeobox_new/B_1le8.pdb-../restrict_domains/Homeobox_new/B_9ant.pdb	S max: 449.968 
+../restrict_domains/Homeobox_new/B_1le8.pdb-../restrict_domains/Homeobox_new/C_1apl.pdb	S max: 345.235 
+../restrict_domains/Homeobox_new/B_1le8.pdb-../restrict_domains/Homeobox_new/C_1e3o.pdb	Error: none_c
+../restrict_domains/Homeobox_new/B_1le8.pdb-../restrict_domains/Homeobox_new/C_1gt0.pdb	S max: 214.192 
+../restrict_domains/Homeobox_new/B_1le8.pdb-../restrict_domains/Homeobox_new/C_1hdd.pdb	S max: 483.786 
+../restrict_domains/Homeobox_new/B_1le8.pdb-../restrict_domains/Homeobox_new/C_1k61.pdb	S max: 584.077 
+../restrict_domains/Homeobox_new/B_1le8.pdb-../restrict_domains/Homeobox_new/C_1mnm.pdb	S max: 701.254 
+../restrict_domains/Homeobox_new/B_1le8.pdb-../restrict_domains/Homeobox_new/C_1oct.pdb	S max: 335.454 
+../restrict_domains/Homeobox_new/B_1le8.pdb-../restrict_domains/Homeobox_new/D_1apl.pdb	S max: 616.811 
+../restrict_domains/Homeobox_new/B_1le8.pdb-../restrict_domains/Homeobox_new/D_1hdd.pdb	S max: 177.682 
+../restrict_domains/Homeobox_new/B_1le8.pdb-../restrict_domains/Homeobox_new/D_1k61.pdb	S max: 537.304 
+../restrict_domains/Homeobox_new/B_1le8.pdb-../restrict_domains/Homeobox_new/D_1mnm.pdb	S max: 307.723 
+../restrict_domains/Homeobox_new/B_1le8.pdb-../restrict_domains/Homeobox_new/P_1ahd.pdb	S max: 236.269 
+../restrict_domains/Homeobox_new/B_1le8.pdb-../restrict_domains/Homeobox_new/P_1lfu.pdb	S max: 334.666 
+../restrict_domains/Homeobox_new/B_1le8.pdb-../restrict_domains/Homeobox_new/P_1nk2.pdb	S max: 184.135 
+../restrict_domains/Homeobox_new/B_1le8.pdb-../restrict_domains/Homeobox_new/P_1nk3.pdb	S max: 348.722 
+../restrict_domains/Homeobox_new/B_1le8.pdb-../restrict_domains/Homeobox_new/P_1zq3.pdb	S max: 227.008 
+../restrict_domains/Homeobox_new/B_1puf.pdb-../restrict_domains/Homeobox_new/B_1puf.pdb	S max: 11475.3 
+../restrict_domains/Homeobox_new/B_1puf.pdb-../restrict_domains/Homeobox_new/B_1yrn.pdb	S max: 776.317 
+../restrict_domains/Homeobox_new/B_1puf.pdb-../restrict_domains/Homeobox_new/B_2hdd.pdb	S max: 160.431 
+../restrict_domains/Homeobox_new/B_1puf.pdb-../restrict_domains/Homeobox_new/B_2r5y.pdb	S max: 1536.13 
+../restrict_domains/Homeobox_new/B_1puf.pdb-../restrict_domains/Homeobox_new/B_2r5z.pdb	S max: 1626.65 
+../restrict_domains/Homeobox_new/B_1puf.pdb-../restrict_domains/Homeobox_new/B_3hdd.pdb	S max: 257.332 
+../restrict_domains/Homeobox_new/B_1puf.pdb-../restrict_domains/Homeobox_new/B_9ant.pdb	S max: 681.275 
+../restrict_domains/Homeobox_new/B_1puf.pdb-../restrict_domains/Homeobox_new/C_1apl.pdb	S max: 316.475 
+../restrict_domains/Homeobox_new/B_1puf.pdb-../restrict_domains/Homeobox_new/C_1e3o.pdb	Error: none_c
+../restrict_domains/Homeobox_new/B_1puf.pdb-../restrict_domains/Homeobox_new/C_1gt0.pdb	S max: 550.34 
+../restrict_domains/Homeobox_new/B_1puf.pdb-../restrict_domains/Homeobox_new/C_1hdd.pdb	S max: 811.183 
+../restrict_domains/Homeobox_new/B_1puf.pdb-../restrict_domains/Homeobox_new/C_1k61.pdb	S max: 494.813 
+../restrict_domains/Homeobox_new/B_1puf.pdb-../restrict_domains/Homeobox_new/C_1mnm.pdb	S max: 885.075 
+../restrict_domains/Homeobox_new/B_1puf.pdb-../restrict_domains/Homeobox_new/C_1oct.pdb	S max: 880.443 
+../restrict_domains/Homeobox_new/B_1puf.pdb-../restrict_domains/Homeobox_new/D_1apl.pdb	S max: 599.94 
+../restrict_domains/Homeobox_new/B_1puf.pdb-../restrict_domains/Homeobox_new/D_1hdd.pdb	S max: 343.61 
+../restrict_domains/Homeobox_new/B_1puf.pdb-../restrict_domains/Homeobox_new/D_1k61.pdb	S max: 500.137 
+../restrict_domains/Homeobox_new/B_1puf.pdb-../restrict_domains/Homeobox_new/D_1mnm.pdb	S max: 598.244 
+../restrict_domains/Homeobox_new/B_1puf.pdb-../restrict_domains/Homeobox_new/P_1ahd.pdb	S max: 296.456 
+../restrict_domains/Homeobox_new/B_1puf.pdb-../restrict_domains/Homeobox_new/P_1lfu.pdb	S max: 453.245 
+../restrict_domains/Homeobox_new/B_1puf.pdb-../restrict_domains/Homeobox_new/P_1nk2.pdb	S max: 277.966 
+../restrict_domains/Homeobox_new/B_1puf.pdb-../restrict_domains/Homeobox_new/P_1nk3.pdb	S max: 666.566 
+../restrict_domains/Homeobox_new/B_1puf.pdb-../restrict_domains/Homeobox_new/P_1zq3.pdb	S max: 300.317 
+../restrict_domains/Homeobox_new/B_1yrn.pdb-../restrict_domains/Homeobox_new/B_1yrn.pdb	S max: 12479.2 
+../restrict_domains/Homeobox_new/B_1yrn.pdb-../restrict_domains/Homeobox_new/B_2hdd.pdb	S max: 185.076 
+../restrict_domains/Homeobox_new/B_1yrn.pdb-../restrict_domains/Homeobox_new/B_2r5y.pdb	S max: 686.205 
+../restrict_domains/Homeobox_new/B_1yrn.pdb-../restrict_domains/Homeobox_new/B_2r5z.pdb	S max: 722.563 
+../restrict_domains/Homeobox_new/B_1yrn.pdb-../restrict_domains/Homeobox_new/B_3hdd.pdb	S max: 249.934 
+../restrict_domains/Homeobox_new/B_1yrn.pdb-../restrict_domains/Homeobox_new/B_9ant.pdb	S max: 728.736 
+../restrict_domains/Homeobox_new/B_1yrn.pdb-../restrict_domains/Homeobox_new/C_1apl.pdb	S max: 712.226 
+../restrict_domains/Homeobox_new/B_1yrn.pdb-../restrict_domains/Homeobox_new/C_1e3o.pdb	Error: none_c
+../restrict_domains/Homeobox_new/B_1yrn.pdb-../restrict_domains/Homeobox_new/C_1gt0.pdb	S max: 390.714 
+../restrict_domains/Homeobox_new/B_1yrn.pdb-../restrict_domains/Homeobox_new/C_1hdd.pdb	S max: 357.986 
+../restrict_domains/Homeobox_new/B_1yrn.pdb-../restrict_domains/Homeobox_new/C_1k61.pdb	S max: 639.25 
+../restrict_domains/Homeobox_new/B_1yrn.pdb-../restrict_domains/Homeobox_new/C_1mnm.pdb	S max: 1374.34 
+../restrict_domains/Homeobox_new/B_1yrn.pdb-../restrict_domains/Homeobox_new/C_1oct.pdb	S max: 480.409 
+../restrict_domains/Homeobox_new/B_1yrn.pdb-../restrict_domains/Homeobox_new/D_1apl.pdb	S max: 844.488 
+../restrict_domains/Homeobox_new/B_1yrn.pdb-../restrict_domains/Homeobox_new/D_1hdd.pdb	S max: 244.451 
+../restrict_domains/Homeobox_new/B_1yrn.pdb-../restrict_domains/Homeobox_new/D_1k61.pdb	S max: 504.464 
+../restrict_domains/Homeobox_new/B_1yrn.pdb-../restrict_domains/Homeobox_new/D_1mnm.pdb	S max: 426.915 
+../restrict_domains/Homeobox_new/B_1yrn.pdb-../restrict_domains/Homeobox_new/P_1ahd.pdb	S max: 362.984 
+../restrict_domains/Homeobox_new/B_1yrn.pdb-../restrict_domains/Homeobox_new/P_1lfu.pdb	S max: 358.242 
+../restrict_domains/Homeobox_new/B_1yrn.pdb-../restrict_domains/Homeobox_new/P_1nk2.pdb	S max: 165.643 
+../restrict_domains/Homeobox_new/B_1yrn.pdb-../restrict_domains/Homeobox_new/P_1nk3.pdb	S max: 359.083 
+../restrict_domains/Homeobox_new/B_1yrn.pdb-../restrict_domains/Homeobox_new/P_1zq3.pdb	S max: 268.816 
+../restrict_domains/Homeobox_new/B_2hdd.pdb-../restrict_domains/Homeobox_new/B_2hdd.pdb	S max: 8839.23 
+../restrict_domains/Homeobox_new/B_2hdd.pdb-../restrict_domains/Homeobox_new/B_2r5y.pdb	S max: 154.638 
+../restrict_domains/Homeobox_new/B_2hdd.pdb-../restrict_domains/Homeobox_new/B_2r5z.pdb	S max: 113.131 
+../restrict_domains/Homeobox_new/B_2hdd.pdb-../restrict_domains/Homeobox_new/B_3hdd.pdb	S max: 1551.02 
+../restrict_domains/Homeobox_new/B_2hdd.pdb-../restrict_domains/Homeobox_new/B_9ant.pdb	S max: 330.821 
+../restrict_domains/Homeobox_new/B_2hdd.pdb-../restrict_domains/Homeobox_new/C_1apl.pdb	S max: 135.866 
+../restrict_domains/Homeobox_new/B_2hdd.pdb-../restrict_domains/Homeobox_new/C_1e3o.pdb	Error: none_c
+../restrict_domains/Homeobox_new/B_2hdd.pdb-../restrict_domains/Homeobox_new/C_1gt0.pdb	S max: 38.9561 
+../restrict_domains/Homeobox_new/B_2hdd.pdb-../restrict_domains/Homeobox_new/C_1hdd.pdb	S max: 336.145 
+../restrict_domains/Homeobox_new/B_2hdd.pdb-../restrict_domains/Homeobox_new/C_1k61.pdb	S max: 89.764 
+../restrict_domains/Homeobox_new/B_2hdd.pdb-../restrict_domains/Homeobox_new/C_1mnm.pdb	S max: 168.654 
+../restrict_domains/Homeobox_new/B_2hdd.pdb-../restrict_domains/Homeobox_new/C_1oct.pdb	S max: 71.5379 
+../restrict_domains/Homeobox_new/B_2hdd.pdb-../restrict_domains/Homeobox_new/D_1apl.pdb	S max: 159.076 
+../restrict_domains/Homeobox_new/B_2hdd.pdb-../restrict_domains/Homeobox_new/D_1hdd.pdb	S max: 879.032 
+../restrict_domains/Homeobox_new/B_2hdd.pdb-../restrict_domains/Homeobox_new/D_1k61.pdb	S max: 164.481 
+../restrict_domains/Homeobox_new/B_2hdd.pdb-../restrict_domains/Homeobox_new/D_1mnm.pdb	S max: 152.592 
+../restrict_domains/Homeobox_new/B_2hdd.pdb-../restrict_domains/Homeobox_new/P_1ahd.pdb	S max: 246.136 
+../restrict_domains/Homeobox_new/B_2hdd.pdb-../restrict_domains/Homeobox_new/P_1lfu.pdb	S max: 177.847 
+../restrict_domains/Homeobox_new/B_2hdd.pdb-../restrict_domains/Homeobox_new/P_1nk2.pdb	S max: 44.7514 
+../restrict_domains/Homeobox_new/B_2hdd.pdb-../restrict_domains/Homeobox_new/P_1nk3.pdb	S max: 96.0653 
+../restrict_domains/Homeobox_new/B_2hdd.pdb-../restrict_domains/Homeobox_new/P_1zq3.pdb	S max: 87.4351 
+../restrict_domains/Homeobox_new/B_2r5y.pdb-../restrict_domains/Homeobox_new/B_2r5y.pdb	S max: 8226.27 
+../restrict_domains/Homeobox_new/B_2r5y.pdb-../restrict_domains/Homeobox_new/B_2r5z.pdb	S max: 1761.72 
+../restrict_domains/Homeobox_new/B_2r5y.pdb-../restrict_domains/Homeobox_new/B_3hdd.pdb	S max: 301.638 
+../restrict_domains/Homeobox_new/B_2r5y.pdb-../restrict_domains/Homeobox_new/B_9ant.pdb	S max: 642.308 
+../restrict_domains/Homeobox_new/B_2r5y.pdb-../restrict_domains/Homeobox_new/C_1apl.pdb	S max: 292.204 
+../restrict_domains/Homeobox_new/B_2r5y.pdb-../restrict_domains/Homeobox_new/C_1e3o.pdb	Error: none_c
+../restrict_domains/Homeobox_new/B_2r5y.pdb-../restrict_domains/Homeobox_new/C_1gt0.pdb	S max: 414.314 
+../restrict_domains/Homeobox_new/B_2r5y.pdb-../restrict_domains/Homeobox_new/C_1hdd.pdb	S max: 501.454 
+../restrict_domains/Homeobox_new/B_2r5y.pdb-../restrict_domains/Homeobox_new/C_1k61.pdb	S max: 514.318 
+../restrict_domains/Homeobox_new/B_2r5y.pdb-../restrict_domains/Homeobox_new/C_1mnm.pdb	S max: 610.634 
+../restrict_domains/Homeobox_new/B_2r5y.pdb-../restrict_domains/Homeobox_new/C_1oct.pdb	S max: 549.44 
+../restrict_domains/Homeobox_new/B_2r5y.pdb-../restrict_domains/Homeobox_new/D_1apl.pdb	S max: 546.929 
+../restrict_domains/Homeobox_new/B_2r5y.pdb-../restrict_domains/Homeobox_new/D_1hdd.pdb	S max: 237.131 
+../restrict_domains/Homeobox_new/B_2r5y.pdb-../restrict_domains/Homeobox_new/D_1k61.pdb	S max: 475.975 
+../restrict_domains/Homeobox_new/B_2r5y.pdb-../restrict_domains/Homeobox_new/D_1mnm.pdb	S max: 537.159 
+../restrict_domains/Homeobox_new/B_2r5y.pdb-../restrict_domains/Homeobox_new/P_1ahd.pdb	S max: 254.21 
+../restrict_domains/Homeobox_new/B_2r5y.pdb-../restrict_domains/Homeobox_new/P_1lfu.pdb	S max: 288.132 
+../restrict_domains/Homeobox_new/B_2r5y.pdb-../restrict_domains/Homeobox_new/P_1nk2.pdb	S max: 220.596 
+../restrict_domains/Homeobox_new/B_2r5y.pdb-../restrict_domains/Homeobox_new/P_1nk3.pdb	S max: 340.492 
+../restrict_domains/Homeobox_new/B_2r5y.pdb-../restrict_domains/Homeobox_new/P_1zq3.pdb	S max: 305.659 
+../restrict_domains/Homeobox_new/B_2r5z.pdb-../restrict_domains/Homeobox_new/B_2r5z.pdb	S max: 8226.27 
+../restrict_domains/Homeobox_new/B_2r5z.pdb-../restrict_domains/Homeobox_new/B_3hdd.pdb	S max: 259.476 
+../restrict_domains/Homeobox_new/B_2r5z.pdb-../restrict_domains/Homeobox_new/B_9ant.pdb	S max: 711.007 
+../restrict_domains/Homeobox_new/B_2r5z.pdb-../restrict_domains/Homeobox_new/C_1apl.pdb	S max: 221.701 
+../restrict_domains/Homeobox_new/B_2r5z.pdb-../restrict_domains/Homeobox_new/C_1e3o.pdb	Error: none_c
+../restrict_domains/Homeobox_new/B_2r5z.pdb-../restrict_domains/Homeobox_new/C_1gt0.pdb	S max: 362.088 
+../restrict_domains/Homeobox_new/B_2r5z.pdb-../restrict_domains/Homeobox_new/C_1hdd.pdb	S max: 556.874 
+../restrict_domains/Homeobox_new/B_2r5z.pdb-../restrict_domains/Homeobox_new/C_1k61.pdb	S max: 470.647 
+../restrict_domains/Homeobox_new/B_2r5z.pdb-../restrict_domains/Homeobox_new/C_1mnm.pdb	S max: 679.398 
+../restrict_domains/Homeobox_new/B_2r5z.pdb-../restrict_domains/Homeobox_new/C_1oct.pdb	S max: 628.455 
+../restrict_domains/Homeobox_new/B_2r5z.pdb-../restrict_domains/Homeobox_new/D_1apl.pdb	S max: 732.535 
+../restrict_domains/Homeobox_new/B_2r5z.pdb-../restrict_domains/Homeobox_new/D_1hdd.pdb	S max: 212.868 
+../restrict_domains/Homeobox_new/B_2r5z.pdb-../restrict_domains/Homeobox_new/D_1k61.pdb	S max: 544.992 
+../restrict_domains/Homeobox_new/B_2r5z.pdb-../restrict_domains/Homeobox_new/D_1mnm.pdb	S max: 473.926 
+../restrict_domains/Homeobox_new/B_2r5z.pdb-../restrict_domains/Homeobox_new/P_1ahd.pdb	S max: 337.006 
+../restrict_domains/Homeobox_new/B_2r5z.pdb-../restrict_domains/Homeobox_new/P_1lfu.pdb	S max: 345.412 
+../restrict_domains/Homeobox_new/B_2r5z.pdb-../restrict_domains/Homeobox_new/P_1nk2.pdb	S max: 252.266 
+../restrict_domains/Homeobox_new/B_2r5z.pdb-../restrict_domains/Homeobox_new/P_1nk3.pdb	S max: 540.151 
+../restrict_domains/Homeobox_new/B_2r5z.pdb-../restrict_domains/Homeobox_new/P_1zq3.pdb	S max: 307.434 
+../restrict_domains/Homeobox_new/B_3hdd.pdb-../restrict_domains/Homeobox_new/B_3hdd.pdb	S max: 8839.23 
+../restrict_domains/Homeobox_new/B_3hdd.pdb-../restrict_domains/Homeobox_new/B_9ant.pdb	S max: 510.309 
+../restrict_domains/Homeobox_new/B_3hdd.pdb-../restrict_domains/Homeobox_new/C_1apl.pdb	S max: 180.251 
+../restrict_domains/Homeobox_new/B_3hdd.pdb-../restrict_domains/Homeobox_new/C_1e3o.pdb	Error: none_c
+../restrict_domains/Homeobox_new/B_3hdd.pdb-../restrict_domains/Homeobox_new/C_1gt0.pdb	S max: 80.4598 
+../restrict_domains/Homeobox_new/B_3hdd.pdb-../restrict_domains/Homeobox_new/C_1hdd.pdb	S max: 531.552 
+../restrict_domains/Homeobox_new/B_3hdd.pdb-../restrict_domains/Homeobox_new/C_1k61.pdb	S max: 132.645 
+../restrict_domains/Homeobox_new/B_3hdd.pdb-../restrict_domains/Homeobox_new/C_1mnm.pdb	S max: 310.377 
+../restrict_domains/Homeobox_new/B_3hdd.pdb-../restrict_domains/Homeobox_new/C_1oct.pdb	S max: 104.257 
+../restrict_domains/Homeobox_new/B_3hdd.pdb-../restrict_domains/Homeobox_new/D_1apl.pdb	S max: 139.037 
+../restrict_domains/Homeobox_new/B_3hdd.pdb-../restrict_domains/Homeobox_new/D_1hdd.pdb	S max: 1014.09 
+../restrict_domains/Homeobox_new/B_3hdd.pdb-../restrict_domains/Homeobox_new/D_1k61.pdb	S max: 233.611 
+../restrict_domains/Homeobox_new/B_3hdd.pdb-../restrict_domains/Homeobox_new/D_1mnm.pdb	S max: 178.579 
+../restrict_domains/Homeobox_new/B_3hdd.pdb-../restrict_domains/Homeobox_new/P_1ahd.pdb	S max: 197.818 
+../restrict_domains/Homeobox_new/B_3hdd.pdb-../restrict_domains/Homeobox_new/P_1lfu.pdb	S max: 194.306 
+../restrict_domains/Homeobox_new/B_3hdd.pdb-../restrict_domains/Homeobox_new/P_1nk2.pdb	S max: 29.8849 
+../restrict_domains/Homeobox_new/B_3hdd.pdb-../restrict_domains/Homeobox_new/P_1nk3.pdb	S max: 81.7901 
+../restrict_domains/Homeobox_new/B_3hdd.pdb-../restrict_domains/Homeobox_new/P_1zq3.pdb	S max: 92.5552 
+../restrict_domains/Homeobox_new/B_9ant.pdb-../restrict_domains/Homeobox_new/B_9ant.pdb	S max: 6313.46 
+../restrict_domains/Homeobox_new/B_9ant.pdb-../restrict_domains/Homeobox_new/C_1apl.pdb	S max: 269.689 
+../restrict_domains/Homeobox_new/B_9ant.pdb-../restrict_domains/Homeobox_new/C_1e3o.pdb	Error: none_c
+../restrict_domains/Homeobox_new/B_9ant.pdb-../restrict_domains/Homeobox_new/C_1gt0.pdb	S max: 442.147 
+../restrict_domains/Homeobox_new/B_9ant.pdb-../restrict_domains/Homeobox_new/C_1hdd.pdb	S max: 793.357 
+../restrict_domains/Homeobox_new/B_9ant.pdb-../restrict_domains/Homeobox_new/C_1k61.pdb	S max: 418.12 
+../restrict_domains/Homeobox_new/B_9ant.pdb-../restrict_domains/Homeobox_new/C_1mnm.pdb	S max: 711.622 
+../restrict_domains/Homeobox_new/B_9ant.pdb-../restrict_domains/Homeobox_new/C_1oct.pdb	S max: 462.139 
+../restrict_domains/Homeobox_new/B_9ant.pdb-../restrict_domains/Homeobox_new/D_1apl.pdb	S max: 600.866 
+../restrict_domains/Homeobox_new/B_9ant.pdb-../restrict_domains/Homeobox_new/D_1hdd.pdb	S max: 401.767 
+../restrict_domains/Homeobox_new/B_9ant.pdb-../restrict_domains/Homeobox_new/D_1k61.pdb	S max: 571.436 
+../restrict_domains/Homeobox_new/B_9ant.pdb-../restrict_domains/Homeobox_new/D_1mnm.pdb	S max: 472.786 
+../restrict_domains/Homeobox_new/B_9ant.pdb-../restrict_domains/Homeobox_new/P_1ahd.pdb	S max: 366.86 
+../restrict_domains/Homeobox_new/B_9ant.pdb-../restrict_domains/Homeobox_new/P_1lfu.pdb	S max: 333.446 
+../restrict_domains/Homeobox_new/B_9ant.pdb-../restrict_domains/Homeobox_new/P_1nk2.pdb	S max: 108.896 
+../restrict_domains/Homeobox_new/B_9ant.pdb-../restrict_domains/Homeobox_new/P_1nk3.pdb	S max: 253.098 
+../restrict_domains/Homeobox_new/B_9ant.pdb-../restrict_domains/Homeobox_new/P_1zq3.pdb	S max: 452.464 
+../restrict_domains/Homeobox_new/C_1apl.pdb-../restrict_domains/Homeobox_new/C_1apl.pdb	S max: 9379.23 
+../restrict_domains/Homeobox_new/C_1apl.pdb-../restrict_domains/Homeobox_new/C_1e3o.pdb	Error: none_c
+../restrict_domains/Homeobox_new/C_1apl.pdb-../restrict_domains/Homeobox_new/C_1gt0.pdb	S max: 146.724 
+../restrict_domains/Homeobox_new/C_1apl.pdb-../restrict_domains/Homeobox_new/C_1hdd.pdb	S max: 239.216 
+../restrict_domains/Homeobox_new/C_1apl.pdb-../restrict_domains/Homeobox_new/C_1k61.pdb	S max: 252.745 
+../restrict_domains/Homeobox_new/C_1apl.pdb-../restrict_domains/Homeobox_new/C_1mnm.pdb	S max: 492.499 
+../restrict_domains/Homeobox_new/C_1apl.pdb-../restrict_domains/Homeobox_new/C_1oct.pdb	S max: 273.783 
+../restrict_domains/Homeobox_new/C_1apl.pdb-../restrict_domains/Homeobox_new/D_1apl.pdb	S max: 524.718 
+../restrict_domains/Homeobox_new/C_1apl.pdb-../restrict_domains/Homeobox_new/D_1hdd.pdb	S max: 203.013 
+../restrict_domains/Homeobox_new/C_1apl.pdb-../restrict_domains/Homeobox_new/D_1k61.pdb	S max: 225.46 
+../restrict_domains/Homeobox_new/C_1apl.pdb-../restrict_domains/Homeobox_new/D_1mnm.pdb	S max: 287.636 
+../restrict_domains/Homeobox_new/C_1apl.pdb-../restrict_domains/Homeobox_new/P_1ahd.pdb	S max: 169.907 
+../restrict_domains/Homeobox_new/C_1apl.pdb-../restrict_domains/Homeobox_new/P_1lfu.pdb	S max: 192.038 
+../restrict_domains/Homeobox_new/C_1apl.pdb-../restrict_domains/Homeobox_new/P_1nk2.pdb	S max: 227.146 
+../restrict_domains/Homeobox_new/C_1apl.pdb-../restrict_domains/Homeobox_new/P_1nk3.pdb	S max: 106.412 
+../restrict_domains/Homeobox_new/C_1apl.pdb-../restrict_domains/Homeobox_new/P_1zq3.pdb	S max: 128.041 
+../restrict_domains/Homeobox_new/C_1e3o.pdb-../restrict_domains/Homeobox_new/C_1e3o.pdb	Error: none_c
+../restrict_domains/Homeobox_new/C_1e3o.pdb-../restrict_domains/Homeobox_new/C_1gt0.pdb	Error: none_c
+../restrict_domains/Homeobox_new/C_1e3o.pdb-../restrict_domains/Homeobox_new/C_1hdd.pdb	Error: none_c
+../restrict_domains/Homeobox_new/C_1e3o.pdb-../restrict_domains/Homeobox_new/C_1k61.pdb	Error: none_c
+../restrict_domains/Homeobox_new/C_1e3o.pdb-../restrict_domains/Homeobox_new/C_1mnm.pdb	Error: none_c
+../restrict_domains/Homeobox_new/C_1e3o.pdb-../restrict_domains/Homeobox_new/C_1oct.pdb	Error: none_c
+../restrict_domains/Homeobox_new/C_1e3o.pdb-../restrict_domains/Homeobox_new/D_1apl.pdb	Error: none_c
+../restrict_domains/Homeobox_new/C_1e3o.pdb-../restrict_domains/Homeobox_new/D_1hdd.pdb	Error: none_c
+../restrict_domains/Homeobox_new/C_1e3o.pdb-../restrict_domains/Homeobox_new/D_1k61.pdb	Error: none_c
+../restrict_domains/Homeobox_new/C_1e3o.pdb-../restrict_domains/Homeobox_new/D_1mnm.pdb	Error: none_c
+../restrict_domains/Homeobox_new/C_1e3o.pdb-../restrict_domains/Homeobox_new/P_1ahd.pdb	Error: none_c
+../restrict_domains/Homeobox_new/C_1e3o.pdb-../restrict_domains/Homeobox_new/P_1lfu.pdb	Error: none_c
+../restrict_domains/Homeobox_new/C_1e3o.pdb-../restrict_domains/Homeobox_new/P_1nk2.pdb	Error: none_c
+../restrict_domains/Homeobox_new/C_1e3o.pdb-../restrict_domains/Homeobox_new/P_1nk3.pdb	Error: none_c
+../restrict_domains/Homeobox_new/C_1e3o.pdb-../restrict_domains/Homeobox_new/P_1zq3.pdb	Error: none_c
+../restrict_domains/Homeobox_new/C_1gt0.pdb-../restrict_domains/Homeobox_new/C_1gt0.pdb	S max: 11407.1 
+../restrict_domains/Homeobox_new/C_1gt0.pdb-../restrict_domains/Homeobox_new/C_1hdd.pdb	S max: 205.091 
+../restrict_domains/Homeobox_new/C_1gt0.pdb-../restrict_domains/Homeobox_new/C_1k61.pdb	S max: 313.645 
+../restrict_domains/Homeobox_new/C_1gt0.pdb-../restrict_domains/Homeobox_new/C_1mnm.pdb	S max: 317.989 
+../restrict_domains/Homeobox_new/C_1gt0.pdb-../restrict_domains/Homeobox_new/C_1oct.pdb	S max: 1116.32 
+../restrict_domains/Homeobox_new/C_1gt0.pdb-../restrict_domains/Homeobox_new/D_1apl.pdb	S max: 367.74 
+../restrict_domains/Homeobox_new/C_1gt0.pdb-../restrict_domains/Homeobox_new/D_1hdd.pdb	S max: 46.5867 
+../restrict_domains/Homeobox_new/C_1gt0.pdb-../restrict_domains/Homeobox_new/D_1k61.pdb	S max: 255.522 
+../restrict_domains/Homeobox_new/C_1gt0.pdb-../restrict_domains/Homeobox_new/D_1mnm.pdb	S max: 452.05 
+../restrict_domains/Homeobox_new/C_1gt0.pdb-../restrict_domains/Homeobox_new/P_1ahd.pdb	S max: 232.818 
+../restrict_domains/Homeobox_new/C_1gt0.pdb-../restrict_domains/Homeobox_new/P_1lfu.pdb	S max: 214.83 
+../restrict_domains/Homeobox_new/C_1gt0.pdb-../restrict_domains/Homeobox_new/P_1nk2.pdb	S max: 176.693 
+../restrict_domains/Homeobox_new/C_1gt0.pdb-../restrict_domains/Homeobox_new/P_1nk3.pdb	S max: 401.552 
+../restrict_domains/Homeobox_new/C_1gt0.pdb-../restrict_domains/Homeobox_new/P_1zq3.pdb	S max: 357.91 
+../restrict_domains/Homeobox_new/C_1hdd.pdb-../restrict_domains/Homeobox_new/C_1hdd.pdb	S max: 9019.23 
+../restrict_domains/Homeobox_new/C_1hdd.pdb-../restrict_domains/Homeobox_new/C_1k61.pdb	S max: 230.656 
+../restrict_domains/Homeobox_new/C_1hdd.pdb-../restrict_domains/Homeobox_new/C_1mnm.pdb	S max: 532.946 
+../restrict_domains/Homeobox_new/C_1hdd.pdb-../restrict_domains/Homeobox_new/C_1oct.pdb	S max: 460.884 
+../restrict_domains/Homeobox_new/C_1hdd.pdb-../restrict_domains/Homeobox_new/D_1apl.pdb	S max: 298.989 
+../restrict_domains/Homeobox_new/C_1hdd.pdb-../restrict_domains/Homeobox_new/D_1hdd.pdb	S max: 1070.16 
+../restrict_domains/Homeobox_new/C_1hdd.pdb-../restrict_domains/Homeobox_new/D_1k61.pdb	S max: 456.533 
+../restrict_domains/Homeobox_new/C_1hdd.pdb-../restrict_domains/Homeobox_new/D_1mnm.pdb	S max: 394.821 
+../restrict_domains/Homeobox_new/C_1hdd.pdb-../restrict_domains/Homeobox_new/P_1ahd.pdb	S max: 247.235 
+../restrict_domains/Homeobox_new/C_1hdd.pdb-../restrict_domains/Homeobox_new/P_1lfu.pdb	S max: 393.105 
+../restrict_domains/Homeobox_new/C_1hdd.pdb-../restrict_domains/Homeobox_new/P_1nk2.pdb	S max: 113.125 
+../restrict_domains/Homeobox_new/C_1hdd.pdb-../restrict_domains/Homeobox_new/P_1nk3.pdb	S max: 370.663 
+../restrict_domains/Homeobox_new/C_1hdd.pdb-../restrict_domains/Homeobox_new/P_1zq3.pdb	S max: 326.298 
+../restrict_domains/Homeobox_new/C_1k61.pdb-../restrict_domains/Homeobox_new/C_1k61.pdb	S max: 8839.23 
+../restrict_domains/Homeobox_new/C_1k61.pdb-../restrict_domains/Homeobox_new/C_1mnm.pdb	S max: 652.296 
+../restrict_domains/Homeobox_new/C_1k61.pdb-../restrict_domains/Homeobox_new/C_1oct.pdb	S max: 297.874 
+../restrict_domains/Homeobox_new/C_1k61.pdb-../restrict_domains/Homeobox_new/D_1apl.pdb	S max: 490.576 
+../restrict_domains/Homeobox_new/C_1k61.pdb-../restrict_domains/Homeobox_new/D_1hdd.pdb	S max: 94.9213 
+../restrict_domains/Homeobox_new/C_1k61.pdb-../restrict_domains/Homeobox_new/D_1k61.pdb	S max: 358.744 
+../restrict_domains/Homeobox_new/C_1k61.pdb-../restrict_domains/Homeobox_new/D_1mnm.pdb	S max: 705.145 
+../restrict_domains/Homeobox_new/C_1k61.pdb-../restrict_domains/Homeobox_new/P_1ahd.pdb	S max: 120.375 
+../restrict_domains/Homeobox_new/C_1k61.pdb-../restrict_domains/Homeobox_new/P_1lfu.pdb	S max: 289.884 
+../restrict_domains/Homeobox_new/C_1k61.pdb-../restrict_domains/Homeobox_new/P_1nk2.pdb	S max: 105.104 
+../restrict_domains/Homeobox_new/C_1k61.pdb-../restrict_domains/Homeobox_new/P_1nk3.pdb	S max: 240.703 
+../restrict_domains/Homeobox_new/C_1k61.pdb-../restrict_domains/Homeobox_new/P_1zq3.pdb	S max: 273.728 
+../restrict_domains/Homeobox_new/C_1mnm.pdb-../restrict_domains/Homeobox_new/C_1mnm.pdb	S max: 15774 
+../restrict_domains/Homeobox_new/C_1mnm.pdb-../restrict_domains/Homeobox_new/C_1oct.pdb	S max: 530.557 
+../restrict_domains/Homeobox_new/C_1mnm.pdb-../restrict_domains/Homeobox_new/D_1apl.pdb	S max: 771.935 
+../restrict_domains/Homeobox_new/C_1mnm.pdb-../restrict_domains/Homeobox_new/D_1hdd.pdb	S max: 174.168 
+../restrict_domains/Homeobox_new/C_1mnm.pdb-../restrict_domains/Homeobox_new/D_1k61.pdb	S max: 481.951 
+../restrict_domains/Homeobox_new/C_1mnm.pdb-../restrict_domains/Homeobox_new/D_1mnm.pdb	S max: 535.277 
+../restrict_domains/Homeobox_new/C_1mnm.pdb-../restrict_domains/Homeobox_new/P_1ahd.pdb	S max: 277.942 
+../restrict_domains/Homeobox_new/C_1mnm.pdb-../restrict_domains/Homeobox_new/P_1lfu.pdb	S max: 562.934 
+../restrict_domains/Homeobox_new/C_1mnm.pdb-../restrict_domains/Homeobox_new/P_1nk2.pdb	S max: 231.104 
+../restrict_domains/Homeobox_new/C_1mnm.pdb-../restrict_domains/Homeobox_new/P_1nk3.pdb	S max: 503.504 
+../restrict_domains/Homeobox_new/C_1mnm.pdb-../restrict_domains/Homeobox_new/P_1zq3.pdb	S max: 298.927 
+../restrict_domains/Homeobox_new/C_1oct.pdb-../restrict_domains/Homeobox_new/C_1oct.pdb	S max: 6691.46 
+../restrict_domains/Homeobox_new/C_1oct.pdb-../restrict_domains/Homeobox_new/D_1apl.pdb	S max: 490.512 
+../restrict_domains/Homeobox_new/C_1oct.pdb-../restrict_domains/Homeobox_new/D_1hdd.pdb	S max: 99.6297 
+../restrict_domains/Homeobox_new/C_1oct.pdb-../restrict_domains/Homeobox_new/D_1k61.pdb	S max: 258.675 
+../restrict_domains/Homeobox_new/C_1oct.pdb-../restrict_domains/Homeobox_new/D_1mnm.pdb	S max: 580.031 
+../restrict_domains/Homeobox_new/C_1oct.pdb-../restrict_domains/Homeobox_new/P_1ahd.pdb	S max: 386.662 
+../restrict_domains/Homeobox_new/C_1oct.pdb-../restrict_domains/Homeobox_new/P_1lfu.pdb	S max: 405.832 
+../restrict_domains/Homeobox_new/C_1oct.pdb-../restrict_domains/Homeobox_new/P_1nk2.pdb	S max: 307.895 
+../restrict_domains/Homeobox_new/C_1oct.pdb-../restrict_domains/Homeobox_new/P_1nk3.pdb	S max: 803.373 
+../restrict_domains/Homeobox_new/C_1oct.pdb-../restrict_domains/Homeobox_new/P_1zq3.pdb	S max: 526.946 
+../restrict_domains/Homeobox_new/D_1apl.pdb-../restrict_domains/Homeobox_new/D_1apl.pdb	S max: 9199.23 
+../restrict_domains/Homeobox_new/D_1apl.pdb-../restrict_domains/Homeobox_new/D_1hdd.pdb	S max: 188.252 
+../restrict_domains/Homeobox_new/D_1apl.pdb-../restrict_domains/Homeobox_new/D_1k61.pdb	S max: 511.399 
+../restrict_domains/Homeobox_new/D_1apl.pdb-../restrict_domains/Homeobox_new/D_1mnm.pdb	S max: 517.021 
+../restrict_domains/Homeobox_new/D_1apl.pdb-../restrict_domains/Homeobox_new/P_1ahd.pdb	S max: 276.943 
+../restrict_domains/Homeobox_new/D_1apl.pdb-../restrict_domains/Homeobox_new/P_1lfu.pdb	S max: 228.424 
+../restrict_domains/Homeobox_new/D_1apl.pdb-../restrict_domains/Homeobox_new/P_1nk2.pdb	S max: 125.712 
+../restrict_domains/Homeobox_new/D_1apl.pdb-../restrict_domains/Homeobox_new/P_1nk3.pdb	S max: 243.766 
+../restrict_domains/Homeobox_new/D_1apl.pdb-../restrict_domains/Homeobox_new/P_1zq3.pdb	S max: 331.431 
+../restrict_domains/Homeobox_new/D_1hdd.pdb-../restrict_domains/Homeobox_new/D_1hdd.pdb	S max: 9019.23 
+../restrict_domains/Homeobox_new/D_1hdd.pdb-../restrict_domains/Homeobox_new/D_1k61.pdb	S max: 205.944 
+../restrict_domains/Homeobox_new/D_1hdd.pdb-../restrict_domains/Homeobox_new/D_1mnm.pdb	S max: 125.224 
+../restrict_domains/Homeobox_new/D_1hdd.pdb-../restrict_domains/Homeobox_new/P_1ahd.pdb	S max: 231.774 
+../restrict_domains/Homeobox_new/D_1hdd.pdb-../restrict_domains/Homeobox_new/P_1lfu.pdb	S max: 141.93 
+../restrict_domains/Homeobox_new/D_1hdd.pdb-../restrict_domains/Homeobox_new/P_1nk2.pdb	S max: 43.8035 
+../restrict_domains/Homeobox_new/D_1hdd.pdb-../restrict_domains/Homeobox_new/P_1nk3.pdb	S max: 95.5897 
+../restrict_domains/Homeobox_new/D_1hdd.pdb-../restrict_domains/Homeobox_new/P_1zq3.pdb	S max: 85.4251 
+../restrict_domains/Homeobox_new/D_1k61.pdb-../restrict_domains/Homeobox_new/D_1k61.pdb	S max: 9199.23 
+../restrict_domains/Homeobox_new/D_1k61.pdb-../restrict_domains/Homeobox_new/D_1mnm.pdb	S max: 282.507 
+../restrict_domains/Homeobox_new/D_1k61.pdb-../restrict_domains/Homeobox_new/P_1ahd.pdb	S max: 217.411 
+../restrict_domains/Homeobox_new/D_1k61.pdb-../restrict_domains/Homeobox_new/P_1lfu.pdb	S max: 388.588 
+../restrict_domains/Homeobox_new/D_1k61.pdb-../restrict_domains/Homeobox_new/P_1nk2.pdb	S max: 97.7441 
+../restrict_domains/Homeobox_new/D_1k61.pdb-../restrict_domains/Homeobox_new/P_1nk3.pdb	S max: 232.194 
+../restrict_domains/Homeobox_new/D_1k61.pdb-../restrict_domains/Homeobox_new/P_1zq3.pdb	S max: 297.383 
+../restrict_domains/Homeobox_new/D_1mnm.pdb-../restrict_domains/Homeobox_new/D_1mnm.pdb	S max: 15774 
+../restrict_domains/Homeobox_new/D_1mnm.pdb-../restrict_domains/Homeobox_new/P_1ahd.pdb	S max: 238.515 
+../restrict_domains/Homeobox_new/D_1mnm.pdb-../restrict_domains/Homeobox_new/P_1lfu.pdb	S max: 272.336 
+../restrict_domains/Homeobox_new/D_1mnm.pdb-../restrict_domains/Homeobox_new/P_1nk2.pdb	S max: 187.021 
+../restrict_domains/Homeobox_new/D_1mnm.pdb-../restrict_domains/Homeobox_new/P_1nk3.pdb	S max: 421.421 
+../restrict_domains/Homeobox_new/D_1mnm.pdb-../restrict_domains/Homeobox_new/P_1zq3.pdb	S max: 197.274 
+../restrict_domains/Homeobox_new/P_1ahd.pdb-../restrict_domains/Homeobox_new/P_1ahd.pdb	S max: 7149.5 
+../restrict_domains/Homeobox_new/P_1ahd.pdb-../restrict_domains/Homeobox_new/P_1lfu.pdb	S max: 271.895 
+../restrict_domains/Homeobox_new/P_1ahd.pdb-../restrict_domains/Homeobox_new/P_1nk2.pdb	S max: 62.6642 
+../restrict_domains/Homeobox_new/P_1ahd.pdb-../restrict_domains/Homeobox_new/P_1nk3.pdb	S max: 92.7808 
+../restrict_domains/Homeobox_new/P_1ahd.pdb-../restrict_domains/Homeobox_new/P_1zq3.pdb	S max: 258.564 
+../restrict_domains/Homeobox_new/P_1lfu.pdb-../restrict_domains/Homeobox_new/P_1lfu.pdb	S max: 8787.5 
+../restrict_domains/Homeobox_new/P_1lfu.pdb-../restrict_domains/Homeobox_new/P_1nk2.pdb	S max: 246.898 
+../restrict_domains/Homeobox_new/P_1lfu.pdb-../restrict_domains/Homeobox_new/P_1nk3.pdb	S max: 330.684 
+../restrict_domains/Homeobox_new/P_1lfu.pdb-../restrict_domains/Homeobox_new/P_1zq3.pdb	S max: 357.588 
+../restrict_domains/Homeobox_new/P_1nk2.pdb-../restrict_domains/Homeobox_new/P_1nk2.pdb	S max: 9464.42 
+../restrict_domains/Homeobox_new/P_1nk2.pdb-../restrict_domains/Homeobox_new/P_1nk3.pdb	S max: 892.621 
+../restrict_domains/Homeobox_new/P_1nk2.pdb-../restrict_domains/Homeobox_new/P_1zq3.pdb	S max: 223.635 
+../restrict_domains/Homeobox_new/P_1nk3.pdb-../restrict_domains/Homeobox_new/P_1nk3.pdb	S max: 7574.42 
+../restrict_domains/Homeobox_new/P_1nk3.pdb-../restrict_domains/Homeobox_new/P_1zq3.pdb	S max: 357.612 
+../restrict_domains/Homeobox_new/P_1zq3.pdb-../restrict_domains/Homeobox_new/P_1zq3.pdb	S max: 6491.54 
