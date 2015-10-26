@@ -157,10 +157,10 @@ double Measure3_p(double *measure, unsigned int ** list_hit, unsigned int n_hit,
 *********************************/
 
 
-unsigned int BidirectionalHit( struct atom * atoms_i, struct atom *C_atoms_i, unsigned int n_i, struct atom * atoms_j, struct atom *C_atoms_j, unsigned int n_j, unsigned int *** list, unsigned int * n_hit){
-  unsigned int i,j,k, curr, m, *list_j, *list_i, ja, ma;
+unsigned int BidirectionalHit( struct atom * atoms_i, unsigned int n_i, struct atom * atoms_j, unsigned int n_j, unsigned int *** list, unsigned int * n_hit){
+  unsigned int i,j,k, curr,m, *list_j,* list_i,ja,ma;
   double min, dist;
-  struct geomvector vector, vector1, vector2;
+  struct geomvector vector;
   
   /*free (*list);*/
   //printf("H1\n"); // Enable in test mode
@@ -168,8 +168,8 @@ unsigned int BidirectionalHit( struct atom * atoms_i, struct atom *C_atoms_i, un
   for (i=0; i<n_i+1; i++) (*list)[i] = (unsigned int *)malloc( sizeof(unsigned int)*2 );
   //printf("H2\n"); // Enable in test mode
  
-  list_i = (unsigned int *)malloc(sizeof(unsigned int)*(n_i+1));
-  list_j = (unsigned int *)malloc(sizeof(unsigned int)*(n_j+1));
+  list_i = (unsigned int*)malloc(sizeof(unsigned int)*(n_i+1));
+  list_j = (unsigned int*)malloc(sizeof(unsigned int)*(n_j+1));
   //printf("H3\n"); // Enable in test mode
 
   m=0;  
@@ -180,25 +180,21 @@ unsigned int BidirectionalHit( struct atom * atoms_i, struct atom *C_atoms_i, un
 	  vector = fromto( location(atoms_i[i]), location(atoms_j[j]) );
 	  dist = sqrt( scalar(vector, vector) );
           if (dist - min < 0) {
-          	vector1 = fromto( location(atoms_i[i]), location(C_atoms_i[i]) );
-          	vector2 = fromto( location(atoms_j[j]), location(C_atoms_j[j]) );
-          	if ( scalar(vector1, vector2) > 0 ){
-			min = dist;
-			list_i[i] = j;
-		}
+	        min = dist;
+		list_i[i] = j;
 	  }
       }
       ma = 2;
       for (ja=1; ja<=m; ja++) {if (list_i[i]==list_j[ja]) ma=1; 
-      //printf("ma: %u\tlist_j[ja]:%u\tja: %u\n",ma, list_j[ja], ja); // Enable in test mode
+      /*printf("ma: %u\tlist_j[ja]:%u\tja: %u\n",ma, list_j[ja], ja);*/ // Enable in test mode
       }
 	  if (ma>1){
 	    m++;
 	    list_j[m] = list_i[i];
-		//printf(" I add   m: %u\tlist_i[i]: %u\n",m, list_i[i]); // Enable in test mode
+		/*printf(" I add   m: %u\tlist_i[i]: %u\n",m, list_i[i]);*/ // Enable in test mode
 	    }
-	//printf("\ti: %u list_i[i]: %u\tm: %u\tlist_j[m]: %u\n", i, list_i[i],m,list_j[m]); // Enable in test mode
-  }
+	/*printf("\ti: %u list_i[i]: %u\tm: %u\tlist_j[m]: %u\n", i, list_i[i],m,list_j[m]);*/ // Enable in test mode
+	}
   //printf("H4\n"); // Enable in test mode
 
   k = 0;
@@ -208,14 +204,10 @@ unsigned int BidirectionalHit( struct atom * atoms_i, struct atom *C_atoms_i, un
 	    vector = fromto( location(atoms_j[list_j[j]]), location(atoms_i[i]) );
 	    dist = sqrt( scalar(vector, vector) );
         if (dist - min < 0) {
-        	vector1 = fromto( location(atoms_i[i]), location(C_atoms_i[i]) );
-          	vector2 = fromto( location(atoms_j[list_j[j]]), location(C_atoms_j[list_j[j]]) );
-          	if ( scalar(vector2, vector1) > 0 ){
-			min = dist;
-			curr = i;
-		}
-	}
-      }
+	      min = dist;
+		  curr = i;
+		  }
+	    }
     //printf("list_j[j]: %u\tlist_i[curr]: %u\tk: %u\t|\t",list_j[j],list_i[curr],k); // Enable in test mode
 	if (list_j[j]==list_i[curr]){
 	  //printf("I add: k: %u 0: %u 1: %u\n", k, curr, list_j[j]); // Enable in test mode
@@ -429,7 +421,7 @@ void BestDiag(double **measures, unsigned int n, unsigned int m, double *S_max,
 		unsigned int *i_max, unsigned int *j_max, unsigned int *i_start,
 		unsigned int *j_start, unsigned int *i_max_measure, unsigned int *j_max_measure,
 		struct atom *atoms1, unsigned int *list_P1, struct atom *atoms2, unsigned int *list_P2,
-		unsigned int compl1, unsigned int compl2, unsigned int n_1chain, unsigned int m_1chain,
+		unsigned int compl1, unsigned int compl2, unsigned int n_1chain, unsigned int m_1chain, 
 		char *infile1, char *infile2, FILE *S_out, FILE *outputfile){
 
 //n for n_P1; m for n_P2
@@ -446,7 +438,6 @@ S = (double **)malloc( sizeof(double *)*(n+1) );
 for (i=1; i<=n; i++)  S[i] = (double *)malloc( sizeof(double)*(m+1) );
 
 
-printf("n=%u\n", n);
 for (d=(int)(-n+1); d<=(int)(m_1chain-1); d++){ 
 	for (i = ((-d+1 > 1) ? -d+1 : 1); i <= (n+d<m_1chain ? n : m_1chain-d); i++){
 	//for i=max(-d+1, 1) to (n_P1 if n_P1+d<m_1chain and m_1chain otherwise)
@@ -487,9 +478,10 @@ while (i>0 && j>0 && S[i][j]>0){
 *i_start = i+1;
 *j_start = j+1;
 
-printf("\nS max: %lg, i_start: %d, j_start: %d, i_max: %d, j_max: %d, max_M: %lg\n", max_sum, i+1, j+1, max_i, max_j, measure_max);
+printf("S max: %lg \n\n", max_sum);
 fprintf(S_out, "%s-%s\tS max: %lg \n", infile1, infile2, max_sum);
 fprintf(outputfile, "%s-%s\tS max: %lg \n", infile1, infile2, max_sum);
+//printf("\nS max: %lg, i_start: %d, j_start: %d, i_max: %d, j_max: %d, max_M: %lg\n", max_sum, i+1, j+1, max_i, max_j, measure_max);
 //Enable in test mode
 
 //print S-table

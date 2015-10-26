@@ -1,9 +1,10 @@
 import re
+current = 'HTH3'
 
 list = []
 d = {}
 
-f = open("Homeobox_output.txt", 'r')
+f = open("{}_output.txt".format(current), 'r')
 for line in f:
 	temp = re.findall(r'new\/(.+).pdb-.+\/(.+).pdb\t(.+)', line)[0]
 	if temp[0] not in d:
@@ -16,9 +17,9 @@ f.close()
 
 #d['A_1jgg']['B_1du0'] = 'seg_f'
 
-print ' '*6,
+print ' '*7,
 for i in list:
-	print "{:6} ".format(i),
+	print "{:7} ".format(i),
 print ""
 
 for i in range(len(list)):
@@ -27,10 +28,10 @@ for i in range(len(list)):
 		if j>=i:
 			s = d[list[i]][list[j]]
 			if s.replace('.', '').isdigit():
-				print "{:>6.0f} ".format(float(s)),
+				print "{:>7.0f} ".format(float(s)),
 			else:
-				print "{:>6} ".format(s),
+				print "{:>7} ".format(s),
 		else:
-			print " "*7,
+			print " "*8,
 	print ""
 

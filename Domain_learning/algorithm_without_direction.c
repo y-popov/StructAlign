@@ -28,7 +28,7 @@ int main  (int argc, char **argv)
 
   outfile = (char *)malloc( sizeof(char)*(strlen(argv[3])+1) );
   sscanf(argv[3], "%s", outfile);
-
+  
   S_file = (char *)malloc( sizeof(char)*(strlen(argv[4])+5) );
   output_file = (char *)malloc( sizeof(char)*(strlen(argv[4])+12) );
   sscanf(argv[4], "%s", S_file);
@@ -45,10 +45,8 @@ int main  (int argc, char **argv)
   struct atom *atoms_dna1 = NULL, *atoms_dna2 = NULL;
   struct atom *atoms_wat1 = NULL, *atoms_wat2 = NULL;
   struct atom *atoms_prot_CA1 = NULL, *atoms_prot_CA2 = NULL;
-  struct atom *atoms_prot_C1 = NULL, *atoms_prot_C2 = NULL;
   struct atom *atoms_prot_i1 = NULL, *atoms_prot_i2 = NULL;
   struct atom *atoms_prot_j1 = NULL, *atoms_prot_j2 = NULL;
-  struct atom *C_atoms_prot_i1 = NULL, *C_atoms_prot_j2 = NULL;
 
   struct atomname *list1, *list2;
 
@@ -87,8 +85,9 @@ int main  (int argc, char **argv)
   /* Make lists of P, C1', OP1 atoms 
   of dna and CA atoms of protein */
   
-  unsigned int *list_P1, *list_C11, *list_OP11, *list_OP21, *list_CA1, *list_P2, *list_C12, *list_OP12, *list_OP22, *list_CA2, *list_C1, *list_C2;
-  unsigned int n_P1, n_C11, n_OP11, n_OP21, n_CA1, n_P2, n_C12, n_OP12, n_OP22, n_CA2, n_C1, n_C2;
+  unsigned int *list_P1, *list_C11, *list_OP11, *list_OP21, *list_CA1, *list_P2, *list_C12, *list_OP12, *list_OP22, *list_CA2;
+  unsigned int n_P1, n_C11, n_OP11, n_OP21, n_CA1, n_P2, n_C12, n_OP12, n_OP22, n_CA2;
+  
 
   getAtomsNumbers(atoms_dna1, m1, &list_P1, &n_P1, "P"); 
     // pdb.c function, get only indexes of atoms
@@ -96,7 +95,6 @@ int main  (int argc, char **argv)
   getAtomsNumbers(atoms_dna1, m1, &list_OP11, &n_OP11, "OP1");
   getAtomsNumbers(atoms_dna1, m1, &list_OP21, &n_OP21, "OP2");
   getAtomsNumbers(atoms_prot1, n1, &list_CA1, &n_CA1, "CA");
-  getAtomsNumbers(atoms_prot1, n1, &list_C1, &n_C1, "C");
   correctC1_P(atoms_dna1, &list_C11, &n_C11, list_P1, n_P1);
     //corrects list_C1 to use rule list_P[i] and list_C1[i+1] are in the same nucleotide
 
@@ -105,7 +103,6 @@ int main  (int argc, char **argv)
   getAtomsNumbers(atoms_dna2, m2, &list_OP12, &n_OP12, "OP1");
   getAtomsNumbers(atoms_dna2, m2, &list_OP22, &n_OP22, "OP2");
   getAtomsNumbers(atoms_prot2, n2, &list_CA2, &n_CA2, "CA");
-  getAtomsNumbers(atoms_prot2, n2, &list_C2, &n_C2, "C");
   correctC1_P(atoms_dna2, &list_C12, &n_C12, list_P2, n_P2);
 
   atoms_prot_CA1 = (struct atom *)malloc( sizeof(struct atom)*(n_CA1+1) );
@@ -113,21 +110,13 @@ int main  (int argc, char **argv)
     atomcpy(&atoms_prot_CA1[i], atoms_prot1[list_CA1[i]]); 
       //pdb.c function. Copy all properties of atom
 	}
-  atoms_prot_C1 = (struct atom *)malloc( sizeof(struct atom)*(n_C1+1) );
-  for (i=1; i<=n_C1; i++) {
-  	atomcpy(&atoms_prot_C1[i], atoms_prot1[list_C1[i]]);
-  }
-  //printf("Done atoms:\tP %u\tC1 %u\tOP1 %u\tOP2 %u\tCA %u\tC %u\n",n_P1, n_C11, n_OP11, n_OP21, n_CA1, n_C1);  
+  //printf("Done atoms:\tP %u\tC1 %u\tOP1 %u\tOP2 %u\tCA %u\n",n_P1, n_C11, n_OP11, n_OP21, n_CA1);  
   
   atoms_prot_CA2 = (struct atom *)malloc( sizeof(struct atom)*(n_CA2+1) );
   for (i=1; i<=n_CA2; i++) {
     atomcpy(&atoms_prot_CA2[i], atoms_prot2[list_CA2[i]]);
 	}
-  atoms_prot_C2 = (struct atom *)malloc( sizeof(struct atom)*(n_C2+1) );
-  for (i=1; i<=n_C2; i++) {
-  	atomcpy(&atoms_prot_C2[i], atoms_prot2[list_C2[i]]);
-  }
-  //printf("Done atoms:\tP %u\tC1 %u\tOP1 %u\tOP2 %u\tCA %u\tC %u\n",n_P2, n_C12, n_OP12, n_OP22, n_CA2, n_C2);  
+  //printf("Done atoms:\tP %u\tC1 %u\tOP1 %u\tOP2 %u\tCA %u\n",n_P2, n_C12, n_OP12, n_OP22, n_CA2);  
 
   /* Done making lists */
 
@@ -149,10 +138,8 @@ int main  (int argc, char **argv)
     for (j=1; j<=n_P2; j++){  
       ChangeSystem(atoms_prot_CA1, n_CA1, &atoms_prot_i1, atoms_dna1[list_P1[i]], atoms_dna1[list_C11[i+1]], atoms_dna1[list_OP11[i]], atoms_dna1[list_OP21[i]], 'E'); 
         // pdb.c function. Change the coordinate system of protein with given nucleotide
-      ChangeSystem(atoms_prot_C1, n_C1, &C_atoms_prot_i1, atoms_dna1[list_P1[i]], atoms_dna1[list_C11[i+1]], atoms_dna1[list_OP11[i]], atoms_dna1[list_OP21[i]], 'E');
       ChangeSystem(atoms_prot_CA2, n_CA2, &atoms_prot_j2, atoms_dna2[list_P2[j]], atoms_dna2[list_C12[j+1]], atoms_dna2[list_OP12[j]], atoms_dna2[list_OP22[j]], 'F');
-      ChangeSystem(atoms_prot_C2, n_C2, &C_atoms_prot_j2, atoms_dna2[list_P2[j]], atoms_dna2[list_C12[j+1]], atoms_dna2[list_OP12[j]], atoms_dna2[list_OP22[j]], 'F');
-	    BidirectionalHit(atoms_prot_i1, C_atoms_prot_i1, n_CA1, atoms_prot_j2, C_atoms_prot_j2, n_CA2, &list_hit, &n_hit); 
+	    BidirectionalHit(atoms_prot_i1, n_CA1, atoms_prot_j2, n_CA2, &list_hit, &n_hit); 
         // pdb.c function.
 	    Measure2_p(&(list_measure[i][j]), list_hit, n_hit, atoms_prot_i1, atoms_prot_j2); 
         // pdb.c function.
@@ -173,20 +160,13 @@ int main  (int argc, char **argv)
   struct atom *atoms_dna_P2 = NULL;
 
   // print measure-table
-  /*printf("  ");
-  for (j=1; j<=n_P2; j++) printf("%4d", j);
-  puts("");
-  for (i=n_P1; i>=1; i--){
-  	printf("%2d", i);
+/*  for (i=n_P1; i>=1; i--){
 	for (j=1; j<=n_P2; j++){
 		printf("%4.0f", list_measure[i][j]>0 ? list_measure[i][j] : 0);
 	}
 	puts("");
-  }
-  printf("  ");
-  for (j=1; j<=n_P2; j++) printf("%4d", j);
-  puts(""); 
-  */
+  } */
+  
  
   i_max_measure=0;
   j_max_measure=0;
@@ -199,7 +179,7 @@ int main  (int argc, char **argv)
 	atomcpy(&atoms_dna_P2[i], atoms_dna2[list_P2[i]]);
 
   }
-
+  
   FILE *S_outfile;
   S_outfile = fopen(S_file, "a");
   FILE *output;
@@ -216,7 +196,7 @@ int main  (int argc, char **argv)
 
   struct atom *atoms_dna_i1 = NULL;
   struct atom *atoms_dna_j2 = NULL;
-  /* Change the system to i and j coordinates, write the alignment to file */
+/*  //Change the system to i and j coordinates, write the alignment to file */
 
   ChangeSystem(atoms_prot1, n1, &atoms_prot_i1, atoms_dna1[list_P1[i_max_measure]], atoms_dna1[list_C11[i_max_measure+1]], atoms_dna1[list_OP11[i_max_measure]], atoms_dna1[list_OP21[i_max_measure]], 'E'); 
     // Note that names of chains will be changed to 'E' and 'F' by default! Modify if required.
@@ -224,7 +204,6 @@ int main  (int argc, char **argv)
   ChangeSystem(atoms_dna1, m1, &atoms_dna_i1, atoms_dna1[list_P1[i_max_measure]], atoms_dna1[list_C11[i_max_measure+1]], atoms_dna1[list_OP11[i_max_measure]], atoms_dna1[list_OP21[i_max_measure]], 'C'); 
   ChangeSystem(atoms_dna2, m2, &atoms_dna_j2, atoms_dna2[list_P2[j_max_measure]], atoms_dna2[list_C12[j_max_measure+1]], atoms_dna2[list_OP12[j_max_measure]], atoms_dna2[list_OP22[j_max_measure]], 'D');
     
-  //puts("\nFix 'nan' in pdb with this data:");
   createPDB(outfile, outfile); 
     // pdb.c function
   writetoPDB(outfile, atoms_dna_i1, m1);

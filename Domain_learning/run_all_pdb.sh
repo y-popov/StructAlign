@@ -1,5 +1,5 @@
 #!/bin/bash
-current="Homeobox"
+current="HTH3"
 
 make
 if ! [ -d "all_vs_all/$current" ]

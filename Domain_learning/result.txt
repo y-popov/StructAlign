@@ -1,22 +1,22 @@
 All
 Lower i: 496, Greater i: 496
 
-[394.026]
+[457.523]
 
 
 ETS
 Lower i: 4, Greater i: 4
 
-[1030.53]
+[1009.69]
 
 
 HTH3
 Lower i: 37, Greater i: 37
 
-[833.644]
+[578.842]
 
 
 Homeobox
 Lower i: 496, Greater i: 496
 
-[394.026]
+[438.269]

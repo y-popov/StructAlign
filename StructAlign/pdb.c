@@ -157,10 +157,10 @@ double Measure3_p(double *measure, unsigned int ** list_hit, unsigned int n_hit,
 *********************************/
 
 
-unsigned int BidirectionalHit( struct atom * atoms_i, unsigned int n_i, struct atom * atoms_j, unsigned int n_j, unsigned int *** list, unsigned int * n_hit){
+unsigned int BidirectionalHit( struct atom * atoms_i, struct atom *C_atoms_i, unsigned int n_i, struct atom * atoms_j, struct atom *C_atoms_j, unsigned int n_j, unsigned int *** list, unsigned int * n_hit){
   unsigned int i,j,k, curr, m, *list_j, *list_i, ja, ma;
   double min, dist;
-  struct geomvector vector;
+  struct geomvector vector, vector1, vector2;
   
   /*free (*list);*/
   //printf("H1\n"); // Enable in test mode
@@ -180,20 +180,24 @@ unsigned int BidirectionalHit( struct atom * atoms_i, unsigned int n_i, struct a
 	  vector = fromto( location(atoms_i[i]), location(atoms_j[j]) );
 	  dist = sqrt( scalar(vector, vector) );
           if (dist - min < 0) {
-	        min = dist;
-		list_i[i] = j;
+          	vector1 = fromto( location(atoms_i[i]), location(C_atoms_i[i]) );
+          	vector2 = fromto( location(atoms_j[j]), location(C_atoms_j[j]) );
+          	if ( scalar(vector1, vector2) > 0 ){
+			min = dist;
+			list_i[i] = j;
+		}
 	  }
       }
       ma = 2;
       for (ja=1; ja<=m; ja++) {if (list_i[i]==list_j[ja]) ma=1; 
-      /*printf("ma: %u\tlist_j[ja]:%u\tja: %u\n",ma, list_j[ja], ja);*/ // Enable in test mode
+      //printf("ma: %u\tlist_j[ja]:%u\tja: %u\n",ma, list_j[ja], ja); // Enable in test mode
       }
 	  if (ma>1){
 	    m++;
 	    list_j[m] = list_i[i];
-		/*printf(" I add   m: %u\tlist_i[i]: %u\n",m, list_i[i]);*/ // Enable in test mode
+		//printf(" I add   m: %u\tlist_i[i]: %u\n",m, list_i[i]); // Enable in test mode
 	    }
-	/*printf("\ti: %u list_i[i]: %u\tm: %u\tlist_j[m]: %u\n", i, list_i[i],m,list_j[m]);*/ // Enable in test mode
+	//printf("\ti: %u list_i[i]: %u\tm: %u\tlist_j[m]: %u\n", i, list_i[i],m,list_j[m]); // Enable in test mode
   }
   //printf("H4\n"); // Enable in test mode
 
@@ -204,8 +208,12 @@ unsigned int BidirectionalHit( struct atom * atoms_i, unsigned int n_i, struct a
 	    vector = fromto( location(atoms_j[list_j[j]]), location(atoms_i[i]) );
 	    dist = sqrt( scalar(vector, vector) );
         if (dist - min < 0) {
-	      min = dist;
-	      curr = i;
+        	vector1 = fromto( location(atoms_i[i]), location(C_atoms_i[i]) );
+          	vector2 = fromto( location(atoms_j[list_j[j]]), location(C_atoms_j[list_j[j]]) );
+          	if ( scalar(vector2, vector1) > 0 ){
+			min = dist;
+			curr = i;
+		}
 	}
       }
     //printf("list_j[j]: %u\tlist_i[curr]: %u\tk: %u\t|\t",list_j[j],list_i[curr],k); // Enable in test mode

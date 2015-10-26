@@ -10,12 +10,16 @@ for line in g:
 measures1.sort()
 g.close()
 
+print 'Random: ', len(measures1)
+
 f = open("{}.txt".format(current), 'r')
 measures2 = []
 for line in f:
 	measures2.append( float(line.split()[3]) )
 measures2.sort()
 f.close()
+
+print current, len(measures2)
 
 assay = []
 m_assay = []
@@ -46,6 +50,7 @@ def BSearch_partial(start, end, array, m_array):
     left = start
     i = start
     while True:
+	previous = array[i]
 	i = (left+right)/2
 	print 'I am in', array[i], 'position=', i
 	lower_i = 0
@@ -55,8 +60,10 @@ def BSearch_partial(start, end, array, m_array):
 			lower_i += 1
 		if (array[j] > array[i]) and (m_array[j] == 1):
 			greater_i += 1
-	print "Lower i: {}, Greater i: {}\n".format(lower_i, greater_i)
-	if lower_i == greater_i:
+	lower_i /= 1.0*m_array.count(2)
+	greater_i /= 1.0*m_array.count(1)
+	print "Lower i rate: {}, Greater i rate: {}\n".format(lower_i, greater_i)
+	if (lower_i == greater_i) or (previous==array[i]):
 	    return array[i]
 	if lower_i > greater_i:
 	    right = i
