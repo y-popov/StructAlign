@@ -3,14 +3,14 @@ StructAlign2
 1) Unzip
 2) Place to desired folder
 3) type 'make'
-4) run as 'python StructAlign.py -i1 pdb1 -i2 pdb2'
+4) run as 'python StructAlign.py pdb1 pdb2'
 
 Type 'python StructAlign.py -h' for more options
 
 Выходные файлы:
 
-pdb1_pdb2.pdb
-	pdb-файл с совмещением структур
+pdb1*_pdb2*.pdb
+	pdb-файл с совмещением структур, где * - имя белковой цепи
 
 pdb1_pdb2.fasta
 	выравнивание ДНК; совмещаются первые 2 и последние 2 последовательности

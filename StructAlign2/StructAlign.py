@@ -2,47 +2,58 @@
 from argparse import ArgumentParser
 from subprocess import call
 from sys import stdin
-from os import system, access, F_OK, remove, devnull
+from os import system, access, F_OK, remove, devnull, path, makedirs
+from sys import argv
 from random import choice
 from string import ascii_uppercase, digits
 
 
 
-parser=ArgumentParser()
-parser.add_argument('-i1', '--input1', help='First pdb-file')
-parser.add_argument('-i2', '--input2', help='Second pdb-file')
-parser.add_argument('-o', '--output', help='Name of output files, pdb1_pdb2 by default')
-parser.add_argument('-c1', '--chain1', default='@', help='Protein chain in first pdb-file')
+parser=ArgumentParser(description="Align two DNA-protein complexes")
+parser.add_argument('pdb1', help='First pdb-file')
+parser.add_argument('pdb2', help='Second pdb-file')
+parser.add_argument('-o', '--output', help='Name of output directory')
+parser.add_argument('-c1', '--chain1', default='@', help='Protein chain in first pdb-file ')
 parser.add_argument('-c2', '--chain2', default='@', help='Protein chain in second pdb-file')
-parser.add_argument('-s', '--supress', action='store_true', help='Supress program output text')
+parser.add_argument('-i', '--internal', action="store_true", help="Use internal algorithm for complement nucleotide search; not stable but doesn't require 3DNA tools")
+parser.add_argument('-s', '--supress', action='store_true', help='Suppress program internal output text')
+parser.add_argument('-ss', '--supressAll', action='store_true', help='Suppress all program output text')
 
 options=parser.parse_args()
 
 chain1 = options.chain1.upper()
 chain2 = options.chain2.upper()
 
-if not options.output:
-	output = options.input1[-8:-4]+'*_'+options.input2[-8:-4]+'*'
-else:
-        output = options.output
+code1 = options.pdb1[0:4]
+code2 = options.pdb2[0:4]
 
-if not access(options.input1, F_OK):
-	print ( "PDB entry <B>"+options.input1+"</B> does not exist" )
+if not options.output:
+	output = options.pdb1[-8:-4]+'*_'+options.pdb2[-8:-4]+'*'
+else:
+	if not path.exists(options.output):
+		makedirs(options.output)
+        output = options.output.rstrip('/')+'/'+options.pdb1[-8:-4]+'*_'+options.pdb2[-8:-4]+'*'
+
+if not access(options.pdb1, F_OK):
+	print ( "PDB entry "+code1+" does not exist" )
 	exit(1)
-if not access(options.input2, F_OK):
-	print ( "PDB entry <B>"+options.input2+"</B> does not exist" )
+if not access(options.pdb2, F_OK):
+	print ( "PDB entry "+code2+" does not exist" )
 	exit(1)
+
+if options.supressAll:
+	options.supress = True
 
 random_name = ''.join(choice(ascii_uppercase + digits) for i in range(10))
 open(random_name+'.txt', 'w').close()
 
 #devnull = open(devnull, 'w')
-#args = 'algorithm.exe {} {} {}.pdb {} {} {}.txt'.format(options.input1, options.input2, output, chain1, chain2, random_name)
+#args = 'algorithm.exe {} {} {}.pdb {} {} {}.txt'.format(options.pdb1, options.pdb2, output, chain1, chain2, random_name)
 if options.supress:
-        system('./align {} {} {}.pdb {} {} {}.txt > /dev/null'.format(options.input1, options.input2, output, chain1, chain2, random_name))
+        system('{}./align {} {} {}.pdb {} {} {}.txt > /dev/null'.format(argv[0].rstrip("StructAlign.py"), options.pdb1, options.pdb2, output, chain1, chain2, random_name))
         #call(args, shell=False, stdout=devnull)
 else:
-        system('./align {} {} {}.pdb {} {} {}.txt'.format(options.input1, options.input2, output, chain1, chain2, random_name))
+        system('{}./align {} {} {}.pdb {} {} {}.txt'.format(argv[0].rstrip("StructAlign.py"), options.pdb1, options.pdb2, output, chain1, chain2, random_name))
         #call(args, shell=False)
 
 				
@@ -69,9 +80,6 @@ for index, line in enumerate(max_score):
 		dna12 = range(int(endA2), int(startA2)-1, -1)[::-1]
 		dna21 = range(int(startB1), int(endB1)+1)
 		dna22 = range(int(endB2), int(startB2)-1, -1)[::-1]
-
-		code1 = options.input1[0:4]
-		code2 = options.input2[0:4]
 
 		description_string = "{0}.{1} -> A\n{0}.{2} -> B\n{3}.{4} -> C\n{3}.{5} -> D".format(code1, dna_chainA1, dna_chainA2, code2, dna_chainB1, dna_chainB2)
 		if int(maxA) in dna12:
@@ -109,23 +117,29 @@ for index, line in enumerate(max_score):
 		else:
 			dna2_chain2 += '-'*delta
 		
-
-		print "Structures {} chain {} and {} chain {} were aligned with score: {}".format(code1, chain1, code2, chain2, score)
-		print "The nucleotides with max measure: {}.{}:{}, {}.{}:{}".format(code1, dna_chainA1, maxA, code2, dna_chainB1, maxB)
+		if not options.supressAll:
+			print "\nStructures {} chain {} and {} chain {} were aligned with score: {}".format(code1, chain1, code2, chain2, score)
+			print "\nThe nucleotides with max measure: {}.{}:{}, {}.{}:{}".format(code1, dna_chainA1, maxA, code2, dna_chainB1, maxB)
 		
-		
-		fasta = open(output[:-7]+output[-6:-1]+'.fasta', 'w')
+		fasta_name = output[:-7]+output[-6:-1]+'.fasta'
+		pdb_name = output[:-7]+chain1+output[-6:-1]+chain2+'.pdb'
+		fasta = open(fasta_name, 'w')
 		fasta.write(">{}.{} {}-{}\n{}\n\n>{}.{} {}-{}\n{}\n\n>{}.{} {}-{}\n{}\n\n>{}.{} {}-{}\n{}\n".format(code1, dna_chainA1, startA1, endA1, dna1_chain1, code2, dna_chainB1, startB1, endB1, dna2_chain1, code1, dna_chainA2, startA2, endA2, dna1_chain2, code2, dna_chainB2, startB2, endB2, dna2_chain2) )
 		fasta.close()
 
+		if not options.supressAll:
+			print '\nTo avoid possible overlapping of chain names, they were changed. The resulting pdb-file contains new names!'
+			print "DNA chains:"
+			print description_string
 
-		print 'To avoid possible overlapping of chain names, they were changed. The resulting pdb-file contains new names!'
-		print "DNA chains:"
-		print description_string
-
-		print "Protein chains:"
-		print "{}.{} -> E".format(code1, chain1)
-		print "{}.{} -> F".format(code2, chain2)
+			print "Protein chains:"
+			print "{}.{} -> E".format(code1, chain1)
+			print "{}.{} -> F".format(code2, chain2)
+			print "\n{} and {} were generated".format(pdb_name, fasta_name)
 		break
 
 remove("{}.txt".format(random_name))
+if not options.internal:
+	x3dna_files = ["bestpairs.pdb", "col_chains.scr", "hel_regions.pdb", "ref_frames.dat", "bp_order.dat", "col_helices.scr", "out"]
+	for file in x3dna_files:
+		remove(file)

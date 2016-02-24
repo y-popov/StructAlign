@@ -213,8 +213,7 @@ for b in a:
 				print ( "<H3>Error</H3>" )
 				print ( "<p>PDB entry <B>"+code2+"</B> does not exist</p>" )
 
+print "</BODY>\n</HTML>"
 		
 system("/home/popov/bin/clean_temp.sh")
-
-print "</BODY>\n</HTML>"
 

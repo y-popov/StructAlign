@@ -211,6 +211,75 @@ double Measure3_p(double *measure, unsigned int ** list_hit, unsigned int n_hit,
 }  
 
 /********************************
+*                            3DNA
+********************************/
+unsigned int run_3dna(char *pdb_name, unsigned int **compl, char ***pairs)
+{
+	FILE *fp, *out_file;
+	extern FILE *popen();
+	char *command;
+	char c[102];
+	char chain1, chain2, flag;
+	unsigned int pairs_max=2;
+	unsigned int i, j, n, a, b, count;
+	command = (char *)malloc(sizeof(char)*(strlen(pdb_name)+27));
+	(*compl) = (unsigned int *)malloc(sizeof(unsigned int)*pairs_max);
+	(*pairs) = (char **)malloc(sizeof(char *)*pairs_max);
+	for (j=1; j<=pairs_max; j++)
+		(*pairs)[j] = (char *)malloc(sizeof(char)*3);
+
+	sprintf(command, "find_pair %s out 2>/dev/null", pdb_name);
+	fp = popen(command, "r");
+  	if (fp == NULL)
+  	{
+		printf("Failed to run find_pair on %s\n", pdb_name);
+		exit(1);
+  	}
+  	pclose(fp);
+
+	out_file = fopen("out", "r");
+	if (out_file == NULL)
+	{
+    		perror("find_pair failed");
+    		exit(1);
+  	}
+	fgets (c, 102, out_file);
+	fgets (c, 102, out_file);
+	fgets (c, 102, out_file);
+	fgets (c, 102, out_file);
+	sscanf(c, "%u", &n);
+	fgets (c, 102, out_file);
+	
+	flag = 'x';
+	count = 0;
+	for (i=1; i<=n; i++)
+	{
+		fgets (c, 102, out_file);
+		if (flag == 'x')
+		{
+			sscanf(c, "%5u%5u%*u #%*u %c %*5c%c%*31c%c", &a, &b, &flag, &chain1, &chain2);
+			count++;
+			if (count > pairs_max)
+			{
+				pairs_max = pairs_max * 2;
+				(*compl) = (unsigned int *)realloc((*compl), pairs_max*sizeof(unsigned int));
+				(*pairs) = (char **)realloc((*pairs), sizeof(char *)*pairs_max);
+				for (j=pairs_max; j>pairs_max/2; j--)
+					(*pairs)[j] = (char *)malloc(sizeof(char)*3);
+			}
+			(*compl)[count] = b-a;
+			(*pairs)[count][1] = chain1;
+			(*pairs)[count][2] = chain2;
+		}
+		else
+		{
+			sscanf(c, "%5u%5u%*u #%*u %c %*5c%c%*31c%c", &a, &b, &flag, &chain1, &chain2);
+		}
+	}
+}
+
+
+/********************************
 *		BIDIRECTIONAL HIT
 *********************************/
 
@@ -472,7 +541,7 @@ void find_compl(struct atom *atoms1, unsigned int *list_P, unsigned int *list_C1
 	}
 	
 	(*compl) = (n_P1+k-1);
-	//printf("k=%u; compl=%u; n_P1=%u\n", k, (*compl), n_P1 );
+	printf("k=%u; compl=%u; n_P1=%u\n", k, (*compl), n_P1 );
 }
 
 void BestDiag(double **measures, unsigned int n, unsigned int m, double *S_max,

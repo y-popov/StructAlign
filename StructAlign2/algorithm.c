@@ -115,6 +115,17 @@ int main  (int argc, char **argv)
   printf("DNA1 chains: %s; DNA2 chains: %s\n", dna_chains1, dna_chains2);
   /* Done reading */
 
+  /*** 3DNA block ***/
+  
+  unsigned int *compl_list1, *compl_list2;
+  char **pairs1, **pairs2;
+  
+  run_3dna(infile1, &compl_list1, &pairs1);
+  run_3dna(infile2, &compl_list2, &pairs2);
+  
+  printf("compl1 = %u %u\n", compl_list1[1], compl_list1[1]);
+  /*** 3DNA block end ***/
+
   /*** For server: *************
   *****reading DNA sequences ***/
   struct atom *dna1_chain1, *dna1_chain2, *dna2_chain1, *dna2_chain2;
@@ -214,7 +225,8 @@ int main  (int argc, char **argv)
   /* Start working with diagonals */
 
   unsigned int i_max, j_max, i_start, j_start, i_max_measure, j_max_measure;
-  unsigned int compl1, compl2, n_first_chain, m_first_chain;
+  unsigned int n_first_chain, m_first_chain;
+  unsigned int compl1, compl2;
   double S_max;
   struct atom *atoms_dna_P1 = NULL;
   struct atom *atoms_dna_P2 = NULL;

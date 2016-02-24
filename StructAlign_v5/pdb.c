@@ -56,7 +56,7 @@ unsigned int correctC1_P(struct atom *atoms_from, unsigned int **list_C, unsigne
       if ( strcmp(atoms_from[list_P[j]].ResNumber, atoms_from[(*list_C)[j+2]].ResNumber) == 0 )
       {
         (*n_C) -= 1;
-        for (i=j; i<=(*n_C); i++)
+        for (i=j+1; i<(*n_C); i++)
           {(*list_C)[i] = (*list_C)[i+1];}
         //printf("P: %s; C1: %s\n", atoms_from[list_P[j]].ResNumber, atoms_from[(*list_C)[j+1]].ResNumber); //prints if smth changed
       }
