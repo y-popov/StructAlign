@@ -130,7 +130,7 @@ unsigned int SelectChain(struct atom * atoms_from, unsigned int n_from, struct a
 unsigned int getAtomsNumbers(struct atom * atoms_from, unsigned int n, unsigned int ** list_to, unsigned int * n_to, char * atoms_type);
 
 /* If there is different number of C1' and P atoms, it deletes redundant atoms */
-unsigned int correctC1_P(struct atom *atoms_from, unsigned int **list_C, unsigned int *n_C, unsigned int *list_P, unsigned int n_P);
+unsigned int correctC1_P(struct atom *atoms_from, unsigned int **list_C, unsigned int *n_C, unsigned int *list_P, unsigned int *n_P);
 
 /* Moves coordinate system to desired atom */
 unsigned int ChangeSystem(struct atom * atoms_from, 

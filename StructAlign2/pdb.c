@@ -44,13 +44,19 @@ unsigned int getAtomsNumbers(struct atom * atoms_from, unsigned int n, unsigned 
   return 0;
  } 
 
-unsigned int correctC1_P(struct atom *atoms_from, unsigned int **list_C, unsigned int *n_C, unsigned int *list_P, unsigned int n_P)
+unsigned int correctC1_P(struct atom *atoms_from, unsigned int **list_C, unsigned int *n_C, unsigned int *list_P, unsigned int *n_P)
   {
   unsigned int i, j;
   
-  for (j=1; j<=n_P; j++)
+  for (j=1; j<=(*n_P); j++)
   {
     //printf("P: %s; C1: %s\n", atoms_from[list_P[j]].ResNumber, atoms_from[(*list_C)[j+1]].ResNumber);
+    if ( j == (*n_C) ) //if number of P-atoms is greater than C1'-atoms
+    {
+    	(*n_P) -= 1;
+    	return 0;
+    }
+    	
     if ( strcmp(atoms_from[list_P[j]].ResNumber, atoms_from[(*list_C)[j+1]].ResNumber) != 0 )
     {
 			
@@ -213,7 +219,7 @@ double Measure3_p(double *measure, unsigned int ** list_hit, unsigned int n_hit,
 /********************************
 *                            3DNA
 ********************************/
-unsigned int run_3dna(char *pdb_name, unsigned int **compl, char ***pairs)
+unsigned int run_3dna(char *pdb_name, unsigned int **compl, char ***pairs, unsigned int *len)
 {
 	FILE *fp, *out_file;
 	extern FILE *popen();
@@ -248,6 +254,11 @@ unsigned int run_3dna(char *pdb_name, unsigned int **compl, char ***pairs)
 	fgets (c, 102, out_file);
 	fgets (c, 102, out_file);
 	sscanf(c, "%u", &n);
+	if (n==0)
+	{
+		perror("There is no double stranded DNA!");
+		exit(1);
+	}
 	fgets (c, 102, out_file);
 	
 	flag = 'x';
@@ -257,7 +268,7 @@ unsigned int run_3dna(char *pdb_name, unsigned int **compl, char ***pairs)
 		fgets (c, 102, out_file);
 		if (flag == 'x')
 		{
-			sscanf(c, "%5u%5u%*u #%*u %c %*5c%c%*31c%c", &a, &b, &flag, &chain1, &chain2);
+			sscanf(c, "%5u%5u%*u #%*u %c %*4c>%c%*31c%c", &a, &b, &flag, &chain1, &chain2);
 			count++;
 			if (count > pairs_max)
 			{
@@ -270,12 +281,14 @@ unsigned int run_3dna(char *pdb_name, unsigned int **compl, char ***pairs)
 			(*compl)[count] = b-a;
 			(*pairs)[count][1] = chain1;
 			(*pairs)[count][2] = chain2;
+			(*len) = count;
 		}
 		else
 		{
 			sscanf(c, "%5u%5u%*u #%*u %c %*5c%c%*31c%c", &a, &b, &flag, &chain1, &chain2);
 		}
 	}
+	return 0;
 }
 
 
@@ -454,9 +467,10 @@ void find_compl(struct atom *atoms1, unsigned int *list_P, unsigned int *list_C1
 	n_P1 = 0; n_P2 = 0;
 	for (i=1; i<=n_P; i++)
 	{
+		//printf("%c.%s\n", atoms1_P[i].Chain, atoms1_P[i].ResNumber);
 		if (atoms1_P[i].Chain == atoms1_P[1].Chain)
-			{n_P1 += 1;}
-		else {n_P2 += 1;}
+			{n_P1 += 1; }
+		else {n_P2 += 1; }
 	}
 	
 	(*first_chain_length) = n_P1;
@@ -564,7 +578,7 @@ S = (double **)malloc( sizeof(double *)*(n+1) );
 for (i=1; i<=n; i++)  S[i] = (double *)malloc( sizeof(double)*(m+1) );
 
 
-printf("n=%u\n", n);
+//printf("n=%u\n", n);
 for (d=(int)(-n+1); d<=(int)(m_1chain-1); d++){ 
 	for (i = ((-d+1 > 1) ? -d+1 : 1); i <= (n+d<m_1chain ? n : m_1chain-d); i++){
 	//for i=max(-d+1, 1) to (n_P1 if n_P1+d<m_1chain and m_1chain otherwise)
@@ -573,7 +587,9 @@ for (d=(int)(-n+1); d<=(int)(m_1chain-1); d++){
 		//printf("compl1-i+1=%u compl2-j+1=%u Res1№=%s chain1=%c Res2№=%s chain2=%c\n", compl1-i+1, compl2-j+1, atoms1[list_P1[compl1-i+1]].ResNumber, atoms1[list_P1[compl1-i+1]].Chain, atoms2[list_P2[compl2-j+1]].ResNumber, atoms2[list_P2[compl2-j+1]].Chain);
 		
 		S[i][j] = measures[i][j] + ((i==1 || j==1 || i==n_1chain+1 ) ? 0 : S[i-1][j-1]);
-		if ( (compl1-i+1)>0 && (compl2-j+1)>0 && (compl1-i+1)<=n_1chain*2 && (compl2-j+1)<=m_1chain*2 )
+		//if ( (compl1-i+1)>0 && (compl2-j+1)>0 && (compl1-i+1)<=n_1chain*2 && (compl2-j+1)<=m_1chain*2 )
+		//	{S[i][j] += measures[compl1-i+1][compl2-j+1];}
+		if ( (compl1-i+1)>0 && (compl2-j+1)>0 && (compl1-i+1)<=n && (compl2-j+1)<=m )
 			{S[i][j] += measures[compl1-i+1][compl2-j+1];}
 		if (S[i][j] < 0)  S[i][j] = 0;
 		if (S[i][j] >= max_sum){
@@ -1424,6 +1440,32 @@ void atomcpy(struct atom *target, struct atom source)
   return;
 }
 
+/**********************
+* atomlistcpy():
+* Copy all atoms of given list of atoms to the target list 
+**********************/
+
+void atomlistcpy(struct atom **target, struct atom *source, unsigned int leng)
+{
+	unsigned int i;
+	(*target) = (struct atom *)malloc( sizeof(struct atom)*(leng+1) );
+	for (i=1; i<=leng; i++)
+		atomcpy(&(*target)[i], source[i]);
+}
+
+
+void atomlistmerge(struct atom **target, unsigned int *len, struct atom *source1, unsigned int len1, struct atom *source2, unsigned int len2)
+{
+	unsigned int i, c;
+	(*target) = (struct atom *)malloc( sizeof(struct atom)*(len1+len2+1) );
+	(*len) = len1 + len2;
+	for (i=1; i<=len1; i++)
+		atomcpy(&(*target)[i], source1[i]);
+	
+	c = len1+1;
+	for (i=1; i<=len2; i++, c++)
+		atomcpy(&(*target)[c], source2[i]);
+}
 /************************
 * location
 ************************/

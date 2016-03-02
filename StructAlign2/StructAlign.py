@@ -24,8 +24,8 @@ options=parser.parse_args()
 chain1 = options.chain1.upper()
 chain2 = options.chain2.upper()
 
-code1 = options.pdb1[0:4]
-code2 = options.pdb2[0:4]
+code1 = options.pdb1[-8:-4]
+code2 = options.pdb2[-8:-4]
 
 if not options.output:
 	output = options.pdb1[-8:-4]+'*_'+options.pdb2[-8:-4]+'*'
