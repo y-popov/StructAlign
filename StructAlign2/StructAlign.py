@@ -1,6 +1,6 @@
 
 from argparse import ArgumentParser
-from subprocess import call
+from subprocess import check_output
 from sys import stdin
 from os import system, access, F_OK, remove, devnull, path, makedirs
 from sys import argv
@@ -21,12 +21,13 @@ parser.add_argument('-ss', '--supressAll', action='store_true', help='Suppress a
 
 options=parser.parse_args()
 
-"""
-if not installed 3DNA and not options.internal:
-	print "It seems you don't have installed 3DNA package! Please, install it oe use '-i' option."
+not_installed = int( check_output(['./check_3dna.sh']) )
+if (not_installed==1) and (not options.internal):
+	print "It seems you don't have installed 3DNA package! Please, install it or use '-i' option."
 	print "You can download 3DNA from http://forum.x3dna.org/downloads/3dna-download/"
 	print "Follow installation instructions from http://forum.x3dna.org/howtos/how-to-install-3dna-on-linux-and-windows/"
-"""
+	exit(1)
+
 
 chain1 = options.chain1.upper()
 chain2 = options.chain2.upper()
@@ -58,10 +59,10 @@ open(random_name+'.txt', 'w').close()
 #args = 'algorithm.exe {} {} {}.pdb {} {} {}.txt'.format(options.pdb1, options.pdb2, output, chain1, chain2, random_name)
 if options.supress:
         system('{}./align {} {} {}.pdb {} {} {}.txt > /dev/null'.format(argv[0].rstrip("StructAlign.py"), options.pdb1, options.pdb2, output, chain1, chain2, random_name))
-        #call(args, shell=False, stdout=devnull)
+        
 else:
         system('{}./align {} {} {}.pdb {} {} {}.txt'.format(argv[0].rstrip("StructAlign.py"), options.pdb1, options.pdb2, output, chain1, chain2, random_name))
-        #call(args, shell=False)
+        
 
 				
 								
