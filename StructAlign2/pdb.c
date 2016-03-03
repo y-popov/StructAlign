@@ -219,7 +219,7 @@ double Measure3_p(double *measure, unsigned int ** list_hit, unsigned int n_hit,
 /********************************
 *                            3DNA
 ********************************/
-unsigned int run_3dna(char *pdb_name, unsigned int **compl, char ***pairs, unsigned int *len)
+unsigned int run_3dna(char *pdb_name, unsigned int **compl, unsigned int ***compl_pairs, char ***pairs, unsigned int *len)
 {
 	FILE *fp, *out_file;
 	extern FILE *popen();
@@ -228,12 +228,17 @@ unsigned int run_3dna(char *pdb_name, unsigned int **compl, char ***pairs, unsig
 	char chain1, chain2, flag;
 	unsigned int pairs_max=2;
 	unsigned int i, j, n, a, b, count;
+	unsigned int res1, res2;
 	command = (char *)malloc(sizeof(char)*(strlen(pdb_name)+27));
 	(*compl) = (unsigned int *)malloc(sizeof(unsigned int)*pairs_max);
+	(*compl_pairs) = (unsigned int **)malloc(sizeof(unsigned int *)*pairs_max);
 	(*pairs) = (char **)malloc(sizeof(char *)*pairs_max);
 	for (j=1; j<=pairs_max; j++)
+	{
 		(*pairs)[j] = (char *)malloc(sizeof(char)*3);
-
+		(*compl_pairs)[j] = (unsigned int *)malloc(sizeof(unsigned int)*3);
+	}
+	
 	sprintf(command, "find_pair %s out 2>/dev/null", pdb_name);
 	fp = popen(command, "r");
   	if (fp == NULL)
@@ -242,7 +247,6 @@ unsigned int run_3dna(char *pdb_name, unsigned int **compl, char ***pairs, unsig
 		exit(1);
   	}
   	pclose(fp);
-
 	out_file = fopen("out", "r");
 	if (out_file == NULL)
 	{
@@ -268,17 +272,23 @@ unsigned int run_3dna(char *pdb_name, unsigned int **compl, char ***pairs, unsig
 		fgets (c, 102, out_file);
 		if (flag == 'x')
 		{
-			sscanf(c, "%5u%5u%*u #%*u %c %*4c>%c%*31c%c", &a, &b, &flag, &chain1, &chain2);
+			//sscanf(c, "%5u%5u%*u #%*u %c %*4c>%c%*31c%c", &a, &b, &flag, &chain1, &chain2);
+			sscanf(c, "%5u%5u%*u #%*u %c %*4c>%c:%*[.]%u%*20c%*[.]%u%*c:%c", &a, &b, &flag, &chain1, &res1, &res2,  &chain2);
+			//printf("%u %u %c %c %u %u %c\n", a, b, flag, chain1, res1, res2, chain2);
 			count++;
 			if (count > pairs_max)
 			{
 				pairs_max = pairs_max * 2;
 				(*compl) = (unsigned int *)realloc((*compl), pairs_max*sizeof(unsigned int));
+				(*compl_pairs) = (unsigned int **)realloc((*compl_pairs), sizeof(unsigned int *)*pairs_max);
 				(*pairs) = (char **)realloc((*pairs), sizeof(char *)*pairs_max);
 				for (j=pairs_max; j>pairs_max/2; j--)
 					(*pairs)[j] = (char *)malloc(sizeof(char)*3);
+					(*compl_pairs)[j] = (unsigned int *)malloc(sizeof(unsigned int)*3);
 			}
 			(*compl)[count] = b-a;
+			(*compl_pairs)[count][1] = res1;
+			(*compl_pairs)[count][2] = res2;
 			(*pairs)[count][1] = chain1;
 			(*pairs)[count][2] = chain2;
 			(*len) = count;
@@ -557,6 +567,43 @@ void find_compl(struct atom *atoms1, unsigned int *list_P, unsigned int *list_C1
 	(*compl) = (n_P1+k-1);
 	printf("k=%u; compl=%u; n_P1=%u\n", k, (*compl), n_P1 );
 }
+
+
+unsigned int run_find_compl(struct atom *atoms1_P, unsigned int n_P, unsigned int *compl, unsigned int *first_chain_length, unsigned int *compl_pair)
+{
+	unsigned i, k, c, count, k_min, n_P1, n_P2;
+	char res1[5], res2[5];
+
+	n_P1 = 0; n_P2 = 0;
+	for (i=1; i<=n_P; i++)
+	{
+		//printf("%c.%s\n", atoms1_P[i].Chain, atoms1_P[i].ResNumber);
+		if (atoms1_P[i].Chain == atoms1_P[1].Chain)
+		{n_P1 += 1; }
+		else {n_P2 += 1; }
+	}
+
+	(*first_chain_length) = n_P1;
+
+	sprintf(res1, "%u", compl_pair[1]);
+	sprintf(res2, "%u", compl_pair[2]);
+
+	for (k=2; k<=n_P; k++)
+		for (i=1; i<=n_P1; i++)
+		{
+			if ( (k-i>=1) && (k-i<=n_P2) )
+			{
+				//printf("k=%u i=%i %s=%s %s=%s\n", k, i, atoms1_P[i].ResNumber, res1, atoms1_P[n_P1+k-i].ResNumber, res2);
+				if ( (strcmp(atoms1_P[i].ResNumber, res1)==0) && (strcmp(atoms1_P[n_P1+k-i].ResNumber, res2)==0) )
+				{
+					(*compl) = (n_P1+k-1);
+					return 0;
+				}
+			}
+		}
+	return 1;
+}
+
 
 void BestDiag(double **measures, unsigned int n, unsigned int m, double *S_max,
 		unsigned int *i_max, unsigned int *j_max, unsigned int *i_start,

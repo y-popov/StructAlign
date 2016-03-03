@@ -118,12 +118,14 @@ int main  (int argc, char **argv)
   /*** 3DNA block ***/
   
   unsigned int *compl_list1, *compl_list2, n_pairs1, n_pairs2, pair1, pair2;
+  unsigned int **compl_pairs1, **compl_pairs2;
   char **pairs1, **pairs2;
   
-  run_3dna(infile1, &compl_list1, &pairs1, &n_pairs1);
-  run_3dna(infile2, &compl_list2, &pairs2, &n_pairs2);
+  //run_3dna(infile1, &compl_list1, &pairs1, &n_pairs1);
+  //run_3dna(infile2, &compl_list2, &pairs2, &n_pairs2);
+  run_3dna(infile1, &compl_list1, &compl_pairs1, &pairs1, &n_pairs1);
+  run_3dna(infile2, &compl_list2, &compl_pairs2, &pairs2, &n_pairs2);
   
-  printf("compl1 = %u %u\n", compl_list1[1], compl_list1[1]);
   /*** 3DNA block end ***/
   
   /*** MAIN FOR CYCLE ***/
@@ -264,13 +266,12 @@ int main  (int argc, char **argv)
 		atomcpy(&atoms_dna_P2[i], atoms_dna2[list_P2[i]]);
 	  }
 	  
-	  find_compl(atoms_dna1, list_P1, list_C11, list_OP11, list_OP21, atoms_dna_P1, n_P1, &compl1, &n_first_chain, max_score);
-	  printf("%u\n", compl_list1[pair1]);
-	  find_compl(atoms_dna2, list_P2, list_C12, list_OP12, list_OP22, atoms_dna_P2, n_P2, &compl2, &m_first_chain, max_score);
-	  printf("%u\n", compl_list2[pair2]);
+	  //find_compl(atoms_dna1, list_P1, list_C11, list_OP11, list_OP21, atoms_dna_P1, n_P1, &compl1, &n_first_chain, max_score);
+	  run_find_compl(atoms_dna_P1, n_P1, &compl1, &n_first_chain, compl_pairs1[pair1]);
+	  //find_compl(atoms_dna2, list_P2, list_C12, list_OP12, list_OP22, atoms_dna_P2, n_P2, &compl2, &m_first_chain, max_score);
+	  run_find_compl(atoms_dna_P2, n_P2, &compl2, &m_first_chain, compl_pairs2[pair2]);
 	  BestDiag(list_measure, n_P1, n_P2, &S_max, &i_max, &j_max, &i_start, &j_start, &i_max_measure, &j_max_measure,
 	  	   atoms_dna1, list_P1, atoms_dna2, list_P2, compl1, compl2, n_first_chain, m_first_chain);
-	  puts("OK");
 	  // pdb.c function 
 
 	  /* Done diagonal search */

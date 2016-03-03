@@ -21,6 +21,13 @@ parser.add_argument('-ss', '--supressAll', action='store_true', help='Suppress a
 
 options=parser.parse_args()
 
+"""
+if not installed 3DNA and not options.internal:
+	print "It seems you don't have installed 3DNA package! Please, install it oe use '-i' option."
+	print "You can download 3DNA from http://forum.x3dna.org/downloads/3dna-download/"
+	print "Follow installation instructions from http://forum.x3dna.org/howtos/how-to-install-3dna-on-linux-and-windows/"
+"""
+
 chain1 = options.chain1.upper()
 chain2 = options.chain2.upper()
 
