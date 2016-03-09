@@ -125,10 +125,11 @@ void Seq(struct atom *atoms, unsigned int n, char **seq, unsigned int *m,  FILE 
 				if ( convertNT( res, &nt) == 0 )
 				{
 					(*seq)[i-1] = nt;
+					fprintf(max_score, "Warning! There is modified residue %s in chain %c. Reading it as %c.\n", res, atoms[list_C[i]].Chain, nt);
 				}
 				else
 				{
-					fprintf(max_score, "Warning\nThe program doesn't know residue %s\n! Please, report us about it.", res);
+					fprintf(max_score, "Warning! The program doesn't know residue %s\n! Please, report us about it.\n", res);
 					(*seq)[i-1] = '?';
 				}
 			}
@@ -272,6 +273,7 @@ unsigned int run_3dna(char *pdb_name, unsigned int **compl, unsigned int ***comp
 		fgets (c, 102, out_file);
 		if (flag == 'x')
 		{
+			fgets (c, 102, out_file);
 			//sscanf(c, "%5u%5u%*u #%*u %c %*4c>%c%*31c%c", &a, &b, &flag, &chain1, &chain2);
 			sscanf(c, "%5u%5u%*u #%*u %c %*4c>%c:%*[.]%u%*20c%*[.]%u%*c:%c", &a, &b, &flag, &chain1, &res1, &res2,  &chain2);
 			//printf("%u %u %c %c %u %u %c\n", a, b, flag, chain1, res1, res2, chain2);
@@ -283,8 +285,10 @@ unsigned int run_3dna(char *pdb_name, unsigned int **compl, unsigned int ***comp
 				(*compl_pairs) = (unsigned int **)realloc((*compl_pairs), sizeof(unsigned int *)*pairs_max);
 				(*pairs) = (char **)realloc((*pairs), sizeof(char *)*pairs_max);
 				for (j=pairs_max; j>pairs_max/2; j--)
+				{
 					(*pairs)[j] = (char *)malloc(sizeof(char)*3);
 					(*compl_pairs)[j] = (unsigned int *)malloc(sizeof(unsigned int)*3);
+				}
 			}
 			(*compl)[count] = b-a;
 			(*compl_pairs)[count][1] = res1;
@@ -584,9 +588,10 @@ unsigned int run_find_compl(struct atom *atoms1_P, unsigned int n_P, unsigned in
 	}
 
 	(*first_chain_length) = n_P1;
-
+	
 	sprintf(res1, "%u", compl_pair[1]);
 	sprintf(res2, "%u", compl_pair[2]);
+	//printf("res1=%s res2=%s\n", res1, res2);
 
 	for (k=2; k<=n_P; k++)
 		for (i=1; i<=n_P1; i++)
@@ -596,6 +601,7 @@ unsigned int run_find_compl(struct atom *atoms1_P, unsigned int n_P, unsigned in
 				//printf("k=%u i=%i %s=%s %s=%s\n", k, i, atoms1_P[i].ResNumber, res1, atoms1_P[n_P1+k-i].ResNumber, res2);
 				if ( (strcmp(atoms1_P[i].ResNumber, res1)==0) && (strcmp(atoms1_P[n_P1+k-i].ResNumber, res2)==0) )
 				{
+					printf("n_P1=%u, k=%u\n", n_P1, k);
 					(*compl) = (n_P1+k-1);
 					return 0;
 				}

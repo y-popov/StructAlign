@@ -350,13 +350,13 @@ int main  (int argc, char **argv)
   
   outfile[strlen(outfile)-11] = chain1;
   outfile[strlen(outfile)-5] = chain2;
+  //printf("n_first_chain=%u i_max_measure=%u best_compl1=%u\n", best_n_first_chain, best_i_max_measure,  best_compl1);
   i_max_measure_compl = ((best_i_max_measure > best_n_first_chain) ? best_compl1-best_i_max_measure+1 : best_compl1-best_i_max_measure+1);
   j_max_measure_compl = ((best_j_max_measure > best_m_first_chain) ? best_compl2-best_j_max_measure+1 : best_compl2-best_j_max_measure+1);
   //printf("%c %c %c %c %c %c\n%lg\n%s\n%s", chain1, chain2, dna_chains1[1], dna_chains1[2], dna_chains2[1], dna_chains2[2], S_max, dna_string1, dna_string2);
 
   fprintf(max_score, "%c %c %c %c %c %c %s %s %s %s %s %s %s %s %s %s %s %s\n%lg\n%s\n%s\n%s\n%s", chain1, chain2, pairs1[best_pair1][1], pairs1[best_pair1][2], pairs2[best_pair2][1], pairs2[best_pair2][2], dna1_chain1_start, dna1_chain1_end, dna1_chain2_start, dna1_chain2_end, dna2_chain1_start, dna2_chain1_end, dna2_chain2_start, dna2_chain2_end, best_atoms_dna1[best_list_P1[best_i_max_measure]].ResNumber, best_atoms_dna2[best_list_P2[best_j_max_measure]].ResNumber, best_atoms_dna1[best_list_P1[i_max_measure_compl]].ResNumber, best_atoms_dna2[best_list_P2[j_max_measure_compl]].ResNumber, best_S_max, dna_seq11, dna_seq12, dna_seq21, dna_seq22);
-  fclose(max_score);
-  
+  fclose(max_score); 
 
   struct atom *atoms_dna_i1 = NULL;
   struct atom *atoms_dna_i2 = NULL;

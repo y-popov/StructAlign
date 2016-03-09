@@ -68,17 +68,22 @@ else:
 								
 try:
 	max_score = open("{}.txt".format(random_name), 'r')
+	max_score = max_score.read().splitlines()
+	if not max_score:
+		print "Sorry, the program has fault"
 except IOError as e:
 	print "Sorry, the program has fault"
 	print "I/O error({0}): {1}".format(e.errno, e.strerror)
 
 				
-max_score = max_score.read().splitlines()
+
 for index, line in enumerate(max_score):
 	if line.startswith("Error"):
 		print "Error"
 		print max_score[index+1]
-
+	elif line.startswith("Warning"):
+		print '\n', line
+		del max_score[index]
 	else:
 		chain1, chain2, dna_chainA1, dna_chainA2, dna_chainB1, dna_chainB2, startA1, endA1, startA2, endA2, startB1, endB1, startB2, endB2, maxA, maxB, maxAc, maxBc = max_score[0].split()
 		score = float( max_score[1] )
@@ -88,6 +93,7 @@ for index, line in enumerate(max_score):
 		dna12 = range(int(endA2), int(startA2)-1, -1)[::-1]
 		dna21 = range(int(startB1), int(endB1)+1)
 		dna22 = range(int(endB2), int(startB2)-1, -1)[::-1]
+		print dna11, '\n', dna12, '\n', dna21, '\n', dna22, '\n'
 
 		description_string = "{0}.{1} -> A\n{0}.{2} -> B\n{3}.{4} -> C\n{3}.{5} -> D".format(code1, dna_chainA1, dna_chainA2, code2, dna_chainB1, dna_chainB2)
 		if int(maxA) in dna12:
