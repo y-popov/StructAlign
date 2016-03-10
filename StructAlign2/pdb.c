@@ -1136,6 +1136,7 @@ unsigned int readerPDB (char *filename, unsigned int *dnanum, unsigned int *prot
 
 
 	    if( strcmp(currentatom.ModelNumber, CurrentModel) == 0 ) {
+	    //printf("%s, %s\n", currentatom.ResType, currentatom.ResNumber);
 		  if ( ifprot(currentatom.ResType) == TRUE ) {
 		     (*protnum)++;
 		     if( (*protnum) >= maxnumber2 ){
@@ -1176,13 +1177,14 @@ unsigned int readerPDB (char *filename, unsigned int *dnanum, unsigned int *prot
 		     	dna_chains_num++;
 		     	if (dna_chains_num >= dna_chains_max){
 		     		dna_chains_max += 2;
-		     		(*chains_dna) = (char *)realloc( (*chains_dna), sizeof(char)*(dna_chains_max) );
+		     		(*chains_dna) = (char *)realloc( (*chains_dna), sizeof(char)*(dna_chains_max+1) );
 		     	}
 		     }
 		     atomcpy ( &((*patoms_dna)[(*dnanum)]), currentatom);
 		     if ( (*dnanum) > 1 )
 		     if ( strcmp(currentatom.AtomName, (*patoms_dna)[(*dnanum)-1].AtomName ) == 0 && strcmp(currentatom.ResNumber, (*patoms_dna)[(*dnanum)-1].ResNumber) == 0 )
     		     	{
+    		     	
     		     		(*dnanum)--;
 		        } // if AtomName and ResNumber differs from previous DNA atom to avoid atoms with alternative position
 		  }

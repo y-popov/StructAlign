@@ -85,7 +85,7 @@ for index, line in enumerate(max_score):
 		print '\n', line
 		del max_score[index]
 	else:
-		chain1, chain2, dna_chainA1, dna_chainA2, dna_chainB1, dna_chainB2, startA1, endA1, startA2, endA2, startB1, endB1, startB2, endB2, maxA, maxB, maxAc, maxBc = max_score[0].split()
+		chain1, chain2, dna_chainA1, dna_chainA2, dna_chainB1, dna_chainB2, startA1, endA1, startA2, endA2, startB1, endB1, startB2, endB2, maxA, maxB, maxAc, maxBc, isreverse1, isreverse2 = max_score[0].split()
 		score = float( max_score[1] )
 		dna1_chain1, dna1_chain2 = max_score[2], max_score[3] #sequence
 		dna2_chain1, dna2_chain2 = max_score[4], max_score[5] #sequence
@@ -93,16 +93,18 @@ for index, line in enumerate(max_score):
 		dna12 = range(int(endA2), int(startA2)-1, -1)[::-1]
 		dna21 = range(int(startB1), int(endB1)+1)
 		dna22 = range(int(endB2), int(startB2)-1, -1)[::-1]
-		print dna11, '\n', dna12, '\n', dna21, '\n', dna22, '\n'
+		#print dna11, '\n', dna12, '\n', dna21, '\n', dna22, '\n'
 
 		description_string = "{0}.{1} -> A\n{0}.{2} -> B\n{3}.{4} -> C\n{3}.{5} -> D".format(code1, dna_chainA1, dna_chainA2, code2, dna_chainB1, dna_chainB2)
-		if int(maxA) in dna12:
+		#if int(maxA) in dna12:
+		if isreverse1 == '1':
 			dna11, dna12 = dna12, dna11
 			startA1, endA1, startA2, endA2 = startA2, endA2, startA1, endA1
 			dna1_chain1, dna1_chain2 = dna1_chain2, dna1_chain1
 			dna_chainA1, dna_chainA2 = dna_chainA2, dna_chainA1
 			#maxA, maxAc = maxAc, maxA
-		if int(maxB) in dna22:
+		#if int(maxB) in dna22:
+		if isreverse2 == '1':
 			dna21, dna22 = dna22, dna21
 			startB1, endB1, startB2, endB2 = startB2, endB2, startB1, endB1
 			dna2_chain1, dna2_chain2 = dna2_chain2, dna2_chain1
