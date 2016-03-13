@@ -125,7 +125,7 @@ void Seq(struct atom *atoms, unsigned int n, char **seq, unsigned int *m,  FILE 
 				if ( convertNT( res, &nt) == 0 )
 				{
 					(*seq)[i-1] = nt;
-					fprintf(max_score, "Warning! There is modified residue %s in chain %c. Reading it as %c.\n", res, atoms[list_C[i]].Chain, nt);
+					fprintf(max_score, "Warning! There is modified residue %s`%s in chain %c. Reading it as %c.\n", res, atoms[list_C[i]].ResNumber, atoms[list_C[i]].Chain, nt);
 				}
 				else
 				{
@@ -601,7 +601,7 @@ unsigned int run_find_compl(struct atom *atoms1_P, unsigned int n_P, unsigned in
 				//printf("k=%u i=%i %s=%s %s=%s\n", k, i, atoms1_P[i].ResNumber, res1, atoms1_P[n_P1+k-i].ResNumber, res2);
 				if ( (strcmp(atoms1_P[i].ResNumber, res1)==0) && (strcmp(atoms1_P[n_P1+k-i].ResNumber, res2)==0) )
 				{
-					printf("n_P1=%u, k=%u\n", n_P1, k);
+					//printf("n_P1=%u, k=%u\n", n_P1, k);
 					(*compl) = (n_P1+k-1);
 					return 0;
 				}

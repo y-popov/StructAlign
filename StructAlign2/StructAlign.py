@@ -12,7 +12,7 @@ from string import ascii_uppercase, digits
 parser=ArgumentParser(description="Align two DNA-protein complexes")
 parser.add_argument('pdb1', help='First pdb-file')
 parser.add_argument('pdb2', help='Second pdb-file')
-parser.add_argument('-o', '--output', help='Name of output directory')
+parser.add_argument('-o', '--output', help='Output directory')
 parser.add_argument('-c1', '--chain1', default='@', help='Protein chain in first pdb-file ')
 parser.add_argument('-c2', '--chain2', default='@', help='Protein chain in second pdb-file')
 parser.add_argument('-i', '--internal', action="store_true", help="Use internal algorithm for complement nucleotide search; not stable but doesn't require 3DNA tools")
@@ -36,7 +36,7 @@ code1 = options.pdb1[-8:-4]
 code2 = options.pdb2[-8:-4]
 
 if not options.output:
-	output = options.pdb1[-8:-4]+'*_'+options.pdb2[-8:-4]+'*'
+	output = options.pdb1[-8:-4]+'@_'+options.pdb2[-8:-4]+'@'
 else:
 	if not path.exists(options.output):
 		makedirs(options.output)
