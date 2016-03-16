@@ -7,6 +7,7 @@ int main  (int argc, char **argv)
   puts("Program starts");
   /* Checking command line, 
   throw exception if not complete */
+  //printf("%s %s %s %s %s %s %s\n", argv[0], argv[1], argv[2], argv[3], argv[4], argv[5], argv[6]);
 
   if (argc != 7)
   {

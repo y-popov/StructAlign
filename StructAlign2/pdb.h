@@ -160,3 +160,15 @@ unsigned int writetoPDB(char *filename,
                 struct atom *atoms, unsigned int natoms);
 unsigned int endPDB(char *filename);
 
+/* execute find_pair */
+unsigned int run_3dna(char *pdb_name, unsigned int **compl, unsigned int ***compl_pairs, char ***pairs, unsigned int *len);
+
+/* append list to another list */
+void atomlistmerge(struct atom **target, unsigned int *len, struct atom *source1, unsigned int len1, struct atom *source2, unsigned int len2);
+
+/* copies struct atom list */
+void atomlistcpy(struct atom **target, struct atom *source, unsigned int leng);
+
+/* find_compl based on 3dna data */
+unsigned int run_find_compl(struct atom *atoms1_P, unsigned int n_P, unsigned int *compl, unsigned int *first_chain_length, unsigned int *compl_pair);
+
