@@ -58,12 +58,12 @@ open(random_name+'.txt', 'w').close()
 #devnull = open(devnull, 'w')
 #args = 'algorithm.exe {} {} {}.pdb {} {} {}.txt'.format(options.pdb1, options.pdb2, output, chain1, chain2, random_name)
 if options.supress:
-        system('{}./align {} {} {}.pdb {} {} {}.txt > /dev/null'.format(argv[0].rstrip("StructAlign.py"), options.pdb1, options.pdb2, output, chain1, chain2, random_name))
+        system('{}./align {} {} {}.pdb {} {} {}.txt 0 > /dev/null'.format(argv[0].rstrip("StructAlign.py"), options.pdb1, options.pdb2, output, chain1, chain2, random_name))
         
 else:
-        system('{}./align {} {} {}.pdb {} {} {}.txt'.format(argv[0].rstrip("StructAlign.py"), options.pdb1, options.pdb2, output, chain1, chain2, random_name))
+        system('{}./align {} {} {}.pdb {} {} {}.txt 0'.format(argv[0].rstrip("StructAlign.py"), options.pdb1, options.pdb2, output, chain1, chain2, random_name))
         
-
+#0 is for is_server
 				
 								
 try:
@@ -75,15 +75,19 @@ except IOError as e:
 	print "Sorry, the program has fault"
 	print "I/O error({0}): {1}".format(e.errno, e.strerror)
 
-				
 
-for index, line in enumerate(max_score):
+print ''
+index = -1				
+while index < len(max_score):
+	index += 1
+	line  = max_score[index]
 	if line.startswith("Error"):
 		print "Error"
 		print max_score[index+1]
 	elif line.startswith("Warning"):
-		print '\n', line
+		print line
 		del max_score[index]
+		index -= 1
 	else:
 		chain1, chain2, dna_chainA1, dna_chainA2, dna_chainB1, dna_chainB2, startA1, endA1, startA2, endA2, startB1, endB1, startB2, endB2, maxA, maxB, maxAc, maxBc, isreverse1, isreverse2 = max_score[0].split()
 		score = float( max_score[1] )

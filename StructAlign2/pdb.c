@@ -220,7 +220,7 @@ double Measure3_p(double *measure, unsigned int ** list_hit, unsigned int n_hit,
 /********************************
 *                            3DNA
 ********************************/
-unsigned int run_3dna(char *pdb_name, unsigned int **compl, unsigned int ***compl_pairs, char ***pairs, unsigned int *len)
+unsigned int run_3dna(char *pdb_name, unsigned int **compl, unsigned int ***compl_pairs, char ***pairs, unsigned int *len, unsigned int server, char *max_score_filename)
 {
 	FILE *fp, *out_file;
 	extern FILE *popen();
@@ -230,7 +230,7 @@ unsigned int run_3dna(char *pdb_name, unsigned int **compl, unsigned int ***comp
 	unsigned int pairs_max=2;
 	unsigned int i, j, n, a, b, count;
 	unsigned int res1, res2;
-	command = (char *)malloc(sizeof(char)*(strlen(pdb_name)+27));
+	command = (char *)malloc(sizeof(char)*(strlen(pdb_name)+35));
 	(*compl) = (unsigned int *)malloc(sizeof(unsigned int)*pairs_max);
 	(*compl_pairs) = (unsigned int **)malloc(sizeof(unsigned int *)*pairs_max);
 	(*pairs) = (char **)malloc(sizeof(char *)*pairs_max);
@@ -239,20 +239,47 @@ unsigned int run_3dna(char *pdb_name, unsigned int **compl, unsigned int ***comp
 		(*pairs)[j] = (char *)malloc(sizeof(char)*3);
 		(*compl_pairs)[j] = (unsigned int *)malloc(sizeof(unsigned int)*3);
 	}
-	
-	sprintf(command, "find_pair %s out 2>/dev/null", pdb_name);
-	fp = popen(command, "r");
-  	if (fp == NULL)
-  	{
-		printf("Failed to run find_pair on %s\n", pdb_name);
-		exit(1);
-  	}
-  	pclose(fp);
-	out_file = fopen("out", "r");
-	if (out_file == NULL)
+	if (server == 0)
 	{
-    		perror("find_pair failed");
-    		exit(1);
+		sprintf(command, "find_pair %s out 2>/dev/null", pdb_name);
+		fp = popen(command, "r");
+	  	if (fp == NULL)
+	  	{
+			printf("Failed to run find_pair on %s\n", pdb_name);
+			exit(1);
+	  	}
+	  	pclose(fp);
+		out_file = fopen("out", "r");
+		if (out_file == NULL)
+		{
+	    		perror("find_pair failed");
+	    		exit(1);
+	  	}
+  	}
+  	else
+  	{
+  		char random_name[10];
+  		sprintf(random_name, "%.*s", 10, max_score_filename + strlen(max_score_filename)-21 );
+  		sprintf(command, "StructAlign/3dna.sh %s %s", pdb_name, random_name);
+  		fp = popen(command, "r");
+	  	if (fp == NULL)
+	  	{
+	  		FILE *max_score;
+	  		max_score = popen(max_score_filename, "w");
+			fprintf(max_score, "Error\nFailed to run find_pair on %s\n", pdb_name);
+			exit(1);
+	  	}
+	  	pclose(fp);
+	  	char outname[46];
+	  	sprintf(outname, "/var/www/tools/tmp/StructAlign/%s/out", random_name);
+		out_file = fopen(outname, "r");
+		if (out_file == NULL)
+		{
+			FILE *max_score;
+	  		max_score = popen(max_score_filename, "w");
+	  		fprintf(max_score, "Error\nfind_pair failed");
+	    		exit(1);
+	  	}
   	}
 	fgets (c, 102, out_file);
 	fgets (c, 102, out_file);

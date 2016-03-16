@@ -94,13 +94,11 @@ for b in a:
 				system("mkdir ../tmp/StructAlign/{}".format(random_name))
 				system("chmod a=rwx ../tmp/StructAlign/{}".format(random_name))
 				system("touch ../tmp/StructAlign/{}/result.txt".format(random_name) )
-				system("export X3DNA=/usr/local/src/x3dna-v2.1")
-				system("export PATH='/usr/local/src/x3dna-v2.1/bin':$PATH")
-				system("find_pair -h 2&> ../tmp/StructAlign/structaligntemp.txt")
+				#system("StructAlign/3dna.sh 1puf.pdb %s" % random_name)
 				#system("chmod a=rwx ../tmp/StructAlign/{}/result.txt".format(random_name) )
 				
 				#system("/home/popov/bin/align ../tmp/{0}.pdb ../tmp/{1}.pdb ../tmp/StructAlign/{0}*_{1}*.pdb {2} {3} {4} > ../tmp/StructAlign/log.txt".format(code1, code2, chain1, chain2, random_name) )
-				system("StructAlign/align ../tmp/{0}.pdb ../tmp/{1}.pdb ../tmp/StructAlign/{4}/{0}*_{1}*.pdb {2} {3} /var/www/tools/tmp/StructAlign/{4}/result.txt > ../tmp/StructAlign/{4}/log.txt".format(code1, code2, chain1, chain2, random_name) )
+				system("StructAlign/align ../tmp/{0}.pdb ../tmp/{1}.pdb ../tmp/StructAlign/{4}/{0}@_{1}@.pdb {2} {3} /var/www/tools/tmp/StructAlign/{4}/result.txt 1 > ../tmp/StructAlign/{4}/log.txt".format(code1, code2, chain1, chain2, random_name) ) #1 is for is_server
 								
 				try:
 					max_score = open("../tmp/StructAlign/{}/result.txt".format(random_name), 'r')
@@ -112,13 +110,17 @@ for b in a:
 					print "I/O error({0}): {1}".format(e.errno, e.strerror)
 
 				warnings = ''
-				for index, line in enumerate(max_score):
+				index = -1
+				while index < len(max_score):
+					index += 1
+					line  = max_score[index]
 					if line.startswith("Error"):
 						print "<H3>Error</H3>"
 						print "<p> "+max_score[index+1]+" </p>"
 					elif line.startswith("Warning"):
-						warnings += line+'\n'
+						warnings += '<p>'+line+'</p>\n'
 						del max_score[index]
+						index -= 1
 
 					else:
 						chain1, chain2, dna_chainA1, dna_chainA2, dna_chainB1, dna_chainB2, startA1, endA1, startA2, endA2, startB1, endB1, startB2, endB2, maxA, maxB, maxAc, maxBc, isreverse1, isreverse2 = max_score[0].split()
@@ -218,6 +220,7 @@ for b in a:
 						print "<p>{}.{} -> E</p>".format(code1, chain1)
 						print "<p>{}.{} -> F</p>".format(code2, chain2)
 						print "</td></TR>"
+						break
 					
   
 			else:

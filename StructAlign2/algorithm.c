@@ -1,6 +1,5 @@
 #include "pdb.h"
 #include <math.h>
-#define SERVER 0
 
 int main  (int argc, char **argv)
 {
@@ -9,10 +8,10 @@ int main  (int argc, char **argv)
   throw exception if not complete */
   //printf("%s %s %s %s %s %s %s\n", argv[0], argv[1], argv[2], argv[3], argv[4], argv[5], argv[6]);
 
-  if (argc != 7)
+  if (argc != 8)
   {
-    printf("\nUsage: %s <input file 1.pdb> <input file 2.pdb> <output file> <chain1> <chain2> <file name for score>", argv[0]);
-    printf("\nExample: %s 3hdd.pdb 1puf.pdb superpos_3hdd_1puf.pdb A B max_score.txt\n\n", argv[0]);
+    printf("\nUsage: %s <input file 1.pdb> <input file 2.pdb> <output file> <chain1> <chain2> <file name for score> <is on server>", argv[0]);
+    printf("\nExample: %s 3hdd.pdb 1puf.pdb superpos_3hdd_1puf.pdb A B max_score.txt 0\n\n", argv[0]);
     exit (1);
   } /* end if */
   
@@ -22,6 +21,7 @@ int main  (int argc, char **argv)
 
   char *infile1, *infile2, *outfile, *max_score_filename;
   char chain1, chain2;
+  unsigned int SERVER;
 
   infile1 = (char *)malloc( sizeof(char)*(strlen(argv[1])+1) );
   sscanf(argv[1],"%s", infile1);
@@ -37,6 +37,8 @@ int main  (int argc, char **argv)
 
   max_score_filename = (char *)malloc( sizeof(char)*(strlen(argv[6])+1) );
   sscanf(argv[6], "%s", max_score_filename);
+
+  sscanf(argv[7], "%u", &SERVER);
 
   /* Done reading arguments */
 
@@ -122,8 +124,8 @@ int main  (int argc, char **argv)
   unsigned int **compl_pairs1, **compl_pairs2;
   char **pairs1, **pairs2;
   
-  run_3dna(infile1, &compl_list1, &compl_pairs1, &pairs1, &n_pairs1);
-  run_3dna(infile2, &compl_list2, &compl_pairs2, &pairs2, &n_pairs2);
+  run_3dna(infile1, &compl_list1, &compl_pairs1, &pairs1, &n_pairs1, SERVER, max_score_filename);
+  run_3dna(infile2, &compl_list2, &compl_pairs2, &pairs2, &n_pairs2, SERVER, max_score_filename);
   
   /*** 3DNA block end ***/
   
