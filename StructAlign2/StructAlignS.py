@@ -101,120 +101,112 @@ for b in a:
 								
 				try:
 					max_score = open("../tmp/StructAlign/{}/result.txt".format(random_name), 'r')
-					max_score = max_score.read().splitlines()
-					if not max_score:
-						print "<p>Sorry, the program has fault</p>"
 				except IOError as e:
 					print "<p>Sorry, the program has fault</p>"
 					print "I/O error({0}): {1}".format(e.errno, e.strerror)
 
-				warnings = ''
+				
+				max_score = max_score.read().splitlines()
 				for index, line in enumerate(max_score):
 					if line.startswith("Error"):
 						print "<H3>Error</H3>"
 						print "<p> "+max_score[index+1]+" </p>"
-					elif line.startswith("Warning"):
-						warnings += line+'\n'
-						del max_score[index]
 
+				else:
+					chain1, chain2, dna_chainA1, dna_chainA2, dna_chainB1, dna_chainB2, startA1, endA1, startA2, endA2, startB1, endB1, startB2, endB2, maxA, maxB, maxAc, maxBc = max_score[0].split()
+					score = float( max_score[1] )
+					dna1_chain1, dna1_chain2 = max_score[2], max_score[3] #sequence
+					dna2_chain1, dna2_chain2 = max_score[4], max_score[5] #sequence
+					dna11 = range(int(startA1), int(endA1)+1)
+					dna12 = range(int(endA2), int(startA2)-1, -1)[::-1]
+					dna21 = range(int(startB1), int(endB1)+1)
+					dna22 = range(int(endB2), int(startB2)-1, -1)[::-1]
+					"""dna11 = range(int(startA1), int(endA1)+1)
+					dna12 = range(int(endA2), int(startA2)-1, -1)
+					dna21 = range(int(startB1), int(endB1)+1)
+					dna22 = range(int(endB2), int(startB2)-1, -1)"""
+					description_string = "<p>{0}.{1} -> A</p>\n<p>{0}.{2} -> B</p>\n<p>{3}.{4} -> C</p>\n<p>{3}.{5} -> D</p>".format(code1, dna_chainA1, dna_chainA2, code2, dna_chainB1, dna_chainB2)
+					if int(maxA) in dna12:
+						dna11, dna12 = dna12, dna11
+						startA1, endA1, startA2, endA2 = startA2, endA2, startA1, endA1
+						dna1_chain1, dna1_chain2 = dna1_chain2, dna1_chain1
+						dna_chainA1, dna_chainA2 = dna_chainA2, dna_chainA1
+						#maxA, maxAc = maxAc, maxA
+					if int(maxB) in dna22:
+						dna21, dna22 = dna22, dna21
+						startB1, endB1, startB2, endB2 = startB2, endB2, startB1, endB1
+						dna2_chain1, dna2_chain2 = dna2_chain2, dna2_chain1
+						dna_chainB1, dna_chainB2 = dna_chainB2, dna_chainB1
+					#create alignment 1
+					delta = dna11.index(int(maxA)) - dna21.index(int(maxB))
+					if delta < 0:
+						dna1_chain1 = '-'*(-delta)+dna1_chain1
+					if delta > 0:
+						dna2_chain1 = '-'*delta+dna2_chain1
+					delta = len(dna1_chain1)-len(dna2_chain1)
+					if delta < 0:
+						dna1_chain1 += '-'*(-delta)
 					else:
-						chain1, chain2, dna_chainA1, dna_chainA2, dna_chainB1, dna_chainB2, startA1, endA1, startA2, endA2, startB1, endB1, startB2, endB2, maxA, maxB, maxAc, maxBc, isreverse1, isreverse2 = max_score[0].split()
-						score = float( max_score[1] )
-						dna1_chain1, dna1_chain2 = max_score[2], max_score[3] #sequence
-						dna2_chain1, dna2_chain2 = max_score[4], max_score[5] #sequence
-						dna11 = range(int(startA1), int(endA1)+1)
-						dna12 = range(int(endA2), int(startA2)-1, -1)[::-1]
-						dna21 = range(int(startB1), int(endB1)+1)
-						dna22 = range(int(endB2), int(startB2)-1, -1)[::-1]
-						"""dna11 = range(int(startA1), int(endA1)+1)
-						dna12 = range(int(endA2), int(startA2)-1, -1)
-						dna21 = range(int(startB1), int(endB1)+1)
-						dna22 = range(int(endB2), int(startB2)-1, -1)"""
-						description_string = "<p>{0}.{1} -> A</p>\n<p>{0}.{2} -> B</p>\n<p>{3}.{4} -> C</p>\n<p>{3}.{5} -> D</p>".format(code1, dna_chainA1, dna_chainA2, code2, dna_chainB1, dna_chainB2)
-						#if int(maxA) in dna12:
-						if isreverse1 == '1':
-							dna11, dna12 = dna12, dna11
-							startA1, endA1, startA2, endA2 = startA2, endA2, startA1, endA1
-							dna1_chain1, dna1_chain2 = dna1_chain2, dna1_chain1
-							dna_chainA1, dna_chainA2 = dna_chainA2, dna_chainA1
-							#maxA, maxAc = maxAc, maxA
-						#if int(maxB) in dna22:
-						if isreverse2 == '1':
-							dna21, dna22 = dna22, dna21
-							startB1, endB1, startB2, endB2 = startB2, endB2, startB1, endB1
-							dna2_chain1, dna2_chain2 = dna2_chain2, dna2_chain1
-							dna_chainB1, dna_chainB2 = dna_chainB2, dna_chainB1
-						#create alignment 1
-						delta = dna11.index(int(maxA)) - dna21.index(int(maxB))
-						if delta < 0:
-							dna1_chain1 = '-'*(-delta)+dna1_chain1
-						if delta > 0:
-							dna2_chain1 = '-'*delta+dna2_chain1
-						delta = len(dna1_chain1)-len(dna2_chain1)
-						if delta < 0:
-							dna1_chain1 += '-'*(-delta)
+						dna2_chain1 += '-'*delta
+
+					#create alignment 2
+					delta = dna12.index(int(maxAc)) - dna22.index(int(maxBc))
+					if delta < 0:
+						dna1_chain2 = '-'*(-delta)+dna1_chain2
+					if delta > 0:
+						dna2_chain2 = '-'*delta+dna2_chain2
+					delta = len(dna1_chain2)-len(dna2_chain2)
+					if delta < 0:
+						dna1_chain2 += '-'*(-delta)
+					else:
+						dna2_chain2 += '-'*delta
+					
+					print ("<center><H2>Your job was completed successfully</H2></center>\n")
+					print '<table border="1" width="100%">\n<TR>\n<td>\n'
+					print ( "<p>Structures {} chain {} and {} chain {} were aligned with score: {}</p>".format(code1, chain1, code2, chain2, score) )
+					
+					print ( '<p>To download the structural alignment follow this <a href="../tmp/StructAlign/{}/{}{}_{}{}.pdb">link</a></p> '.format(random_name, code1, chain1, code2, chain2) )
+
+
+					#system("chmod a=rw ../tmp/StructAlign/{}{}_{}{}.pdb".format(code1, chain1, code2, chain2))
+					print "<p>The nucleotides with max measure: {}.{}:{}, {}.{}:{}</p>".format(code1, dna_chainA1, maxA, code2, dna_chainB1, maxB)
+					print ("<p>The alignment of DNAs:</p>" )
+					middle1 = ''
+					for index, nt in enumerate(dna1_chain1):
+						if dna2_chain1[index] == nt:
+							middle1 += '|'
 						else:
-							dna2_chain1 += '-'*delta
-
-						#create alignment 2
-						delta = dna12.index(int(maxAc)) - dna22.index(int(maxBc))
-						if delta < 0:
-							dna1_chain2 = '-'*(-delta)+dna1_chain2
-						if delta > 0:
-							dna2_chain2 = '-'*delta+dna2_chain2
-						delta = len(dna1_chain2)-len(dna2_chain2)
-						if delta < 0:
-							dna1_chain2 += '-'*(-delta)
+							middle1 += ' '
+					middle2 = ''
+					for index, nt in enumerate(dna1_chain2):
+						if dna2_chain2[index] == nt:
+							middle2 += '|'
 						else:
-							dna2_chain2 += '-'*delta
+							middle2 += ' '
+
+					print "<pre>{}.{}[{:>4}-{:<4}]: {}     {}.{}[{:>4}-{:<4}]: {}\n\t\t   {}     {:19}{}\n{}.{}[{:>4}-{:<4}]: {}     {}.{}[{:>4}-{:<4}]: {}</pre>".format(code1, dna_chainA1, startA1, endA1, dna1_chain1, code1, dna_chainA2, startA2, endA2, dna1_chain2, middle1, ' ', middle2, code2, dna_chainB1, startB1, endB1, dna2_chain1, code2, dna_chainB2, startB2, endB2, dna2_chain2)  
+					#print "<pre>{}.{}[{:>4}-{:<4}]: {}\n\t\t   {}\n{}.{}[{:>4}-{:<4}]: {}</pre>".format(code1, dna_chainA2, startA2, endA2, dna1_chain2, middle2, code2, dna_chainB2, startB2, endB2, dna2_chain2)  
+
+					print '      \n<script type="text/javascript"> \n \
+        jmolSetCallback ( "messageCallback", "jmMessage" ); \n\
+        jmolApplet ([600, 600], "load ../tmp/StructAlign/{}/{}{}_{}{}.pdb; cartoon only; color chain; background white" ); \n\
+		jmolBr(); \n\
+		jmolMenu(["background white","background black"]); \n\
+      </script> \n'.format(random_name, code1, chain1, code2, chain2)
 					
-						print ("<center><H2>Your job was completed successfully</H2></center>\n")
-						print '<table border="1" width="100%">\n<TR>\n<td>\n'
-						print ( "<p>Structures {} chain {} and {} chain {} were aligned with score: {}</p>".format(code1, chain1, code2, chain2, score) )
-					
-						print ( '<p>To download the structural alignment follow this <a href="../tmp/StructAlign/{}/{}{}_{}{}.pdb">link</a></p> '.format(random_name, code1, chain1, code2, chain2) )
-
-
-						#system("chmod a=rw ../tmp/StructAlign/{}{}_{}{}.pdb".format(code1, chain1, code2, chain2))
-						print "<p>The nucleotides with max measure: {}.{}:{}, {}.{}:{}</p>".format(code1, dna_chainA1, maxA, code2, dna_chainB1, maxB)
-						print ("<p>The alignment of DNAs:</p>" )
-						middle1 = ''
-						for index, nt in enumerate(dna1_chain1):
-							if dna2_chain1[index] == nt:
-								middle1 += '|'
-							else:
-								middle1 += ' '
-						middle2 = ''
-						for index, nt in enumerate(dna1_chain2):
-							if dna2_chain2[index] == nt:
-								middle2 += '|'
-							else:
-								middle2 += ' '
-
-						print "<pre>{}.{}[{:>4}-{:<4}]: {}     {}.{}[{:>4}-{:<4}]: {}\n\t\t   {}     {:19}{}\n{}.{}[{:>4}-{:<4}]: {}     {}.{}[{:>4}-{:<4}]: {}</pre>".format(code1, dna_chainA1, startA1, endA1, dna1_chain1, code1, dna_chainA2, startA2, endA2, dna1_chain2, middle1, ' ', middle2, code2, dna_chainB1, startB1, endB1, dna2_chain1, code2, dna_chainB2, startB2, endB2, dna2_chain2)  
-						#print "<pre>{}.{}[{:>4}-{:<4}]: {}\n\t\t   {}\n{}.{}[{:>4}-{:<4}]: {}</pre>".format(code1, dna_chainA2, startA2, endA2, dna1_chain2, middle2, code2, dna_chainB2, startB2, endB2, dna2_chain2)  
-
-						print '      \n<script type="text/javascript"> \n \
-		jmolSetCallback ( "messageCallback", "jmMessage" ); \n\
-		jmolApplet ([600, 600], "load ../tmp/StructAlign/{}/{}{}_{}{}.pdb; cartoon only; color chain; background white" ); \n\
-			jmolBr(); \n\
-			jmolMenu(["background white","background black"]); \n\
-	      </script> \n'.format(random_name, code1, chain1, code2, chain2)
-					
-						print '</td>\n<td width="50%" style="vertical-align: top">\n'
-						print "<center><H3>Description</H3></center>"
-						print warnings
-						print '<p>To avoid possible overlapping of chain names, they were changed. The resulting pdb-file contains new names!</p>'
-						print "<p>DNA chains:</p>"
-						print description_string
-						"""print "<p>{}.{} -> A</p>".format(code1, dna_chainA1)
-						print "<p>{}.{} -> B</p>".format(code1, dna_chainA2)
-						print "<p>{}.{} -> C</p>".format(code2, dna_chainB1)
-						print "<p>{}.{} -> D</p>".format(code2, dna_chainB2)"""
-						print "<p>Protein chains:</p>"
-						print "<p>{}.{} -> E</p>".format(code1, chain1)
-						print "<p>{}.{} -> F</p>".format(code2, chain2)
-						print "</td></TR>"
+					print '</td>\n<td width="50%" style="vertical-align: top">\n'
+					print "<center><H3>Description</H3></center>"
+					print '<p>To avoid possible overlapping of chain names, they were changed. The resulting pdb-file contains new names!</p>'
+					print "<p>DNA chains:</p>"
+					print description_string
+					"""print "<p>{}.{} -> A</p>".format(code1, dna_chainA1)
+					print "<p>{}.{} -> B</p>".format(code1, dna_chainA2)
+					print "<p>{}.{} -> C</p>".format(code2, dna_chainB1)
+					print "<p>{}.{} -> D</p>".format(code2, dna_chainB2)"""
+					print "<p>Protein chains:</p>"
+					print "<p>{}.{} -> E</p>".format(code1, chain1)
+					print "<p>{}.{} -> F</p>".format(code2, chain2)
+					print "</td></TR>"
 					
   
 			else:

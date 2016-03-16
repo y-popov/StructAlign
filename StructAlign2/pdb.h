@@ -147,9 +147,6 @@ double Measure2_p(double *measure, unsigned int ** list_hit, unsigned int n_hit,
 /* Tries to find a complement nucleotide */
 void find_compl(struct atom *atoms1, unsigned int *list_P, unsigned int *list_C1, unsigned int *list_OP1, unsigned int *list_OP2, struct atom *atoms1_P, unsigned int n_P, unsigned int *compl, unsigned int *first_chain_length, FILE *max_score);
 
-/* execute find_pair */
-unsigned int run_3dna(char *pdb_name, unsigned int **compl, unsigned int ***compl_pairs, char ***pairs, unsigned int *len);
-
 /* Returns a fragment with max sum */
 void BestDiag(double **measures, unsigned int n, unsigned int m, double *S_max,
 		unsigned int *i_max, unsigned int *j_max, unsigned int *i_start,
@@ -162,14 +159,4 @@ unsigned int createPDB(char *filename, char *title);
 unsigned int writetoPDB(char *filename, 
                 struct atom *atoms, unsigned int natoms);
 unsigned int endPDB(char *filename);
-
-/* append list to another list */
-void atomlistmerge(struct atom **target, unsigned int *len, struct atom *source1, unsigned int len1, struct atom *source2, unsigned int len2);
-
-/* copies struct atom list */
-void atomlistcpy(struct atom **target, struct atom *source, unsigned int leng);
-
-/* find_compl based on 3dna data */
-unsigned int run_find_compl(struct atom *atoms1_P, unsigned int n_P, unsigned int *compl, unsigned int *first_chain_length, unsigned int *compl_pair);
-
 
