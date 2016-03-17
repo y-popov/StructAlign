@@ -21,7 +21,7 @@ parser.add_argument('-ss', '--supressAll', action='store_true', help='Suppress a
 
 options=parser.parse_args()
 
-not_installed = int( check_output(['./check_3dna.sh']) )
+not_installed = int( check_output(['{}./check_3dna.sh'.format(argv[0].rstrip("StructAlign.py"))]) )
 if (not_installed==1) and (not options.internal):
 	print "It seems you don't have installed 3DNA package! Please, install it or use '-i' option."
 	print "You can download 3DNA from http://forum.x3dna.org/downloads/3dna-download/"
