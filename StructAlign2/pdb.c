@@ -302,7 +302,7 @@ unsigned int run_3dna(char *pdb_name, unsigned int **compl, unsigned int ***comp
 		{
 			fgets (c, 102, out_file);
 			//sscanf(c, "%5u%5u%*u #%*u %c %*4c>%c%*31c%c", &a, &b, &flag, &chain1, &chain2);
-			sscanf(c, "%5u%5u%*u #%*u %c %*4c>%c:%*[.]%u%*20c%*[.]%u%*c:%c", &a, &b, &flag, &chain1, &res1, &res2,  &chain2);
+			sscanf(c, "%5u%5u%*u #%*u %c %*4c>%c%*[:.]%u%*19c%*[:.]%u%*c:%c", &a, &b, &flag, &chain1, &res1, &res2,  &chain2);
 			//printf("%u %u %c %c %u %u %c\n", a, b, flag, chain1, res1, res2, chain2);
 			count++;
 			if (count > pairs_max)

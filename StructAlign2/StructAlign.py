@@ -6,6 +6,7 @@ from os import system, access, F_OK, remove, devnull, path, makedirs
 from sys import argv
 from random import choice
 from string import ascii_uppercase, digits
+from urllib2 import urlopen
 
 
 
@@ -42,26 +43,44 @@ else:
 		makedirs(options.output)
         output = options.output.rstrip('/')+'/'+options.pdb1[-8:-4]+'*_'+options.pdb2[-8:-4]+'*'
 
-if not access(options.pdb1, F_OK):
-	print ( "PDB entry "+code1+" does not exist" )
-	exit(1)
-if not access(options.pdb2, F_OK):
-	print ( "PDB entry "+code2+" does not exist" )
-	exit(1)
-
+dev_null = ''
+dev_null_err = ''
 if options.supressAll:
 	options.supress = True
+if options.supress:
+	dev_null = ' > /dev/null'
+	dev_null_err = ' 2&> /dev/null'
+
+if not access(options.pdb1, F_OK):
+	if not options.supressAll:
+		print 'You do not have %s pdb-file! Downloading it...' % code1
+	try:
+		response = urlopen("http://files.rcsb.org/download/{}.pdb".format(code1))
+		with open("{}.pdb".format(code1), 'w') as dl:
+			dl.write(response.read())
+	except Exception:
+		print "... aborting. PDB entry "+code1+" does not exist or you have not Internet connection!"
+		exit(1)
+
+if not access(options.pdb2, F_OK):
+	if not options.supressAll:
+		print 'You do not have %s pdb-file! Downloading it...' % code2
+	try:
+		response = urlopen("http://files.rcsb.org/download/{}.pdb".format(code2))
+		with open("{}.pdb".format(code2), 'w') as dl:
+			dl.write(response.read())
+	except Exception:
+		print "... aborting. PDB entry "+code2+" does not exist or you have not Internet connection!"
+		exit(1)
+
 
 random_name = ''.join(choice(ascii_uppercase + digits) for i in range(10))
 open(random_name+'.txt', 'w').close()
 
 #devnull = open(devnull, 'w')
 #args = 'algorithm.exe {} {} {}.pdb {} {} {}.txt'.format(options.pdb1, options.pdb2, output, chain1, chain2, random_name)
-if options.supress:
-        system('{}./align {} {} {}.pdb {} {} {}.txt 0 > /dev/null'.format(argv[0].rstrip("StructAlign.py"), options.pdb1, options.pdb2, output, chain1, chain2, random_name))
-        
-else:
-        system('{}./align {} {} {}.pdb {} {} {}.txt 0'.format(argv[0].rstrip("StructAlign.py"), options.pdb1, options.pdb2, output, chain1, chain2, random_name))
+
+system('{}./align {} {} {}.pdb {} {} {}.txt 0{}'.format(argv[0].rstrip("StructAlign.py"), options.pdb1, options.pdb2, output, chain1, chain2, random_name, dev_null))
         
 #0 is for is_server
 				
