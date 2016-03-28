@@ -139,7 +139,7 @@ unsigned int ChangeSystem(struct atom * atoms_from,
 						  char chainname);
 
 /* Makes comparison between Calpha atoms */
-unsigned int BidirectionalHit( struct atom * atoms_i, unsigned int n_i, struct atom * atoms_j, unsigned int n_j, unsigned int *** list, unsigned int * n_hit);
+unsigned int BidirectionalHit( struct atom * atoms_i, struct atom *C_atoms_i, unsigned int n_i, struct atom * atoms_j, struct atom *C_atoms_j, unsigned int n_j, unsigned int *** list, unsigned int * n_hit);
 
 /* M = max( 0; 4.5-rho(atom1, atom2) ) */
 double Measure2_p(double *measure, unsigned int ** list_hit, unsigned int n_hit, struct atom * atoms_prot_1, struct atom * atoms_prot_2);

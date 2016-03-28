@@ -1,7 +1,7 @@
 StructAlign2
 
 1) Place to desired folder
-2) Unzip (tar -xf StructAlign2.tar)
+2) Unzip (tar -xf StructAlign.tar)
 3) type 'make'
 4) run as 'python StructAlign.py pdb1 pdb2'
 

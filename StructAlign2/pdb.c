@@ -338,10 +338,10 @@ unsigned int run_3dna(char *pdb_name, unsigned int **compl, unsigned int ***comp
 *********************************/
 
 
-unsigned int BidirectionalHit( struct atom * atoms_i, unsigned int n_i, struct atom * atoms_j, unsigned int n_j, unsigned int *** list, unsigned int * n_hit){
+unsigned int BidirectionalHit( struct atom * atoms_i, struct atom *C_atoms_i, unsigned int n_i, struct atom * atoms_j, struct atom *C_atoms_j, unsigned int n_j, unsigned int *** list, unsigned int * n_hit){
   unsigned int i,j,k, curr, m, *list_j, *list_i, ja, ma;
   double min, dist;
-  struct geomvector vector;
+  struct geomvector vector, vector1, vector2;
   
   /*free (*list);*/
   //printf("H1\n"); // Enable in test mode
@@ -361,8 +361,13 @@ unsigned int BidirectionalHit( struct atom * atoms_i, unsigned int n_i, struct a
 	  vector = fromto( location(atoms_i[i]), location(atoms_j[j]) );
 	  dist = sqrt( scalar(vector, vector) );
           if (dist - min < 0) {
-	        min = dist;
-		list_i[i] = j;
+          	vector1 = fromto( location(atoms_i[i]), location(C_atoms_i[i]) );
+          	vector2 = fromto( location(atoms_j[j]), location(C_atoms_j[j]) );
+          	if ( scalar(vector1, vector2) > 0 )
+		{
+			min = dist;
+			list_i[i] = j;
+		}
 	  }
       }
       ma = 2;
@@ -385,8 +390,13 @@ unsigned int BidirectionalHit( struct atom * atoms_i, unsigned int n_i, struct a
 	    vector = fromto( location(atoms_j[list_j[j]]), location(atoms_i[i]) );
 	    dist = sqrt( scalar(vector, vector) );
         if (dist - min < 0) {
-	      min = dist;
-	      curr = i;
+        	vector1 = fromto( location(atoms_i[i]), location(C_atoms_i[i]) );
+          	vector2 = fromto( location(atoms_j[list_j[j]]), location(C_atoms_j[list_j[j]]) );
+          	if ( scalar(vector2, vector1) > 0 )
+		{
+			min = dist;
+			curr = i;
+		}
 	}
       }
     //printf("list_j[j]: %u\tlist_i[curr]: %u\tk: %u\t|\t",list_j[j],list_i[curr],k); // Enable in test mode
@@ -690,6 +700,11 @@ while (i>0 && j>0 && S[i][j]>0){
 		measure_max = measures[i][j];
 		max_measure_i = i;
 		max_measure_j = j;
+	}
+	if ( (compl1-i+1)>0 && (compl2-j+1)>0 && (compl1-i+1)<=n && (compl2-j+1)<=m && measures[compl1-i+1][compl2-j+1] > measure_max ){
+		measure_max = measures[compl1-i+1][compl2-j+1];
+		max_measure_i = compl1-i+1;
+		max_measure_j = compl2-j+1;
 	}
 	i--;
 	j--;
