@@ -140,7 +140,7 @@ int main  (int argc, char **argv)
   unsigned int best_compl1, best_compl2;
   unsigned int best_n_first_chain, best_m_first_chain;
   unsigned int best_pair1, best_pair2;
-  double best_S_max = 0;
+  double best_S_max = -1;
   
   for (pair1=1; pair1<=n_pairs1; pair1++)
   {
@@ -292,45 +292,45 @@ int main  (int argc, char **argv)
 	  /* Done diagonal search */
 	  
 	  if (S_max > best_S_max)
-	  	{
-	  		best_S_max = S_max;
-	  		atomlistcpy(&best_dna1_chain1, dna1_chain1, dna1_chain1_n);
-	  		best_dna1_chain1_n = dna1_chain1_n;
-	  		atomlistcpy(&best_dna1_chain2, dna1_chain2, dna1_chain2_n);
-	  		best_dna1_chain2_n = dna1_chain2_n;
-	  		atomlistcpy(&best_dna2_chain1, dna2_chain1, dna2_chain1_n);
-	  		best_dna2_chain1_n = dna2_chain1_n;
-	  		atomlistcpy(&best_dna2_chain2, dna2_chain2, dna2_chain2_n);
-	  		best_dna2_chain2_n = dna2_chain2_n;
-	  		
-	  		atomlistcpy(&best_atoms_dna1, atoms_dna1, m1);
-	  		best_list_P1 = (unsigned int *)malloc(sizeof(unsigned int)*(n_P1+1));
-	  		best_list_C11 = (unsigned int *)malloc(sizeof(unsigned int)*(n_C11+1));
-	  		best_list_OP11 = (unsigned int *)malloc(sizeof(unsigned int)*(n_OP11+1));
-	  		best_list_OP21 = (unsigned int *)malloc(sizeof(unsigned int)*(n_OP21+1));
-	  		memcpy(best_list_P1, list_P1, sizeof(unsigned int)*(n_P1+1));
-	  		memcpy(best_list_C11, list_C11, sizeof(unsigned int)*(n_C11+1));
-	  		memcpy(best_list_OP11, list_OP11, sizeof(unsigned int)*(n_OP11+1));
-	  		memcpy(best_list_OP21, list_OP21, sizeof(unsigned int)*(n_OP21+1));
-	  			
-	  		atomlistcpy(&best_atoms_dna2, atoms_dna2, m2);
-	  		best_list_P2 = (unsigned int *)malloc(sizeof(unsigned int)*(n_P2+1));
-	  		best_list_C12 = (unsigned int *)malloc(sizeof(unsigned int)*(n_C12+1));
-	  		best_list_OP12 = (unsigned int *)malloc(sizeof(unsigned int)*(n_OP12+1));
-	  		best_list_OP22 = (unsigned int *)malloc(sizeof(unsigned int)*(n_OP22+1));
-	  		memcpy(best_list_P2, list_P2, sizeof(unsigned int)*(n_P2+1));
-	  		memcpy(best_list_C12, list_C12, sizeof(unsigned int)*(n_C12+1));
-	  		memcpy(best_list_OP12, list_OP12, sizeof(unsigned int)*(n_OP12+1));
-	  		memcpy(best_list_OP22, list_OP22, sizeof(unsigned int)*(n_OP22+1));
-	  		best_i_max_measure = i_max_measure;
-	  		best_j_max_measure = j_max_measure;
-	  		best_compl1 = compl1;
-	  		best_compl2 = compl2;
-	  		best_n_first_chain = n_first_chain;
-	  		best_m_first_chain = m_first_chain;
-	  		best_pair1 = pair1;
-	  		best_pair2 = pair2;
-	  	}
+  	  {
+  		best_S_max = S_max;
+  		atomlistcpy(&best_dna1_chain1, dna1_chain1, dna1_chain1_n);
+  		best_dna1_chain1_n = dna1_chain1_n;
+  		atomlistcpy(&best_dna1_chain2, dna1_chain2, dna1_chain2_n);
+  		best_dna1_chain2_n = dna1_chain2_n;
+  		atomlistcpy(&best_dna2_chain1, dna2_chain1, dna2_chain1_n);
+  		best_dna2_chain1_n = dna2_chain1_n;
+  		atomlistcpy(&best_dna2_chain2, dna2_chain2, dna2_chain2_n);
+  		best_dna2_chain2_n = dna2_chain2_n;
+  		
+  		atomlistcpy(&best_atoms_dna1, atoms_dna1, m1);
+  		best_list_P1 = (unsigned int *)malloc(sizeof(unsigned int)*(n_P1+1));
+  		best_list_C11 = (unsigned int *)malloc(sizeof(unsigned int)*(n_C11+1));
+  		best_list_OP11 = (unsigned int *)malloc(sizeof(unsigned int)*(n_OP11+1));
+  		best_list_OP21 = (unsigned int *)malloc(sizeof(unsigned int)*(n_OP21+1));
+  		memcpy(best_list_P1, list_P1, sizeof(unsigned int)*(n_P1+1));
+  		memcpy(best_list_C11, list_C11, sizeof(unsigned int)*(n_C11+1));
+  		memcpy(best_list_OP11, list_OP11, sizeof(unsigned int)*(n_OP11+1));
+  		memcpy(best_list_OP21, list_OP21, sizeof(unsigned int)*(n_OP21+1));
+  			
+  		atomlistcpy(&best_atoms_dna2, atoms_dna2, m2);
+  		best_list_P2 = (unsigned int *)malloc(sizeof(unsigned int)*(n_P2+1));
+  		best_list_C12 = (unsigned int *)malloc(sizeof(unsigned int)*(n_C12+1));
+  		best_list_OP12 = (unsigned int *)malloc(sizeof(unsigned int)*(n_OP12+1));
+  		best_list_OP22 = (unsigned int *)malloc(sizeof(unsigned int)*(n_OP22+1));
+  		memcpy(best_list_P2, list_P2, sizeof(unsigned int)*(n_P2+1));
+  		memcpy(best_list_C12, list_C12, sizeof(unsigned int)*(n_C12+1));
+  		memcpy(best_list_OP12, list_OP12, sizeof(unsigned int)*(n_OP12+1));
+  		memcpy(best_list_OP22, list_OP22, sizeof(unsigned int)*(n_OP22+1));
+  		best_i_max_measure = i_max_measure;
+  		best_j_max_measure = j_max_measure;
+  		best_compl1 = compl1;
+  		best_compl2 = compl2;
+  		best_n_first_chain = n_first_chain;
+  		best_m_first_chain = m_first_chain;
+  		best_pair1 = pair1;
+  		best_pair2 = pair2;
+  	  }
 	}
   } 
   /*** END OF MAIN CYCLE ***/
@@ -364,8 +364,8 @@ int main  (int argc, char **argv)
   unsigned int i_max_measure_compl, j_max_measure_compl;
   unsigned int is_reverse1, is_reverse2;
   
-  outfile[strlen(outfile)-11] = chain1;
-  outfile[strlen(outfile)-5] = chain2;
+  //outfile[strlen(outfile)-11] = chain1;
+  //outfile[strlen(outfile)-5] = chain2;
   //printf("n_first_chain=%u i_max_measure=%u best_compl1=%u\n", best_n_first_chain, best_i_max_measure,  best_compl1);
   is_reverse1 = ((best_i_max_measure > best_n_first_chain) ? 1 : 0);
   is_reverse2 = ((best_j_max_measure > best_m_first_chain) ? 1 : 0);

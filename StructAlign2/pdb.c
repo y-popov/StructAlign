@@ -297,7 +297,8 @@ unsigned int run_3dna(char *pdb_name, unsigned int **compl, unsigned int ***comp
 	count = 0;
 	for (i=1; i<=n; i++)
 	{
-		fgets (c, 102, out_file);
+		if (chain1 != (*pairs)[count][1])
+			flag = 'x';
 		if (flag == 'x')
 		{
 			fgets (c, 102, out_file);
@@ -317,7 +318,7 @@ unsigned int run_3dna(char *pdb_name, unsigned int **compl, unsigned int ***comp
 					(*compl_pairs)[j] = (unsigned int *)malloc(sizeof(unsigned int)*3);
 				}
 			}
-			(*compl)[count] = b-a;
+			(*compl)[count] = b-a; // unnessesary
 			(*compl_pairs)[count][1] = res1;
 			(*compl_pairs)[count][2] = res2;
 			(*pairs)[count][1] = chain1;
@@ -326,7 +327,7 @@ unsigned int run_3dna(char *pdb_name, unsigned int **compl, unsigned int ***comp
 		}
 		else
 		{
-			sscanf(c, "%5u%5u%*u #%*u %c %*5c%c%*31c%c", &a, &b, &flag, &chain1, &chain2);
+			sscanf(c, "%5u%5u%*u #%*u %c %*4c>%c%*[:.]%u%*19c%*[:.]%u%*c:%c", &a, &b, &flag, &chain1, &res1, &res2,  &chain2);
 		}
 	}
 	return 0;
@@ -661,7 +662,7 @@ void BestDiag(double **measures, unsigned int n, unsigned int m, double *S_max,
 int d; //diagonal number: [-n_P1+1; max(n_P2-n_P1, 0)]
 unsigned int i,j,c, max_i, max_j, max_measure_i, max_measure_j;
 double **S; //S-table
-double measure_max=0, max_sum=0;
+double measure_max=-1, max_sum=-1;
 
 //S_max search
 S = (double **)malloc( sizeof(double *)*(n+1) );
@@ -682,7 +683,7 @@ for (d=(int)(-n+1); d<=(int)(m_1chain-1); d++){
 		if ( (compl1-i+1)>0 && (compl2-j+1)>0 && (compl1-i+1)<=n && (compl2-j+1)<=m )
 			{S[i][j] += measures[compl1-i+1][compl2-j+1];}
 		if (S[i][j] < 0)  S[i][j] = 0;
-		if (S[i][j] >= max_sum){
+		if (S[i][j] > max_sum){
 			max_sum = S[i][j];
 			max_i=i; max_j=j;
 		}
@@ -695,6 +696,9 @@ for (d=(int)(-n+1); d<=(int)(m_1chain-1); d++){
 
 //reverse move
 i=max_i; j=max_j;
+measure_max = 0;
+max_measure_i = i-2;
+max_measure_j = j+2;
 while (i>0 && j>0 && S[i][j]>0){
 	if (measures[i][j] > measure_max){
 		measure_max = measures[i][j];

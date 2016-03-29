@@ -1,8 +1,8 @@
 
 from argparse import ArgumentParser
 from subprocess import check_output
-from sys import stdin
-from os import system, access, F_OK, remove, devnull, path, makedirs
+#from sys import stdin
+from os import system, access, F_OK, remove, devnull, path, makedirs, rename
 from sys import argv
 from random import choice
 from string import ascii_uppercase, digits
@@ -22,7 +22,7 @@ parser.add_argument('-ss', '--supressAll', action='store_true', help='Suppress a
 
 options=parser.parse_args()
 
-not_installed = int( check_output(['{}./check_3dna.sh'.format(argv[0].rstrip("StructAlign.py"))]) )
+not_installed = int( check_output(['{}./check_3dna.sh'.format(argv[0].replace("StructAlign.py", ''))]) )
 if (not_installed==1) and (not options.internal):
 	print "It seems you don't have installed 3DNA package! Please, install it or use '-i' option."
 	print "You can download 3DNA from http://forum.x3dna.org/downloads/3dna-download/"
@@ -33,15 +33,15 @@ if (not_installed==1) and (not options.internal):
 chain1 = options.chain1.upper()
 chain2 = options.chain2.upper()
 
-code1 = options.pdb1[-8:-4]
-code2 = options.pdb2[-8:-4]
+code1 = options.pdb1[options.pdb1.rfind('/')+1:-4]
+code2 = options.pdb2[options.pdb2.rfind('/')+1:-4]
 
 if not options.output:
-	output = options.pdb1[-8:-4]+'@_'+options.pdb2[-8:-4]+'@'
+	output = code1+'@_'+code2+'@'
 else:
 	if not path.exists(options.output):
 		makedirs(options.output)
-        output = options.output.rstrip('/')+'/'+options.pdb1[-8:-4]+'*_'+options.pdb2[-8:-4]+'*'
+        output = options.output.rstrip('/')+'/'+code1+'@_'+code2+'@'
 
 dev_null = ''
 dev_null_err = ''
@@ -56,7 +56,7 @@ if not access(options.pdb1, F_OK):
 		print 'You do not have %s pdb-file! Downloading it...' % code1
 	try:
 		response = urlopen("http://files.rcsb.org/download/{}.pdb".format(code1))
-		with open("{}.pdb".format(code1), 'w') as dl:
+		with open(options.pdb1, 'w') as dl:
 			dl.write(response.read())
 	except Exception:
 		print "... aborting. PDB entry "+code1+" does not exist or you have not Internet connection!"
@@ -67,7 +67,7 @@ if not access(options.pdb2, F_OK):
 		print 'You do not have %s pdb-file! Downloading it...' % code2
 	try:
 		response = urlopen("http://files.rcsb.org/download/{}.pdb".format(code2))
-		with open("{}.pdb".format(code2), 'w') as dl:
+		with open(options.pdb2, 'w') as dl:
 			dl.write(response.read())
 	except Exception:
 		print "... aborting. PDB entry "+code2+" does not exist or you have not Internet connection!"
@@ -80,7 +80,7 @@ open(random_name+'.txt', 'w').close()
 #devnull = open(devnull, 'w')
 #args = 'algorithm.exe {} {} {}.pdb {} {} {}.txt'.format(options.pdb1, options.pdb2, output, chain1, chain2, random_name)
 
-system('{}./align {} {} {}.pdb {} {} {}.txt 0{}'.format(argv[0].rstrip("StructAlign.py"), options.pdb1, options.pdb2, output, chain1, chain2, random_name, dev_null))
+system('{}./align {} {} {}.pdb {} {} {}.txt 0{}'.format(argv[0].replace("StructAlign.py", ''), options.pdb1, options.pdb2, output, chain1, chain2, random_name, dev_null))
         
 #0 is for is_server
 				
@@ -90,9 +90,11 @@ try:
 	max_score = max_score.read().splitlines()
 	if not max_score:
 		print "Sorry, the program has fault"
+		exit(1)
 except IOError as e:
 	print "Sorry, the program has fault"
 	print "I/O error({0}): {1}".format(e.errno, e.strerror)
+	exit(1)
 
 
 print ''
@@ -160,8 +162,11 @@ while index < len(max_score):
 			print "\nStructures {} chain {} and {} chain {} were aligned with score: {}".format(code1, chain1, code2, chain2, score)
 			print "\nThe nucleotides with max measure: {}.{}:{}, {}.{}:{}".format(code1, dna_chainA1, maxA, code2, dna_chainB1, maxB)
 		
-		fasta_name = output[:-7]+output[-6:-1]+'.fasta'
-		pdb_name = output[:-7]+chain1+output[-6:-1]+chain2+'.pdb'
+		fasta_name = output.replace('@', '')+'.fasta'
+		pdb_name = output[:output.find('@')]+chain1+output[output.find('@')+1:-1]+chain2+'.pdb'
+		print output+'.pdb'
+		print pdb_name
+		rename(output+'.pdb', pdb_name)
 		fasta = open(fasta_name, 'w')
 		fasta.write(">{}.{} {}-{}\n{}\n\n>{}.{} {}-{}\n{}\n\n>{}.{} {}-{}\n{}\n\n>{}.{} {}-{}\n{}\n".format(code1, dna_chainA1, startA1, endA1, dna1_chain1, code2, dna_chainB1, startB1, endB1, dna2_chain1, code1, dna_chainA2, startA2, endA2, dna1_chain2, code2, dna_chainB2, startB2, endB2, dna2_chain2) )
 		fasta.close()

@@ -7,8 +7,6 @@ StructAlign2
 
 Type 'python StructAlign.py -h' for more options
 
-Выходные файлы:
-!Для формирования правильных имён имена pdb-файлов должны заканчиваться на pdb-код!
 
 pdb1*_pdb2*.pdb
 	pdb-файл с совмещением структур, где * - имя белковой цепи
