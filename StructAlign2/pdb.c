@@ -297,6 +297,8 @@ unsigned int run_3dna(char *pdb_name, unsigned int **compl, unsigned int ***comp
 	count = 0;
 	for (i=1; i<=n; i++)
 	{
+		fgets (c, 102, out_file);
+		//printf("%c %c\n", chain1, (*pairs)[count][1]);
 		if (chain1 != (*pairs)[count][1])
 			flag = 'x';
 		if (flag == 'x')
@@ -324,10 +326,12 @@ unsigned int run_3dna(char *pdb_name, unsigned int **compl, unsigned int ***comp
 			(*pairs)[count][1] = chain1;
 			(*pairs)[count][2] = chain2;
 			(*len) = count;
+			n --;
 		}
 		else
 		{
 			sscanf(c, "%5u%5u%*u #%*u %c %*4c>%c%*[:.]%u%*19c%*[:.]%u%*c:%c", &a, &b, &flag, &chain1, &res1, &res2,  &chain2);
+			//printf("%u %u %c %c %u %u %c\n", a, b, flag, chain1, res1, res2, chain2);
 		}
 	}
 	return 0;
