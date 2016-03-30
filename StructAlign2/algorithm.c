@@ -361,6 +361,9 @@ int main  (int argc, char **argv)
 
   /*** For server work - DNA alignment making ***/
   
+  if (best_S_max == 0)
+  	fprintf(max_score, "Warning! The score is zero! It seems you have specified wrong parameters.\n");
+  
   unsigned int i_max_measure_compl, j_max_measure_compl;
   unsigned int is_reverse1, is_reverse2;
   

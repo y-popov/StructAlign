@@ -105,6 +105,7 @@ while index < len(max_score):
 	if line.startswith("Error"):
 		print "Error"
 		print max_score[index+1]
+		break
 	elif line.startswith("Warning"):
 		print line
 		del max_score[index]
@@ -164,8 +165,6 @@ while index < len(max_score):
 		
 		fasta_name = output.replace('@', '')+'.fasta'
 		pdb_name = output[:output.find('@')]+chain1+output[output.find('@')+1:-1]+chain2+'.pdb'
-		print output+'.pdb'
-		print pdb_name
 		rename(output+'.pdb', pdb_name)
 		fasta = open(fasta_name, 'w')
 		fasta.write(">{}.{} {}-{}\n{}\n\n>{}.{} {}-{}\n{}\n\n>{}.{} {}-{}\n{}\n\n>{}.{} {}-{}\n{}\n".format(code1, dna_chainA1, startA1, endA1, dna1_chain1, code2, dna_chainB1, startB1, endB1, dna2_chain1, code1, dna_chainA2, startA2, endA2, dna1_chain2, code2, dna_chainB2, startB2, endB2, dna2_chain2) )

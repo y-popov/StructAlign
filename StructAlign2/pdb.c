@@ -89,7 +89,12 @@ unsigned int correctC1_P(struct atom *atoms_from, unsigned int **list_C, unsigne
 int inArray(char c, char *string)
 {
 	unsigned int i;
-	for (i=1; i<=sizeof(string)/sizeof(char); i++)
+	unsigned int leng = 1;
+	
+	while (string[leng] != '\0')
+		leng++;
+	
+	for (i=1; i<leng; i++)
 	{
 		if (string[i]==c)
 			return TRUE;
@@ -1204,9 +1209,10 @@ unsigned int readerPDB (char *filename, unsigned int *dnanum, unsigned int *prot
 		     	prot_chains_num++;
 		     	if (prot_chains_num >= prot_chains_max){
 		     		prot_chains_max++;
-		     		(*chains_prot) = (char *)realloc( (*chains_prot), sizeof(char)*(prot_chains_max) );
+		     		(*chains_prot) = (char *)realloc( (*chains_prot), sizeof(char)*(prot_chains_max+1) );
 		     	}
 		     }
+		     (*chains_prot)[count+1] = '\0';
 		     atomcpy ( &((*patoms_prot)[(*protnum)]), currentatom);
 		  }
 		  else if ( ifdna(currentatom.ResType) == TRUE ) {
@@ -1251,7 +1257,6 @@ unsigned int readerPDB (char *filename, unsigned int *dnanum, unsigned int *prot
 	   } /* if first model or no models */ 
    
   } /* while */
-
 
   fclose (flow_pdb);    /*close infile*/
 
