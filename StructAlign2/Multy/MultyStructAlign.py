@@ -8,7 +8,7 @@ from random import choice
 from string import ascii_uppercase, digits
 from urllib2 import urlopen
 
-def StructAlign(pdb1, pdb2, outfile):
+def StructAlign(pdb1, pdb2, outfile, warns):
 	code1 = pdb1[pdb1.rfind('/')+1:-1]
 	code2 = pdb2[pdb2.rfind('/')+1:-1]
 	
@@ -19,6 +19,35 @@ def StructAlign(pdb1, pdb2, outfile):
 	pdb2_name = pdb2[:-1]+'.pdb'
 	
 	system('{}./align {} {} {}.pdb {} {} {}.txt 0 > /dev/null'.format(argv[0].replace("MultyStructAlign.py", pdb1_name, pdb2_name, output, chain1, chain2, outfile))
+	
+	max_score = open("{}.txt".format(random_name), 'r')
+	max_score = max_score.read().splitlines()
+	if not max_score:
+		print "Sorry, the program has fault"
+		remove("{}.txt".format(random_name))
+		exit(1)
+	
+	index = -1
+	while index < len(max_score):
+		index += 1
+		line = max_score[index]
+		if line.startswith("Error"):
+			print "Error"
+			print max_score[index+1]
+			break
+		elif line.startswith("Warning"):
+			warns += line
+			del max_score[index]
+			index -= 1
+		else:
+			chain1, chain2, dna_chainA1, dna_chainA2, dna_chainB1, dna_chainB2, startA1, endA1, startA2, endA2, startB1, endB1, startB2, endB2, maxA, maxB, maxAc, maxBc, isreverse1, isreverse2 = max_score[0].split()
+			score = float( max_score[1] )
+			dna1_chain1, dna1_chain2 = max_score[2], max_score[3] #sequence
+			dna2_chain1, dna2_chain2 = max_score[4], max_score[5] #sequence
+			dna11 = range(int(startA1), int(endA1)+1)
+			dna12 = range(int(endA2), int(startA2)-1, -1)[::-1]
+			dna21 = range(int(startB1), int(endB1)+1)
+			dna22 = range(int(endB2), int(startB2)-1, -1)[::-1]
 	
 	return
 	
@@ -46,10 +75,15 @@ for pair in options.chains:
 	if pdb+'.pdb' not in options.pdbs:
 		print "\nYou didn't specify file {}.pdb!".format(pdb)
 		while answer.lower() not in ['n', 'y', 'no', 'yes']:
-			answer = raw_input("Do you wish to continue? [y/n] ")
+			answer = raw_input("Do you wish to continue without it? [y/n/a] ")
 		if answer.lower() in ['n', 'no']:
 			print 'Aborting...'
 			exit(1)
+		if answer.lower() in ['a', 'add']:
+			if pdb not in chains:
+				chains[pdb] = [chain]
+			else:
+				chains[pdb].append(chain)
 	else:
 		if pdb not in chains:
 			chains[pdb] = [chain]
@@ -81,6 +115,15 @@ for pdb in options.pdbs+files:
 			print "... aborting. PDB entry "+code+" does not exist or you have not Internet connection!"
 			exit(1)
 
+if path.isfile("out"):
+	rename("out", "out.backup")
+	if not options.supressAll:
+		print "File 'out' was renamed to 'out.backup'!"
+if path.exists("out"):
+	print "Please, remove 'out' folder. It conflicts with program!"
+	print 'Aborting'
+	exit(1)
+
 leng = len(pdbs)
 scores = {}
 random_name = ''.join(choice(ascii_uppercase + digits) for i in range(10))
@@ -88,10 +131,11 @@ open(random_name+'.txt', 'w').close()
 
 if not path.exists("All"):
 	makedirs('All')
+warnings = ''
 for i in range(leng):
 	for j in range(i+1, leng):
 		print pdbs[i], pdbs[j]
-		score = StructAlign(pdbs[i], pdbs[j], random_name)
+		score = StructAlign(pdbs[i], pdbs[j], random_name, warnings)
 		
 		
 	

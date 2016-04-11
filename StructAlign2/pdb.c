@@ -236,13 +236,13 @@ unsigned int run_3dna(char *pdb_name, unsigned int **compl, unsigned int ***comp
 	unsigned int i, j, n, a, b, count;
 	unsigned int res1, res2;
 	command = (char *)malloc(sizeof(char)*(strlen(pdb_name)+35));
-	(*compl) = (unsigned int *)malloc(sizeof(unsigned int)*pairs_max);
-	(*compl_pairs) = (unsigned int **)malloc(sizeof(unsigned int *)*pairs_max);
+	(*compl) = (unsigned int *)malloc(sizeof(unsigned int)*(pairs_max+1));
+	(*compl_pairs) = (unsigned int **)malloc(sizeof(unsigned int *)*(pairs_max+1));
 	(*pairs) = (char **)malloc(sizeof(char *)*pairs_max);
-	for (j=1; j<=pairs_max; j++)
+	for (j=0; j<=pairs_max; j++)
 	{
-		(*pairs)[j] = (char *)malloc(sizeof(char)*3);
-		(*compl_pairs)[j] = (unsigned int *)malloc(sizeof(unsigned int)*3);
+		(*pairs)[j] = (char *)malloc(sizeof(char)*2);
+		(*compl_pairs)[j] = (unsigned int *)malloc(sizeof(unsigned int)*2);
 	}
 	if (server == 0)
 	{
@@ -300,12 +300,15 @@ unsigned int run_3dna(char *pdb_name, unsigned int **compl, unsigned int ***comp
 	
 	flag = 'x';
 	count = 0;
+	chain1 = '@';
+	(*pairs)[count][1] = chain1;
 	for (i=1; i<=n; i++)
 	{
 		fgets (c, 102, out_file);
 		//printf("%c %c\n", chain1, (*pairs)[count][1]);
-		if (chain1 != (*pairs)[count][1])
+		if (chain1 != (*pairs)[count][1] && chain2 != (*pairs)[count][2])
 			flag = 'x';
+
 		if (flag == 'x')
 		{
 			fgets (c, 102, out_file);
@@ -317,12 +320,12 @@ unsigned int run_3dna(char *pdb_name, unsigned int **compl, unsigned int ***comp
 			{
 				pairs_max = pairs_max * 2;
 				(*compl) = (unsigned int *)realloc((*compl), pairs_max*sizeof(unsigned int));
-				(*compl_pairs) = (unsigned int **)realloc((*compl_pairs), sizeof(unsigned int *)*pairs_max);
-				(*pairs) = (char **)realloc((*pairs), sizeof(char *)*pairs_max);
+				(*compl_pairs) = (unsigned int **)realloc((*compl_pairs), sizeof(unsigned int *)*(pairs_max+1));
+				(*pairs) = (char **)realloc((*pairs), sizeof(char *)*(pairs_max+1));
 				for (j=pairs_max; j>pairs_max/2; j--)
 				{
-					(*pairs)[j] = (char *)malloc(sizeof(char)*3);
-					(*compl_pairs)[j] = (unsigned int *)malloc(sizeof(unsigned int)*3);
+					(*pairs)[j] = (char *)malloc(sizeof(char)*2);
+					(*compl_pairs)[j] = (unsigned int *)malloc(sizeof(unsigned int)*2);
 				}
 			}
 			(*compl)[count] = b-a; // unnessesary

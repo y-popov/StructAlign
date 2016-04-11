@@ -73,6 +73,14 @@ if not access(options.pdb2, F_OK):
 		print "... aborting. PDB entry "+code2+" does not exist or you have not Internet connection!"
 		exit(1)
 
+if path.isfile("out"):
+	rename("out", "out.backup")
+	if not options.supressAll:
+		print "File 'out' was renamed to 'out.backup'!"
+if path.exists("out"):
+	print "Please, remove 'out' folder. It conflicts with program!"
+	print 'Aborting'
+	exit(1)
 
 random_name = ''.join(choice(ascii_uppercase + digits) for i in range(10))
 open(random_name+'.txt', 'w').close()
@@ -80,6 +88,7 @@ open(random_name+'.txt', 'w').close()
 #devnull = open(devnull, 'w')
 #args = 'algorithm.exe {} {} {}.pdb {} {} {}.txt'.format(options.pdb1, options.pdb2, output, chain1, chain2, random_name)
 
+#print '{}./align {} {} {}.pdb {} {} {}.txt 0{}'.format(argv[0].replace("StructAlign.py", ''), options.pdb1, options.pdb2, output, chain1, chain2, random_name, dev_null)
 system('{}./align {} {} {}.pdb {} {} {}.txt 0{}'.format(argv[0].replace("StructAlign.py", ''), options.pdb1, options.pdb2, output, chain1, chain2, random_name, dev_null))
         
 #0 is for is_server
@@ -90,6 +99,7 @@ try:
 	max_score = max_score.read().splitlines()
 	if not max_score:
 		print "Sorry, the program has fault"
+		remove("{}.txt".format(random_name))
 		exit(1)
 except IOError as e:
 	print "Sorry, the program has fault"
@@ -101,7 +111,7 @@ print ''
 index = -1				
 while index < len(max_score):
 	index += 1
-	line  = max_score[index]
+	line = max_score[index]
 	if line.startswith("Error"):
 		print "Error"
 		print max_score[index+1]

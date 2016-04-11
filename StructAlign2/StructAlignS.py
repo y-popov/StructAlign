@@ -1,7 +1,7 @@
 #!/usr/bin/python
 
 from sys import stdin
-from os import system, access, F_OK
+from os import system, access, F_OK, rename
 from random import choice
 from string import ascii_uppercase, digits
 
@@ -172,7 +172,9 @@ for b in a:
 							dna1_chain2 += '-'*(-delta)
 						else:
 							dna2_chain2 += '-'*delta
-					
+						
+						rename("../tmp/StructAlign/{2}/{0}@_{1}@.pdb".format(code1, code2, random_name), "../tmp/StructAlign/{2}/{0}{3}_{1}{4}.pdb".format(code1, code2, random_name, chain1, chain2))
+						
 						print ("<center><H2>Your job was completed successfully</H2></center>\n")
 						print '<table border="1" width="100%">\n<TR>\n<td>\n'
 						print ( "<p>Structures {} chain {} and {} chain {} were aligned with score: {}</p>".format(code1, chain1, code2, chain2, score) )
