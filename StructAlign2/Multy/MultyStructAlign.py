@@ -245,7 +245,7 @@ print ''
 for i in range(leng):
 	for j in range(i, leng): #or i+1?
 		s += 1
-		print pdbs[i], pdbs[j], '--{:->3.2f}%-->'.format( 100.0*s/total ), 
+		print pdbs[i], pdbs[j], '--{:->3.2%}-->'.format( s/total ), 
 		score, chain1, chain2 = StructAlign(pdbs[i], pdbs[j], random_name, warnings, pairs)
 		pdbs[i] = pdbs[i][:-1]+chain1
 		pdbs[j] = pdbs[j][:-1]+chain2
