@@ -133,7 +133,7 @@ unsigned int getAtomsNumbers(struct atom * atoms_from, unsigned int n, unsigned 
 unsigned int correctC1_P(struct atom *atoms_from, unsigned int **list_C, unsigned int *n_C, unsigned int *list_P, unsigned int *n_P);
 
 /* Moves coordinate system to desired atom */
-unsigned int ChangeSystem(struct atom * atoms_from, 
+struct coordsystem ChangeSystem(struct atom * atoms_from, 
                           unsigned int n, struct atom ** atoms_to, 
 						  struct atom Op, struct atom Xp, struct atom Yp, struct atom Yp2,
 						  char chainname);

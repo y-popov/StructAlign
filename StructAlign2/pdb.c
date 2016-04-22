@@ -433,7 +433,7 @@ unsigned int BidirectionalHit( struct atom * atoms_i, struct atom *C_atoms_i, un
 *********************************/
 // OP1 is an atom that has smaller scalar(P_OPx, P_C1)
 
-unsigned int ChangeSystem(struct atom * atoms_from, 
+struct coordsystem ChangeSystem(struct atom * atoms_from, 
                           unsigned int n, struct atom ** atoms_to, 
 						  struct atom Op, struct atom Xp, struct atom Yp, struct atom Yp2,
 						  char chainname)
@@ -506,6 +506,38 @@ unsigned int ChangeSystem(struct atom * atoms_from,
 	(*atoms_to)[i].Chain = chainname;
   }	
     //printf("L5\n");  // Enable in test mode
+
+  return dnares;
+  }
+
+unsigned int ChangeSystemR(struct atom * atoms_from, 
+                          unsigned int n, struct atom ** atoms_to, 
+						  struct atom Op, char chainname, struct coordsystem dnares)
+{
+  unsigned int i;
+  struct geompoint Pp, currp, zero;
+  struct geomvector currv;
+  zero.X = 0;
+  zero.Y = 0;
+  zero.Z = 0;
+   
+  Pp = location(Op);		// P coordinates
+
+
+  *atoms_to = (struct atom *)malloc( sizeof(struct atom)*(n+1) );
+
+  for (i=1; i<=n; i++){
+    atomcpy(&(*atoms_to)[i], atoms_from[i]);
+	
+	currp = location( (*atoms_to)[i] );
+	currv = fromto( Pp, currp);
+	currv = changesystem(currv, dnares, -1);
+	
+    (*atoms_to)[i].XCoord = currv.X;
+    (*atoms_to)[i].YCoord = currv.Y;
+    (*atoms_to)[i].ZCoord = currv.Z;
+	(*atoms_to)[i].Chain = chainname;
+  }	
 
   return 0;
   }

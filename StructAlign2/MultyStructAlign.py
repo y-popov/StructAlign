@@ -9,7 +9,7 @@ from string import ascii_uppercase, digits
 from urllib2 import urlopen
 from shutil import rmtree
 
-def StructAlign(pdb1, pdb2, outfile, warns, pairs):
+def StructAlign(pdb1, pdb2, outfile, warns, pairs, maxMs):
 	code1 = pdb1[pdb1.rfind('/')+1:-1]
 	code2 = pdb2[pdb2.rfind('/')+1:-1]
 	
@@ -94,6 +94,7 @@ def StructAlign(pdb1, pdb2, outfile, warns, pairs):
 			fasta.close()
 			
 			pairs.append(pair)
+			maxMs[pair] = [(code1, dna_chainA1, maxA), (code1, dna_chainA2, maxAc), (code2, dna_chainB1, maxB), (code2, dna_chainB2, maxBc)]
 			break
 				
 	return score, chain1, chain2
@@ -117,11 +118,22 @@ def print_matrix(d, list):
 		print ""
 
 def find_repr(d, pdbs):
-	return pdbs[0][pdbs[0].rfind('/')+1:]
+	print "\nSearching for the representative... ",
+	print pdbs[0][pdbs[0].rfind('/')+1:]
+	return pdbs[0][pdbs[0].rfind('/')+1:], 0
 
-def writePDB(fl, c, rep, pdb):
+def reAlign(rep, repr_pdb, pair, maxM, pdb_name):
+	l = pair.split('_')
+	index = 0 if l[1]==rep else 1
+	maxM = maxM[0:2] if index==1 else maxM[2:] #select maxM of repr
+
+	system("{}./realign {}.pdb {} {} {} {} All/{}.pdb {} {} > /dev/null".format(argv[0].replace("MultyStructAlign.py", ''), repr_pdb[:-1], repr_pdb[-1], maxM[0][1], maxM[0][2], maxM[1][1], pair, index, pdb_name))
+
+def writePDB(fl, c, rep, pair, repr_pdb, maxM, pdb_name):
+	fl = open(pdb_name, 'a')
 	fl.write("MODEL{:>9}\n".format(c))
-	
+	fl.close()
+	"""
 	pair = pdb.split('_')
 	index = 0 if pair[1]==rep else 1
 	target = pair[index]
@@ -137,8 +149,11 @@ def writePDB(fl, c, rep, pdb):
 			if line[21] in chains:
 				fl.write(line)
 	pdb_file.close()
-	
+	"""
+	reAlign(rep, repr_pdb, pair, maxM, pdb_name)
+	fl = open(pdb_name, 'a')
 	fl.write("ENDMDL\n")
+	fl.close()
 
 def writeFASTA(fl, rep, pdb):
 	pair = pdb.split('_')
@@ -167,7 +182,7 @@ parser.add_argument('-c', '--chains', nargs='+', help='Protein chains in format 
 
 options=parser.parse_args()
 
-not_installed = int( check_output(['{}../check_3dna.sh'.format(argv[0].replace("MultyStructAlign.py", ''))]) )
+not_installed = int( check_output(['{}./check_3dna.sh'.format(argv[0].replace("MultyStructAlign.py", ''))]) )
 if (not_installed==1) and (not options.internal):
 	print "It seems you don't have installed 3DNA package! Please, install it."
 	print "You can download 3DNA from http://forum.x3dna.org/downloads/3dna-download/"
@@ -237,16 +252,18 @@ open(random_name+'.txt', 'w').close()
 
 if not path.exists("All"):
 	makedirs('All')
+
 warnings = ''
 pairs = []
+maxMs = {}
 s = 0
 total = (leng**2+leng)/2.0
 print ''
 for i in range(leng):
 	for j in range(i, leng): #or i+1?
 		s += 1
-		print pdbs[i], pdbs[j], '--{:->3.2f}%-->'.format( 100.0*s/total ), 
-		score, chain1, chain2 = StructAlign(pdbs[i], pdbs[j], random_name, warnings, pairs)
+		print pdbs[i], pdbs[j], '--{:->3.2%}-->'.format( s/total ), 
+		score, chain1, chain2 = StructAlign(pdbs[i], pdbs[j], random_name, warnings, pairs, maxMs)
 		pdbs[i] = pdbs[i][:-1]+chain1
 		pdbs[j] = pdbs[j][:-1]+chain2
 		print pdbs[i], pdbs[j]
@@ -257,18 +274,22 @@ for i in range(leng):
 print_matrix(scores, pdbs)	
 
 
-repres = find_repr(scores, pdbs)
+repres, repr_index = find_repr(scores, pdbs)
 
-f = open('multy.pdb', 'w')
+multy_pdb = "multy.pdb"
+f = open(multy_pdb, 'w')
 f.write( "HEADER{:>60}\n".format("MultyStructAlign") )
 f.write( "TITLE{:>60}\n".format("title") )
+f.close()
 
 c = 1
 for pair in pairs:
 	if repres in pair:
-		writePDB(f, c, repres, pair)
+		#reAlign(repres, pdbs[repr_index], pair, maxMs[pair], multy_pdb)
+		writePDB(f, c, repres, pair, pdbs[repr_index], maxMs[pair], multy_pdb)
 		c += 1
 
+f = open(multy_pdb, 'a')
 f.write( "END\n" )
 f.close()
 
