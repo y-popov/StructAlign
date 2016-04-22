@@ -99,8 +99,9 @@ def StructAlign(pdb1, pdb2, outfile, warns, pairs, maxMs):
 				
 	return score, chain1, chain2
 	
-def print_matrix(d, list):
+def print_matrix(name, d, list):
 	print ''
+	print name+':'
 	leng = len(list[0])
 	print ' '*7,
 	for i in list:
@@ -133,23 +134,6 @@ def writePDB(fl, c, rep, pair, repr_pdb, maxM, pdb_name):
 	fl = open(pdb_name, 'a')
 	fl.write("MODEL{:>9}\n".format(c))
 	fl.close()
-	"""
-	pair = pdb.split('_')
-	index = 0 if pair[1]==rep else 1
-	target = pair[index]
-
-	if index == 0:
-		chains = ['A', 'B', 'E']
-	else:
-		chains = ['C', 'D', 'F']
-	
-	pdb_file = open("All/"+pdb+".pdb", 'r')
-	for line in pdb_file:
-		if len(line)>21:
-			if line[21] in chains:
-				fl.write(line)
-	pdb_file.close()
-	"""
 	reAlign(rep, repr_pdb, pair, maxM, pdb_name)
 	fl = open(pdb_name, 'a')
 	fl.write("ENDMDL\n")
@@ -271,9 +255,16 @@ for i in range(leng):
 			scores[pdbs[i]] = {}
 		scores[pdbs[i]][pdbs[j]] = score
 		
-print_matrix(scores, pdbs)	
+print_matrix("Scores", scores, pdbs)	
 
+distances = {}
+for i in range(leng):
+	distances[pdbs[i]] = {}
+	for j in range(i, leng):
+		distances[pdbs[i]][pdbs[j]] = (scores[pdbs[i]][pdbs[i]]+scores[pdbs[j]][pdbs[j]])/2.0 - scores[pdbs[i]][pdbs[j]]
 
+print_matrix("Distances", distances, pdbs)
+		
 repres, repr_index = find_repr(scores, pdbs)
 
 multy_pdb = "multy.pdb"

@@ -530,8 +530,8 @@ unsigned int ChangeSystemR(struct atom * atoms_from,
     atomcpy(&(*atoms_to)[i], atoms_from[i]);
 	
 	currp = location( (*atoms_to)[i] );
-	currv = fromto( Pp, currp);
-	currv = changesystem(currv, dnares, -1);
+	currv = changesystem(fromto(zero, currp), dnares, -1);
+	currv = sumvec( currv, fromto(zero, Pp));
 	
     (*atoms_to)[i].XCoord = currv.X;
     (*atoms_to)[i].YCoord = currv.Y;
