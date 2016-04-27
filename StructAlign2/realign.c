@@ -3,15 +3,15 @@
 
 int main  (int argc, char **argv)
 {
-  if (argc != 9)
+  if (argc != 12)
   {
-    printf("\nUsage: %s <repr-pdb> <repr_chain> <repr-dna-chain1> <maxM> <repr-dna-chain2> <align-pdb> <align-index> <outfile>", argv[0]);
-    printf("\nExample: %s 3hdd.pdb A B 20 C superpos_3hdd_1puf.pdb 1 multy.pdb\n\n", argv[0]);
+    printf("\nUsage: %s <repr-pdb> <repr_chain> <repr-dna-chain1> <maxM> <repr-dna-chain2> <align-pdb> <align-index> <outfile> <target-prot> <target-dna1> <target_dna2>", argv[0]);
+    printf("\nExample: %s 3hdd.pdb A B 20 C superpos_3hdd_1puf.pdb 1 multy.pdb F D E\n\n", argv[0]);
     exit (1);
   }
   
   char *infile1, *infile2, *maxM, *outfile;
-  char chain1, chain2, dna_chain1, dna_chain2, repr_dna_chain1, repr_dna_chain2;
+  char chain1, chain2, dna_chain1, dna_chain2, repr_dna_chain1, repr_dna_chain2, target_prot, target_dna1, target_dna2;
   unsigned int index;
 
   infile1 = (char *)malloc( sizeof(char)*(strlen(argv[1])+1) );
@@ -44,7 +44,10 @@ int main  (int argc, char **argv)
   
   outfile = (char *)malloc( sizeof(char)*(strlen(argv[8])+1) );
   sscanf(argv[8],"%s", outfile);
-
+  
+  sscanf(argv[9], "%c", &target_prot);
+  sscanf(argv[10], "%c", &target_dna1);
+  sscanf(argv[11], "%c", &target_dna2);
   
   
   struct atom *all_atoms_dna1 = NULL, *all_atoms_dna2 = NULL;
@@ -91,6 +94,11 @@ int main  (int argc, char **argv)
   	{
   		i_max = i;
   	}
+  if (i_max==0)
+  {
+  	printf("Cannot find maxM-nucleotide in %s\n", infile2);
+  	exit(1);
+  }
 
   puts("Reading 2nd PDB file...");
   readerPDB(infile2, &all_m2, &n2, &w2, maxnumber, &all_atoms_dna2, &dna_chains2, &atoms_prot2, &prot_chains2, &atoms_wat2, &list2); 
@@ -107,9 +115,9 @@ int main  (int argc, char **argv)
   struct coordsystem dnares;
   dnares = ChangeSystem(dna1_chain1, dna1_chain1_n, &dna1_chain1, atoms_dna1[list_P1[i_max]], atoms_dna1[list_C11[i_max+1]], atoms_dna1[list_OP11[i_max]], atoms_dna1[list_OP21[i_max]], 'X'); 
   
-  ChangeSystemR(atoms_prot2, n2, &atoms_prot2,  atoms_dna1[list_P1[i_max]], 'E', dnares);  
-  ChangeSystemR(dna2_chain1, dna2_chain1_n, &dna2_chain1,  atoms_dna1[list_P1[i_max]], 'A', dnares); 
-  ChangeSystemR(dna2_chain2, dna2_chain2_n, &dna2_chain2,  atoms_dna1[list_P1[i_max]], 'B', dnares); 
+  ChangeSystemR(atoms_prot2, n2, &atoms_prot2,  atoms_dna1[list_P1[i_max]], target_prot, dnares);  
+  ChangeSystemR(dna2_chain1, dna2_chain1_n, &dna2_chain1,  atoms_dna1[list_P1[i_max]], target_dna1, dnares); 
+  ChangeSystemR(dna2_chain2, dna2_chain2_n, &dna2_chain2,  atoms_dna1[list_P1[i_max]], target_dna2, dnares); 
   
   
   writetoPDB(outfile, dna2_chain1, dna2_chain1_n);

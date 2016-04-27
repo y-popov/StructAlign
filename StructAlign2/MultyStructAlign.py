@@ -8,6 +8,8 @@ from random import choice
 from string import ascii_uppercase, digits
 from urllib2 import urlopen
 from shutil import rmtree
+from Bio import Phylo 
+from Bio.Phylo import TreeConstruction
 
 def StructAlign(pdb1, pdb2, outfile, warns, pairs, maxMs):
 	code1 = pdb1[pdb1.rfind('/')+1:-1]
@@ -111,33 +113,43 @@ def print_matrix(name, d, list):
 	for i in range(len(list)):
 		print list[i][list[i].rfind('/')+1:],
 		for j in range(len(list)):
-			if j>=i:
+			if i>=j:
 				s = d[list[i]][list[j]]
 				print "{:>7.0f} ".format(float(s)),
 			else:
 				print " "*8,
 		print ""
 
-def find_repr(d, pdbs):
+def find_repr(m):
 	print "\nSearching for the representative... ",
-	print pdbs[0][pdbs[0].rfind('/')+1:]
-	return pdbs[0][pdbs[0].rfind('/')+1:], 0
+	maxs = [max(x) for x in m]
+	best = min(maxs)
+	i = maxs.index(best)
+	
+	print m.names[i]
+	return m.names[i], i
 
-def reAlign(rep, repr_pdb, pair, maxM, pdb_name):
+def reAlign(rep, repr_pdb, pair, maxM, pdb_name, c):
 	l = pair.split('_')
 	index = 0 if l[1]==rep else 1
-	maxM = maxM[0:2] if index==1 else maxM[2:] #select maxM of repr
-
-	system("{}./realign {}.pdb {} {} {} {} All/{}.pdb {} {} > /dev/null".format(argv[0].replace("MultyStructAlign.py", ''), repr_pdb[:-1], repr_pdb[-1], maxM[0][1], maxM[0][2], maxM[1][1], pair, index, pdb_name))
+	maxM1 = maxM[0:2] if index==1 else maxM[2:] #select maxM of repr
+	maxM2 = maxM[0:2] if index==0 else maxM[2:]
+	target = l[index]
+	
+	#print "{}./realign {}.pdb {} {} {} {} All/{}.pdb {} {} {} {} {} > /dev/null".format(argv[0].replace("MultyStructAlign.py", ''), repr_pdb[:-1], repr_pdb[-1], maxM1[0][1], maxM1[0][2], maxM1[1][1], pair, index, pdb_name, target[-1], maxM2[0][1], maxM2[1][1])
+	system("{}./realign {}.pdb {} {} {} {} All/{}.pdb {} {} {} {} {} > /dev/null".format(argv[0].replace("MultyStructAlign.py", ''), repr_pdb[:-1], repr_pdb[-1], maxM1[0][1], maxM1[0][2], maxM1[1][1], pair, index, pdb_name, target[-1], maxM2[0][1], maxM2[1][1]))
+	
+	return "Model {}: {}\n".format(c, target)
 
 def writePDB(fl, c, rep, pair, repr_pdb, maxM, pdb_name):
 	fl = open(pdb_name, 'a')
 	fl.write("MODEL{:>9}\n".format(c))
 	fl.close()
-	reAlign(rep, repr_pdb, pair, maxM, pdb_name)
+	descr = reAlign(rep, repr_pdb, pair, maxM, pdb_name, c)
 	fl = open(pdb_name, 'a')
 	fl.write("ENDMDL\n")
 	fl.close()
+	return descr
 
 def writeFASTA(fl, rep, pdb):
 	pair = pdb.split('_')
@@ -163,6 +175,7 @@ parser=ArgumentParser(description="Align several DNA-protein complexes")
 parser.add_argument('pdbs', nargs='*', help='pdb-files to align')
 parser.add_argument('-d', '--folder', help="Folder with pdb-files")
 parser.add_argument('-c', '--chains', nargs='+', help='Protein chains in format pdb:chain. You can assign several chains for pdb (-c pdb1:chain1 pdb1:chain2)', default=[])
+parser.add_argument('-o', '--output', default="multy", help="Name for output files")
 
 options=parser.parse_args()
 
@@ -172,6 +185,9 @@ if (not_installed==1) and (not options.internal):
 	print "You can download 3DNA from http://forum.x3dna.org/downloads/3dna-download/"
 	print "Follow installation instructions from http://forum.x3dna.org/howtos/how-to-install-3dna-on-linux-and-windows/"
 	exit(1)
+
+multy_pdb = options.output+".pdb"
+multy_fasta = options.output+".fasta"
 
 chains = {}
 for pair in options.chains:
@@ -240,44 +256,51 @@ if not path.exists("All"):
 warnings = ''
 pairs = []
 maxMs = {}
+PhyloM = []
 s = 0
 total = (leng**2+leng)/2.0
 print ''
 for i in range(leng):
-	for j in range(i, leng): #or i+1?
+	for j in range(i+1): #or i+1?
 		s += 1
 		print pdbs[i], pdbs[j], '--{:->3.2%}-->'.format( s/total ), 
 		score, chain1, chain2 = StructAlign(pdbs[i], pdbs[j], random_name, warnings, pairs, maxMs)
 		pdbs[i] = pdbs[i][:-1]+chain1
 		pdbs[j] = pdbs[j][:-1]+chain2
 		print pdbs[i], pdbs[j]
-		if j == i:
+		if pdbs[i] not in scores:
 			scores[pdbs[i]] = {}
+			PhyloM.append([])
 		scores[pdbs[i]][pdbs[j]] = score
 		
-print_matrix("Scores", scores, pdbs)	
+print_matrix("Scores", scores, pdbs)
 
 distances = {}
 for i in range(leng):
 	distances[pdbs[i]] = {}
-	for j in range(i, leng):
+	for j in range(i+1):
 		distances[pdbs[i]][pdbs[j]] = (scores[pdbs[i]][pdbs[i]]+scores[pdbs[j]][pdbs[j]])/2.0 - scores[pdbs[i]][pdbs[j]]
-
+		PhyloM[i].append(distances[pdbs[i]][pdbs[j]])
+PhyloM = TreeConstruction._DistanceMatrix([x[x.rfind('/')+1:] for x in pdbs], PhyloM)
 print_matrix("Distances", distances, pdbs)
-		
-repres, repr_index = find_repr(scores, pdbs)
 
-multy_pdb = "multy.pdb"
+tree = TreeConstruction.DistanceTreeConstructor().upgma(PhyloM)
+Phylo.draw_ascii(tree)
+		
+repres, repr_index = find_repr(PhyloM)
+
+
 f = open(multy_pdb, 'w')
 f.write( "HEADER{:>60}\n".format("MultyStructAlign") )
 f.write( "TITLE{:>60}\n".format("title") )
 f.close()
 
 c = 1
+description = "\n"
 for pair in pairs:
 	if repres in pair:
 		#reAlign(repres, pdbs[repr_index], pair, maxMs[pair], multy_pdb)
-		writePDB(f, c, repres, pair, pdbs[repr_index], maxMs[pair], multy_pdb)
+		description += writePDB(f, c, repres, pair, pdbs[repr_index], maxMs[pair], multy_pdb)
 		c += 1
 
 f = open(multy_pdb, 'a')
@@ -285,7 +308,7 @@ f.write( "END\n" )
 f.close()
 
 
-g = open('multy.fasta' ,'w')
+g = open(multy_fasta ,'w')
 for pair in pairs:
 	if repres in pair:
 		writeFASTA(g, repres, pair)
@@ -293,7 +316,8 @@ g.close()
 
 if warnings:
 	print '\n'+warnings
-print "\nFiles multy.pdb and multy.fasta were generated"
+print "\nFiles {} and {} were generated".format(multy_pdb, multy_fasta)
+print description
 		
 remove("{}.txt".format(random_name))
 x3dna_files = ["bestpairs.pdb", "col_chains.scr", "hel_regions.pdb", "ref_frames.dat", "bp_order.dat", "col_helices.scr", "out"]
