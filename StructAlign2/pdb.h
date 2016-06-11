@@ -121,7 +121,7 @@ unsigned int readerPDB (char *filename, unsigned int *dnanum, unsigned int *prot
 int inArray(char c, char *string);
 
 /* Return the nucleotide sequence of DNA atoms*/
-void Seq(struct atom *atoms, unsigned int n, char **seq, unsigned int *m,  FILE *max_score);
+void Seq(struct atom *atoms, unsigned int n, char **seq, char **num_seq, unsigned int *m,  FILE *max_score);
 
 /* Returns the array of atoms of one chain*/
 unsigned int SelectChain(struct atom * atoms_from, unsigned int n_from, struct atom ** atoms_to, unsigned int * n_to, char chain);

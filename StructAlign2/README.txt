@@ -1,5 +1,5 @@
 StructAlign2
-
+======================================================================================
 1) Place to desired folder
 2) Unzip (tar -xf StructAlign.tar)
 3) type 'make'
@@ -17,3 +17,11 @@ pdb1_pdb2.fasta
 Чтобы использовать на kodomo, нужно указать путь к 3DNA:
 export PATH=${PATH}:/home/preps/golovin/progs/X3DNA/bin
 export X3DNA=/home/preps/golovin/progs/X3DNA
+
+
+
+MultiStructAlign
+======================================================================================
+Запуск: python MultiStructAlign.py pdb1 pdb2 -d pdb_folder -c pdb2:chain1 pdb2:chain2
+
+pdb1, pdb2 - файлы, не ID

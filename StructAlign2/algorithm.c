@@ -267,8 +267,8 @@ int main  (int argc, char **argv)
 	  }
 	  printf("  ");
 	  for (j=1; j<=n_P2; j++) printf("%4d", j);
-	  puts(""); 
-	  */
+	  puts(""); */
+	  
 	 
 	  i_max_measure=0;
 	  j_max_measure=0;
@@ -338,27 +338,23 @@ int main  (int argc, char **argv)
     /****reading DNA sequences ***/
   unsigned int dna_n11, dna_n12, dna_n21, dna_n22; //sequence length
   char *dna_seq11, *dna_seq12, *dna_seq21, *dna_seq22;
-  char dna1_chain1_start[5], dna1_chain1_end[5], dna1_chain2_start[5], dna1_chain2_end[5], dna2_chain1_start[5], dna2_chain1_end[5], dna2_chain2_start[5], dna2_chain2_end[5];
+  char *dna_num_seq11, *dna_num_seq12, *dna_num_seq21, *dna_num_seq22;
+  int dna1_chain1_start, dna1_chain2_start, dna2_chain1_start, dna2_chain2_start;
+
   	//SelectChain(atoms_dna1, m1, &dna1_chain1, &dna1_chain1_n, dna_chains1[1]);
-  strcpy(dna1_chain1_start, best_dna1_chain1[1].ResNumber);
-  strcpy(dna1_chain1_end, best_dna1_chain1[best_dna1_chain1_n].ResNumber);
-  Seq(best_dna1_chain1, best_dna1_chain1_n, &dna_seq11, &dna_n11, max_score);
+  Seq(best_dna1_chain1, best_dna1_chain1_n, &dna_seq11, &dna_num_seq11, &dna_n11, max_score);
+  sscanf(best_dna1_chain1[1].ResNumber, "%d", &dna1_chain1_start);
 
-  	//SelectChain(atoms_dna1, m1, &dna1_chain2, &dna1_chain2_n, dna_chains1[2]);
-  strcpy(dna1_chain2_start, best_dna1_chain2[1].ResNumber);
-  strcpy(dna1_chain2_end, best_dna1_chain2[best_dna1_chain2_n].ResNumber);
-  Seq(best_dna1_chain2, best_dna1_chain2_n, &dna_seq12, &dna_n12, max_score);
+  Seq(best_dna1_chain2, best_dna1_chain2_n, &dna_seq12, &dna_num_seq12, &dna_n12, max_score);
+  sscanf(best_dna1_chain2[1].ResNumber, "%d", &dna1_chain2_start);
 
-  	//SelectChain(atoms_dna2, m2, &dna2_chain1, &dna2_chain1_n, dna_chains2[1]);
-  strcpy(dna2_chain1_start, best_dna2_chain1[1].ResNumber);
-  strcpy(dna2_chain1_end, best_dna2_chain1[best_dna2_chain1_n].ResNumber);
-  Seq(best_dna2_chain1, best_dna2_chain1_n, &dna_seq21, &dna_n21, max_score);
+  Seq(best_dna2_chain1, best_dna2_chain1_n, &dna_seq21, &dna_num_seq21, &dna_n21, max_score);
+  sscanf(best_dna2_chain1[1].ResNumber, "%d", &dna2_chain1_start);
 
-  	//SelectChain(atoms_dna2, m2, &dna2_chain2, &dna2_chain2_n, dna_chains2[2]);
-  strcpy(dna2_chain2_start, best_dna2_chain2[1].ResNumber);
-  strcpy(dna2_chain2_end, best_dna2_chain2[best_dna2_chain2_n].ResNumber);
-  Seq(best_dna2_chain2, best_dna2_chain2_n, &dna_seq22, &dna_n22, max_score);
-
+  Seq(best_dna2_chain2, best_dna2_chain2_n, &dna_seq22, &dna_num_seq22, &dna_n22, max_score);
+  sscanf(best_dna2_chain2[1].ResNumber, "%d", &dna2_chain2_start);
+  
+  //printf("%c %c %c %c %c %c\n%lg\n%s\n%s", chain1, chain2, dna_chains1[1], dna_chains1[2], dna_chains2[1], dna_chains2[2], S_max, dna_string1, dna_string2);
   /*** For server work - DNA alignment making ***/
   
   if (best_S_max == 0)
@@ -372,28 +368,62 @@ int main  (int argc, char **argv)
   is_reverse2 = ((best_j_max_measure > best_m_first_chain) ? 1 : 0);
   i_max_measure_compl = ((best_i_max_measure > best_n_first_chain) ? best_compl1-best_i_max_measure+1 : best_compl1-best_i_max_measure+1);
   j_max_measure_compl = ((best_j_max_measure > best_m_first_chain) ? best_compl2-best_j_max_measure+1 : best_compl2-best_j_max_measure+1);
-  //printf("%c %c %c %c %c %c\n%lg\n%s\n%s", chain1, chain2, dna_chains1[1], dna_chains1[2], dna_chains2[1], dna_chains2[2], S_max, dna_string1, dna_string2);
+  //printf("i_max_measure=%u i_max_measure_compl=%u\n", best_i_max_measure, i_max_measure_compl);
+  //printf("i_max_measure=%s\n", best_atoms_dna1[best_list_P1[best_i_max_measure]].ResNumber);
+  
+  if (i_max_measure_compl > dna_n11+dna_n12)
+  {
+  	//printf("i_compl=%u n11=%u n12=%u\n", i_max_measure_compl, dna_n11, dna_n12);
+  	j_max_measure_compl = j_max_measure_compl-(i_max_measure_compl-dna_n11-dna_n12);
+  	i_max_measure_compl = dna_n11+dna_n12;
+  	//printf("i_compl=%u n11=%u n12=%u\n", i_max_measure_compl, dna_n11, dna_n12);
+  }
+  if (j_max_measure_compl > dna_n21+dna_n22)
+  {
+  	//printf("j_compl=%u n21=%u n22=%u\n", j_max_measure_compl, dna_n21, dna_n22);
+  	i_max_measure_compl = i_max_measure_compl-(j_max_measure_compl-dna_n21-dna_n22);
+  	j_max_measure_compl = dna_n21+dna_n22;
+  	//printf("j_compl=%u n21=%u n22=%u\n", j_max_measure_compl, dna_n21, dna_n22);
+  }
   
   int i_max_measure_compl_num, j_max_measure_compl_num;
   char *i_max_measure_compl_str, *j_max_measure_compl_str;
-  
+  i_max_measure_compl_str = (char *)malloc( sizeof(char)*7 );
+  j_max_measure_compl_str = (char *)malloc( sizeof(char)*7 );
+  sscanf(best_atoms_dna1[best_list_P1[i_max_measure_compl]].ResNumber, "%d", &i_max_measure_compl_num);
+  sscanf(best_atoms_dna2[best_list_P2[j_max_measure_compl]].ResNumber, "%d", &j_max_measure_compl_num); 
+
   if (i_max_measure_compl==best_i_max_measure)
   {
-  	i_max_measure_compl_str = (char *)malloc( sizeof(char)*7 );
-  	
   	sscanf(best_atoms_dna1[best_list_P1[i_max_measure_compl+1]].ResNumber, "%d", &i_max_measure_compl_num);
-  	sprintf(i_max_measure_compl_str, "%d", i_max_measure_compl_num-1);
+  	i_max_measure_compl_num = i_max_measure_compl_num - 1;
   }
-  
   if (j_max_measure_compl==best_j_max_measure)
   {
-	  j_max_measure_compl_str = (char *)malloc( sizeof(char)*7 );
-	  
 	  sscanf(best_atoms_dna2[best_list_P2[j_max_measure_compl+1]].ResNumber, "%d", &j_max_measure_compl_num);
-	  sprintf(j_max_measure_compl_str, "%d", j_max_measure_compl_num-1);
+	  j_max_measure_compl_num = j_max_measure_compl_num - 1;
   }
+  
+  
+  if (i_max_measure_compl_num < (is_reverse1 == 1) ? dna1_chain1_start : dna1_chain2_start)
+  {
+  	//printf("ires_compl=%d start=%d\n", i_max_measure_compl_num, (is_reverse1 == 1) ? dna1_chain1_start : dna1_chain2_start);
+  	j_max_measure_compl_num = j_max_measure_compl_num + ((is_reverse1 == 1) ? dna1_chain1_start : dna1_chain2_start) - i_max_measure_compl_num;
+  	i_max_measure_compl_num = (is_reverse1 == 1) ? dna1_chain1_start : dna1_chain2_start;
+  	//printf("ires_compl=%d start=%d\n", i_max_measure_compl_num, (is_reverse1 == 1) ? dna1_chain1_start : dna1_chain2_start);
+  }
+  if (j_max_measure_compl_num < (is_reverse2 == 1) ? dna2_chain1_start : dna2_chain2_start)
+  {
+  	//printf("jres_compl=%d start=%d\n", j_max_measure_compl_num, (is_reverse2 == 1) ? dna2_chain1_start : dna2_chain2_start);
+  	i_max_measure_compl = i_max_measure_compl_num + ((is_reverse2 == 1) ? dna2_chain1_start : dna2_chain2_start) - j_max_measure_compl_num;
+  	j_max_measure_compl = (is_reverse2 == 1) ? dna2_chain1_start : dna2_chain2_start;
+  	//printf("jres_compl=%d start=%d\n", j_max_measure_compl_num, (is_reverse2 == 1) ? dna2_chain1_start : dna2_chain2_start);
+  }
+  
+  sprintf(i_max_measure_compl_str, "%d", i_max_measure_compl_num);
+  sprintf(j_max_measure_compl_str, "%d", j_max_measure_compl_num);
 
-  fprintf(max_score, "%c %c %c %c %c %c %s %s %s %s %s %s %s %s %s %s %s %s %u %u\n%lg\n%s\n%s\n%s\n%s", chain1, chain2, pairs1[best_pair1][1], pairs1[best_pair1][2], pairs2[best_pair2][1], pairs2[best_pair2][2], dna1_chain1_start, dna1_chain1_end, dna1_chain2_start, dna1_chain2_end, dna2_chain1_start, dna2_chain1_end, dna2_chain2_start, dna2_chain2_end, best_atoms_dna1[best_list_P1[best_i_max_measure]].ResNumber, best_atoms_dna2[best_list_P2[best_j_max_measure]].ResNumber, i_max_measure_compl==best_i_max_measure ? i_max_measure_compl_str : best_atoms_dna1[best_list_P1[i_max_measure_compl]].ResNumber, j_max_measure_compl==best_j_max_measure ? j_max_measure_compl_str : best_atoms_dna2[best_list_P2[j_max_measure_compl]].ResNumber, is_reverse1, is_reverse2, best_S_max, dna_seq11, dna_seq12, dna_seq21, dna_seq22);
+  fprintf(max_score, "%c %c %c %c %c %c %s %s %s %s %u %u\n%lg\n%s %s\n%s %s\n%s %s\n%s %s", chain1, chain2, pairs1[best_pair1][1], pairs1[best_pair1][2], pairs2[best_pair2][1], pairs2[best_pair2][2], best_atoms_dna1[best_list_P1[best_i_max_measure]].ResNumber, best_atoms_dna2[best_list_P2[best_j_max_measure]].ResNumber, i_max_measure_compl_str, j_max_measure_compl_str, is_reverse1, is_reverse2, best_S_max, dna_seq11, dna_num_seq11, dna_seq12, dna_num_seq12, dna_seq21, dna_num_seq21, dna_seq22, dna_num_seq22);
   fclose(max_score); 
 
   struct atom *atoms_dna_i1 = NULL;

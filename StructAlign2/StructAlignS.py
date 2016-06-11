@@ -123,18 +123,18 @@ for b in a:
 						index -= 1
 
 					else:
-						chain1, chain2, dna_chainA1, dna_chainA2, dna_chainB1, dna_chainB2, startA1, endA1, startA2, endA2, startB1, endB1, startB2, endB2, maxA, maxB, maxAc, maxBc, isreverse1, isreverse2 = max_score[0].split()
+						chain1, chain2, dna_chainA1, dna_chainA2, dna_chainB1, dna_chainB2, maxA, maxB, maxAc, maxBc, isreverse1, isreverse2 = max_score[0].split()
 						score = float( max_score[1] )
-						dna1_chain1, dna1_chain2 = max_score[2], max_score[3] #sequence
-						dna2_chain1, dna2_chain2 = max_score[4], max_score[5] #sequence
-						dna11 = range(int(startA1), int(endA1)+1)
-						dna12 = range(int(endA2), int(startA2)-1, -1)[::-1]
-						dna21 = range(int(startB1), int(endB1)+1)
-						dna22 = range(int(endB2), int(startB2)-1, -1)[::-1]
-						"""dna11 = range(int(startA1), int(endA1)+1)
-						dna12 = range(int(endA2), int(startA2)-1, -1)
-						dna21 = range(int(startB1), int(endB1)+1)
-						dna22 = range(int(endB2), int(startB2)-1, -1)"""
+						dna1_chain1, dna11 = max_score[2].split()[0], [int(x) for x  in max_score[2].split()[1].split(',')]
+						dna1_chain2, dna12 = max_score[3].split()[0], [int(x) for x  in max_score[3].split()[1].split(',')]
+						dna2_chain1, dna21 = max_score[4].split()[0], [int(x) for x  in max_score[4].split()[1].split(',')]
+						dna2_chain2, dna22 = max_score[5].split()[0], [int(x) for x  in max_score[5].split()[1].split(',')]
+
+						startA1, endA1 = dna11[0], dna11[-1]
+						startA2, endA2 = dna12[0], dna12[-1]
+						startB1, endB1 = dna21[0], dna21[-1]
+						startB2, endB2 = dna22[0], dna22[-1]
+
 						description_string = "<p>{0}.{1} -> A</p>\n<p>{0}.{2} -> B</p>\n<p>{3}.{4} -> C</p>\n<p>{3}.{5} -> D</p>".format(code1, dna_chainA1, dna_chainA2, code2, dna_chainB1, dna_chainB2)
 						#if int(maxA) in dna12:
 						if isreverse1 == '1':

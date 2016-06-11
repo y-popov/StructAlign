@@ -102,7 +102,7 @@ int inArray(char c, char *string)
 	return FALSE;
 }
 
-void Seq(struct atom *atoms, unsigned int n, char **seq, unsigned int *m,  FILE *max_score)
+void Seq(struct atom *atoms, unsigned int n, char **seq, char **num_seq, unsigned int *m,  FILE *max_score)
 {
 	unsigned int i;
 	unsigned int *list_C;
@@ -111,6 +111,7 @@ void Seq(struct atom *atoms, unsigned int n, char **seq, unsigned int *m,  FILE 
 	res = (char *)malloc( sizeof(char)*4 );
 	getAtomsNumbers(atoms, n, &list_C, &(*m), "C1'"); 
 	(*seq) = (char *)malloc( sizeof(char)*((*m)+1) );
+	(*num_seq) = (char *)malloc( sizeof(char)*(*m)*5 );
 	for (i=1; i<=(*m); i++)
 	{
 		strcpy(res, atoms[list_C[i]].ResType);
@@ -139,6 +140,9 @@ void Seq(struct atom *atoms, unsigned int n, char **seq, unsigned int *m,  FILE 
 				}
 			}
 		}
+		strcat( (*num_seq), atoms[list_C[i]].ResNumber );
+		if ( i<(*m) )
+			strcat( (*num_seq), "," );
 	}
 	(*seq)[(*m)] = '\0';
 	printf("%s\n", (*seq));
@@ -778,8 +782,8 @@ for (i=n; i>=1; i--){
 	puts("");
 }
 for (j=1; j<=m_1chain; j++) printf("%4d", j);
-puts("");
-*/
+puts("");*/
+
 
 }
 
