@@ -267,8 +267,8 @@ int main  (int argc, char **argv)
 	  }
 	  printf("  ");
 	  for (j=1; j<=n_P2; j++) printf("%4d", j);
-	  puts(""); */
-	  
+	  puts(""); 
+	  */
 	 
 	  i_max_measure=0;
 	  j_max_measure=0;
@@ -369,7 +369,7 @@ int main  (int argc, char **argv)
   i_max_measure_compl = ((best_i_max_measure > best_n_first_chain) ? best_compl1-best_i_max_measure+1 : best_compl1-best_i_max_measure+1);
   j_max_measure_compl = ((best_j_max_measure > best_m_first_chain) ? best_compl2-best_j_max_measure+1 : best_compl2-best_j_max_measure+1);
   //printf("i_max_measure=%u i_max_measure_compl=%u\n", best_i_max_measure, i_max_measure_compl);
-  //printf("i_max_measure=%s\n", best_atoms_dna1[best_list_P1[best_i_max_measure]].ResNumber);
+  //printf("i_max_measure_compl=%s\n", best_atoms_dna1[best_list_P1[i_max_measure_compl]].ResNumber);
   
   if (i_max_measure_compl > dna_n11+dna_n12)
   {
@@ -405,19 +405,22 @@ int main  (int argc, char **argv)
   }
   
   
-  if (i_max_measure_compl_num < (is_reverse1 == 1) ? dna1_chain1_start : dna1_chain2_start)
+  int start;
+  start = (is_reverse1 == 1) ? dna1_chain1_start : dna1_chain2_start;
+  if (i_max_measure_compl_num < start)
   {
-  	//printf("ires_compl=%d start=%d\n", i_max_measure_compl_num, (is_reverse1 == 1) ? dna1_chain1_start : dna1_chain2_start);
-  	j_max_measure_compl_num = j_max_measure_compl_num + ((is_reverse1 == 1) ? dna1_chain1_start : dna1_chain2_start) - i_max_measure_compl_num;
-  	i_max_measure_compl_num = (is_reverse1 == 1) ? dna1_chain1_start : dna1_chain2_start;
-  	//printf("ires_compl=%d start=%d\n", i_max_measure_compl_num, (is_reverse1 == 1) ? dna1_chain1_start : dna1_chain2_start);
+  	//printf("ires_compl=%d start=%d\n", i_max_measure_compl_num, start);
+  	j_max_measure_compl_num = j_max_measure_compl_num + start - i_max_measure_compl_num;
+  	i_max_measure_compl_num = start;
+  	//printf("ires_compl=%d start=%d\n", i_max_measure_compl_num, start;
   }
-  if (j_max_measure_compl_num < (is_reverse2 == 1) ? dna2_chain1_start : dna2_chain2_start)
+  start = (is_reverse2 == 1) ? dna2_chain1_start : dna2_chain2_start;
+  if (j_max_measure_compl_num < start)
   {
-  	//printf("jres_compl=%d start=%d\n", j_max_measure_compl_num, (is_reverse2 == 1) ? dna2_chain1_start : dna2_chain2_start);
-  	i_max_measure_compl = i_max_measure_compl_num + ((is_reverse2 == 1) ? dna2_chain1_start : dna2_chain2_start) - j_max_measure_compl_num;
-  	j_max_measure_compl = (is_reverse2 == 1) ? dna2_chain1_start : dna2_chain2_start;
-  	//printf("jres_compl=%d start=%d\n", j_max_measure_compl_num, (is_reverse2 == 1) ? dna2_chain1_start : dna2_chain2_start);
+  	//printf("jres_compl=%d start=%d\n", j_max_measure_compl_num, start);
+  	i_max_measure_compl = i_max_measure_compl_num + start - j_max_measure_compl_num;
+  	j_max_measure_compl = start;
+  	//printf("jres_compl=%d start=%d\n", j_max_measure_compl_num, start);
   }
   
   sprintf(i_max_measure_compl_str, "%d", i_max_measure_compl_num);

@@ -10,6 +10,7 @@ from urllib2 import urlopen
 from shutil import rmtree
 from Bio import Phylo 
 from Bio.Phylo import TreeConstruction
+from pylab import show, savefig
 
 def StructAlign(pdb1, pdb2, outfile, warns, pairs, maxMs):
 	code1 = pdb1[pdb1.rfind('/')+1:-1]
@@ -23,7 +24,7 @@ def StructAlign(pdb1, pdb2, outfile, warns, pairs, maxMs):
 	
 	output = code1+'@_'+code2+'@'
 	
-	system('{}./align {} {} All/{}.pdb {} {} {}.txt 0 > /dev/null'.format(argv[0].replace("MultyStructAlign.py", ''), pdb1_name, pdb2_name, output, chain1, chain2, outfile))
+	system('{}./align {} {} All/{}.pdb {} {} {}.txt 0 > /dev/null'.format(argv[0].replace("MultiStructAlign.py", ''), pdb1_name, pdb2_name, output, chain1, chain2, outfile))
 	
 	max_score = open("{}.txt".format(outfile), 'r')
 	max_score = max_score.read().splitlines()
@@ -45,20 +46,31 @@ def StructAlign(pdb1, pdb2, outfile, warns, pairs, maxMs):
 			del max_score[index]
 			index -= 1
 		else:
-			pair = output[:output.find('@')]+chain1+output[output.find('@')+1:-1]+chain2
-			fasta_name = 'All/'+pair+'.fasta'
-			fasta = open(fasta_name, 'w')
-			fasta.write(max_score)
-			fasta.close()
-			
-			chain1, chain2, dna_chainA1, dna_chainA2, dna_chainB1, dna_chainB2, startA1, endA1, startA2, endA2, startB1, endB1, startB2, endB2, maxA, maxB, maxAc, maxBc, isreverse1, isreverse2 = max_score[0].split()
+			chain1, chain2, dna_chainA1, dna_chainA2, dna_chainB1, dna_chainB2, maxA, maxB, maxAc, maxBc, isreverse1, isreverse2 = max_score[0].split()
 			score = float( max_score[1] )
-			
+			dna1_chain1, dna11 = max_score[2].split()[0], [int(x) for x  in max_score[2].split()[1].split(',')]
+			dna1_chain2, dna12 = max_score[3].split()[0], [int(x) for x  in max_score[3].split()[1].split(',')]
+			dna2_chain1, dna21 = max_score[4].split()[0], [int(x) for x  in max_score[4].split()[1].split(',')]
+			dna2_chain2, dna22 = max_score[5].split()[0], [int(x) for x  in max_score[5].split()[1].split(',')] #sequence
+			#print chain1, chain2, dna_chainA1, dna_chainA2, dna_chainB1, dna_chainB2, maxA, maxB, maxAc, maxBc, isreverse1, isreverse2
+			if isreverse1 == '1':
+				#maxA, maxAc = maxAc, maxA
+				dna11, dna12 = dna12, dna11
+				dna1_chain1, dna1_chain2 = dna1_chain2, dna1_chain1
+				dna_chainA1, dna_chainA2 = dna_chainA2, dna_chainA1
+			if isreverse2 == '1':
+				#maxB, maxBc = maxBc, maxB
+				dna21, dna22 = dna22, dna21
+				dna2_chain1, dna2_chain2 = dna2_chain2, dna2_chain1
+				dna_chainB1, dna_chainB2 = dna_chainB2, dna_chainB1
+			#print chain1, chain2, dna_chainA1, dna_chainA2, dna_chainB1, dna_chainB2, maxA, maxB, maxAc, maxBc, isreverse1, isreverse2
+			pair = output[:output.find('@')]+chain1+output[output.find('@')+1:-1]+chain2
+
 			pdb_name = 'All/'+pair+'.pdb'
 			rename('All/'+output+'.pdb', pdb_name)
 			
 			pairs.append(pair)
-			maxMs[pair] = [(code1, dna_chainA1, maxA), (code1, dna_chainA2, maxAc), (code2, dna_chainB1, maxB), (code2, dna_chainB2, maxBc)]
+			maxMs[pair] = [(code1, dna_chainA1, dna1_chain1, dna11, maxA), (code1, dna_chainA2, dna1_chain2, dna12, maxAc), (code2, dna_chainB1, dna2_chain1, dna21, maxB), (code2, dna_chainB2, dna2_chain2, dna22, maxBc)]
 			break
 				
 	return score, chain1, chain2
@@ -84,9 +96,9 @@ def print_matrix(name, d, list):
 
 def find_repr(m):
 	print "\nSearching for the representative... ",
-	maxs = [max(x) for x in m]
-	best = min(maxs)
-	i = maxs.index(best)
+	mins = [min(x) for x in m]
+	best = max(mins)
+	i = mins.index(best)
 	
 	print m.names[i]
 	return m.names[i], i
@@ -98,61 +110,8 @@ def reAlign(rep, repr_pdb, pair, maxM, pdb_name, c):
 	maxM2 = maxM[0:2] if index==0 else maxM[2:]
 	target = l[index]
 	
-	#print "{}./realign {}.pdb {} {} {} {} All/{}.pdb {} {} {} {} {} > /dev/null".format(argv[0].replace("MultyStructAlign.py", ''), repr_pdb[:-1], repr_pdb[-1], maxM1[0][1], maxM1[0][2], maxM1[1][1], pair, index, pdb_name, target[-1], maxM2[0][1], maxM2[1][1])
-	system("{}./realign {}.pdb {} {} {} {} All/{}.pdb {} {} {} {} {} > /dev/null".format(argv[0].replace("MultyStructAlign.py", ''), repr_pdb[:-1], repr_pdb[-1], maxM1[0][1], maxM1[0][2], maxM1[1][1], pair, index, pdb_name, target[-1], maxM2[0][1], maxM2[1][1]))
-	
-	fasta = open("All/"+pair+".fasta", 'r')
-	
-	fasta.close()
-	
-	
-	dna1_chain1, dna1_chain2 = max_score[2], max_score[3] #sequence
-	dna2_chain1, dna2_chain2 = max_score[4], max_score[5] #sequence
-	dna11 = range(int(startA1), int(endA1)+1)
-	dna12 = range(int(endA2), int(startA2)-1, -1)[::-1]
-	dna21 = range(int(startB1), int(endB1)+1)
-	dna22 = range(int(endB2), int(startB2)-1, -1)[::-1]
-	
-	if isreverse1 == '1':
-		dna11, dna12 = dna12, dna11
-		startA1, endA1, startA2, endA2 = startA2, endA2, startA1, endA1
-		dna1_chain1, dna1_chain2 = dna1_chain2, dna1_chain1
-		dna_chainA1, dna_chainA2 = dna_chainA2, dna_chainA1
-	if isreverse2 == '1':
-		dna21, dna22 = dna22, dna21
-		startB1, endB1, startB2, endB2 = startB2, endB2, startB1, endB1
-		dna2_chain1, dna2_chain2 = dna2_chain2, dna2_chain1
-		dna_chainB1, dna_chainB2 = dna_chainB2, dna_chainB1
-	#create alignment 1
-	delta = dna11.index(int(maxA)) - dna21.index(int(maxB))
-	if delta < 0:
-		dna1_chain1 = '-'*(-delta)+dna1_chain1
-	if delta > 0:
-		dna2_chain1 = '-'*delta+dna2_chain1
-	delta = len(dna1_chain1)-len(dna2_chain1)
-	if delta < 0:
-		dna1_chain1 += '-'*(-delta)
-	else:
-		dna2_chain1 += '-'*delta
-	#create alignment 2
-	delta = dna12.index(int(maxAc)) - dna22.index(int(maxBc))
-	if delta < 0:
-		dna1_chain2 = '-'*(-delta)+dna1_chain2
-	if delta > 0:
-		dna2_chain2 = '-'*delta+dna2_chain2
-	delta = len(dna1_chain2)-len(dna2_chain2)
-	if delta < 0:
-		dna1_chain2 += '-'*(-delta)
-	else:
-		dna2_chain2 += '-'*delta
-	
-	pair = output[:output.find('@')]+chain1+output[output.find('@')+1:-1]+chain2
-	fasta_name = 'All/'+pair+'.fasta'
-	pdb_name = 'All/'+pair+'.pdb'
-	rename('All/'+output+'.pdb', pdb_name)
-	fasta = open(fasta_name, 'w')
-	fasta.write(">{}.{} {}-{}\n{}\n\n>{}.{} {}-{}\n{}\n\n>{}.{} {}-{}\n{}\n\n>{}.{} {}-{}\n{}\n".format(code1, dna_chainA1, startA1, endA1, dna1_chain1, code2, dna_chainB1, startB1, endB1, dna2_chain1, code1, dna_chainA2, startA2, endA2, dna1_chain2, code2, dna_chainB2, startB2, endB2, dna2_chain2) )
-	fasta.close()
+	#print "{}./realign {}.pdb {} {} {} {} All/{}.pdb {} {} {} {} {} > /dev/null".format(argv[0].replace("MultiStructAlign.py", ''), repr_pdb[:-1], repr_pdb[-1], maxM1[0][1], maxM1[0][4], maxM1[1][1], pair, index, pdb_name, target[-1], maxM2[0][1], maxM2[1][1])
+	system("{}./realign {}.pdb {} {} {} {} All/{}.pdb {} {} {} {} {} > /dev/null".format(argv[0].replace("MultiStructAlign.py", ''), repr_pdb[:-1], repr_pdb[-1], maxM1[0][1], maxM1[0][4], maxM1[1][1], pair, index, pdb_name, target[-1], maxM2[0][1], maxM2[1][1]))
 	
 	return "Model {}: {}\n".format(c, target)
 
@@ -166,45 +125,87 @@ def writePDB(fl, c, rep, pair, repr_pdb, maxM, pdb_name):
 	fl.close()
 	return descr
 
-def readFASTAs(pairs, rep):
-	for pair in pairs:
-		if rep in pair:
-			pair = pdb.split('_')
-			index = 0 if pair[1]==rep else 1
-			target = pair[index]
-			fasta_file = open("All/"+pair+".fasta", 'r')
-			max_score = fasta_file.read().splitlines()
-			fasta_file.close()
-			
-			chain1, chain2, dna_chainA1, dna_chainA2, dna_chainB1, dna_chainB2, startA1, endA1, startA2, endA2, startB1, endB1, startB2, endB2, maxA, maxB, maxAc, maxBc, isreverse1, isreverse2 = max_score[0].split()
-			
-
-def writeFASTA(fl, rep, pdb):
+class Fasta(object):
+	def __init__(self, pdb, chain, seq, num_seq, max_m, max_ref):
+		self.pdb = pdb
+		self.chain = chain
+		self.seq = seq
+		self.num_seq = num_seq
+		self.max_m = int(max_m)
+		self.max_ref = int(max_ref)
+		self.gaps = [0, 0]
+	def __str__(self):
+		return ">{}.{} {}-{}\n{}\n".format(self.pdb, self.chain, self.num_seq[0], self.num_seq[-1], '-'*self.gaps[0]+self.seq+'-'*self.gaps[1])
+	def leng(self):
+		return len(self.seq)+sum(self.gaps)
+	def __repr__(self):
+		return "pdb={} chain={} seq={} num_seq={} max_m={} max_ref={} gaps={}".format(self.pdb, self.chain, self.seq, self.num_seq, self.max_m, self.max_ref, self.gaps)
 	
-
-	flag = 0
-	count = []
-	for line in fasta_file:
-		if flag == 1:
-			fl.write(line+'\n')
-			flag = 0
-		if line[1:7] not in count:
-			if target[:-1]+'.' in line:
-				flag = 1
-				fl.write(line)
-				count.append(line[1:7])
+def createFASTA(fastas1, fastas2, maxMs_all, rep, pair):
+	maxMs = maxMs_all[pair]
+	maxM_ref = maxMs_all[rep+'_'+rep][:2]
+	pair = pair.split('_')
+	#print pair, rep
+	index = 0 if pair[1]==rep else 1
+	#print index
+	target = pair[index]
 	
-	fasta_file.close()
+	if index == 0:
+		maxM = maxMs[:2]
+		maxM2 = maxMs[2:]
+	else:
+		maxM = maxMs[2:]
+		maxM2 = maxMs[:2]
+	for ind, i in enumerate(maxM):
+		#print i, maxM2[ind][4]
+		buff = Fasta(i[0], i[1], i[2], i[3], i[4], maxM2[ind][4])
+		if maxM2[ind][1] == maxM_ref[ind][1]:
+			if ind == 0:
+				fastas1.append(buff)
+			if ind == 1:
+				fastas2.append(buff)
+		else:
+			if ind == 1:
+				fastas1.append(buff)
+			if ind == 0:
+				fastas2.append(buff)
+
+def alignFASTA(fastas, ref_fasta):
+	for index, fasta in enumerate(fastas):
+		"""print '========================'
+		for x in fastas:
+			print x
+		print "fasta: ", fasta.__repr__()
+		print "refas: ", ref_fasta.__repr__()"""
+		delta = fasta.num_seq.index(fasta.max_m)+fasta.gaps[0] - ref_fasta.num_seq.index(fasta.max_ref)-ref_fasta.gaps[0]
+		if delta < 0:
+			fasta.gaps[0] -= delta
+		if delta > 0:
+			ref_fasta.gaps[0] += delta
+			for i in range(index):
+				fastas[i].gaps[0] += delta
+		delta = fasta.leng() - ref_fasta.leng()
+		if delta < 0:
+			fasta.gaps[1] -= delta
+		else:
+			ref_fasta.gaps[1] += delta
+			for i in range(index):
+				fastas[i].gaps[1] += delta		
+	
+def writeFASTA(f, fasta):
+	for handle in fasta:
+		f.write(handle.__str__())
+
 
 parser=ArgumentParser(description="Align several DNA-protein complexes")
 parser.add_argument('pdbs', nargs='*', help='pdb-files to align')
 parser.add_argument('-d', '--folder', help="Folder with pdb-files")
 parser.add_argument('-c', '--chains', nargs='+', help='Protein chains in format pdb:chain. You can assign several chains for pdb (-c pdb1:chain1 pdb1:chain2)', default=[])
-parser.add_argument('-o', '--output', default="multy", help="Name for output files")
+parser.add_argument('-o', '--output', default="multi", help="Name for output files")
 
 options=parser.parse_args()
 
-not_installed = int( check_output(['{}./check_3dna.sh'.format(argv[0].replace("MultyStructAlign.py", ''))]) )
+not_installed = int( check_output(['{}./check_3dna.sh'.format(argv[0].replace("MultiStructAlign.py", ''))]) )
 if (not_installed==1) and (not options.internal):
 	print "It seems you don't have installed 3DNA package! Please, install it."
 	print "You can download 3DNA from http://forum.x3dna.org/downloads/3dna-download/"
@@ -212,12 +213,14 @@ if (not_installed==1) and (not options.internal):
 	exit(1)
 
 multy_pdb = options.output+".pdb"
-multy_fasta = options.output+".fasta"
+multy_fasta1 = options.output+"1.fasta"
+multy_fasta2 = options.output+"2.fasta"
+multy_png = options.output+".png"
 
 chains = {}
 for pair in options.chains:
 	pdb, chain = pair.split(':')
-	if pdb+'.pdb' not in options.pdbs:
+	if pdb+'.pdb' not in [x[x.rfind('/')+1:] for x in options.pdbs]:
 		answer = ''
 		print "\nYou didn't specify file {}.pdb!".format(pdb)
 		while answer.lower() not in ['n', 'y', 'no', 'yes', 'a', 'add']:
@@ -246,9 +249,9 @@ if options.folder:
 		print "There is no folder %s! Aborting..." % options.folder
 		exit(1)	
 for pdb in options.pdbs+files:
-	code = pdb.replace('.pdb', '')
-	if code in chains:
-		for chain in chains[code]:
+	code = pdb[::-1].replace(".pdb"[::-1], '', 1)[::-1]
+	if code[code.rfind('/')+1:] in chains:
+		for chain in chains[code[code.rfind('/')+1:]]:
 			pdbs.append(code+chain)
 	else:
 		pdbs.append(code+'@')
@@ -282,6 +285,7 @@ warnings = ''
 pairs = []
 maxMs = {}
 PhyloM = []
+scoresM = []
 s = 0
 total = (leng**2+leng)/2.0
 print ''
@@ -296,9 +300,12 @@ for i in range(leng):
 		if pdbs[i] not in scores:
 			scores[pdbs[i]] = {}
 			PhyloM.append([])
+			scoresM.append([])
 		scores[pdbs[i]][pdbs[j]] = score
+		scoresM[i].append(score)
 		
 print_matrix("Scores", scores, pdbs)
+scoresM = TreeConstruction._Matrix([x[x.rfind('/')+1:] for x in pdbs], scoresM)
 
 distances = {}
 for i in range(leng):
@@ -311,12 +318,18 @@ print_matrix("Distances", distances, pdbs)
 
 tree = TreeConstruction.DistanceTreeConstructor().upgma(PhyloM)
 Phylo.draw_ascii(tree)
+tree.ladderize()
+#Phylo.draw_graphviz(tree, node_size=0)
+Phylo.draw(tree, show_confidence=False, do_show=False)
+#show()
+savefig(multy_png)
+
 		
-repres, repr_index = find_repr(PhyloM)
+repres, repr_index = find_repr(scoresM)
 
 
 f = open(multy_pdb, 'w')
-f.write( "HEADER{:>60}\n".format("MultyStructAlign") )
+f.write( "HEADER{:>60}\n".format("MultiStructAlign") )
 f.write( "TITLE{:>60}\n".format("title") )
 f.close()
 
@@ -332,21 +345,33 @@ f = open(multy_pdb, 'a')
 f.write( "END\n" )
 f.close()
 
-fastas1 = []
-fastas2 = []
-readFASTAs(pairs, repres)
-makeFASTA()
-writeFASTA()
 
-g = open(multy_fasta ,'w')
+fasta_align1 = [] #array of fasta-classes
+fasta_align2 = []
+
+temp = maxMs[repres+'_'+repres][0]
+ref_fasta1 = Fasta(temp[0], temp[1], temp[2], temp[3], temp[4], temp[4])
+temp = maxMs[repres+'_'+repres][1]
+ref_fasta2 = Fasta(temp[0], temp[1], temp[2], temp[3], temp[4], temp[4])
+
 for pair in pairs:
 	if repres in pair:
-		writeFASTA(g, repres, pair)
+		createFASTA(fasta_align1, fasta_align2, maxMs, repres, pair)
+
+g = open(multy_fasta1 ,'w')
+alignFASTA(fasta_align1, ref_fasta1)
+writeFASTA(g, fasta_align1)
 g.close()
+
+g = open(multy_fasta2 ,'w')
+alignFASTA(fasta_align2, ref_fasta2)
+writeFASTA(g, fasta_align2)
+g.close()
+
 
 if warnings:
 	print '\n'+warnings
-print "\nFiles {} and {} were generated".format(multy_pdb, multy_fasta)
+print "\nFiles {}, {}, {} and {} were generated".format(multy_pdb, multy_fasta1, multy_fasta2, multy_png)
 print description
 		
 remove("{}.txt".format(random_name))
