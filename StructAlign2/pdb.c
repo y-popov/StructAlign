@@ -32,6 +32,75 @@ unsigned int SelectChain(struct atom * atoms_from, unsigned int n_from, struct a
   return 0;
 }
 
+unsigned int SelectRange(struct atom * atoms_from, unsigned int n_from, struct atom ** atoms_to, unsigned int * n_to, char *start, char *end)
+  {
+  unsigned int i, j=0;
+  double buff, s, e;
+
+  (*atoms_to) = (struct atom *)malloc( sizeof(struct atom)*(n_from+1) );
+  /*printf("OK1\n");*/ // Enable in test mode
+
+  if (strcmp(start, "zero") == 0)
+	s = -INFINITY;
+  else
+	sscanf(start, "%d", &s);
+  if (strcmp(end, "inf") == 0 )
+	e = INFINITY;
+  else
+	sscanf(end, "%d", &e);
+
+  for (i=1; i<=n_from; i++) {
+    sscanf(atoms_from[i].ResNumber, "%d", &buff);
+    //printf("%d %s %s\t", buff, start, end);
+  if (buff >= s && buff <= e) {
+    j++;
+    (*atoms_to)[j] = atoms_from[i];
+  }
+/*
+    if (strcmp(start, "zero") == 0)
+    {
+    	if (strcmp(end, "inf") != 0)
+    	{
+    		sscanf(end, "%d", &e);
+    		if (buff <= e) {
+			  j++;
+			  (*atoms_to)[j] = atoms_from[i];
+		}
+	}
+	else
+	{
+		j++;
+		(*atoms_to)[j] = atoms_from[i];
+	}
+    }
+    else
+    {
+    	sscanf(start, "%d", &s);
+    	//printf("!!!%d %d!!!", buff, s);
+	if (strcmp(end, "inf") == 0)
+	{
+    		if (buff >= s) {
+			  j++;
+			  (*atoms_to)[j] = atoms_from[i];
+		}
+	}
+	else
+	{
+		sscanf(end, "%d", &e);
+		if (buff >= s && buff <= e) {
+		  j++;
+		  (*atoms_to)[j] = atoms_from[i];
+		}
+	}
+    }*/
+  }
+    
+  /*printf("OK\n");*/ // Enable in test mode
+  *n_to = j;
+    
+  return 0;
+}
+
 unsigned int getAtomsNumbers(struct atom * atoms_from, unsigned int n, unsigned int ** list_to, unsigned int * n_to, char * atoms_type){
   unsigned int i, k;
   
@@ -131,7 +200,7 @@ void Seq(struct atom *atoms, unsigned int n, char **seq, char **num_seq, unsigne
 				if ( convertNT( res, &nt) == 0 )
 				{
 					(*seq)[i-1] = nt;
-					fprintf(max_score, "Warning! There is modified residue %s`%s in chain %c. Reading it as %c.\n", res, atoms[list_C[i]].ResNumber, atoms[list_C[i]].Chain, nt);
+					fprintf(max_score, "Warning! There is modified residue %s`%s in chain %c of %s. Reading it as %c.\n", res, atoms[list_C[i]].ResNumber, atoms[list_C[i]].Chain, atoms[list_C[i]].PDBCode, nt);
 				}
 				else
 				{
@@ -229,7 +298,7 @@ double Measure3_p(double *measure, unsigned int ** list_hit, unsigned int n_hit,
 /********************************
 *                            3DNA
 ********************************/
-unsigned int run_3dna(char *pdb_name, unsigned int **compl, unsigned int ***compl_pairs, char ***pairs, unsigned int *len, unsigned int server, char *max_score_filename)
+unsigned int run_3dna(char *pdb_name, unsigned int **compl, int ***compl_pairs, char ***pairs, unsigned int *len, unsigned int server, char *max_score_filename)
 {
 	FILE *fp, *out_file;
 	extern FILE *popen();
@@ -238,15 +307,15 @@ unsigned int run_3dna(char *pdb_name, unsigned int **compl, unsigned int ***comp
 	char chain1, chain2, flag;
 	unsigned int pairs_max=2;
 	unsigned int i, j, n, a, b, count;
-	unsigned int res1, res2;
+	int res1, res2;
 	command = (char *)malloc(sizeof(char)*(strlen(pdb_name)+35));
 	(*compl) = (unsigned int *)malloc(sizeof(unsigned int)*(pairs_max+1));
-	(*compl_pairs) = (unsigned int **)malloc(sizeof(unsigned int *)*(pairs_max+1));
+	(*compl_pairs) = (int **)malloc(sizeof(int *)*(pairs_max+1));
 	(*pairs) = (char **)malloc(sizeof(char *)*pairs_max);
 	for (j=0; j<=pairs_max; j++)
 	{
 		(*pairs)[j] = (char *)malloc(sizeof(char)*2);
-		(*compl_pairs)[j] = (unsigned int *)malloc(sizeof(unsigned int)*2);
+		(*compl_pairs)[j] = (int *)malloc(sizeof(int)*2);
 	}
 	if (server == 0)
 	{
@@ -317,19 +386,19 @@ unsigned int run_3dna(char *pdb_name, unsigned int **compl, unsigned int ***comp
 		{
 			fgets (c, 102, out_file);
 			//sscanf(c, "%5u%5u%*u #%*u %c %*4c>%c%*31c%c", &a, &b, &flag, &chain1, &chain2);
-			sscanf(c, "%5u%5u%*u #%*u %c %*4c>%c%*[:.]%u%*19c%*[:.]%u%*c:%c", &a, &b, &flag, &chain1, &res1, &res2,  &chain2);
-			//printf("%u %u %c %c %u %u %c\n", a, b, flag, chain1, res1, res2, chain2);
+			sscanf(c, "%5u%5u%*u #%*u %c %*4c>%c%*[:.]%d%*19c%*[:.]%d%*c:%c", &a, &b, &flag, &chain1, &res1, &res2,  &chain2);
+			//printf("%u %u %c %c %d %d %c\n", a, b, flag, chain1, res1, res2, chain2);
 			count++;
 			if (count > pairs_max)
 			{
 				pairs_max = pairs_max * 2;
 				(*compl) = (unsigned int *)realloc((*compl), pairs_max*sizeof(unsigned int));
-				(*compl_pairs) = (unsigned int **)realloc((*compl_pairs), sizeof(unsigned int *)*(pairs_max+1));
+				(*compl_pairs) = (int **)realloc((*compl_pairs), sizeof(int *)*(pairs_max+1));
 				(*pairs) = (char **)realloc((*pairs), sizeof(char *)*(pairs_max+1));
 				for (j=pairs_max; j>pairs_max/2; j--)
 				{
 					(*pairs)[j] = (char *)malloc(sizeof(char)*2);
-					(*compl_pairs)[j] = (unsigned int *)malloc(sizeof(unsigned int)*2);
+					(*compl_pairs)[j] = (int *)malloc(sizeof(int)*2);
 				}
 			}
 			(*compl)[count] = b-a; // unnessesary
@@ -675,8 +744,8 @@ unsigned int run_find_compl(struct atom *atoms1_P, unsigned int n_P, unsigned in
 
 	(*first_chain_length) = n_P1;
 	
-	sprintf(res1, "%u", compl_pair[1]);
-	sprintf(res2, "%u", compl_pair[2]);
+	sprintf(res1, "%d", compl_pair[1]);
+	sprintf(res2, "%d", compl_pair[2]);
 	//printf("res1=%s res2=%s\n", res1, res2);
 
 	for (k=2; k<=n_P; k++)

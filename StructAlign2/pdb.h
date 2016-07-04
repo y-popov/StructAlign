@@ -126,6 +126,9 @@ void Seq(struct atom *atoms, unsigned int n, char **seq, char **num_seq, unsigne
 /* Returns the array of atoms of one chain*/
 unsigned int SelectChain(struct atom * atoms_from, unsigned int n_from, struct atom ** atoms_to, unsigned int * n_to, char chain);
 
+/* Returns the array of atom within range */
+unsigned int SelectRange(struct atom * atoms_from, unsigned int n_from, struct atom ** atoms_to, unsigned int * n_to, char *start, char *end);
+
 /* Returns the number of atoms from the array of one atom type*/
 unsigned int getAtomsNumbers(struct atom * atoms_from, unsigned int n, unsigned int ** list_to, unsigned int * n_to, char * atoms_type);
 
@@ -137,6 +140,10 @@ struct coordsystem ChangeSystem(struct atom * atoms_from,
                           unsigned int n, struct atom ** atoms_to, 
 						  struct atom Op, struct atom Xp, struct atom Yp, struct atom Yp2,
 						  char chainname);
+
+unsigned int ChangeSystemR(struct atom * atoms_from, 
+                          unsigned int n, struct atom ** atoms_to, 
+						  struct atom Op, char chainname, struct coordsystem dnares);
 
 /* Makes comparison between Calpha atoms */
 unsigned int BidirectionalHit( struct atom * atoms_i, struct atom *C_atoms_i, unsigned int n_i, struct atom * atoms_j, struct atom *C_atoms_j, unsigned int n_j, unsigned int *** list, unsigned int * n_hit);
@@ -161,7 +168,7 @@ unsigned int writetoPDB(char *filename,
 unsigned int endPDB(char *filename);
 
 /* execute find_pair */
-unsigned int run_3dna(char *pdb_name, unsigned int **compl, unsigned int ***compl_pairs, char ***pairs, unsigned int *len, unsigned int server, char *max_score_filename);
+unsigned int run_3dna(char *pdb_name, unsigned int **compl, int ***compl_pairs, char ***pairs, unsigned int *len, unsigned int server, char *max_score_filename);
 
 /* append list to another list */
 void atomlistmerge(struct atom **target, unsigned int *len, struct atom *source1, unsigned int len1, struct atom *source2, unsigned int len2);

@@ -12,19 +12,46 @@ from Bio import Phylo
 from Bio.Phylo import TreeConstruction
 from pylab import show, savefig
 
-def StructAlign(pdb1, pdb2, outfile, warns, pairs, maxMs):
+def readRange(r, code, chain):
+	#print code, chain, r
+	if code not in ranges: 
+		buff = ["zero", "inf"]
+	elif chain not in ranges[code] and len(ranges[code]) > 1:
+		buff = ["zero", "inf"]
+	else:
+		chain = ranges[code].keys()[0]
+		buff = ranges[code][chain]
+		if buff[0] == '':
+			buff[0] = "zero"
+		else:
+			if not buff[0].lstrip('-').isdigit():
+				print "The start of range is not numeric! Try again. Aborting.."
+				exit(1)
+		if buff[1] == '':
+			buff[1] = "inf"
+		else:
+			if not buff[1].lstrip('-').isdigit():
+				print "The end of range is not numeric! Try again. Aborting.."
+				exit(1)
+	return buff
+
+def StructAlign(pdb1, pdb2, outfile, warns, pairs, maxMs, ranges):
 	code1 = pdb1[pdb1.rfind('/')+1:-1]
 	code2 = pdb2[pdb2.rfind('/')+1:-1]
 	
 	chain1 = pdb1[-1].upper()
 	chain2 = pdb2[-1].upper()
 	
+	range1 = readRange(ranges, code1, chain1)
+	range2 = readRange(ranges, code2, chain2)
+	
 	pdb1_name = pdb1[:-1]+'.pdb'
 	pdb2_name = pdb2[:-1]+'.pdb'
 	
 	output = code1+'@_'+code2+'@'
 	
-	system('{}./align {} {} All/{}.pdb {} {} {}.txt 0 > /dev/null'.format(argv[0].replace("MultiStructAlign.py", ''), pdb1_name, pdb2_name, output, chain1, chain2, outfile))
+	system('{}./align {} {} All/{}.pdb {} {} {} {} {} {} {}.txt 0 > /dev/null'.format(argv[0].replace("MultiStructAlign.py", ''), pdb1_name, pdb2_name, output, chain1, chain2, range1[0], range1[1], range2[0], range2[1], outfile))
+	#print '{}./align {} {} All/{}.pdb {} {} {} {} {} {} {}.txt 0 > /dev/null'.format(argv[0].replace("MultiStructAlign.py", ''), pdb1_name, pdb2_name, output, chain1, chain2, range1[0], range1[1], range2[0], range2[1], outfile)
 	
 	max_score = open("{}.txt".format(outfile), 'r')
 	max_score = max_score.read().splitlines()
@@ -201,6 +228,7 @@ parser=ArgumentParser(description="Align several DNA-protein complexes")
 parser.add_argument('pdbs', nargs='*', help='pdb-files to align')
 parser.add_argument('-d', '--folder', help="Folder with pdb-files")
 parser.add_argument('-c', '--chains', nargs='+', help='Protein chains in format pdb:chain. You can assign several chains for pdb (-c pdb1:chain1 pdb1:chain2)', default=[])
+parser.add_argument('-r', '--ranges', nargs='+', help='Ranges of proteins in format pdb:chain:start-end. Chain is not necessary (pdb::start-end).', default=[])
 parser.add_argument('-o', '--output', default="multi", help="Name for output files")
 
 options=parser.parse_args()
@@ -239,6 +267,21 @@ for pair in options.chains:
 			chains[pdb] = [chain]
 		else:
 			chains[pdb].append(chain)
+
+ranges = {}
+for handle in options.ranges:
+	pdb, chain, r = handle.split(':')
+	chain = chain.upper()
+	if chain == '':
+		chain = '@'
+	if '-' not in r:
+		print "There is an error in range input. You missed '-'. Aborting..."
+		exit(1)
+	r = r.split('-')
+	if pdb not in ranges:
+		ranges[pdb] = {chain:r}
+	else:
+		ranges[pdb][chain] = r
 			
 pdbs = []
 files = []
@@ -258,7 +301,7 @@ for pdb in options.pdbs+files:
 	if not access(pdb, F_OK):
 		print 'You do not have %s pdb-file! Downloading it...' % code
 		try:
-			response = urlopen("http://files.rcsb.org/download/{}.pdb".format(code))
+			response = urlopen("http://files.rcsb.org/download/{}.pdb".format(code[code.rfind('/')+1:]))
 			with open("{}.pdb".format(code), 'w') as dl:
 				dl.write(response.read())
 		except Exception:
@@ -293,7 +336,7 @@ for i in range(leng):
 	for j in range(i+1): #or i+1?
 		s += 1
 		print pdbs[i], pdbs[j], '--{:->3.2%}-->'.format( s/total ), 
-		score, chain1, chain2 = StructAlign(pdbs[i], pdbs[j], random_name, warnings, pairs, maxMs)
+		score, chain1, chain2 = StructAlign(pdbs[i], pdbs[j], random_name, warnings, pairs, maxMs, ranges)
 		pdbs[i] = pdbs[i][:-1]+chain1
 		pdbs[j] = pdbs[j][:-1]+chain2
 		print pdbs[i], pdbs[j]

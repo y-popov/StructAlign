@@ -16,7 +16,9 @@ parser.add_argument('pdb2', help='Second pdb-file')
 parser.add_argument('-o', '--output', help='Output directory')
 parser.add_argument('-c1', '--chain1', default='@', help='Protein chain in first pdb-file ')
 parser.add_argument('-c2', '--chain2', default='@', help='Protein chain in second pdb-file')
-parser.add_argument('-i', '--internal', action="store_true", help="Use internal algorithm for complement nucleotide search; not stable but doesn't require 3DNA tools")
+parser.add_argument('-r1', '--range1', default='-', help='Use this range of protein in first pdb-file. Example: 5-60, -60, 5-')
+parser.add_argument('-r2', '--range2', default='-', help='Use this range of protein in second pdb-file')
+parser.add_argument('-i', '--internal', action="store_true", help="Use internal algorithm for complement nucleotide search; not stable but doesn't require 3DNA tools. DOES NOT WORK NOW.")
 parser.add_argument('-s', '--supress', action='store_true', help='Suppress program internal output text')
 parser.add_argument('-ss', '--supressAll', action='store_true', help='Suppress all program output text')
 
@@ -32,6 +34,28 @@ if (not_installed==1) and (not options.internal):
 
 chain1 = options.chain1.upper()
 chain2 = options.chain2.upper()
+
+def readRange(r):
+	if '-' not in r:
+		print "There is an error in range input. You missed '-'. Aborting..."
+		exit(1)
+	buff = r.split('-')
+	if buff[0] == '':
+		buff[0] = "zero"
+	else:
+		if not buff[0].lstrip('-').isdigit():
+			print "The start of range is not numeric! Try again. Aborting.."
+			exit(1)
+	if buff[1] == '':
+		buff[1] = "inf"
+	else:
+		if not buff[1].lstrip('-').isdigit():
+			print "The end of range is not numeric! Try again. Aborting.."
+			exit(1)
+	return buff
+
+range1 = readRange(options.range1)
+range2 = readRange(options.range2)
 
 code1 = options.pdb1[options.pdb1.rfind('/')+1:-4]
 code2 = options.pdb2[options.pdb2.rfind('/')+1:-4]
@@ -88,8 +112,8 @@ open(random_name+'.txt', 'w').close()
 #devnull = open(devnull, 'w')
 #args = 'algorithm.exe {} {} {}.pdb {} {} {}.txt'.format(options.pdb1, options.pdb2, output, chain1, chain2, random_name)
 
-#print '{}./align {} {} {}.pdb {} {} {}.txt 0{}'.format(argv[0].replace("StructAlign.py", ''), options.pdb1, options.pdb2, output, chain1, chain2, random_name, dev_null)
-system('{}./align {} {} {}.pdb {} {} {}.txt 0{}'.format(argv[0].replace("StructAlign.py", ''), options.pdb1, options.pdb2, output, chain1, chain2, random_name, dev_null))
+#print '{}./align {} {} {}.pdb {} {} {} {} {} {} {}.txt 0{}'.format(argv[0].replace("StructAlign.py", ''), options.pdb1, options.pdb2, output, chain1, chain2, range1[0], range1[1], range2[0], range2[1], random_name, dev_null)
+system('{}./align {} {} {}.pdb {} {} {} {} {} {} {}.txt 0{}'.format(argv[0].replace("StructAlign.py", ''), options.pdb1, options.pdb2, output, chain1, chain2, range1[0], range1[1], range2[0], range2[1], random_name, dev_null))
         
 #0 is for is_server
 				

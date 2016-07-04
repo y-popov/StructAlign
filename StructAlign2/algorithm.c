@@ -8,10 +8,10 @@ int main  (int argc, char **argv)
   throw exception if not complete */
   //printf("%s %s %s %s %s %s %s\n", argv[0], argv[1], argv[2], argv[3], argv[4], argv[5], argv[6]);
 
-  if (argc != 8)
+  if (argc != 12)
   {
-    printf("\nUsage: %s <input file 1.pdb> <input file 2.pdb> <output file> <chain1> <chain2> <file name for score> <is on server>", argv[0]);
-    printf("\nExample: %s 3hdd.pdb 1puf.pdb superpos_3hdd_1puf.pdb A B max_score.txt 0\n\n", argv[0]);
+    printf("\nUsage: %s <input file 1.pdb> <input file 2.pdb> <output file> <chain1> <chain2> <start1> <end1> <start2> <end2> <file name for score> <is on server>", argv[0]);
+    printf("\nExample: %s 3hdd.pdb 1puf.pdb superpos_3hdd_1puf.pdb A B 5 60 zero inf max_score.txt 0\n\n", argv[0]);
     exit (1);
   } /* end if */
   
@@ -20,6 +20,7 @@ int main  (int argc, char **argv)
   /* Reading command line arguments */
 
   char *infile1, *infile2, *outfile, *max_score_filename;
+  char *start1, *end1, *start2, *end2;
   char chain1, chain2;
   unsigned int SERVER;
 
@@ -35,10 +36,19 @@ int main  (int argc, char **argv)
   sscanf(argv[4], "%c", &chain1);
   sscanf(argv[5], "%c", &chain2);
 
-  max_score_filename = (char *)malloc( sizeof(char)*(strlen(argv[6])+1) );
-  sscanf(argv[6], "%s", max_score_filename);
+  start1 = (char *)malloc( sizeof(char)*(strlen(argv[6])+1) );
+  end1 = (char *)malloc( sizeof(char)*(strlen(argv[7])+1) );
+  start2 = (char *)malloc( sizeof(char)*(strlen(argv[8])+1) );
+  end2 = (char *)malloc( sizeof(char)*(strlen(argv[9])+1) );
+  sscanf(argv[6], "%s", start1);
+  sscanf(argv[7], "%s", end1);
+  sscanf(argv[8], "%s", start2);
+  sscanf(argv[9], "%s", end2);
 
-  sscanf(argv[7], "%u", &SERVER);
+  max_score_filename = (char *)malloc( sizeof(char)*(strlen(argv[10])+1) );
+  sscanf(argv[10], "%s", max_score_filename);
+
+  sscanf(argv[11], "%u", &SERVER);
 
   /* Done reading arguments */
 
@@ -93,6 +103,7 @@ int main  (int argc, char **argv)
       { fprintf(max_score, "Error\nChain %c is not a protein chain in first structure", chain1);
       exit(1); }
   SelectChain(atoms_prot1, n1, &atoms_prot1, &n1, chain1);
+  SelectRange(atoms_prot1, n1, &atoms_prot1, &n1, start1, end1);
   // pdb.c function
   printf("Atoms in selected chain: %u\n\n", n1); 
     // print to stdout number of protein atoms in selected chain
@@ -110,6 +121,7 @@ int main  (int argc, char **argv)
       { fprintf(max_score, "Error\nChain %c is not a protein chain in second structure!", chain2);
       exit(1); }
   SelectChain(atoms_prot2, n2, &atoms_prot2, &n2, chain2);
+  SelectRange(atoms_prot2, n2, &atoms_prot2, &n2, start2, end2);
   printf("Atoms in selected chain: %u\n\n", n2);
 
   dna_chains1[0] = ' '; dna_chains2[0] = ' ';
@@ -123,7 +135,7 @@ int main  (int argc, char **argv)
   /*** 3DNA block ***/
   
   unsigned int *compl_list1, *compl_list2, n_pairs1, n_pairs2, pair1, pair2;
-  unsigned int **compl_pairs1, **compl_pairs2;
+  int **compl_pairs1, **compl_pairs2;
   char **pairs1, **pairs2;
   
   run_3dna(infile1, &compl_list1, &compl_pairs1, &pairs1, &n_pairs1, SERVER, max_score_filename);
@@ -385,7 +397,7 @@ int main  (int argc, char **argv)
   	j_max_measure_compl = dna_n21+dna_n22;
   	//printf("j_compl=%u n21=%u n22=%u\n", j_max_measure_compl, dna_n21, dna_n22);
   }
-  
+ 
   int i_max_measure_compl_num, j_max_measure_compl_num;
   char *i_max_measure_compl_str, *j_max_measure_compl_str;
   i_max_measure_compl_str = (char *)malloc( sizeof(char)*7 );
@@ -397,14 +409,16 @@ int main  (int argc, char **argv)
   {
   	sscanf(best_atoms_dna1[best_list_P1[i_max_measure_compl+1]].ResNumber, "%d", &i_max_measure_compl_num);
   	i_max_measure_compl_num = i_max_measure_compl_num - 1;
+	//puts("Here1");
   }
   if (j_max_measure_compl==best_j_max_measure)
   {
 	  sscanf(best_atoms_dna2[best_list_P2[j_max_measure_compl+1]].ResNumber, "%d", &j_max_measure_compl_num);
 	  j_max_measure_compl_num = j_max_measure_compl_num - 1;
+	  //puts("Here2");
   }
   
-  
+ 
   int start;
   start = (is_reverse1 == 1) ? dna1_chain1_start : dna1_chain2_start;
   if (i_max_measure_compl_num < start)

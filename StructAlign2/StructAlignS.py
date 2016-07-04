@@ -72,8 +72,17 @@ for b in a:
 				chain2 = "@"
 			else:
 				chain2 = value.upper()
+		
+		elif name == "start1":
+			start1 = value if value != "" else "zero"
+		elif name == "end1":
+			end1 = value if value != "" else "inf"
+		elif name == "start2":
+			start2 = value if value != "" else "zero"
+		elif name == "end2":
+			end2 = value if value != "" else "inf"
 
-		elif name == "pdbcode1":
+		elif name == "zpdbcode1":
 			code1 = value[0:4].lower()
 			filename = "/mnt/databanks/pdb/"+value[1:3].lower()+"/pdb"+code1+".ent.gz"
 			if access(filename, F_OK): # this PDB entry exists
@@ -82,7 +91,7 @@ for b in a:
 			else:
 				print ( "<H3>Error</H3>" )
 				print ( "<p>PDB entry <B>"+code1+"</B> does not exist</p>" )
-		elif name == "pdbcode2":
+		elif name == "zpdbcode2":
 			code2 = value[0:4].lower()
 			filename = "/mnt/databanks/pdb/"+value[1:3].lower()+"/pdb"+code2+".ent.gz"
 			if access(filename, F_OK):
@@ -98,8 +107,7 @@ for b in a:
 				#system("chmod a=rwx ../tmp/StructAlign/{}/result.txt".format(random_name) )
 				
 				#system("/home/popov/bin/align ../tmp/{0}.pdb ../tmp/{1}.pdb ../tmp/StructAlign/{0}*_{1}*.pdb {2} {3} {4} > ../tmp/StructAlign/log.txt".format(code1, code2, chain1, chain2, random_name) )
-				system("StructAlign/align ../tmp/{0}.pdb ../tmp/{1}.pdb ../tmp/StructAlign/{4}/{0}@_{1}@.pdb {2} {3} /var/www/tools/tmp/StructAlign/{4}/result.txt 1 > ../tmp/StructAlign/{4}/log.txt".format(code1, code2, chain1, chain2, random_name) ) #1 is for is_server
-								
+				system("StructAlign/align ../tmp/{0}.pdb ../tmp/{1}.pdb ../tmp/StructAlign/{8}/{0}@_{1}@.pdb {2} {3} {4} {5} {6} {7} /var/www/tools/tmp/StructAlign/{8}/result.txt 1 >> ../tmp/StructAlign/{8}/log.txt".format(code1, code2, chain1, chain2, start1, end1, start2, end2, random_name) ) #1 is for is_server				
 				try:
 					max_score = open("../tmp/StructAlign/{}/result.txt".format(random_name), 'r')
 					max_score = max_score.read().splitlines()
