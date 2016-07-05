@@ -43,15 +43,15 @@ unsigned int SelectRange(struct atom * atoms_from, unsigned int n_from, struct a
   if (strcmp(start, "zero") == 0)
 	s = -INFINITY;
   else
-	sscanf(start, "%d", &s);
+	sscanf(start, "%lg", &s);
   if (strcmp(end, "inf") == 0 )
 	e = INFINITY;
   else
-	sscanf(end, "%d", &e);
+	sscanf(end, "%lg", &e);
 
   for (i=1; i<=n_from; i++) {
-    sscanf(atoms_from[i].ResNumber, "%d", &buff);
-    //printf("%d %s %s\t", buff, start, end);
+    sscanf(atoms_from[i].ResNumber, "%lg", &buff);
+    //printf("%lg %s %s\t", buff, start, end);
   if (buff >= s && buff <= e) {
     j++;
     (*atoms_to)[j] = atoms_from[i];

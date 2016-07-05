@@ -16,31 +16,33 @@ def readRange(r, code, chain):
 	#print code, chain, r
 	if code not in ranges: 
 		buff = ["zero", "inf"]
-	elif chain not in ranges[code] and len(ranges[code]) > 1:
+	elif chain not in ranges[code] and ranges[code].values() != ['@']:#len(ranges[code]) > 1:
 		buff = ["zero", "inf"]
 	else:
-		chain = ranges[code].keys()[0]
+		if ranges[code].values() == ['@']:
+			chain = ranges[code].keys()[0]
 		buff = ranges[code][chain]
 		if buff[0] == '':
 			buff[0] = "zero"
-		else:
+		elif buff[0] != "zero":
 			if not buff[0].lstrip('-').isdigit():
 				print "The start of range is not numeric! Try again. Aborting.."
 				exit(1)
 		if buff[1] == '':
 			buff[1] = "inf"
-		else:
+		elif buff[1] != "inf":
 			if not buff[1].lstrip('-').isdigit():
 				print "The end of range is not numeric! Try again. Aborting.."
 				exit(1)
+	#print code, chain, buff
 	return buff
 
 def StructAlign(pdb1, pdb2, outfile, warns, pairs, maxMs, ranges):
 	code1 = pdb1[pdb1.rfind('/')+1:-1]
 	code2 = pdb2[pdb2.rfind('/')+1:-1]
 	
-	chain1 = pdb1[-1].upper()
-	chain2 = pdb2[-1].upper()
+	chain1 = chain1_old = pdb1[-1].upper()
+	chain2 = chain2_old = pdb2[-1].upper()
 	
 	range1 = readRange(ranges, code1, chain1)
 	range2 = readRange(ranges, code2, chain2)
@@ -98,6 +100,12 @@ def StructAlign(pdb1, pdb2, outfile, warns, pairs, maxMs, ranges):
 			
 			pairs.append(pair)
 			maxMs[pair] = [(code1, dna_chainA1, dna1_chain1, dna11, maxA), (code1, dna_chainA2, dna1_chain2, dna12, maxAc), (code2, dna_chainB1, dna2_chain1, dna21, maxB), (code2, dna_chainB2, dna2_chain2, dna22, maxBc)]
+			
+			if chain1 != chain1_old and code1 in ranges:
+				ranges[code1][chain1] = ranges[code1][chain1_old]
+			if chain2 != chain2_old and code2 in ranges:
+				ranges[code2][chain2] = ranges[code2][chain2_old]
+			
 			break
 				
 	return score, chain1, chain2
@@ -228,7 +236,7 @@ parser=ArgumentParser(description="Align several DNA-protein complexes")
 parser.add_argument('pdbs', nargs='*', help='pdb-files to align')
 parser.add_argument('-d', '--folder', help="Folder with pdb-files")
 parser.add_argument('-c', '--chains', nargs='+', help='Protein chains in format pdb:chain. You can assign several chains for pdb (-c pdb1:chain1 pdb1:chain2)', default=[])
-parser.add_argument('-r', '--ranges', nargs='+', help='Ranges of proteins in format pdb:chain:start-end. Chain is not necessary (pdb::start-end).', default=[])
+parser.add_argument('-r', '--ranges', nargs='+', help='Ranges of proteins in format pdb:chain:start-end. Chain is not necessary (pdb::start--end).', default=[])
 parser.add_argument('-o', '--output', default="multi", help="Name for output files")
 
 options=parser.parse_args()
@@ -274,10 +282,10 @@ for handle in options.ranges:
 	chain = chain.upper()
 	if chain == '':
 		chain = '@'
-	if '-' not in r:
-		print "There is an error in range input. You missed '-'. Aborting..."
+	if '--' not in r:
+		print "There is an error in range input. You missed '--'. Aborting..."
 		exit(1)
-	r = r.split('-')
+	r = r.split('--')
 	if pdb not in ranges:
 		ranges[pdb] = {chain:r}
 	else:
