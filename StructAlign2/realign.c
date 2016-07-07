@@ -68,14 +68,14 @@ int main  (int argc, char **argv)
   unsigned int maxnumber = 256;
   FILE *flow_out;
   
-  puts("Reading 1st PDB file...");
+  //puts("Reading 1st PDB file...");
   readerPDB(infile1, &all_m1, &n1, &w1, maxnumber, &all_atoms_dna1, &dna_chains1, &atoms_prot1, &prot_chains1, &atoms_wat1, &list1); 
-  printf("...done; %d atoms of dna, %d atoms of protein, %d atoms of water\n", all_m1, n1, w1);
+  //printf("...done; %d atoms of dna, %d atoms of protein, %d atoms of water\n", all_m1, n1, w1);
   if (all_m1 == 0)
     {printf("Error\nFirst structure has no DNA!");
     exit(1); }
   SelectChain(atoms_prot1, n1, &atoms_prot1, &n1, chain1);
-  printf("Atoms in selected chain: %u\n\n", n1); 
+  //printf("Atoms in selected chain: %u\n\n", n1); 
   SelectChain(all_atoms_dna1, all_m1, &dna1_chain1, &dna1_chain1_n, repr_dna_chain1);
   SelectChain(all_atoms_dna1, all_m1, &dna1_chain2, &dna1_chain2_n, repr_dna_chain2);
   atomlistmerge(&atoms_dna1, &m1, dna1_chain1, dna1_chain1_n, dna1_chain2, dna1_chain2_n);
@@ -88,11 +88,12 @@ int main  (int argc, char **argv)
   getAtomsNumbers(atoms_dna1, m1, &list_OP21, &n_OP21, "OP2");
   correctC1_P(atoms_dna1, &list_C11, &n_C11, list_P1, &n_P1);
   
-  unsigned int i_max;
+  unsigned int i_max = 0;
   for (i=1; i<=n_P1; i++)
-  	if (strcmp(atoms_dna1[list_P1[i]].ResNumber, maxM) == 0)
+  	if (strcmp(atoms_dna1[list_P1[i]].ResNumber, maxM) == 0 && atoms_dna1[list_P1[i]].Chain == repr_dna_chain1)
   	{
   		i_max = i;
+		//printf("imax:%u maxM:%s res:%s\n", i_max, maxM, atoms_dna1[list_P1[i]].ResNumber);
   	}
   if (i_max==0)
   {
@@ -100,14 +101,14 @@ int main  (int argc, char **argv)
   	exit(1);
   }
 
-  puts("Reading 2nd PDB file...");
+  //puts("Reading 2nd PDB file...");
   readerPDB(infile2, &all_m2, &n2, &w2, maxnumber, &all_atoms_dna2, &dna_chains2, &atoms_prot2, &prot_chains2, &atoms_wat2, &list2); 
-  printf("...done; %d atoms of dna, %d atoms of protein, %d atoms of water\n", all_m2, n2, w2);
+  //printf("...done; %d atoms of dna, %d atoms of protein, %d atoms of water\n", all_m2, n2, w2);
   if (all_m2 == 0)
     {printf("Error\nSecond structure has no DNA!");
     exit(1); }
   SelectChain(atoms_prot2, n2, &atoms_prot2, &n2, chain2);
-  printf("Atoms in selected chain: %u\n\n", n2);
+  //printf("Atoms in selected chain: %u\n\n", n2);
   SelectChain(all_atoms_dna2, all_m2, &dna2_chain1, &dna2_chain1_n, dna_chain1);
   SelectChain(all_atoms_dna2, all_m2, &dna2_chain2, &dna2_chain2_n, dna_chain2);
   atomlistmerge(&atoms_dna2, &m2, dna2_chain1, dna2_chain1_n, dna2_chain2, dna2_chain2_n);

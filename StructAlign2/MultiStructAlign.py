@@ -114,10 +114,6 @@ def print_matrix(name, d, list):
 	print ''
 	print name+':'
 	leng = len(list[0])
-	print ' '*7,
-	for i in list:
-		print "{:7} ".format(i[i.rfind('/')+1:]),
-	print ""
 
 	for i in range(len(list)):
 		print list[i][list[i].rfind('/')+1:],
@@ -128,6 +124,10 @@ def print_matrix(name, d, list):
 			else:
 				print " "*8,
 		print ""
+	print ' '*7,
+	for i in list:
+		print "{:7} ".format(i[i.rfind('/')+1:]),
+	print ""
 
 def find_repr(m):
 	print "\nSearching for the representative... ",
@@ -146,7 +146,7 @@ def reAlign(rep, repr_pdb, pair, maxM, pdb_name, c):
 	target = l[index]
 	
 	#print "{}./realign {}.pdb {} {} {} {} All/{}.pdb {} {} {} {} {} > /dev/null".format(argv[0].replace("MultiStructAlign.py", ''), repr_pdb[:-1], repr_pdb[-1], maxM1[0][1], maxM1[0][4], maxM1[1][1], pair, index, pdb_name, target[-1], maxM2[0][1], maxM2[1][1])
-	system("{}./realign {}.pdb {} {} {} {} All/{}.pdb {} {} {} {} {} > /dev/null".format(argv[0].replace("MultiStructAlign.py", ''), repr_pdb[:-1], repr_pdb[-1], maxM1[0][1], maxM1[0][4], maxM1[1][1], pair, index, pdb_name, target[-1], maxM2[0][1], maxM2[1][1]))
+	system("{}./realign {}.pdb {} {} {} {} All/{}.pdb {} {} {} {} {}".format(argv[0].replace("MultiStructAlign.py", ''), repr_pdb[:-1], repr_pdb[-1], maxM1[0][1], maxM1[0][4], maxM1[1][1], pair, index, pdb_name, target[-1], maxM2[0][1], maxM2[1][1]))
 	
 	return "Model {}: {}\n".format(c, target)
 
@@ -371,9 +371,13 @@ tree = TreeConstruction.DistanceTreeConstructor().upgma(PhyloM)
 Phylo.draw_ascii(tree)
 tree.ladderize()
 #Phylo.draw_graphviz(tree, node_size=0)
-Phylo.draw(tree, show_confidence=False, do_show=False)
-#show()
-savefig(multy_png)
+try:
+	Phylo.draw(tree, show_confidence=False, do_show=False)
+	#show()
+	savefig(multy_png)
+
+except:
+	print "Error: cannot create a figure of the tree! There is no DISPLAY variable\n"
 
 		
 repres, repr_index = find_repr(scoresM)
