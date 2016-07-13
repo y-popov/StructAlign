@@ -99,7 +99,8 @@ def StructAlign(pdb1, pdb2, outfile, warns, pairs, maxMs, ranges):
 			rename('All/'+output+'.pdb', pdb_name)
 			
 			pairs.append(pair)
-			maxMs[pair] = [(code1, dna_chainA1, dna1_chain1, dna11, maxA), (code1, dna_chainA2, dna1_chain2, dna12, maxAc), (code2, dna_chainB1, dna2_chain1, dna21, maxB), (code2, dna_chainB2, dna2_chain2, dna22, maxBc)]
+			maxMs[pair] = [(code1, dna_chainA1, dna1_chain1, dna11, maxA, isreverse1), (code1, dna_chainA2, dna1_chain2, dna12, maxAc), (code2, dna_chainB1, dna2_chain1, dna21, maxB, isreverse2), (code2, dna_chainB2, dna2_chain2, dna22, maxBc)]
+			#print maxMs[pair]
 			
 			if chain1 != chain1_old and code1 in ranges:
 				ranges[code1][chain1] = ranges[code1][chain1_old]
@@ -141,12 +142,18 @@ def find_repr(m):
 def reAlign(rep, repr_pdb, pair, maxM, pdb_name, c):
 	l = pair.split('_')
 	index = 0 if l[1]==rep else 1
+	#index = 1 if l[0]==rep else 0
 	maxM1 = maxM[0:2] if index==1 else maxM[2:] #select maxM of repr
 	maxM2 = maxM[0:2] if index==0 else maxM[2:]
 	target = l[index]
 	
-	#print "{}./realign {}.pdb {} {} {} {} All/{}.pdb {} {} {} {} {} > /dev/null".format(argv[0].replace("MultiStructAlign.py", ''), repr_pdb[:-1], repr_pdb[-1], maxM1[0][1], maxM1[0][4], maxM1[1][1], pair, index, pdb_name, target[-1], maxM2[0][1], maxM2[1][1])
-	system("{}./realign {}.pdb {} {} {} {} All/{}.pdb {} {} {} {} {}".format(argv[0].replace("MultiStructAlign.py", ''), repr_pdb[:-1], repr_pdb[-1], maxM1[0][1], maxM1[0][4], maxM1[1][1], pair, index, pdb_name, target[-1], maxM2[0][1], maxM2[1][1]))
+	if maxM2[0][5] == '0':
+		chain1, chain2 = maxM2[0][1], maxM2[1][1]
+	else:
+		chain1, chain2 = maxM2[1][1], maxM2[0][1]
+
+	#print "{}./realign {}.pdb {} {} {} {} All/{}.pdb {} {} {} {} {}".format(argv[0].replace("MultiStructAlign.py", ''), repr_pdb[:-1], repr_pdb[-1], maxM1[0][1], maxM1[0][4], maxM1[1][1], pair, index, pdb_name, target[-1], chain1, chain2)
+	system("{}./realign {}.pdb {} {} {} {} All/{}.pdb {} {} {} {} {}".format(argv[0].replace("MultiStructAlign.py", ''), repr_pdb[:-1], repr_pdb[-1], maxM1[0][1], maxM1[0][4], maxM1[1][1], pair, index, pdb_name, target[-1], chain1, chain2))
 	
 	return "Model {}: {}\n".format(c, target)
 
@@ -181,7 +188,7 @@ def createFASTA(fastas1, fastas2, maxMs_all, rep, pair):
 	maxM_ref = maxMs_all[rep+'_'+rep][:2]
 	pair = pair.split('_')
 	#print pair, rep
-	index = 0 if pair[1]==rep else 1
+	index = 1 if pair[0]==rep else 0
 	#print index
 	target = pair[index]
 	
@@ -248,10 +255,18 @@ if (not_installed==1) and (not options.internal):
 	print "Follow installation instructions from http://forum.x3dna.org/howtos/how-to-install-3dna-on-linux-and-windows/"
 	exit(1)
 
+temp = options.output[:options.output.rfind('/')]
+if temp != "":
+	if not path.exists(temp):
+		makedirs(temp)
+temp = options.output[options.output.rfind('/')+1:]
+if temp == "":
+	options.output += "multi"
 multy_pdb = options.output+".pdb"
 multy_fasta1 = options.output+"1.fasta"
 multy_fasta2 = options.output+"2.fasta"
 multy_png = options.output+".png"
+multy_descr = options.output+".txt"
 
 chains = {}
 for pair in options.chains:
@@ -424,10 +439,19 @@ writeFASTA(g, fasta_align2)
 g.close()
 
 
+f = open(multy_descr, 'w')
+f.write("Model	PDB_ID	Protein_Chain	DNA_Chain_0	DNA_Chain_1\n")
+for index, i in enumerate(description.split('\n')[1:-1]):
+	buff = i.split()
+	f.write("{}\t{}\t{}\t{}\t{}\n".format(buff[1][:-1], buff[2][:-1].upper(), buff[2][-1], fasta_align1[index].chain, fasta_align2[index].chain))
+f.close()
+
+
 if warnings:
 	print '\n'+warnings
-print "\nFiles {}, {}, {} and {} were generated".format(multy_pdb, multy_fasta1, multy_fasta2, multy_png)
+print "\nFiles {}, {}, {}, {} and {} were generated".format(multy_pdb, multy_fasta1, multy_fasta2, multy_png, multy_descr)
 print description
+
 		
 remove("{}.txt".format(random_name))
 x3dna_files = ["bestpairs.pdb", "col_chains.scr", "hel_regions.pdb", "ref_frames.dat", "bp_order.dat", "col_helices.scr", "out"]
