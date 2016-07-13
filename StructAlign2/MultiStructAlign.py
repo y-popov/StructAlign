@@ -288,7 +288,7 @@ for pair in options.chains:
 	else:
 		if pdb not in chains:
 			chains[pdb] = [chain]
-		else:
+		elif chain not in chains[pdb]:
 			chains[pdb].append(chain)
 
 ranges = {}
@@ -307,6 +307,7 @@ for handle in options.ranges:
 		ranges[pdb][chain] = r
 			
 pdbs = []
+used = []
 files = []
 if options.folder:
 	if path.exists(options.folder):
@@ -314,22 +315,26 @@ if options.folder:
 	else:
 		print "There is no folder %s! Aborting..." % options.folder
 		exit(1)	
+
 for pdb in options.pdbs+files:
 	code = pdb[::-1].replace(".pdb"[::-1], '', 1)[::-1]
-	if code[code.rfind('/')+1:] in chains:
-		for chain in chains[code[code.rfind('/')+1:]]:
-			pdbs.append(code+chain)
-	else:
-		pdbs.append(code+'@')
-	if not access(pdb, F_OK):
-		print 'You do not have %s pdb-file! Downloading it...' % code
-		try:
-			response = urlopen("http://files.rcsb.org/download/{}.pdb".format(code[code.rfind('/')+1:]))
-			with open("{}.pdb".format(code), 'w') as dl:
-				dl.write(response.read())
-		except Exception:
-			print "... aborting. PDB entry "+code+" does not exist or you have not Internet connection!"
-			exit(1)
+	code_id = code[code.rfind('/')+1:]
+	if code_id not in used:
+		if code_id in chains:
+			for chain in chains[code_id]:
+				pdbs.append(code+chain)
+		else:
+			pdbs.append(code+'@')
+		used.append(code_id)
+		if not access(pdb, F_OK):
+			print 'You do not have %s pdb-file! Downloading it...' % code
+			try:
+				response = urlopen("http://files.rcsb.org/download/{}.pdb".format(code[code.rfind('/')+1:]))
+				with open("{}.pdb".format(code), 'w') as dl:
+					dl.write(response.read())
+			except Exception:
+				print "... aborting. PDB entry "+code+" does not exist or you have not Internet connection!"
+				exit(1)
 
 if path.isfile("out"):
 	rename("out", "out.backup")
