@@ -214,11 +214,11 @@ def createFASTA(fastas1, fastas2, maxMs_all, rep, pair):
 
 def alignFASTA(fastas, ref_fasta):
 	for index, fasta in enumerate(fastas):
-		"""print '========================'
+		'''print '========================'
 		for x in fastas:
 			print x
 		print "fasta: ", fasta.__repr__()
-		print "refas: ", ref_fasta.__repr__()"""
+		print "refas: ", ref_fasta.__repr__()'''
 		delta = fasta.num_seq.index(fasta.max_m)+fasta.gaps[0] - ref_fasta.num_seq.index(fasta.max_ref)-ref_fasta.gaps[0]
 		if delta < 0:
 			fasta.gaps[0] -= delta
