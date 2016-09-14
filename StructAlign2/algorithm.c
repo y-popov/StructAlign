@@ -375,7 +375,7 @@ int main  (int argc, char **argv)
   unsigned int i_max_measure_compl, j_max_measure_compl;
   unsigned int is_reverse1, is_reverse2;
   
-  //printf("m_first_chain=%u j_max_measure=%u best_compl2=%u\n", best_m_first_chain, best_j_max_measure,  best_compl2);
+  //printf("n_first_chain=%u i_max_measure=%u best_compl1=%u\n", best_n_first_chain, best_i_max_measure,  best_compl1);
   is_reverse1 = ((best_i_max_measure > best_n_first_chain) ? 1 : 0);
   is_reverse2 = ((best_j_max_measure > best_m_first_chain) ? 1 : 0);
   i_max_measure_compl = ((best_i_max_measure > best_n_first_chain) ? best_compl1-best_i_max_measure+1 : best_compl1-best_i_max_measure+1);
@@ -399,14 +399,25 @@ int main  (int argc, char **argv)
   	j_max_measure_compl = dna_n21+dna_n22;
   	//printf("j_compl=%u n21=%u n22=%u\n", j_max_measure_compl, dna_n21, dna_n22);
   }
- 
+  
+  //if max_compl = 0 or less
+  if (i_max_measure_compl < 1)
+  {
+  	i_max_measure_compl = 1;
+  	j_max_measure_compl = j_max_measure_compl + 1 - i_max_measure_compl;
+  }
+  if (j_max_measure_compl < 1)
+  {
+  	j_max_measure_compl = 1;
+  	i_max_measure_compl = i_max_measure_compl + 1 - j_max_measure_compl;
+  }
+
   int i_max_measure_compl_num, j_max_measure_compl_num;
   char *i_max_measure_compl_str, *j_max_measure_compl_str;
   i_max_measure_compl_str = (char *)malloc( sizeof(char)*7 );
   j_max_measure_compl_str = (char *)malloc( sizeof(char)*7 );
   sscanf(best_atoms_dna1[best_list_P1[i_max_measure_compl]].ResNumber, "%d", &i_max_measure_compl_num);
   sscanf(best_atoms_dna2[best_list_P2[j_max_measure_compl]].ResNumber, "%d", &j_max_measure_compl_num);
-
   if (i_max_measure_compl==best_i_max_measure)
   {
   	sscanf(best_atoms_dna1[best_list_P1[i_max_measure_compl+1]].ResNumber, "%d", &i_max_measure_compl_num);
@@ -419,7 +430,7 @@ int main  (int argc, char **argv)
 	  j_max_measure_compl_num = j_max_measure_compl_num - 1;
 	  //puts("Here2");
   }
-  printf("%d\n", j_max_measure_compl_num);
+  //printf("%d\n", j_max_measure_compl_num);
  
   int start, i_start;
   start = (is_reverse1 == 1) ? dna1_chain1_start : dna1_chain2_start;
@@ -440,11 +451,11 @@ int main  (int argc, char **argv)
   	j_max_measure_compl = start;
   	//printf("jres_compl=%d start=%d\n", j_max_measure_compl_num, start);
   }
-  printf("%d\n", j_max_measure_compl_num);
+  //printf("%d\n", j_max_measure_compl_num);
   
   sprintf(i_max_measure_compl_str, "%d", i_max_measure_compl_num);
   sprintf(j_max_measure_compl_str, "%d", j_max_measure_compl_num);
-  printf("%d\n", j_max_measure_compl_num);
+  //printf("%d\n", j_max_measure_compl_num);
 
   fprintf(max_score, "%c %c %c %c %c %c %s %s %s %s %u %u\n%lg\n%s %s\n%s %s\n%s %s\n%s %s", chain1, chain2, pairs1[best_pair1][1], pairs1[best_pair1][2], pairs2[best_pair2][1], pairs2[best_pair2][2], best_atoms_dna1[best_list_P1[best_i_max_measure]].ResNumber, best_atoms_dna2[best_list_P2[best_j_max_measure]].ResNumber, i_max_measure_compl_str, j_max_measure_compl_str, is_reverse1, is_reverse2, best_S_max, dna_seq11, dna_num_seq11, dna_seq12, dna_num_seq12, dna_seq21, dna_num_seq21, dna_seq22, dna_num_seq22);
   fclose(max_score); 
