@@ -445,7 +445,7 @@ g.close()
 
 
 f = open(multy_descr, 'w')
-f.write("Model	PDB_ID	Protein_Chain	DNA_Chain_0	DNA_Chain_1\n")
+f.write("Model	PDB_ID	Protein_Chain	DNA_Chain_1	DNA_Chain_2\n")
 for index, i in enumerate(description.split('\n')[1:-1]):
 	buff = i.split()
 	f.write("{}\t{}\t{}\t{}\t{}\n".format(buff[1][:-1], buff[2][:-1].upper(), buff[2][-1], fasta_align1[index].chain, fasta_align2[index].chain))
