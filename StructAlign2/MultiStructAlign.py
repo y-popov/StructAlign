@@ -2,7 +2,7 @@
 from argparse import ArgumentParser
 from subprocess import check_output
 from sys import stdin
-from os import system, access, F_OK, remove, devnull, path, makedirs, listdir, rename, getcwd
+from os import system, access, F_OK, remove, devnull, path, makedirs, listdir, rename, getcwd, stat
 from sys import argv
 from random import choice
 from string import ascii_uppercase, digits
@@ -52,15 +52,18 @@ def StructAlign(pdb1, pdb2, outfile, warns, pairs, maxMs, ranges):
 	
 	output = code1+'@_'+code2+'@'
 	
-	system('{}./align {} {} All/{}.pdb {} {} {} {} {} {} {}.txt 0 > /dev/null'.format(argv[0].replace("MultiStructAlign.py", ''), pdb1_name, pdb2_name, output, chain1, chain2, range1[0], range1[1], range2[0], range2[1], outfile))
+	try:
+		system('{}./align {} {} All/{}.pdb {} {} {} {} {} {} {}.txt 0 > /dev/null'.format(argv[0].replace("MultiStructAlign.py", ''), pdb1_name, pdb2_name, output, chain1, chain2, range1[0], range1[1], range2[0], range2[1], outfile))
+	except Exception as e:
+		error.append(e)
 	#print '{}./align {} {} All/{}.pdb {} {} {} {} {} {} {}.txt 0 > /dev/null'.format(argv[0].replace("MultiStructAlign.py", ''), pdb1_name, pdb2_name, output, chain1, chain2, range1[0], range1[1], range2[0], range2[1], outfile)
 	
 	max_score = open("{}.txt".format(outfile), 'r')
 	max_score = max_score.read().splitlines()
 	if not max_score:
-		print "Sorry, the program has fault"
-		remove("{}.txt".format(outfile))
-		exit(1)
+		#print "Sorry, the program has fault"
+		return None, None, None
+		#exit(1)
 	
 	index = -1
 	while index < len(max_score):
@@ -332,6 +335,9 @@ for pdb in options.pdbs+files:
 				response = urlopen("http://files.rcsb.org/download/{}.pdb".format(code[code.rfind('/')+1:]))
 				with open("{}.pdb".format(code), 'w') as dl:
 					dl.write(response.read())
+				if stat("{}.pdb".format(code)).st_size == 0:
+					print "Structure {} downloaded with error! Please, try again or download it manually.".format(code[code.rfind('/')+1:])
+					exit(1)
 			except Exception:
 				print "... aborting. PDB entry "+code+" does not exist or you have not Internet connection!"
 				exit(1)
@@ -353,6 +359,7 @@ if not path.exists("All"):
 	makedirs('All')
 
 warnings = ''
+errors = []
 pairs = []
 maxMs = {}
 PhyloM = []
@@ -363,17 +370,26 @@ print ''
 for i in range(leng):
 	for j in range(i+1): #or i+1?
 		s += 1
-		print pdbs[i], pdbs[j], '--{:->3.2%}-->'.format( s/total ), 
+		#print pdbs[i], pdbs[j], '--{:->3.2%}-->'.format( s/total ), 
 		score, chain1, chain2 = StructAlign(pdbs[i], pdbs[j], random_name, warnings, pairs, maxMs, ranges)
-		pdbs[i] = pdbs[i][:-1]+chain1
-		pdbs[j] = pdbs[j][:-1]+chain2
-		print pdbs[i], pdbs[j]
-		if pdbs[i] not in scores:
-			scores[pdbs[i]] = {}
-			PhyloM.append([])
-			scoresM.append([])
-		scores[pdbs[i]][pdbs[j]] = score
-		scoresM[i].append(score)
+		if score is not None:
+			pdbs[i] = pdbs[i][:-1]+chain1
+			pdbs[j] = pdbs[j][:-1]+chain2
+			print '{:->3.2%}\t{} {}\t{}'.format( s/total, pdbs[i], pdbs[j], "done")
+			if pdbs[i] not in scores:
+				scores[pdbs[i]] = {}
+				PhyloM.append([])
+				scoresM.append([])
+			scores[pdbs[i]][pdbs[j]] = score
+			scoresM[i].append(score)
+		else:
+			print '{:->3.2%}\t{} {}\t{}'.format( s/total, pdbs[i], pdbs[j], "error")
+			if pdbs[i] not in scores:
+				scores[pdbs[i]] = {}
+				PhyloM.append([])
+				scoresM.append([])
+			scores[pdbs[i]][pdbs[j]] = 0
+			scoresM[i].append(0)
 		
 print_matrix("Scores", scores, pdbs)
 scoresM = TreeConstruction._Matrix([x[x.rfind('/')+1:] for x in pdbs], scoresM)
@@ -391,8 +407,13 @@ tree = TreeConstruction.DistanceTreeConstructor().upgma(PhyloM)
 Phylo.draw_ascii(tree)
 tree.ladderize()
 #Phylo.draw_graphviz(tree, node_size=0)
+def hide_inner(node):
+	if node.name.startswith("Inner"):
+		return None
+	else:
+		return node.name
 try:
-	Phylo.draw(tree, show_confidence=False, do_show=False)
+	Phylo.draw(tree, label_func=hide_inner, do_show=False)
 	#show()
 	savefig(multy_png)
 
@@ -451,6 +472,8 @@ for index, i in enumerate(description.split('\n')[1:-1]):
 	f.write("{}\t{}\t{}\t{}\t{}\n".format(buff[1][:-1], buff[2][:-1].upper(), buff[2][-1], fasta_align1[index].chain, fasta_align2[index].chain))
 f.close()
 
+if errors:
+	print '\n'.join(errors)
 
 if warnings:
 	print '\n'+warnings

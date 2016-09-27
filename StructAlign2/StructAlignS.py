@@ -4,6 +4,7 @@ from sys import stdin
 from os import system, access, F_OK, rename, makedirs
 from random import choice
 from string import ascii_uppercase, digits
+from cgi import FieldStorage
 
 
 def complement(x):
@@ -30,14 +31,18 @@ def StructAlign(pdb1, pdb2, outfile, warns, pairs, maxMs, ranges):
 	
 	output = code1+'@_'+code2+'@'
 	
-	system('StructAlign/align {0} {1} ../tmp/StructAlign/{2}/All/{3}.pdb {4} {5} {6} {7} {8} {9} /var/www/tools/tmp/StructAlign/{2}/result.txt 1 >> ../tmp/StructAlign/{2}/log.txt'.format(pdb1_name, pdb2_name, outfile, output, chain1, chain2, range1[0], range1[1], range2[0], range2[1]))
+	try:
+		system('StructAlign/align {0} {1} ../tmp/StructAlign/{2}/All/{3}.pdb {4} {5} {6} {7} {8} {9} /var/www/tools/tmp/StructAlign/{2}/result.txt 1 >> ../tmp/StructAlign/{2}/log.txt'.format(pdb1_name, pdb2_name, outfile, output, chain1, chain2, range1[0], range1[1], range2[0], range2[1]))
+	except Exception as e:
+		error.append(e)
 	
 	
 	max_score = open("/var/www/tools/tmp/StructAlign/{}/result.txt".format(outfile), 'r')
 	max_score = max_score.read().splitlines()
 	if not max_score:
-		print "Sorry, the program has fault"
-		exit(1)
+		#print "Sorry, the program has fault"
+		return None, None, None
+		#exit(1)
 	
 	index = -1
 	while index < len(max_score):
@@ -309,9 +314,21 @@ print '''
 	    <div class="main">
 '''
 
-a = stdin.readlines()
-b = a[0]
-c = b.split("&")
+is_multi = False
+c = []
+form = FieldStorage()
+fileitem = form['file']
+if fileitem.filename:
+	fileitem = fileitem.file.read().splitlines()
+	if len(fileitem) > 2:
+		is_multi = True
+	else:
+		print '''<div class="alert alert-danger"><strong>Error!</strong> There are less then 2 PDBs in your request file</div>'''
+else:
+	fileitem = None
+	for item in form.__iter__():
+		c.append(str(item)+'='+str(form.getvalue(item)))
+
 c.sort()
 system('echo "{}" > ../tmp/StructAlign/log.txt'.format(c))
 random_name = ''.join(choice(ascii_uppercase + digits) for i in range(10))
@@ -498,10 +515,9 @@ for d in c:
 				print ( "<p>PDB entry <B>"+code2+"</B> does not exist</p>" )
 
 if is_multi:
-	from shutil import rmtree
 	from Bio import Phylo 
 	from Bio.Phylo import TreeConstruction
-	from pylab import show, savefig
+	from subprocess import Popen, PIPE
 	
 	pdbs = []
 	chains = []
@@ -509,17 +525,29 @@ if is_multi:
 	ends = []
 	ranges = {}
 	print "<h1>This option is under construction</h1><br>"
-
-	for i in c:
-		(name,value) = i.split("=")
-		if name.startswith("chain"):
-			chains.append(value.upper() if value else '@')
-		elif name.startswith("start"):
-			starts.append(value if value else "zero")
-		elif name.startswith("end"):
-			ends.append(value if value else "inf")
-		elif name.startswith("zpdb"):
-			pdbs.append(value.lower())
+	
+	if fileitem:
+		for query in fileitem:
+			pdb, buff = query.split(".")
+			chain, buff = buff.split(":")
+			start, end = buff.split("--")
+			
+			pdbs.append(pdb.lower())
+			chains.append(chain.upper() if chain else '@')
+			starts.append(start if start else "zero")
+			ends.append(end if end else "inf")
+			
+	else:
+		for i in c:
+			(name,value) = i.split("=")
+			if name.startswith("chain"):
+				chains.append(value.upper() if value else '@')
+			elif name.startswith("start"):
+				starts.append(value if value else "zero")
+			elif name.startswith("end"):
+				ends.append(value if value else "inf")
+			elif name.startswith("zpdb"):
+				pdbs.append(value.lower())
 
 	
 	for index, code in enumerate(pdbs):
@@ -545,6 +573,7 @@ if is_multi:
 	system("chmod a=rwx -R ../tmp/StructAlign/{}".format(random_name))
 	
 	warnings = ''
+	errors = []
 	pairs = []
 	maxMs = {}
 	PhyloM = []
@@ -560,14 +589,22 @@ if is_multi:
 			s += 1
 			#print pdbs[i], pdbs[j], '--{:->3.2%}-->'.format( s/total ), 
 			score, chain1, chain2 = StructAlign(pdbs[i], pdbs[j], random_name, warnings, pairs, maxMs, ranges)
-			pdbs[i] = pdbs[i][:-1]+chain1
-			pdbs[j] = pdbs[j][:-1]+chain2
-			if pdbs[i] not in scores:
-				scores[pdbs[i]] = {}
-				PhyloM.append([])
-				scoresM.append([])
-			scores[pdbs[i]][pdbs[j]] = score
-			scoresM[i].append(score)
+			if score is not None:
+				pdbs[i] = pdbs[i][:-1]+chain1
+				pdbs[j] = pdbs[j][:-1]+chain2
+				if pdbs[i] not in scores:
+					scores[pdbs[i]] = {}
+					PhyloM.append([])
+					scoresM.append([])
+				scores[pdbs[i]][pdbs[j]] = score
+				scoresM[i].append(score)
+			else:
+				if pdbs[i] not in scores:
+					scores[pdbs[i]] = {}
+					PhyloM.append([])
+					scoresM.append([])
+				scores[pdbs[i]][pdbs[j]] = 0
+				scoresM[i].append(0)
 	
 	scoresM = TreeConstruction._Matrix([x[x.rfind('/')+1:] for x in pdbs], scoresM)
 	print "<pre>"
@@ -592,9 +629,24 @@ if is_multi:
 	print make_table_matrix(distances, pdbs)
 	
 	tree = TreeConstruction.DistanceTreeConstructor().upgma(PhyloM)
+	multi_tree = "../tmp/StructAlign/"+random_name+"/multi.tre"
+	multi_ps = "../tmp/StructAlign/"+random_name+"/multi.ps"
+	multi_png = "../tmp/StructAlign/"+random_name+"/multi.png"
+	Phylo.write(tree, multi_tree, "newick")
+	arguments = ["fdrawgram", multi_tree, multi_ps, "-previewer", "n"]
+	fdrawgram = Popen(arguments, stdout = PIPE, stderr = PIPE)
+	(fdgtrash, fdgerror) = fdrawgram.communicate()
+	if fdrawgram.returncode == 0:
+		arguments = ["gs", "-sDEVICE=pngmono", "-sOutputFile=" + multi_png, "-r300", "-dBATCH", "-dNOPAUSE", multi_ps]
+		gs = Popen(arguments, stdout = PIPE, stderr = PIPE)
+		(gstrash, gserror) = gs.communicate()
+		if gs.returncode == 0:
+			pass
+	
 	print "<pre>"
 	Phylo.draw_ascii(tree)
 	print "</pre>"
+	print "<img src='../tmp/StructAlign/"+random_name+"/multi.png' width=500>"
 	
 	
 	
@@ -644,7 +696,7 @@ if is_multi:
 	
 	multy_descr = "../tmp/StructAlign/"+random_name+"/multi.txt"
 	f = open(multy_descr, 'w')
-	f.write("Model	PDB_ID	Protein_Chain	DNA_Chain_0	DNA_Chain_1\n")
+	f.write("Model	PDB_ID	Protein_Chain	DNA_Chain_1	DNA_Chain_2\n")
 	for index, i in enumerate(description.split('\n')[1:-1]):
 		buff = i.split()
 		f.write("{}\t{}\t{}\t{}\t{}\n".format(buff[1][:-1], buff[2][:-1].upper(), buff[2][-1], fasta_align1[index].chain, fasta_align2[index].chain))

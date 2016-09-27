@@ -388,7 +388,8 @@ unsigned int run_3dna(char *pdb_name, unsigned int **compl, int ***compl_pairs, 
 			//sscanf(c, "%5u%5u%*u #%*u %c %*4c>%c%*31c%c", &a, &b, &flag, &chain1, &chain2);
 			sscanf(c, "%5u%5u%*u #%*u %c %*4c>%c%*[:.]%d%*19c%*[:.]%d%*c:%c", &a, &b, &flag, &chain1, &res1, &res2,  &chain2);
 			//printf("%u %u %c %c %d %d %c\n", a, b, flag, chain1, res1, res2, chain2);
-			count++;
+			if (chain1 != (*pairs)[count][1] && chain2 != (*pairs)[count][2])
+				count++;
 			if (count > pairs_max)
 			{
 				pairs_max = pairs_max * 2;
@@ -841,16 +842,16 @@ printf("\nS max: %lg, i_start: %d, j_start: %d, i_max: %d, j_max: %d, max_M: %lg
 //Enable in test mode
 
 //print S-table
-/*for (j=1; j<=m_1chain; j++) printf("%4d", j);
+/*for (j=1; j<=m_1chain; j++) printf("%5d", j);
 puts("");
 for (i=n; i>=1; i--){
 	printf("%2d", i);
 	for (j=1; j<=m_1chain; j++){
-		printf("%3.0f ", S[i][j]);
+		printf("%4.0f ", S[i][j]);
 	}
 	puts("");
 }
-for (j=1; j<=m_1chain; j++) printf("%4d", j);
+for (j=1; j<=m_1chain; j++) printf("%5d", j);
 puts("");*/
 
 
