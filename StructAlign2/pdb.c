@@ -180,7 +180,8 @@ void Seq(struct atom *atoms, unsigned int n, char **seq, char **num_seq, unsigne
 	res = (char *)malloc( sizeof(char)*4 );
 	getAtomsNumbers(atoms, n, &list_C, &(*m), "C1'"); 
 	(*seq) = (char *)malloc( sizeof(char)*((*m)+1) );
-	(*num_seq) = (char *)malloc( sizeof(char)*(*m)*5 );
+	(*num_seq) = (char *)malloc( sizeof(char)*(*m)*6 );
+	strcpy((*num_seq), "");
 	for (i=1; i<=(*m); i++)
 	{
 		strcpy(res, atoms[list_C[i]].ResType);
@@ -204,7 +205,7 @@ void Seq(struct atom *atoms, unsigned int n, char **seq, char **num_seq, unsigne
 				}
 				else
 				{
-					fprintf(max_score, "Warning! The program doesn't know residue %s\n! Please, report us about it.\n", res);
+					fprintf(max_score, "Warning! The program doesn't know residue %s (%s.%c:%s)! Please, report us about it.\n", res, atoms[list_C[i]].PDBCode, atoms[list_C[i]].Chain, atoms[list_C[i]].ResNumber);
 					(*seq)[i-1] = '?';
 				}
 			}
@@ -311,7 +312,7 @@ unsigned int run_3dna(char *pdb_name, unsigned int **compl, int ***compl_pairs, 
 	command = (char *)malloc(sizeof(char)*(strlen(pdb_name)+35));
 	(*compl) = (unsigned int *)malloc(sizeof(unsigned int)*(pairs_max+1));
 	(*compl_pairs) = (int **)malloc(sizeof(int *)*(pairs_max+1));
-	(*pairs) = (char **)malloc(sizeof(char *)*pairs_max);
+	(*pairs) = (char **)malloc(sizeof(char *)*(pairs_max+1));
 	for (j=0; j<=pairs_max; j++)
 	{
 		(*pairs)[j] = (char *)malloc(sizeof(char)*2);
@@ -499,6 +500,8 @@ unsigned int BidirectionalHit( struct atom * atoms_i, struct atom *C_atoms_i, un
   //printf("H5\n");
 
   * n_hit = k;
+  free(list_i);
+  free(list_j);
   return 0;
   }
   
@@ -854,6 +857,8 @@ for (i=n; i>=1; i--){
 for (j=1; j<=m_1chain; j++) printf("%5d", j);
 puts("");*/
 
+for (i=1; i<=n; i++)  free(S[i]);
+free(S);
 
 }
 

@@ -258,7 +258,7 @@ if (not_installed==1) and (not options.internal):
 	print "Follow installation instructions from http://forum.x3dna.org/howtos/how-to-install-3dna-on-linux-and-windows/"
 	exit(1)
 
-temp = options.output[:options.output.rfind('/')]
+temp = options.output[:options.output.rfind('/')+1]
 if temp != "":
 	if not path.exists(temp):
 		makedirs(temp)
@@ -323,24 +323,31 @@ for pdb in options.pdbs+files:
 	code = pdb[::-1].replace(".pdb"[::-1], '', 1)[::-1]
 	code_id = code[code.rfind('/')+1:]
 	if code_id not in used:
-		if code_id in chains:
-			for chain in chains[code_id]:
-				pdbs.append(code+chain)
-		else:
-			pdbs.append(code+'@')
-		used.append(code_id)
+		buff = code
 		if not access(pdb, F_OK):
 			print 'You do not have %s pdb-file! Downloading it...' % code
 			try:
 				response = urlopen("http://files.rcsb.org/download/{}.pdb".format(code[code.rfind('/')+1:]))
-				with open("{}.pdb".format(code), 'w') as dl:
+				if options.output[:options.output.rfind('/')+1]:
+					buff = options.output[:options.output.rfind('/')+1]+code[code.rfind('/')+1:]
+				
+				if not path.exists(buff[:buff.rfind('/')+1]):
+					makedirs(buff[:buff.rfind('/')+1])
+				with open("{}.pdb".format(buff), 'w') as dl:
 					dl.write(response.read())
-				if stat("{}.pdb".format(code)).st_size == 0:
+				if stat("{}.pdb".format(buff)).st_size == 0:
 					print "Structure {} downloaded with error! Please, try again or download it manually.".format(code[code.rfind('/')+1:])
 					exit(1)
 			except Exception:
 				print "... aborting. PDB entry "+code+" does not exist or you have not Internet connection!"
 				exit(1)
+		code_id = buff[buff.rfind('/')+1:]
+		if code_id in chains:
+			for chain in chains[code_id]:
+				pdbs.append(buff+chain)
+		else:
+			pdbs.append(buff+'@')
+		used.append(code_id)
 
 if path.isfile("out"):
 	rename("out", "out.backup")
@@ -371,7 +378,14 @@ for i in range(leng):
 	for j in range(i+1): #or i+1?
 		s += 1
 		#print pdbs[i], pdbs[j], '--{:->3.2%}-->'.format( s/total ), 
-		score, chain1, chain2 = StructAlign(pdbs[i], pdbs[j], random_name, warnings, pairs, maxMs, ranges)
+		failure_c = 0
+		while failure_c < 3:
+			score, chain1, chain2 = StructAlign(pdbs[i], pdbs[j], random_name, warnings, pairs, maxMs, ranges)
+			if score is not None:
+				failure_c = 3
+			else:
+				failure_c += 1
+				print '{:->3.2%}\t{} {}\t{}'.format( s/total, pdbs[i], pdbs[j], "fail")
 		if score is not None:
 			pdbs[i] = pdbs[i][:-1]+chain1
 			pdbs[j] = pdbs[j][:-1]+chain2

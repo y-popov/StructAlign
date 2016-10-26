@@ -588,7 +588,13 @@ if is_multi:
 		for j in range(i+1): #or i+1?
 			s += 1
 			#print pdbs[i], pdbs[j], '--{:->3.2%}-->'.format( s/total ), 
-			score, chain1, chain2 = StructAlign(pdbs[i], pdbs[j], random_name, warnings, pairs, maxMs, ranges)
+			failure_c = 0
+			while failure_c < 3:
+				score, chain1, chain2 = StructAlign(pdbs[i], pdbs[j], random_name, warnings, pairs, maxMs, ranges)
+				if score is not None:
+					failure_c = 3
+				else:
+					failure_c += 1
 			if score is not None:
 				pdbs[i] = pdbs[i][:-1]+chain1
 				pdbs[j] = pdbs[j][:-1]+chain2

@@ -2,7 +2,7 @@
 from argparse import ArgumentParser
 from subprocess import check_output
 #from sys import stdin
-from os import system, access, F_OK, remove, devnull, path, makedirs, rename
+from os import system, access, F_OK, remove, devnull, path, makedirs, rename, stat
 from sys import argv
 from random import choice
 from string import ascii_uppercase, digits
@@ -80,8 +80,13 @@ if not access(options.pdb1, F_OK):
 		print 'You do not have %s pdb-file! Downloading it...' % code1
 	try:
 		response = urlopen("http://files.rcsb.org/download/{}.pdb".format(code1))
+		if not path.exists(options.pdb1[:options.pdb1.rfind('/')+1]):
+			makedirs(options.pdb1[:options.pdb1.rfind('/')+1])
 		with open(options.pdb1, 'w') as dl:
 			dl.write(response.read())
+		if stat(options.pdb1).st_size == 0:
+			print "Structure {} downloaded with error! Please, try again or download it manually.".format(code1)
+			exit(1)
 	except Exception:
 		print "... aborting. PDB entry "+code1+" does not exist or you have not Internet connection!"
 		exit(1)
@@ -91,8 +96,13 @@ if not access(options.pdb2, F_OK):
 		print 'You do not have %s pdb-file! Downloading it...' % code2
 	try:
 		response = urlopen("http://files.rcsb.org/download/{}.pdb".format(code2))
+		if not path.exists(options.pdb2[:options.pdb2.rfind('/')+1]):
+			makedirs(options.pdb2[:options.pdb2.rfind('/')+1])
 		with open(options.pdb2, 'w') as dl:
 			dl.write(response.read())
+		if stat(options.pdb2).st_size == 0:
+			print "Structure {} downloaded with error! Please, try again or download it manually.".format(code2)
+			exit(1)
 	except Exception:
 		print "... aborting. PDB entry "+code2+" does not exist or you have not Internet connection!"
 		exit(1)

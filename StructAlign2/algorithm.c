@@ -164,7 +164,7 @@ int main  (int argc, char **argv)
   	SelectChain(all_atoms_dna1, all_m1, &dna1_chain2, &dna1_chain2_n, pairs1[pair1][2]);
   	atomlistmerge(&atoms_dna1, &m1, dna1_chain1, dna1_chain1_n, dna1_chain2, dna1_chain2_n);
   	
-  	
+  	//printf("%u/%u\n", pair1, n_pairs1);
   	/* Make lists of P, C1', OP1 atoms 
 	  of dna and CA atoms of protein */
   	unsigned int *list_P1, *list_C11, *list_OP11, *list_OP21, *list_CA1, *list_C1;
@@ -194,6 +194,7 @@ int main  (int argc, char **argv)
   	
   	for (pair2=1; pair2<=n_pairs2; pair2++)
 	{
+	//printf("%u/%u\n", pair2, n_pairs2);
 	printf("\nCYCLE %c:%c vs %c:%c\n", pairs1[pair1][1], pairs1[pair1][2], pairs2[pair2][1], pairs2[pair2][2]);
 		struct atom *atoms_dna2 = NULL, *dna2_chain1, *dna2_chain2;
 		unsigned int m2, dna2_chain1_n=0, dna2_chain2_n=0;
@@ -348,7 +349,41 @@ int main  (int argc, char **argv)
   		best_pair1 = pair1;
   		best_pair2 = pair2;
   	  }
+  	
+  	//free array's memory after cycle
+  	/*free(list_P2);
+  	free(list_C12);
+  	free(list_OP12);
+  	free(list_OP22);
+  	free(list_CA2);
+  	free(list_C2);
+  	free(atoms_prot_CA2);
+  	free(atoms_prot_C2);
+  	for (i=1; i<=n_P1; i++) free(list_measure[i]);
+  	free(list_measure);
+  	free(atoms_dna_P1);
+  	free(atoms_dna_P2);
+  	free(atoms_dna2);
+  	free(dna2_chain1);
+  	free(dna2_chain2);
+  	free(atoms_prot_i1);
+  	free(C_atoms_prot_i1);
+  	free(atoms_prot_j2);
+  	free(C_atoms_prot_j2);*/
+
 	}
+	
+  /*free(list_P1);
+  free(list_C11);
+  free(list_OP11);
+  free(list_OP21);
+  free(list_CA1);
+  free(list_C1);
+  free(atoms_prot_CA1);
+  free(atoms_prot_C1);
+  free(atoms_dna1);
+  free(dna1_chain1);
+  free(dna1_chain2);*/
   } 
   /*** END OF MAIN CYCLE ***/
   
@@ -370,6 +405,7 @@ int main  (int argc, char **argv)
 
   Seq(best_dna2_chain2, best_dna2_chain2_n, &dna_seq22, &dna_num_seq22, &dna_n22, max_score);
   sscanf(best_dna2_chain2[1].ResNumber, "%d", &dna2_chain2_start);
+  
   
   //printf("%c %c %c %c %c %c\n%lg\n%s\n%s", chain1, chain2, dna_chains1[1], dna_chains1[2], dna_chains2[1], dna_chains2[2], S_max, dna_string1, dna_string2);
   /*** For server work - DNA alignment making ***/
