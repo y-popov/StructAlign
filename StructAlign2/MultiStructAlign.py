@@ -84,7 +84,7 @@ def StructAlign(pdb1, pdb2, outfile, warns, pairs, maxMs, ranges):
 			dna1_chain2, dna12 = max_score[3].split()[0], [int(x) for x  in max_score[3].split()[1].split(',')]
 			dna2_chain1, dna21 = max_score[4].split()[0], [int(x) for x  in max_score[4].split()[1].split(',')]
 			dna2_chain2, dna22 = max_score[5].split()[0], [int(x) for x  in max_score[5].split()[1].split(',')] #sequence
-			#print chain1, chain2, dna_chainA1, dna_chainA2, dna_chainB1, dna_chainB2, maxA, maxB, maxAc, maxBc, isreverse1, isreverse2
+			print chain1, chain2, dna_chainA1, dna_chainA2, dna_chainB1, dna_chainB2, maxA, maxB, maxAc, maxBc, isreverse1, isreverse2
 			if isreverse1 == '1':
 				#maxA, maxAc = maxAc, maxA
 				dna11, dna12 = dna12, dna11
@@ -95,7 +95,7 @@ def StructAlign(pdb1, pdb2, outfile, warns, pairs, maxMs, ranges):
 				dna21, dna22 = dna22, dna21
 				dna2_chain1, dna2_chain2 = dna2_chain2, dna2_chain1
 				dna_chainB1, dna_chainB2 = dna_chainB2, dna_chainB1
-			#print chain1, chain2, dna_chainA1, dna_chainA2, dna_chainB1, dna_chainB2, maxA, maxB, maxAc, maxBc, isreverse1, isreverse2
+			print chain1, chain2, dna_chainA1, dna_chainA2, dna_chainB1, dna_chainB2, maxA, maxB, maxAc, maxBc, isreverse1, isreverse2
 			pair = output[:output.find('@')]+chain1+output[output.find('@')+1:-1]+chain2
 
 			pdb_name = 'All/'+pair+'.pdb'
@@ -217,11 +217,11 @@ def createFASTA(fastas1, fastas2, maxMs_all, rep, pair):
 
 def alignFASTA(fastas, ref_fasta):
 	for index, fasta in enumerate(fastas):
-		'''print '========================'
+		print '========================'
 		for x in fastas:
 			print x
 		print "fasta: ", fasta.__repr__()
-		print "refas: ", ref_fasta.__repr__()'''
+		print "refas: ", ref_fasta.__repr__()
 		delta = fasta.num_seq.index(fasta.max_m)+fasta.gaps[0] - ref_fasta.num_seq.index(fasta.max_ref)-ref_fasta.gaps[0]
 		if delta < 0:
 			fasta.gaps[0] -= delta
@@ -258,10 +258,10 @@ if (not_installed==1) and (not options.internal):
 	print "Follow installation instructions from http://forum.x3dna.org/howtos/how-to-install-3dna-on-linux-and-windows/"
 	exit(1)
 
-temp = options.output[:options.output.rfind('/')+1]
-if temp != "":
-	if not path.exists(temp):
-		makedirs(temp)
+output_dir = options.output[:options.output.rfind('/')+1]
+if output_dir != "":
+	if not path.exists(output_dir):
+		makedirs(output_dir)
 temp = options.output[options.output.rfind('/')+1:]
 if temp == "":
 	options.output += "multi"
@@ -271,10 +271,12 @@ multy_fasta2 = options.output+"2.fasta"
 multy_png = options.output+".png"
 multy_descr = options.output+".txt"
 
+			
+
 chains = {}
 for pair in options.chains:
 	pdb, chain = pair.split(':')
-	if pdb+'.pdb' not in [x[x.rfind('/')+1:] for x in options.pdbs]:
+	if (pdb+'.pdb' not in [x[x.rfind('/')+1:] for x in options.pdbs]) and (pdb not in [x[x.rfind('/')+1:] for x in options.pdbs]):
 		answer = ''
 		print "\nYou didn't specify file {}.pdb!".format(pdb)
 		while answer.lower() not in ['n', 'y', 'no', 'yes', 'a', 'add']:
@@ -283,7 +285,10 @@ for pair in options.chains:
 			print 'Aborting...'
 			exit(1)
 		if answer.lower() in ['a', 'add']:
-			options.pdbs.append(pdb+'.pdb')
+			if not path.splitext(pdb)[-1]:
+				options.pdbs.append(output_dir+pdb+'.pdb')
+			else:
+				options.pdbs.append(output_dir+pdb)
 			if pdb not in chains:
 				chains[pdb] = [chain]
 			else:
@@ -293,6 +298,36 @@ for pair in options.chains:
 			chains[pdb] = [chain]
 		elif chain not in chains[pdb]:
 			chains[pdb].append(chain)
+
+
+#check if all input files exist
+for index, entry in enumerate(options.pdbs):
+	flag = 1
+	has_ext = 1
+	code = entry[entry.rfind('/')+1:]
+	if not access(entry, F_OK):
+		#there is no such entry
+		if not access(output_dir+code, F_OK):
+			#even in output dir
+			flag = 0
+		else:
+			options.pdbs[index] = output_dir+code
+	if flag == 0:
+		ext = path.splitext(entry)[-1]
+		if not ext:
+			has_ext = 0
+			options.pdbs[index] += '.pdb'
+			entry += '.pdb'
+			if not access(entry, F_OK):
+				#there is no such entry
+				if access(output_dir+code+'.pdb', F_OK):
+					flag = 1
+					options.pdbs[index] = output_dir+code+'.pdb'
+			else:
+				flag = 1
+	#if (flag == 0) and (has_ext == 0):
+		
+
 
 ranges = {}
 for handle in options.ranges:
@@ -327,16 +362,16 @@ for pdb in options.pdbs+files:
 		if not access(pdb, F_OK):
 			print 'You do not have %s pdb-file! Downloading it...' % code
 			try:
-				response = urlopen("http://files.rcsb.org/download/{}.pdb".format(code[code.rfind('/')+1:]))
+				response = urlopen("http://files.rcsb.org/download/{}.pdb".format(code_id))
 				if options.output[:options.output.rfind('/')+1]:
-					buff = options.output[:options.output.rfind('/')+1]+code[code.rfind('/')+1:]
-				
-				if not path.exists(buff[:buff.rfind('/')+1]):
+					buff = options.output[:options.output.rfind('/')+1]+code_id
+
+				if (not path.exists(buff[:buff.rfind('/')+1])) and (buff[:buff.rfind('/')+1]):
 					makedirs(buff[:buff.rfind('/')+1])
 				with open("{}.pdb".format(buff), 'w') as dl:
 					dl.write(response.read())
 				if stat("{}.pdb".format(buff)).st_size == 0:
-					print "Structure {} downloaded with error! Please, try again or download it manually.".format(code[code.rfind('/')+1:])
+					print "Structure {} downloaded with error! Please, try again or download it manually.".format(code_id)
 					exit(1)
 			except Exception:
 				print "... aborting. PDB entry "+code+" does not exist or you have not Internet connection!"
@@ -498,6 +533,9 @@ print description
 remove("{}.txt".format(random_name))
 x3dna_files = ["bestpairs.pdb", "col_chains.scr", "hel_regions.pdb", "ref_frames.dat", "bp_order.dat", "col_helices.scr", "out"]
 for file in x3dna_files:
-	remove(file)	
+	try:
+		remove(file)
+	except:
+		pass	
 #rmtree('All')
 
